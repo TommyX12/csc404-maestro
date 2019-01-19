@@ -153,6 +153,9 @@ public class SequencerUI : MonoBehaviour
             GameObject g = button_sprites[spriteID];
             button_sprites.Remove(spriteID);
             GameObject.Destroy(g);
+            if(YouDied != null) {
+                YouDied.SetActive(true);
+            }
         }
     }
 
