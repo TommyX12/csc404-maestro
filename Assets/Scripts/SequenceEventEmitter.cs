@@ -3,52 +3,57 @@ using UnityEngine;
 
 public abstract class SequenceEventEmitter {
 
-    public delegate void SpriteSpawnEventHandler(int buttonID, int spriteID);
-    public delegate void MissedBeatEventHandler(int spriteID);
-    public delegate void StartMusicEventHandler();
+    // offset are how "late" the event is.
+    // if the event is emitted 0.5 seconds later than intended, offset = 0.5.
+    public delegate void SpriteSpawnEventHandler(int buttonID, int spriteID, float offset);
+    public delegate void MissedBeatEventHandler(int spriteID, float offset);
+    public delegate void StartMusicEventHandler(float offset);
 
     protected event SpriteSpawnEventHandler spriteSpawnEvent;
     protected event MissedBeatEventHandler missedBeatEvent;
     protected event StartMusicEventHandler startMusicEvent;
 
-    protected float currentTime;
+    protected float spawnToPressTime;
 
     public class ButtonHitResult {
         public int spriteID;
         public int deltaTime; // actual - desired
     }
     
-    public SequenceEventEmitter() {
-        
+    public SequenceEventEmitter(float spawnToPressTime) {
+        this.spawnToPressTime = spawnToPressTime;
     }
 
     // call this in fixed update
-    public void Step(float deltaTime) {
-        currentTime += deltaTime;
-        InternalStep(deltaTime);
-    }
-
-    abstract protected void InternalStep(float deltaTime);
-
+    abstract public void Step(float deltaTime);
+    
     public void addSpriteSpawnEventHandler(SpriteSpawnEventHandler handler) {
         spriteSpawnEvent += handler;
     }
 
-    protected void emitSpriteSpawnEvent(int buttonID, int spriteID) {
+    public void addMissedBeatEventHandler(MissedBeatEventHandler handler) {
+        missedBeatEvent += handler;
+    }
+
+    public void addStartMusicEventHandler(StartMusicEventHandler handler) {
+        startMusicEvent += handler;
+    }
+
+    protected void emitSpriteSpawnEvent(int buttonID, int spriteID, float offset) {
         if (spriteSpawnEvent != null) {
-            spriteSpawnEvent(buttonID, spriteID);
+            spriteSpawnEvent(buttonID, spriteID, offset);
         }
     }
 
-    protected void emitMissedBeatEvent(int spriteID) {
+    protected void emitMissedBeatEvent(int spriteID, float offset) {
         if (missedBeatEvent != null) {
-            missedBeatEvent(spriteID);
+            missedBeatEvent(spriteID, offset);
         }
     }
 
-    protected void emitStartMusicEvent() {
+    protected void emitStartMusicEvent(float offset) {
         if (startMusicEvent != null) {
-            startMusicEvent();
+            startMusicEvent(offset);
         }
     }
 
