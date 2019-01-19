@@ -28,7 +28,8 @@ public class SequencerUI : MonoBehaviour
     private float dist;
 
     public float GetScrollTime() {
-        return ScrollSpeed == 0 ? -1f: dist/(ScrollSpeed*Time.fixedDeltaTime);
+        Debug.Log(ScrollSpeed == 0 ? -1f: dist/(ScrollSpeed));
+        return ScrollSpeed == 0 ? -1f: dist/(ScrollSpeed);
     }
 
     public float GetTimeToMiss() {
@@ -49,6 +50,7 @@ public class SequencerUI : MonoBehaviour
         hcsee.addSpriteSpawnEventHandler(SpriteSpawnEventHandler);
         hcsee.addStartMusicEventHandler(StartMusicEventHandler);
         hcsee.addMissedBeatEventHandler(MissedBeatEventHandler);
+        BeginSequence();
     }
 
     public void SpriteSpawnEventHandler(int buttonID, int spriteID, float offset) {
