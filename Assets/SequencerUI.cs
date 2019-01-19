@@ -18,8 +18,9 @@ public class SequencerUI : MonoBehaviour
     public RectTransform SpawnE;
     public RectTransform SpawnR;
 
-
     public AudioSource track;
+
+    private HardcodedSequenceEventEmitter hcsee;
 
     // units per sec
     public float ScrollSpeed;
@@ -34,8 +35,20 @@ public class SequencerUI : MonoBehaviour
         return GetScrollTime()*1.1f;
     }
 
+    void FixedUpdate() {
+        hcsee.Step(Time.fixedDeltaTime);
+    }
+
+    public void BeginSequence() {
+        hcsee.Start();
+    }
+
     void Start() {
         dist = spawnZone.anchoredPosition.x - hitZone.anchoredPosition.x;
+        hcsee = new HardcodedSequenceEventEmitter(GetScrollTime());
+        hcsee.addSpriteSpawnEventHandler(SpriteSpawnEventHandler);
+        hcsee.addStartMusicEventHandler(StartMusicEventHandler);
+        hcsee.addMissedBeatEventHandler(MissedBeatEventHandler);
     }
 
     public void SpriteSpawnEventHandler(int buttonID, int spriteID, float offset) {
