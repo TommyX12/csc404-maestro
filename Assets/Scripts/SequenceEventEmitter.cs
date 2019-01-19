@@ -41,18 +41,21 @@ public abstract class SequenceEventEmitter {
     }
 
     protected void emitSpriteSpawnEvent(int buttonID, int spriteID, float offset) {
+        Debug.Log("spawn");
         if (spriteSpawnEvent != null) {
             spriteSpawnEvent(buttonID, spriteID, offset);
         }
     }
 
     protected void emitMissedBeatEvent(int spriteID, float offset) {
+        Debug.Log("missed");
         if (missedBeatEvent != null) {
             missedBeatEvent(spriteID, offset);
         }
     }
 
     protected void emitStartMusicEvent(float offset) {
+        Debug.Log("start music");
         if (startMusicEvent != null) {
             startMusicEvent(offset);
         }

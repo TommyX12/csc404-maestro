@@ -73,12 +73,15 @@ public class HardcodedSequenceEventEmitter : SequenceEventEmitter {
 
         // spawning notes
         while (true) {
-            if (nextNoteSpawnIndex < notes.Count) {
+            if (nextNoteSpawnIndex >= notes.Count) {
                 break;
             }
 
+            Debug.Log("current time: " + currentTime);
+
             Note nextNote = notes[nextNoteSpawnIndex];
             float spawnTime = nextNote.time + musicStartTime - spawnToPressTime;
+            Debug.Log("notes time: " + spawnTime);
             if (currentTime < spawnTime) {
                 break;
             }
@@ -92,7 +95,7 @@ public class HardcodedSequenceEventEmitter : SequenceEventEmitter {
 
         // checking missed notes
         while (true) {
-            if (nextNoteHitIndex < notes.Count) {
+            if (nextNoteHitIndex >= notes.Count) {
                 break;
             }
 
@@ -112,7 +115,7 @@ public class HardcodedSequenceEventEmitter : SequenceEventEmitter {
     override protected ButtonHitResult ButtonPress(int buttonID) {
         ButtonHitResult result = new ButtonHitResult();
 
-        if (nextNoteHitIndex < notes.Count) {
+        if (nextNoteHitIndex >= notes.Count) {
             result.spriteID = -1;
         }
         else {
