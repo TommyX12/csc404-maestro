@@ -24,6 +24,8 @@ public abstract class SequenceEventEmitter {
         this.spawnToPressTime = spawnToPressTime;
     }
 
+    abstract public void Start();
+
     // call this in fixed update
     abstract public void Step(float deltaTime);
     
