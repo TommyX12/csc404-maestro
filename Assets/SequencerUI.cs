@@ -28,7 +28,7 @@ public class SequencerUI : MonoBehaviour
     private float dist;
 
     public float GetScrollTime() {
-        return ScrollSpeed == 0 ? -1f: dist/ScrollSpeed;
+        return ScrollSpeed == 0 ? -1f: dist/(ScrollSpeed*Time.fixedDeltaTime);
     }
 
     public float GetTimeToMiss() {
