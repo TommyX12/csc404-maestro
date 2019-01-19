@@ -77,11 +77,8 @@ public class HardcodedSequenceEventEmitter : SequenceEventEmitter {
                 break;
             }
 
-            Debug.Log("current time: " + currentTime);
-
             Note nextNote = notes[nextNoteSpawnIndex];
             float spawnTime = nextNote.time + musicStartTime - spawnToPressTime;
-            Debug.Log("notes time: " + spawnTime);
             if (currentTime < spawnTime) {
                 break;
             }
