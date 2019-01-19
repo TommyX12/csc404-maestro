@@ -5600,7 +5600,7 @@ MonoBehaviour:
   SpawnE: {fileID: 1644593637}
   SpawnR: {fileID: 842833020}
   track: {fileID: 1613925207}
-  ScrollSpeed: 75
+  ScrollSpeed: 125
 --- !u!224 &1644593637 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4063581208913855895, guid: cebec3c0f1d954c238c1b155d7db650f,
