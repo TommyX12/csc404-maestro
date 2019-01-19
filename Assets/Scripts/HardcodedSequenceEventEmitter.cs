@@ -109,7 +109,7 @@ public class HardcodedSequenceEventEmitter : SequenceEventEmitter {
         }
     }
 
-    override protected ButtonHitResult ButtonPress(int buttonID) {
+    override public ButtonHitResult ButtonPress(int buttonID) {
         ButtonHitResult result = new ButtonHitResult();
 
         if (nextNoteHitIndex >= notes.Count) {

@@ -58,5 +58,5 @@ public abstract class SequenceEventEmitter {
         }
     }
 
-    abstract protected ButtonHitResult ButtonPress(int buttonID);
+    abstract public ButtonHitResult ButtonPress(int buttonID);
 }
