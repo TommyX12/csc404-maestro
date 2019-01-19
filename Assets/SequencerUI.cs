@@ -11,6 +11,8 @@ public class SequencerUI : MonoBehaviour
 
     public RectTransform MusicBar;
 
+    public GameObject YouDied;
+
     public RectTransform hitZone;
     public RectTransform spawnZone;
     public RectTransform SpawnQ;
