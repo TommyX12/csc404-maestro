@@ -13,15 +13,14 @@ public abstract class SequenceEventEmitter {
     protected event MissedBeatEventHandler missedBeatEvent;
     protected event StartMusicEventHandler startMusicEvent;
 
-    protected float spawnToPressTime;
-
     public class ButtonHitResult {
-        public int spriteID;
-        public int deltaTime; // actual - desired
+        public int spriteID = -1; // -1 means too early
+        public float deltaTime; // actual press time - desired press time
+        public bool buttonCorrect;
     }
     
-    public SequenceEventEmitter(float spawnToPressTime) {
-        this.spawnToPressTime = spawnToPressTime;
+    public SequenceEventEmitter() {
+        
     }
 
     abstract public void Start();
