@@ -16,7 +16,8 @@ public abstract class SequenceEventEmitter {
     public class ButtonHitResult {
         public int spriteID = -1; // -1 means too early
         public float deltaTime; // actual press time - desired press time
-        public bool buttonCorrect;
+        public int pressedButton;
+        public int correctButton;
     }
     
     public SequenceEventEmitter() {

@@ -124,7 +124,8 @@ public class HardcodedSequenceEventEmitter : SequenceEventEmitter {
             else {
                 result.spriteID = nextNoteHitIndex;
                 result.deltaTime = currentTime - hitTime;
-                result.buttonCorrect = buttonID == nextNote.buttonID;
+                result.pressedButton = buttonID;
+                result.correctButton = nextNote.buttonID;
                 nextNoteHitIndex++;
             }
         }
