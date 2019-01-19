@@ -497,7 +497,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480057852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1645c858c115146c6864ccc8fb323257, type: 3}
   m_Name: 
@@ -897,7 +897,7 @@ MonoBehaviour:
   SpawnE: {fileID: 1644593637}
   SpawnR: {fileID: 842833020}
   track: {fileID: 1613925207}
-  ScrollSpeed: 150
+  ScrollSpeed: 75
 --- !u!224 &1644593637 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4063581208913855895, guid: cebec3c0f1d954c238c1b155d7db650f,

@@ -53,6 +53,33 @@ public class SequencerUI : MonoBehaviour
         BeginSequence();
     }
 
+    void Update() {
+        SequenceEventEmitter.ButtonHitResult Bhit = null;
+        if(Input.GetKeyDown(KeyCode.Q)) {
+            Bhit = hcsee.ButtonPress(0);
+        }
+        if(Input.GetKeyDown(KeyCode.W)) {
+            Bhit = hcsee.ButtonPress(1);
+        }
+        if(Input.GetKeyDown(KeyCode.E)) {
+            Bhit = hcsee.ButtonPress(2);
+        }
+        if(Input.GetKeyDown(KeyCode.R)) {
+            Bhit = hcsee.ButtonPress(3);
+        }
+
+        if(Bhit!=null) {
+            Debug.Log(Bhit.spriteID);
+            if(Bhit.spriteID != -1) {
+                if(button_sprites.ContainsKey(Bhit.spriteID)) {
+                    GameObject g = button_sprites[Bhit.spriteID];
+                    button_sprites.Remove(Bhit.spriteID);
+                    GameObject.Destroy(g);
+                }
+            }
+        }
+    }
+
     public void SpriteSpawnEventHandler(int buttonID, int spriteID, float offset) {
         RectTransform target;
 
