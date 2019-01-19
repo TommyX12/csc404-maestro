@@ -18,6 +18,11 @@ public class SequencerUI : MonoBehaviour
     public RectTransform SpawnE;
     public RectTransform SpawnR;
 
+    public ParticleSystem QParticles;
+    public ParticleSystem WParticles;
+    public ParticleSystem EParticles;
+    public ParticleSystem RParticles;
+
     public AudioSource track;
 
     private HardcodedSequenceEventEmitter hcsee;
@@ -55,17 +60,24 @@ public class SequencerUI : MonoBehaviour
 
     void Update() {
         SequenceEventEmitter.ButtonHitResult Bhit = null;
+
+        int button = -1;
+
         if(Input.GetKeyDown(KeyCode.Q)) {
             Bhit = hcsee.ButtonPress(0);
-        }
+            button = 0;
+        } else 
         if(Input.GetKeyDown(KeyCode.W)) {
             Bhit = hcsee.ButtonPress(1);
-        }
+            button = 1;
+        } else 
         if(Input.GetKeyDown(KeyCode.E)) {
             Bhit = hcsee.ButtonPress(2);
-        }
+            button = 2;
+        } else 
         if(Input.GetKeyDown(KeyCode.R)) {
             Bhit = hcsee.ButtonPress(3);
+            button = 3;
         }
 
         if(Bhit!=null) {
@@ -75,6 +87,26 @@ public class SequencerUI : MonoBehaviour
                     GameObject g = button_sprites[Bhit.spriteID];
                     button_sprites.Remove(Bhit.spriteID);
                     GameObject.Destroy(g);
+
+                    ParticleSystem target;
+                    switch(button) {
+                    case 0:
+                        target = QParticles;
+                        break;
+                    case 1:
+                        target = WParticles;
+                    break;
+                    case 2:
+                        target = EParticles;
+                    break;
+                    case 3:
+                        target = RParticles;
+                    break;
+                    default:
+                        target = QParticles;
+                    break;
+                    }
+                    target.Emit((int)((1f-Bhit.deltaTime)*50));
                 }
             }
         }
