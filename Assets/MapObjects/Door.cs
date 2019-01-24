@@ -23,7 +23,11 @@ public class Door : GridObject
     public void Close() {
         IsOpen = false;
     }
-    
+
+    public void Toggle() {
+        IsOpen = !IsOpen;
+    }
+
     public void FixedUpdate()
     {
         if (IsOpen)
