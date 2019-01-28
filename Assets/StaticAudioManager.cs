@@ -16,4 +16,8 @@ public class StaticAudioManager : MonoBehaviour
         BeatPreviewSound.clip = ResourceManager.GetMusic("PreviewBeat");
     }
 
+    public AudioSource GetPreviewSound() {
+        return BeatPreviewSound;
+    }
+
 }

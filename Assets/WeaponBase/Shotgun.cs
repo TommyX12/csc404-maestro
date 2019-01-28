@@ -15,8 +15,6 @@ public class Shotgun : Weapon
     
     public float tol = 0.05f;
 
-    public bool PreviewRhythm = false;
-
     public bool Jammed = false;
 
     private void Start()
@@ -86,8 +84,7 @@ public class Shotgun : Weapon
             Riff.ButtonPressResult press = riff.ButtonPress();
             if (press.noteIndex != -1 && press.deltaTime < tol)
             {
-                Debug.Log(press.noteIndex);
-                FireSound.Play();
+                StaticAudioManager.current.GetPreviewSound().Play();
             }
         }
         else {
