@@ -591,6 +591,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -611,10 +612,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 650dbfaf-6f69-43f0-93e5-ee157f65387c
+  cloudProjectId: 00bd291f-a8b0-408c-9b4b-0050952c4284
   framebufferDepthMemorylessMode: 0
-  projectName: Maestro
-  organizationId: raymond-gao
+  projectName: csc404-maestro
+  organizationId: tommyx12
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

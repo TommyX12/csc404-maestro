@@ -1,0 +1,12 @@
+{
+  "bpm": 80,
+  "tracks": [
+    {
+      "name": "csc404-test-1",
+      "volume": 1.0,
+      "synced": false,
+      "loop": true
+    }
+  ],
+  "snapshots": []
+}
