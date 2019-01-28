@@ -15,11 +15,18 @@ We decided to create a top down room-clearing action game much in the spirit of 
 - The actions of all game objects are to be constrained to happen at rhythmic intervals
 - The input that the player gives for each action must be given in time with a predetermined rhythm
 
+![Image Failed To Load](https://raw.githubusercontent.com/FreakingBarbarians/FreakingBarbarians_Images/master/MaestroGame/UIExample.PNG "What our game could possibly look like")
+
+
 So you get things like enemies moving to a rhythm, creating a beat. Or moving walls shifting every downbeat. And the player must tap out a rhythm on his/her controller in order to perform actions. If we wrap this around a background beat for each level and the general paradigm of topdown action shooters then we have a symphony of different game objects all acting in harmony. Or at least that's the goal.
 
 `To create music by interacting with the world`
 
 It would not be wrong to say that this is the core theme behind our game.
+
+The look and feel was decided by our artists Denzel and Kristan. We wanted to go for a bright and vibrant look.
+
+![Image Failed To Load](https://raw.githubusercontent.com/FreakingBarbarians/FreakingBarbarians_Images/master/MaestroGame/MoodBoard.PNG "Our Moodboard")
 
 ---
 
