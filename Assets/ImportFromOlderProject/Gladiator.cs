@@ -49,6 +49,11 @@ public class Gladiator : Damageable {
 
     public void Update()
     {
+        if (Input.GetButtonDown("RB")) {
+            if (Weapons.Count > 0) {
+                Weapons[0].Fire();
+            }
+        }
     }
 
     public void FixedUpdate()

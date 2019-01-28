@@ -62,7 +62,7 @@ public class Riff {
 
     private void CheckNoteHitable(NoteIndexWithBar index, ref float bestError, ref NoteIndexWithBar best, ref float bestDeltaTime) {
         float totalBeat = GetNoteTotalBeat(index);
-        float noteTime = musicManager.BeatToTime(totalBeat);
+        float noteTime = musicManager.BeatToTime(totalBeat, beatsPerBar);
         float deltaTime = currentTime - (noteTime + hitOffset);
         float error = Mathf.Abs(deltaTime);
         if (lastHit.LessThan(index) &&

@@ -3,28 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * 0 - fire1
- * 2 - Reload_1_0
- * 3 - Reload_1_1
- * 4 - fire2
- * 5 - fire3
- * 6 - Reload_3_0
- * 7 - Reload_3_1
+
  */
 
 public class Shotgun : Weapon
 {
     public AudioSource FireSound;
+    public AudioSource FireSoundReload1;
+    public AudioSource FireSoundReload2;
+    public AudioSource JammedSound;
+    
     public float tol = 0.05f;
+
+    public bool PreviewRhythm = false;
+
+    public bool Jammed = false;
 
     private void Start()
     {
         Init();
+        riff.hitOffset = 0;
+    }
+
+    public void StopAllSounds() {
+        FireSound.Stop();
+        FireSoundReload1.Stop();
+        FireSoundReload2.Stop();
+        JammedSound.Stop();
     }
 
     public override void Fire()
     {
-        
+        Riff.ButtonPressResult press = riff.ButtonPress();
+        if (Jammed) {
+            return;
+        }
+        if (press.noteIndex != -1)
+        {
+            Debug.Log(press.noteIndex);
+            switch (press.noteIndex) {
+                case 0:
+                    FireSoundReload1.Play();
+                    break;
+                case 1:
+                    FireSound.Play();
+                    break;
+                case 2:
+                    FireSoundReload2.Play();
+                    break;
+                default:
+                    Jammed = true;
+                    StopAllSounds();
+                    JammedSound.Play();
+                    break;
+            }
+        } else {
+            Debug.Log(press.noteIndex);
+            Jammed = true;
+            StopAllSounds();
+            JammedSound.Play();
+        }
     }
 
     public override void OnBeat(int beatIdx)
@@ -35,14 +73,25 @@ public class Shotgun : Weapon
     public void FixedUpdate()
     {
         this.riff.Update();
-        Riff.ButtonPressResult press = riff.ButtonPress();
-        if (press.noteIndex != -1 && press.deltaTime < tol)
+
+        if (Jammed) {
+            if (!JammedSound.isPlaying) {
+                Jammed = false;
+            }
+        }
+
+        if (PreviewRhythm)
         {
-            if (press.noteIndex == 0 || press.noteIndex == 4 || press.noteIndex == 5) {
+            riff.hitOffset = 0.2f;
+            Riff.ButtonPressResult press = riff.ButtonPress();
+            if (press.noteIndex != -1 && press.deltaTime < tol)
+            {
+                Debug.Log(press.noteIndex);
                 FireSound.Play();
             }
-            Debug.Log("NOTE " + press.noteIndex);
+        }
+        else {
+            riff.hitOffset = 0;
         }
     }
-
 }
