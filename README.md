@@ -35,8 +35,10 @@ We also got feedback, criticisms and ideas that we hadn't considered before.
 
 - Potentially a lot going on at once, keeping track of enemy movement/bullets, your own character's movements, as well as item rhythms. Could overwhelm the player.
     - To this end we decided that we would remove the need for players to aim their weapons. And we are also considering removing player movement entirely and going for a tower-defense or on rails concept but we are still undecided.
+    - The main issue is that the player might find it very difficult to move along numerous axis as they play music as they fight enemies, etc. Too much to deal with all at once. 
 - Large amounts of enemies could drown out the player's sounds. The music could end up being almost entirely enemy-based, while player sounds are just background noise.
     - This is something to be considered heavily in sound design. We should make the player actions iconic, the melody, or the main theme of each song. Failing that a system that ensures that the player's music is the most important.
+    - The judge's concern was that control is in the hands of the enemy, not the player. If the enemy or the computer-controlled side is mostly in control of the melody, this means that they dictate how things're going to go, not the player.
 - On that note, too many enemies at once would likely make the game too loud, also could result in a blurb of noise rather than smooth, coordinated music.
     - We need a system that ensures volume is kept at a respectable level, and game objects create sound harmoniously.
 - Consider looking at the game "Disco is Dead", a previous Level Up winner.
@@ -47,5 +49,7 @@ We also got feedback, criticisms and ideas that we hadn't considered before.
     - Ray will borrow his mom's noise cancelling headphones. (Thanks mom)
 - Try to stay consistent with a theme. It won't look good if you have this really vibrant game playing rock music based in a sci-fi age, or some other strange combination.
     - Music designers need to be coordinated with artists
+    - They liked the aesthetic but they believe we need to "tighten" it more.
+- They reminded us that gameplay can change at the prototype. We may discover that some things work better or don't work at all at the prototype stage.
 
 Keeping these things in mind we are eager and excited to build the next part of our game. We hope to get something minimally playable by Tuesday January 29th.
