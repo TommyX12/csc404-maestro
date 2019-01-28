@@ -32,7 +32,6 @@ public class Riff {
         currentTime = 0;
         currentBar = 0;
         currentBeat = 0;
-
         ResetLastHit();
     }
 
@@ -78,8 +77,8 @@ public class Riff {
 
     public ButtonPressResult ButtonPress() {
         // find coordinates
-        Debug.Log("time: " + currentTime + ", beat: " + currentBeat + ", bar: " + currentBar);
-        Debug.Log("track position: " + musicManager.GetMusicTrack("csc404-test-1").GetPosition());
+        // Debug.Log("time: " + currentTime + ", beat: " + currentBeat + ", bar: " + currentBar);
+        // Debug.Log("track position: " + musicManager.GetMusicTrack("csc404-test-1").GetPosition());
         
         ButtonPressResult result = new ButtonPressResult();
         
@@ -114,7 +113,7 @@ public class Riff {
             lastHit = next;
         }
 
-        Debug.Log("next: " + next.noteIndex + ", bar: " + next.bar);
+        // Debug.Log("next: " + next.noteIndex + ", bar: " + next.bar);
 
         result.noteIndex = next.noteIndex;
 
@@ -128,7 +127,7 @@ public class Riff {
     public int GetBarIndex() {
         return currentBar;
     }
-    
+
     private struct NoteIndexWithBar {
         public int noteIndex;
         public int bar;
@@ -143,7 +142,9 @@ public class Riff {
         }
     }
 
+    [Serializable]
     public class Note {
+        [SerializeField]
         public float beat; // position, in beats relative to start of rift
 
         public Note(float beat) {

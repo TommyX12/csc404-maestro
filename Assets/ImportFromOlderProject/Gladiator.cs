@@ -13,9 +13,27 @@ public class Gladiator : Damageable {
     public static Gladiator player;
     public float HitPoints = 100;
     public float speed;
+
+    public List<GameObject> WeaponPositions;
+    public List<Weapon> Weapons;
+
     private Quaternion rot_target;
 
     private Vector2 motionVal;
+
+    public bool AddWeapon(Weapon w) {
+        if (Weapons.Count < WeaponPositions.Count)
+        {
+            Weapons.Add(w);
+            w.gameObject.transform.SetParent(WeaponPositions[Weapons.Count - 1].transform);
+            w.gameObject.transform.localPosition = Vector3.zero;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public override void OnHit(DamageSource damage)
     {
