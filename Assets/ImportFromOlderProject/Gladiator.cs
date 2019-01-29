@@ -35,10 +35,10 @@ public class Gladiator : Damageable {
         }
     }
 
-    public override void OnHit(DamageSource damage)
+    public override void OnHit(int damage, int DamageFilter)
     {
-        if ((damage.DamageFilter & this.DamageFilter) != 0) {
-            HitPoints -= damage.DamageAmount;
+        if ((DamageFilter & this.DamageFilter) != 0) {
+            HitPoints -= damage;
         }
     }
 
@@ -54,6 +54,23 @@ public class Gladiator : Damageable {
                 Weapons[0].Fire();
             }
         }
+
+        if (Input.GetButtonDown("A")) {
+            MusicManager.Current.Mixer.audioMixer.SetFloat("Volume", -30);
+            if (Weapons.Count > 0) {
+                Weapons[0].BeginPreview();
+            }
+        }
+
+        if (Input.GetButtonUp("A"))
+        {
+            MusicManager.Current.Mixer.audioMixer.SetFloat("Volume", -10);
+            if (Weapons.Count > 0)
+            {
+                Weapons[0].StopPreview();
+            }
+        }
+
     }
 
     public void FixedUpdate()

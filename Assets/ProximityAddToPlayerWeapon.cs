@@ -11,6 +11,7 @@ public class ProximityAddToPlayerWeapon : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             if (other.gameObject.GetComponent<Gladiator>().AddWeapon(GetComponent<Weapon>())) {
+                GetComponent<Weapon>().enabled = true;
                 this.enabled = false;
             }
         }
