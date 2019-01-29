@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// testing
  // currently this shotgun only raycasts
  // Think of it as firing a "slug"
 public class Shotgun : Weapon
