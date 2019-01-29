@@ -5,12 +5,11 @@ using UnityEngine;
 public class DestroyableObject : Damageable
 {
     public int Hitpoints = 1;
-    public override void OnHit(DamageSource damage)
+    public override void OnHit(int damage, int DamageFilter)
     {
-        if((damage.DamageFilter & this.DamageFilter) != 0) {
-            Hitpoints -= damage.DamageAmount;
+        if((DamageFilter & this.DamageFilter) != 0) {
+            Hitpoints -= damage;
             if (Hitpoints <= 0) {
-                Gladiator.player.HitPoints += 5;
                 Destroy(gameObject);
             }
         }

@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Door : GridObject
 {
     public GameObject DoorLeft;
     public GameObject DoorRight;
+
+    public AudioSource DoorSound;
 
     public GameObject DoorLeftClosePos;
     public GameObject DoorLeftOpenPos;
@@ -16,15 +19,23 @@ public class Door : GridObject
 
     public float Rate = 10;
 
+    private void Start()
+    {
+        this.DoorSound = GetComponent<AudioSource>();
+    }
+
     public void Open() {
+        DoorSound.Play();
         IsOpen = true;
     }
 
     public void Close() {
+        DoorSound.Play();
         IsOpen = false;
     }
 
     public void Toggle() {
+        DoorSound.Play();
         IsOpen = !IsOpen;
     }
 

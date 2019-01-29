@@ -6,6 +6,8 @@ using System.Linq;
 
 public class MusicManager : MonoBehaviour {
     
+    public static float BEAT_VALUE = 4;
+
     public static MusicManager Current;
     
     public class TrackConfig {
@@ -320,20 +322,20 @@ public class MusicManager : MonoBehaviour {
         return this.totalTimer;
     }
 
-    public float BeatToTime(float beat) {
-        return beat * beatLength;
+    public float BeatToTime(float beat, int beatsPerBar) {
+        return beat * beatLength * (BEAT_VALUE/beatsPerBar);
     }
 
-    public float TimeToBeat(float time) {
-        return time / beatLength;
+    public float TimeToBeat(float time, int beatsPerBar) {
+        return time / (beatLength * (BEAT_VALUE / beatsPerBar));
     }
 
     public float GetBeatIndex(int beatsPerBar) {
-        return TimeToBeat(this.totalTimer) % beatsPerBar;
+        return TimeToBeat(this.totalTimer,beatsPerBar) % beatsPerBar;
     }
 
     public int GetBarIndex(int beatsPerBar) {
-        return ((int) Mathf.Floor(this.totalTimer / (this.beatLength * beatsPerBar)));
+        return ((int) Mathf.Floor(this.totalTimer / (this.beatLength * BEAT_VALUE)));
     }
     
 }

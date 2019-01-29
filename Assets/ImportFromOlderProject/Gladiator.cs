@@ -13,14 +13,32 @@ public class Gladiator : Damageable {
     public static Gladiator player;
     public float HitPoints = 100;
     public float speed;
+
+    public List<GameObject> WeaponPositions;
+    public List<Weapon> Weapons;
+
     private Quaternion rot_target;
 
     private Vector2 motionVal;
 
-    public override void OnHit(DamageSource damage)
+    public bool AddWeapon(Weapon w) {
+        if (Weapons.Count < WeaponPositions.Count)
+        {
+            Weapons.Add(w);
+            w.gameObject.transform.SetParent(WeaponPositions[Weapons.Count - 1].transform);
+            w.gameObject.transform.localPosition = Vector3.zero;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public override void OnHit(int damage, int DamageFilter)
     {
-        if ((damage.DamageFilter & this.DamageFilter) != 0) {
-            HitPoints -= damage.DamageAmount;
+        if ((DamageFilter & this.DamageFilter) != 0) {
+            HitPoints -= damage;
         }
     }
 
@@ -31,6 +49,28 @@ public class Gladiator : Damageable {
 
     public void Update()
     {
+        if (Input.GetButtonDown("RB")) {
+            if (Weapons.Count > 0) {
+                Weapons[0].Fire();
+            }
+        }
+
+        if (Input.GetButtonDown("A")) {
+            MusicManager.Current.Mixer.audioMixer.SetFloat("Volume", -30);
+            if (Weapons.Count > 0) {
+                Weapons[0].BeginPreview();
+            }
+        }
+
+        if (Input.GetButtonUp("A"))
+        {
+            MusicManager.Current.Mixer.audioMixer.SetFloat("Volume", -10);
+            if (Weapons.Count > 0)
+            {
+                Weapons[0].StopPreview();
+            }
+        }
+
     }
 
     public void FixedUpdate()

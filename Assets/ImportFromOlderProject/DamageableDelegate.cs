@@ -12,8 +12,8 @@ public class DamageableDelegate : Damageable
         this.DamageFilter = Delegate.DamageFilter;
     }
 
-    public override void OnHit(DamageSource damage)
+    public override void OnHit(int damage, int DamageFilter)
     {
-        Delegate.OnHit(damage);
+        Delegate.OnHit(damage, DamageFilter);
     }
 }
