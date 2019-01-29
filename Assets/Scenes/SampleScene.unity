@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10213,14 +10213,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 403907430}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   tol: 0.005
   bars: 1
   notes:
-  - beat: 0
-  - beat: 1
-  - beat: 2
+  - index: 0
+    unitPerBeat: 1
+  - index: 1
+    unitPerBeat: 1
+  - index: 2
+    unitPerBeat: 1
 --- !u!1 &606123167
 GameObject:
   m_ObjectHideFlags: 0
@@ -10817,10 +10831,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes:
-  - beat: 0
-  - beat: 4
-  - beat: 5
-  BeatsPerBar: 8
+  - index: 0
+    unitPerBeat: 2
+  - index: 4
+    unitPerBeat: 2
+  - index: 5
+    unitPerBeat: 2
+  BeatsPerBar: 4
   PreviewRhythm: 0
   FireSound: {fileID: 648497991}
   FireSoundReload1: {fileID: 648497994}
@@ -12723,7 +12740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765285491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.61, y: 101.42, z: 113.9}
+  m_LocalPosition: {x: 100.61, y: 101.42, z: 113.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13699,6 +13716,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7256413607763416082, guid: fb8775090cdeebe4e85a015db8c54974,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 76e1b3e7258cf8a4eb7501ec42680a2d, type: 2}
+    - target: {fileID: 7256413606974697550, guid: fb8775090cdeebe4e85a015db8c54974,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 76e1b3e7258cf8a4eb7501ec42680a2d, type: 2}
     - target: {fileID: 7256413606800608062, guid: fb8775090cdeebe4e85a015db8c54974,
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -13919,16 +13946,6 @@ PrefabInstance:
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[9].outSlope
       value: -0.002000801
       objectReference: {fileID: 0}
-    - target: {fileID: 7256413607763416082, guid: fb8775090cdeebe4e85a015db8c54974,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 76e1b3e7258cf8a4eb7501ec42680a2d, type: 2}
-    - target: {fileID: 7256413606974697550, guid: fb8775090cdeebe4e85a015db8c54974,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 76e1b3e7258cf8a4eb7501ec42680a2d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8775090cdeebe4e85a015db8c54974, type: 3}
 --- !u!4 &829757384 stripped
@@ -20582,7 +20599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488111215
@@ -25174,7 +25191,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   HitPoints: 100
-  speed: 3
+  speed: 3.5
   WeaponPositions:
   - {fileID: 1681544124}
   Weapons: []

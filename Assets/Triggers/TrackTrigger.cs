@@ -10,11 +10,12 @@ public class TrackTrigger : MonoBehaviour
     public int bars = 1;
     int last_hit = 0;
     public List<Riff.Note> notes;
-    private Riff audioRiff;
+    private Riff riff;
 
     private void Start()
     {
-        audioRiff = new Riff(4, notes, MusicManager.Current);
+        riff = new Riff(4, notes, MusicManager.Current);
+        riff.noteHitEvent += noteHitEventHandler;
     }
 
     private void Update()
@@ -23,9 +24,11 @@ public class TrackTrigger : MonoBehaviour
 
     private void FixedUpdate()
     {
-        audioRiff.Update();
-        Riff.ButtonPressResult press = audioRiff.ButtonPress();
-        if (press.noteIndex != -1 && press.deltaTime < tol) {
+        riff.Update();
+    }
+
+    private void noteHitEventHandler(Riff.NoteHitEvent e) {
+        if (e.automatic && e.noteIndex != -1 && e.deltaTime < tol) {
             OnBeat.Invoke();
         }
     }
