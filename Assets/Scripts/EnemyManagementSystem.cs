@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// actually this is fine for now.
 public class EnemyManagementSystem : MonoBehaviour
 {
     public static EnemyManagementSystem current;
