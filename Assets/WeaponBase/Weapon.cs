@@ -8,15 +8,12 @@ public abstract class Weapon : MonoBehaviour
     public int BeatsPerBar;
     public bool PreviewRhythm = false;
     protected Riff riff;
+
     protected void Init() {
         riff = new Riff(BeatsPerBar, notes, MusicManager.Current);
     }
 
     public abstract void Fire();
-
-    public virtual void OnBeat(int beatIdx) {
-        Debug.Log("FIRE");
-    }
 
     public virtual void BeginPreview() {
         PreviewRhythm = true;
