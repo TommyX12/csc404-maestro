@@ -1,3 +1,14 @@
+## TODO
+- Shotgun should be pellet based
+- Shotgun shell particles
+- Improve Shotgun Particle effects
+- Expose shotgun damage
+- Create a better damage model (Damage model abstract class?)
+- Improve enemy manager
+- Create Respawn Checkpoints (Checkpoint manager)
+- Make doors kill
+
+
 # Maestro
 
 An RPG game in which the player must utilize music, rhythm, and composition to defeat enemies and solve puzzles.
