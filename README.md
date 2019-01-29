@@ -7,6 +7,7 @@
 - Improve enemy manager
 - Create Respawn Checkpoints (Checkpoint manager)
 - Make doors kill
+- How does the audio mixer work!?
 
 
 # Maestro
