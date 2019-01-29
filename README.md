@@ -5,10 +5,6 @@
 - Expose shotgun damage
 - Create a better damage model (Damage model abstract class?)
 - Improve enemy manager
-- Create Respawn Checkpoints (Checkpoint manager)
-- Make doors kill
-- How does the audio mixer work!?
-
 
 # Maestro
 
@@ -72,3 +68,9 @@ We also got feedback, criticisms and ideas that we hadn't considered before.
 - They reminded us that gameplay can change at the prototype. We may discover that some things work better or don't work at all at the prototype stage.
 
 Keeping these things in mind we are eager and excited to build the next part of our game. We hope to get something minimally playable by Tuesday January 29th.
+
+Here's a video link to our tech demo.
+
+https://youtu.be/hmdybQniNog
+
+If the video is unavailable shoot me an email at `paarthurnax@live.ca` There's probably something wrong with the publicity settings.
