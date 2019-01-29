@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-/*
-
- */
-
+// testing
+// currently this shotgun only raycasts
+// Think of it as firing a "slug"
 public class Shotgun : Weapon
 {
     public AudioSource FireSound;
@@ -79,8 +77,7 @@ public class Shotgun : Weapon
         RaycastHit hit;
         Physics.Raycast(FirePoint.transform.position, FirePoint.transform.forward, out hit, 10f);
         if (hit.collider && hit.collider.gameObject.GetComponent<Damageable>()) {
-
-            hit.collider.gameObject.GetComponent<Damageable>().OnHit(10, 1);
+            hit.collider.gameObject.GetComponent<Damageable>().OnHit(10, 1); // hardcoded damage value for shotgun right now.
         }
     }
 

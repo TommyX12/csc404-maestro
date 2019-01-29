@@ -19,5 +19,4 @@ public class StaticAudioManager : MonoBehaviour
     public AudioSource GetPreviewSound() {
         return BeatPreviewSound;
     }
-
 }
