@@ -73,4 +73,8 @@ Here's a video link to our tech demo.
 
 https://youtu.be/hmdybQniNog
 
+And here's another link because I forgot something in the first one. Oh well, watch both if you want.
+
+https://youtu.be/CgVh9DTWrUQ
+
 If the video is unavailable shoot me an email at `paarthurnax@live.ca` There's probably something wrong with the publicity settings.
