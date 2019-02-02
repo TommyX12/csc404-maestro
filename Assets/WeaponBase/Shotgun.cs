@@ -25,6 +25,7 @@ public class Shotgun : Weapon
     {
         Init();
         riff.hitOffset = 0;
+        riff.noteHitEvent += noteHitEventHandler;
     }
 
     public void StopAllSounds() {
@@ -36,7 +37,7 @@ public class Shotgun : Weapon
 
     public override void Fire()
     {
-        Riff.ButtonPressResult press = riff.ButtonPress();
+        Riff.NoteHitEvent press = riff.ButtonPress();
         if (Jammed) {
             return;
         }
@@ -86,6 +87,15 @@ public class Shotgun : Weapon
         Debug.Log("BEAT " + beatIdx);
     }
 
+    private void noteHitEventHandler(Riff.NoteHitEvent e) {
+        if (PreviewRhythm) {
+            if (e.automatic) {
+                StaticAudioManager.current.GetPreviewSound().Play();
+            }
+        }
+
+    }
+
     public void FixedUpdate()
     {
         this.riff.Update();
@@ -94,19 +104,6 @@ public class Shotgun : Weapon
             if (!JammedSound.isPlaying) {
                 Jammed = false;
             }
-        }
-
-        if (PreviewRhythm)
-        {
-            riff.hitOffset = 0.2f;
-            Riff.ButtonPressResult press = riff.ButtonPress();
-            if (press.noteIndex != -1 && press.deltaTime < tol)
-            {
-                StaticAudioManager.current.GetPreviewSound().Play();
-            }
-        }
-        else {
-            riff.hitOffset = 0;
         }
 
         if (target == null) {

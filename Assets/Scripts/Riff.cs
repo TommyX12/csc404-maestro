@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Riff {
 
+    public delegate void NoteHitEventHandler(NoteHitEvent e);
+    public event NoteHitEventHandler noteHitEvent;
+
     private int beatsPerBar;
     private List<Note> notes;
     private NoteIndexWithBar lastHit;
+    private NoteIndexWithBar lastAutoHit;
     private int currentBar;
     private float currentBeat;
     private float currentTime;
@@ -38,10 +42,41 @@ public class Riff {
     private void ResetLastHit() {
         lastHit.noteIndex = 0;
         lastHit.bar = -1;
+        lastAutoHit.bar = currentBar;
+        lastAutoHit.noteIndex = -1;
+        for (int i = 0; i < notes.Count; ++i) {
+            Note note = notes[i];
+            if (note.beat < currentBeat) {
+                lastAutoHit.noteIndex = i;
+                break;
+            }
+        }
+        if (lastAutoHit.noteIndex == -1) {
+            lastAutoHit.noteIndex = notes.Count - 1;
+            lastAutoHit.bar--;
+        }
+    }
+
+    private void CheckAutoHit() {
+        NoteIndexWithBar next = lastAutoHit.next(this);
+        float currentTotalBeat = GetCurrentTotalBeat();
+        while (currentTotalBeat >= GetNoteTotalBeat(next)) {
+            NoteHitEvent e;
+            e.noteIndex = next.noteIndex;
+            e.deltaTime = 0;
+            e.automatic = true;
+            DispatchNoteHitEvent(e);
+            lastAutoHit = next;
+            next = next.next(this);
+        }
     }
 
     private float GetNoteTotalBeat(NoteIndexWithBar pos) {
         return beatsPerBar * pos.bar + notes[pos.noteIndex].beat;
+    }
+
+    private float GetCurrentTotalBeat() {
+        return beatsPerBar * currentBar + currentBeat;
     }
 
     // call this in FixedUpdate
@@ -49,15 +84,17 @@ public class Riff {
         float time = musicManager.GetTotalTimer();
         float beat = musicManager.GetBeatIndex(beatsPerBar);
         int bar = musicManager.GetBarIndex(beatsPerBar);
-        
-        if (time < currentTime) {
-            ResetLastHit();
-        }
 
         // set current index
         currentTime = time;
         currentBeat = beat;
         currentBar = bar;
+        
+        if (time < currentTime) {
+            ResetLastHit();
+        }
+
+        CheckAutoHit();
     }
 
     private void CheckNoteHitable(NoteIndexWithBar index, ref float bestError, ref NoteIndexWithBar best, ref float bestDeltaTime) {
@@ -75,12 +112,19 @@ public class Riff {
         }
     }
 
-    public ButtonPressResult ButtonPress() {
+    private void DispatchNoteHitEvent(NoteHitEvent e) {
+        if (noteHitEvent != null) {
+            noteHitEvent(e);
+        }
+    }
+
+    public NoteHitEvent ButtonPress() {
         // find coordinates
         // Debug.Log("time: " + currentTime + ", beat: " + currentBeat + ", bar: " + currentBar);
         // Debug.Log("track position: " + musicManager.GetMusicTrack("csc404-test-1").GetPosition());
         
-        ButtonPressResult result = new ButtonPressResult();
+        NoteHitEvent result = new NoteHitEvent();
+        result.automatic = false;
         
         float bestError = -1;
         NoteIndexWithBar next = new NoteIndexWithBar();
@@ -117,6 +161,8 @@ public class Riff {
 
         result.noteIndex = next.noteIndex;
 
+        DispatchNoteHitEvent(result);
+
         return result;
     }
 
@@ -140,21 +186,49 @@ public class Riff {
         public bool LessThan(NoteIndexWithBar other) {
             return this.bar < other.bar || (this.bar == other.bar && this.noteIndex < other.noteIndex);
         }
+
+        public NoteIndexWithBar next(Riff riff) {
+            NoteIndexWithBar result = this;
+            result.noteIndex++;
+            if (result.noteIndex >= riff.notes.Count) {
+                result.bar++;
+                result.noteIndex = 0;
+            }
+            return result;
+        }
+
+        public NoteIndexWithBar prev(Riff riff) {
+            NoteIndexWithBar result = this;
+            result.noteIndex--;
+            if (result.noteIndex < 0) {
+                result.bar--;
+                result.noteIndex = riff.notes.Count - 1;
+            }
+            return result;
+        }
     }
 
     [Serializable]
     public class Note {
         [SerializeField]
-        public float beat; // position, in beats relative to start of rift
+        public float index; // position, in beats relative to start of rift
+        public float unitPerBeat; // position, in beats relative to start of rift
+        public float beat {
+            get {
+                return index / unitPerBeat;
+            }
+        }
 
-        public Note(float beat) {
-            this.beat = beat;
+        public Note(float index, float unitPerBeat = 1) {
+            this.index = index;
+            this.unitPerBeat = unitPerBeat;
         }
     }
 
-    public struct ButtonPressResult {
-        public int noteIndex; // -1 means too early
+    public struct NoteHitEvent {
+        public int noteIndex;
         public float deltaTime; // actual press time - desired press time
+        public bool automatic;
     }
     
 }
