@@ -10,6 +10,8 @@ public class Gladiator : Damageable {
 
     public AnimationCurve motionCurve;
 
+    public AudioSource DeathSound;
+
     public static Gladiator player;
     public float HitPoints = 100;
     public float speed;
@@ -39,6 +41,11 @@ public class Gladiator : Damageable {
     {
         if ((DamageFilter & this.DamageFilter) != 0) {
             HitPoints -= damage;
+            if (HitPoints <= 0) {
+                HitPoints = 100;
+                transform.position = CheckpointManager.instance.GetActiveCheckpoint().gameObject.transform.position;
+                DeathSound.Play();
+            }
         }
     }
 
