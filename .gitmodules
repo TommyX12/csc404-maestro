@@ -1,0 +1,3 @@
+[submodule "Assets/CommanderAi"]
+	path = Assets/CommanderAi
+	url = https://github.com/FreakingBarbarians/CommanderAi
