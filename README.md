@@ -78,3 +78,60 @@ And here's another link because I forgot something in the first one. Oh well, wa
 https://youtu.be/CgVh9DTWrUQ
 
 If the video is unavailable shoot me an email at `paarthurnax@live.ca` There's probably something wrong with the publicity settings.
+
+## Design Blog Jan 28th - Feb 3rd, 2019
+
+##### Tech Demo
+
+In case you missed it, the following two videos below demonstrate some tech demos as to what our game might feel like in terms of mechanics.
+
+https://youtu.be/hmdybQniNog
+
+Once again, this second video includes some things accidently forgotten from the previous video.
+
+https://youtu.be/CgVh9DTWrUQ
+
+##### The Meeting
+
+This week, we focused mostly on design and aesthetics. The team wants to settle on one central theme, colour palette, etc. so that we can have a clearer goal in mind as to what we want the final product to look like. The team had a meeting on Thursday to discuss this more in detail.
+
+The first thing that the team agreed on was the central theme of the game. We have already decided to stick with the colour palette demonstrated in the previous blog post. The team decided that a sci-fi theme would be very fitting with this palette.
+
+Prior to this meeting, team member Meena created a character which could be used for the protagonist of the game:
+![Image Failed To Load](https://cdn.discordapp.com/attachments/538651386951368714/539623267304996884/received_2035285553216494.png "Initial protagonist character art")
+
+The team liked how the character looked. However, during the meeting, we came to the consensus that the chibi-style character would not be a good fit in our game and opted for a more human-like character. One such character that we may be looking at for reference is the character Lea from the game CrossCode, shown below.
+![Image Failed To Load](https://gamepedia.cursecdn.com/crosscode_gamepedia/thumb/1/12/Lea.png/508px-Lea.png "Lea from CrossCode")
+
+We also looked at another game that we can take inspiration from: Furi. Furi has a colour palette similar to what the team has in mind, as well as a similar sci-fi theme going on too.
+
+A few other things that the team went over during the meeting are:
+- Each level will consist of 5-6 rooms, with a boss room and an elevator at the end. The player's goal is the reach this elevator.
+    - Elevators would act as level transitions, displaying the results of the previous floor, and maybe healing the player as well.
+- General plot: An evil corporation has stolen/taken over all of the music industry, the player wants to stop their ways
+    - There is a bit more to it (Why the player is even doing this), but then we would be spoiling the plot!
+    - Each level would be a different floor of the corporation's building (Which is currently a massive space ship), such as a factory floor, cafeteria, etc.
+- Due to sheer difficulty, the team has decided that the player will only have to worry about two rhythms, as opposed to the previously mentioned 4 rhythms. Trying to manage 4 potentially unrelated rhythms is simply not feasible for any one person.
+- Give the maestro bar more purpose. Perhaps have a "use" item which consumes a certain amount of the meter to activate an effect, such as a shield.
+- Likely going to use pixel-esque textures for rooms. Drawing inspiration from Octopath Traveler, shown below
+![Image Failed To Load](https://d2skuhm0vrry40.cloudfront.net/2018/articles/2018-07-12-09-18/2018071115202500_93C1C73A3BAF9123A15B9B24886B634B.jpg/EG11/resize/690x-1/quality/75/format/jpg "Octopath Traveler screenshot")
+
+##### After The Meeting
+
+The team has made a few more advancements since we met on Thursday. Denzel has created something initially as a joke, but actually has the potential to be an NPC or enemy in this game:
+
+![Image Failed To Load](https://cdn.pbrd.co/images/HZvcOeV.png "Denzel's dancing jukebox")
+
+Kristan created three example lobby layouts to give an idea of what rooms in the game might look like.
+![Image Failed To Load](https://media.discordapp.net/attachments/538651386951368714/541344852013744168/lobby_level_roughs.jpg?width=789&height=607 "Lobby layout sketch")
+
+Alongside this, Denzel has also created a basic block-layout of said room:
+![Image Failed To Load](https://media.discordapp.net/attachments/538651386951368714/541523611077574676/basic_room.PNG?width=963&height=608 "Basic block layout of the room")
+
+Meena has also created more sketches of what the protagonist could look like:
+![Image Failed To Load](https://cdn.discordapp.com/attachments/538651386951368714/541722699819647011/20190203_154910.jpg "Character concept 1")
+![Image Failed To Load](https://cdn.discordapp.com/attachments/538651386951368714/541722699819647019/20190203_154943.jpg "Character concept 2")
+
+Our music team member Paul has also created some tracks for attacks, background loops, and so on. Unfortunately, I have no means of uploading such files to the blog (Should I be able to, I will update this section, and add the files).
+
+Overall, our team is making good progress towards the next milestone, however we are also aware that there is still much to be done before the final product is complete and ready for launch.
