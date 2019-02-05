@@ -43,7 +43,6 @@ public class Shotgun : Weapon
         }
         if (press.noteIndex != -1)
         {
-            Debug.Log(press.noteIndex);
             switch (press.noteIndex) {
                 case 0:
                     psystem.Emit(25);
@@ -67,7 +66,6 @@ public class Shotgun : Weapon
                     break;
             }
         } else {
-            Debug.Log(press.noteIndex);
             Jammed = true;
             StopAllSounds();
             JammedSound.Play();

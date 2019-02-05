@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void noteHitEventHandler(Riff.NoteHitEvent e) {
-        Debug.Log("automatic: " + e.automatic + ", noteIndex: " + e.noteIndex + ", deltaTime: " + e.deltaTime);
+        // Debug.Log("automatic: " + e.automatic + ", noteIndex: " + e.noteIndex + ", deltaTime: " + e.deltaTime);
     }
     
 }

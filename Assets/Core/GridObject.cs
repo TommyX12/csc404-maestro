@@ -22,7 +22,10 @@ public class GridObject : MonoBehaviour
     public void Update()
     {
 #if UNITY_EDITOR
-        PlaceInGrid();
+        if (!Application.isPlaying)
+        {
+            PlaceInGrid();
+        }
 #endif
     }
 
