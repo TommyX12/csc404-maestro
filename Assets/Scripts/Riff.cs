@@ -58,7 +58,6 @@ public class Riff {
     }
 
     private void CheckAutoHit() {
-        Debug.Log("currentTime: " + currentTime + ", lastAutoHit.noteIndex: " + lastAutoHit.noteIndex + ", lastAutoHit.cycle: " + lastAutoHit.cycle);
         NoteIndexWithCycle next = lastAutoHit.next(this);
         float currentTotalBeat = GetCurrentTotalBeat();
         while (currentTotalBeat >= GetNoteTotalBeat(next)) {
