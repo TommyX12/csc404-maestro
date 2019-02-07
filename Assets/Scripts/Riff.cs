@@ -7,11 +7,11 @@ public class Riff {
     public delegate void NoteHitEventHandler(NoteHitEvent e);
     public event NoteHitEventHandler noteHitEvent;
 
-    private int beatsPerBar;
+    private int beatsPerCycle;
     private List<Note> notes;
-    private NoteIndexWithBar lastHit;
-    private NoteIndexWithBar lastAutoHit;
-    private int currentBar;
+    private NoteIndexWithCycle lastHit;
+    private NoteIndexWithCycle lastAutoHit;
+    private int currentCycle;
     private float currentBeat;
     private float currentTime;
     public float hitMarginBefore = 0.2f; // in seconds
@@ -21,10 +21,10 @@ public class Riff {
     private MusicManager musicManager;
 
     // notes have to be sorted by phase
-    public Riff(int beatsPerBar,
+    public Riff(int beatsPerCycle,
                 List<Note> notes,
                 MusicManager musicManager) {
-        this.beatsPerBar = beatsPerBar;
+        this.beatsPerCycle = beatsPerCycle;
         this.notes = notes;
 
         this.musicManager = musicManager;
@@ -34,15 +34,15 @@ public class Riff {
 
     private void Reset() {
         currentTime = 0;
-        currentBar = 0;
+        currentCycle = 0;
         currentBeat = 0;
         ResetLastHit();
     }
 
     private void ResetLastHit() {
         lastHit.noteIndex = 0;
-        lastHit.bar = -1;
-        lastAutoHit.bar = currentBar;
+        lastHit.cycle = -1;
+        lastAutoHit.cycle = currentCycle;
         lastAutoHit.noteIndex = -1;
         for (int i = 0; i < notes.Count; ++i) {
             Note note = notes[i];
@@ -53,12 +53,13 @@ public class Riff {
         }
         if (lastAutoHit.noteIndex == -1) {
             lastAutoHit.noteIndex = notes.Count - 1;
-            lastAutoHit.bar--;
+            lastAutoHit.cycle--;
         }
     }
 
     private void CheckAutoHit() {
-        NoteIndexWithBar next = lastAutoHit.next(this);
+        Debug.Log("currentTime: " + currentTime + ", lastAutoHit.noteIndex: " + lastAutoHit.noteIndex + ", lastAutoHit.cycle: " + lastAutoHit.cycle);
+        NoteIndexWithCycle next = lastAutoHit.next(this);
         float currentTotalBeat = GetCurrentTotalBeat();
         while (currentTotalBeat >= GetNoteTotalBeat(next)) {
             NoteHitEvent e;
@@ -71,35 +72,34 @@ public class Riff {
         }
     }
 
-    private float GetNoteTotalBeat(NoteIndexWithBar pos) {
-        return beatsPerBar * pos.bar + notes[pos.noteIndex].beat;
+    private float GetNoteTotalBeat(NoteIndexWithCycle pos) {
+        return beatsPerCycle * pos.cycle + notes[pos.noteIndex].beat;
     }
 
     private float GetCurrentTotalBeat() {
-        return beatsPerBar * currentBar + currentBeat;
+        return beatsPerCycle * currentCycle + currentBeat;
     }
 
     // call this in FixedUpdate
     public void Update() {
         float time = musicManager.GetTotalTimer();
-        float beat = musicManager.GetBeatIndex(beatsPerBar);
-        int bar = musicManager.GetBarIndex(beatsPerBar);
+        float beat = musicManager.GetBeatIndex(beatsPerCycle);
+        int cycle = musicManager.GetCycleIndex(beatsPerCycle);
 
-        // set current index
-        currentTime = time;
         currentBeat = beat;
-        currentBar = bar;
+        currentCycle = cycle;
         
         if (time < currentTime) {
             ResetLastHit();
         }
-
+        currentTime = time;
+        
         CheckAutoHit();
     }
 
-    private void CheckNoteHitable(NoteIndexWithBar index, ref float bestError, ref NoteIndexWithBar best, ref float bestDeltaTime) {
+    private void CheckNoteHitable(NoteIndexWithCycle index, ref float bestError, ref NoteIndexWithCycle best, ref float bestDeltaTime) {
         float totalBeat = GetNoteTotalBeat(index);
-        float noteTime = musicManager.BeatToTime(totalBeat, beatsPerBar);
+        float noteTime = musicManager.BeatToTime(totalBeat, beatsPerCycle);
         float deltaTime = currentTime - (noteTime + hitOffset);
         float error = Mathf.Abs(deltaTime);
         if (lastHit.LessThan(index) &&
@@ -120,17 +120,17 @@ public class Riff {
 
     public NoteHitEvent ButtonPress() {
         // find coordinates
-        // Debug.Log("time: " + currentTime + ", beat: " + currentBeat + ", bar: " + currentBar);
+        // Debug.Log("time: " + currentTime + ", beat: " + currentBeat + ", cycle: " + currentCycle);
         // Debug.Log("track position: " + musicManager.GetMusicTrack("csc404-test-1").GetPosition());
         
         NoteHitEvent result = new NoteHitEvent();
         result.automatic = false;
         
         float bestError = -1;
-        NoteIndexWithBar next = new NoteIndexWithBar();
+        NoteIndexWithCycle next = new NoteIndexWithCycle();
 
-        if (currentBar > 0) {
-            CheckNoteHitable(new NoteIndexWithBar(currentBar - 1,
+        if (currentCycle > 0) {
+            CheckNoteHitable(new NoteIndexWithCycle(currentCycle - 1,
                                                   notes.Count - 1),
                              ref bestError,
                              ref next,
@@ -139,13 +139,13 @@ public class Riff {
         
         for (int i = 0; i < notes.Count; ++i) {
             Note note = notes[i];
-            CheckNoteHitable(new NoteIndexWithBar(currentBar, i),
+            CheckNoteHitable(new NoteIndexWithCycle(currentCycle, i),
                              ref bestError,
                              ref next,
                              ref result.deltaTime);
         }
 
-        CheckNoteHitable(new NoteIndexWithBar(currentBar + 1, 0),
+        CheckNoteHitable(new NoteIndexWithCycle(currentCycle + 1, 0),
                          ref bestError,
                          ref next,
                          ref result.deltaTime);
@@ -157,7 +157,7 @@ public class Riff {
             lastHit = next;
         }
 
-        // Debug.Log("next: " + next.noteIndex + ", bar: " + next.bar);
+        // Debug.Log("next: " + next.noteIndex + ", cycle: " + next.cycle);
 
         result.noteIndex = next.noteIndex;
 
@@ -170,38 +170,38 @@ public class Riff {
         return currentBeat;
     }
 
-    public int GetBarIndex() {
-        return currentBar;
+    public int GetCycleIndex() {
+        return currentCycle;
     }
 
-    private struct NoteIndexWithBar {
+    private struct NoteIndexWithCycle {
         public int noteIndex;
-        public int bar;
+        public int cycle;
 
-        public NoteIndexWithBar(int bar, int noteIndex) {
-            this.bar = bar;
+        public NoteIndexWithCycle(int cycle, int noteIndex) {
+            this.cycle = cycle;
             this.noteIndex = noteIndex;
         }
 
-        public bool LessThan(NoteIndexWithBar other) {
-            return this.bar < other.bar || (this.bar == other.bar && this.noteIndex < other.noteIndex);
+        public bool LessThan(NoteIndexWithCycle other) {
+            return this.cycle < other.cycle || (this.cycle == other.cycle && this.noteIndex < other.noteIndex);
         }
 
-        public NoteIndexWithBar next(Riff riff) {
-            NoteIndexWithBar result = this;
+        public NoteIndexWithCycle next(Riff riff) {
+            NoteIndexWithCycle result = this;
             result.noteIndex++;
             if (result.noteIndex >= riff.notes.Count) {
-                result.bar++;
+                result.cycle++;
                 result.noteIndex = 0;
             }
             return result;
         }
 
-        public NoteIndexWithBar prev(Riff riff) {
-            NoteIndexWithBar result = this;
+        public NoteIndexWithCycle prev(Riff riff) {
+            NoteIndexWithCycle result = this;
             result.noteIndex--;
             if (result.noteIndex < 0) {
-                result.bar--;
+                result.cycle--;
                 result.noteIndex = riff.notes.Count - 1;
             }
             return result;

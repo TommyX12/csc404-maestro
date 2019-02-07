@@ -322,19 +322,19 @@ public class MusicManager : MonoBehaviour {
         return this.totalTimer;
     }
 
-    public float BeatToTime(float beat, int beatsPerBar) {
-        return beat * beatLength * (BEAT_VALUE/beatsPerBar);
+    public float BeatToTime(float beat, int beatsPerCycle) {
+        return beat * beatLength * (BEAT_VALUE/beatsPerCycle);
     }
 
-    public float TimeToBeat(float time, int beatsPerBar) {
-        return time / (beatLength * (BEAT_VALUE / beatsPerBar));
+    public float TimeToBeat(float time, int beatsPerCycle) {
+        return time / (beatLength * (BEAT_VALUE / beatsPerCycle));
     }
 
-    public float GetBeatIndex(int beatsPerBar) {
-        return TimeToBeat(this.totalTimer,beatsPerBar) % beatsPerBar;
+    public float GetBeatIndex(int beatsPerCycle) {
+        return TimeToBeat(this.totalTimer,beatsPerCycle) % beatsPerCycle;
     }
 
-    public int GetBarIndex(int beatsPerBar) {
+    public int GetCycleIndex(int beatsPerCycle) {
         return ((int) Mathf.Floor(this.totalTimer / (this.beatLength * BEAT_VALUE)));
     }
     
