@@ -38,9 +38,9 @@ public class Shotgun : Weapon
     public override void Fire()
     {
         Riff.NoteHitEvent press = riff.ButtonPress();
-        if (Jammed) {
-            return;
-        }
+        // if (Jammed) {
+        //     return;
+        // }
         if (press.noteIndex != -1)
         {
             switch (press.noteIndex) {
@@ -91,7 +91,6 @@ public class Shotgun : Weapon
                 StaticAudioManager.current.GetPreviewSound().Play();
             }
         }
-
     }
 
     public void FixedUpdate()

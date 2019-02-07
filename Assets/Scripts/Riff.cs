@@ -5,18 +5,22 @@ using UnityEngine;
 public class Riff {
 
     public delegate void NoteHitEventHandler(NoteHitEvent e);
+    
+    // this correct for audio delay, so it triggers when user hear the beat
+    public event NoteHitEventHandler delayedNoteHitEvent;
+    
+    // this does NOT correct for audio delay, so sound that plays when this triggers will align.
     public event NoteHitEventHandler noteHitEvent;
 
     private int beatsPerCycle;
     private List<Note> notes;
-    private NoteIndexWithCycle lastHit;
-    private NoteIndexWithCycle lastAutoHit;
-    private int currentCycle;
-    private float currentBeat;
-    private float currentTime;
+
+    private RiffPosition currentPosition;
+    private RiffPosition currentPositionDelayed;
+    
     public float hitMarginBefore = 0.2f; // in seconds
     public float hitMarginAfter = 0.2f; // in seconds
-    public float hitOffset = 0.2f; // in seconds
+    public float hitOffset = 0.0f; // in seconds. already taken care of in MusicManager
 
     private MusicManager musicManager;
 
@@ -27,46 +31,45 @@ public class Riff {
         this.beatsPerCycle = beatsPerCycle;
         this.notes = notes;
 
+        this.currentPosition = new RiffPosition();
+        this.currentPositionDelayed = new RiffPosition();
+
         this.musicManager = musicManager;
 
         Reset();
     }
 
+    public List<Note> GetNotes() {
+        return notes;
+    }
+
+    public int GetBeatsPerCycle() {
+        return beatsPerCycle;
+    }
+
     private void Reset() {
-        currentTime = 0;
-        currentCycle = 0;
-        currentBeat = 0;
-        ResetLastHit();
+        currentPosition.Reset();
+        currentPositionDelayed.Reset();
+        ResetLastHit(false);
+        ResetLastHit(true);
     }
 
-    private void ResetLastHit() {
-        lastHit.noteIndex = 0;
-        lastHit.cycle = -1;
-        lastAutoHit.cycle = currentCycle;
-        lastAutoHit.noteIndex = -1;
-        for (int i = 0; i < notes.Count; ++i) {
-            Note note = notes[i];
-            if (note.beat < currentBeat) {
-                lastAutoHit.noteIndex = i;
-                break;
-            }
-        }
-        if (lastAutoHit.noteIndex == -1) {
-            lastAutoHit.noteIndex = notes.Count - 1;
-            lastAutoHit.cycle--;
-        }
+    private void ResetLastHit(bool delayed = true) {
+        currentPosition.ResetLastHit(this);
+        currentPositionDelayed.ResetLastHit(this);
     }
 
-    private void CheckAutoHit() {
-        NoteIndexWithCycle next = lastAutoHit.next(this);
-        float currentTotalBeat = GetCurrentTotalBeat();
+    private void CheckAutoHit(bool delayed = true) {
+        RiffPosition position = GetCurrentPosition(delayed);
+        NoteIndexWithCycle next = position.lastAutoHit.next(this);
+        float currentTotalBeat = GetCurrentTotalBeat(delayed);
         while (currentTotalBeat >= GetNoteTotalBeat(next)) {
             NoteHitEvent e;
             e.noteIndex = next.noteIndex;
             e.deltaTime = 0;
             e.automatic = true;
-            DispatchNoteHitEvent(e);
-            lastAutoHit = next;
+            DispatchNoteHitEvent(e, delayed);
+            position.lastAutoHit = next;
             next = next.next(this);
         }
     }
@@ -75,33 +78,46 @@ public class Riff {
         return beatsPerCycle * pos.cycle + notes[pos.noteIndex].beat;
     }
 
-    private float GetCurrentTotalBeat() {
-        return beatsPerCycle * currentCycle + currentBeat;
+    private float GetCurrentTotalBeat(bool delayed = true) {
+        RiffPosition position = GetCurrentPosition(delayed);
+        return beatsPerCycle * position.cycle + position.beat;
+    }
+
+    private void UpdatePosition(bool delayed = true) {
+        RiffPosition position = GetCurrentPosition(delayed);
+
+        float time = musicManager.GetTotalTimer(delayed);
+        float beat = musicManager.GetBeatIndex(beatsPerCycle, delayed);
+        int cycle = musicManager.GetCycleIndex(beatsPerCycle, delayed);
+
+        position.beat = beat;
+        position.cycle = cycle;
+        
+        if (time < position.time) {
+            ResetLastHit(delayed);
+        }
+        position.time = time;
+        
+        CheckAutoHit(delayed);
     }
 
     // call this in FixedUpdate
     public void Update() {
-        float time = musicManager.GetTotalTimer();
-        float beat = musicManager.GetBeatIndex(beatsPerCycle);
-        int cycle = musicManager.GetCycleIndex(beatsPerCycle);
-
-        currentBeat = beat;
-        currentCycle = cycle;
-        
-        if (time < currentTime) {
-            ResetLastHit();
-        }
-        currentTime = time;
-        
-        CheckAutoHit();
+        UpdatePosition(false);
+        UpdatePosition(true);
     }
 
-    private void CheckNoteHitable(NoteIndexWithCycle index, ref float bestError, ref NoteIndexWithCycle best, ref float bestDeltaTime) {
+    private RiffPosition GetCurrentPosition(bool delayed = true) {
+        return delayed ? currentPositionDelayed : currentPosition;
+    }
+
+    private void CheckNoteHitable(NoteIndexWithCycle index, ref float bestError, ref NoteIndexWithCycle best, ref float bestDeltaTime, bool delayed = true) {
+        RiffPosition position = GetCurrentPosition(delayed);
         float totalBeat = GetNoteTotalBeat(index);
         float noteTime = musicManager.BeatToTime(totalBeat, beatsPerCycle);
-        float deltaTime = currentTime - (noteTime + hitOffset);
+        float deltaTime = position.time - (noteTime + hitOffset);
         float error = Mathf.Abs(deltaTime);
-        if (lastHit.LessThan(index) &&
+        if (position.lastHit.LessThan(index) &&
             deltaTime <= hitMarginAfter &&
             deltaTime >= -hitMarginBefore &&
             (bestError < 0 || error < bestError)) {
@@ -111,15 +127,22 @@ public class Riff {
         }
     }
 
-    private void DispatchNoteHitEvent(NoteHitEvent e) {
-        if (noteHitEvent != null) {
-            noteHitEvent(e);
+    private void DispatchNoteHitEvent(NoteHitEvent e, bool delayed) {
+        if (delayed) {
+            if (delayedNoteHitEvent != null) {
+                delayedNoteHitEvent(e);
+            }
+        }
+        else {
+            if (noteHitEvent != null) {
+                noteHitEvent(e);
+            }
         }
     }
 
-    public NoteHitEvent ButtonPress() {
+    public NoteHitEvent ButtonPress(bool delayed = true) {
         // find coordinates
-        // Debug.Log("time: " + currentTime + ", beat: " + currentBeat + ", cycle: " + currentCycle);
+        // Debug.Log("time: " + position.time + ", beat: " + position.beat + ", cycle: " + position.cycle);
         // Debug.Log("track position: " + musicManager.GetMusicTrack("csc404-test-1").GetPosition());
         
         NoteHitEvent result = new NoteHitEvent();
@@ -128,9 +151,11 @@ public class Riff {
         float bestError = -1;
         NoteIndexWithCycle next = new NoteIndexWithCycle();
 
-        if (currentCycle > 0) {
-            CheckNoteHitable(new NoteIndexWithCycle(currentCycle - 1,
-                                                  notes.Count - 1),
+        RiffPosition position = GetCurrentPosition(delayed);
+
+        if (position.cycle > 0) {
+            CheckNoteHitable(new NoteIndexWithCycle(position.cycle - 1,
+                                                    notes.Count - 1),
                              ref bestError,
                              ref next,
                              ref result.deltaTime);
@@ -138,13 +163,13 @@ public class Riff {
         
         for (int i = 0; i < notes.Count; ++i) {
             Note note = notes[i];
-            CheckNoteHitable(new NoteIndexWithCycle(currentCycle, i),
+            CheckNoteHitable(new NoteIndexWithCycle(position.cycle, i),
                              ref bestError,
                              ref next,
                              ref result.deltaTime);
         }
 
-        CheckNoteHitable(new NoteIndexWithCycle(currentCycle + 1, 0),
+        CheckNoteHitable(new NoteIndexWithCycle(position.cycle + 1, 0),
                          ref bestError,
                          ref next,
                          ref result.deltaTime);
@@ -153,27 +178,29 @@ public class Riff {
             next.noteIndex = -1;
         }
         else {
-            lastHit = next;
+            position.lastHit = next;
         }
 
         // Debug.Log("next: " + next.noteIndex + ", cycle: " + next.cycle);
 
         result.noteIndex = next.noteIndex;
 
-        DispatchNoteHitEvent(result);
+        DispatchNoteHitEvent(result, delayed);
 
         return result;
     }
 
-    public float GetBeatIndex() {
-        return currentBeat;
+    public float GetBeatIndex(bool delayed = true) {
+        RiffPosition position = GetCurrentPosition(delayed);
+        return position.beat;
     }
 
-    public int GetCycleIndex() {
-        return currentCycle;
+    public int GetCycleIndex(bool delayed = true) {
+        RiffPosition position = GetCurrentPosition(delayed);
+        return position.cycle;
     }
 
-    private struct NoteIndexWithCycle {
+    public struct NoteIndexWithCycle {
         public int noteIndex;
         public int cycle;
 
@@ -228,6 +255,36 @@ public class Riff {
         public int noteIndex;
         public float deltaTime; // actual press time - desired press time
         public bool automatic;
+    }
+
+    public class RiffPosition {
+        public float time;
+        public float beat;
+        public int cycle;
+        public NoteIndexWithCycle lastHit;
+        public NoteIndexWithCycle lastAutoHit;
+
+        public void Reset() {
+            time = beat = cycle = 0;
+        }
+
+        public void ResetLastHit(Riff riff) {
+            lastHit.noteIndex = 0;
+            lastHit.cycle = -1;
+            lastAutoHit.cycle = cycle;
+            lastAutoHit.noteIndex = -1;
+            for (int i = 0; i < riff.notes.Count; ++i) {
+                Note note = riff.notes[i];
+                if (note.beat < beat) {
+                    lastAutoHit.noteIndex = i;
+                    break;
+                }
+            }
+            if (lastAutoHit.noteIndex == -1) {
+                lastAutoHit.noteIndex = riff.notes.Count - 1;
+                lastAutoHit.cycle--;
+            }
+        }
     }
     
 }

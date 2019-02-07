@@ -5,6 +5,7 @@ using UnityEngine;
 public class ResourceManager {
     
     private static Dictionary<string, Sprite> sprites;
+    private static Dictionary<string, GameObject> prefabs;
     private static Dictionary<string, AudioClip> music;
     private static Dictionary<string, string> texts;
     private static List<string> code;
@@ -19,6 +20,12 @@ public class ResourceManager {
         sprites = new Dictionary<string, Sprite>();
         foreach (Sprite sprite in spriteObjects) {
             sprites[sprite.name] = sprite;
+        }
+        
+        GameObject[] prefabObjects = Resources.LoadAll<GameObject>("Prefabs");
+        prefabs = new Dictionary<string, GameObject>();
+        foreach (GameObject prefab in prefabObjects) {
+            prefabs[prefab.name] = prefab;
         }
         
         AudioClip[] musicObjects = Resources.LoadAll<AudioClip>("Music");
@@ -38,6 +45,13 @@ public class ResourceManager {
         Initialize();
         Sprite result;
         sprites.TryGetValue(name, out result);
+        return result;
+    }
+    
+    public static GameObject GetPrefab(string name) {
+        Initialize();
+        GameObject result;
+        prefabs.TryGetValue(name, out result);
         return result;
     }
     

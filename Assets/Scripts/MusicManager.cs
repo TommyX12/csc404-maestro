@@ -9,6 +9,8 @@ public class MusicManager : MonoBehaviour {
     public static float BEAT_VALUE = 4;
 
     public static MusicManager Current;
+
+    private const float audioDelay = 0.2f;
     
     public class TrackConfig {
         public string name = null;
@@ -113,6 +115,7 @@ public class MusicManager : MonoBehaviour {
     private float beatLength = 0;
     private float beatTimer = 0;
     private float totalTimer = 0;
+    private float totalTimerDelayed = 0;
     private string masterMusicName;
     private double startingDSPTime = 0;
     private float _bpm = 0;
@@ -133,13 +136,13 @@ public class MusicManager : MonoBehaviour {
     }
 
     public MusicManager() {
+        Current = this;
         bpm = defaultBPM;
     }
     
     private bool conditionsDirty = true;
     
     void Awake() {
-        Current = this;
         this.audioSourceContainer = Util.MakeEmptyContainer(this.gameObject.transform);
         // if (DefaultConfigText != null) {
         //     this.LoadConfig(Util.FromJson<Config>(this.DefaultConfigText.text));
@@ -177,6 +180,7 @@ public class MusicManager : MonoBehaviour {
         
         this.beatTimer = 0;
         this.totalTimer = 0;
+        this.totalTimerDelayed = 0;
         this.startingDSPTime = 0;
         this.bpm = config.bpm;
     }
@@ -213,6 +217,7 @@ public class MusicManager : MonoBehaviour {
         
         startingDSPTime = AudioSettings.dspTime;
         totalTimer = 0;
+        totalTimerDelayed = 0;
         this.masterMusicName = masterMusicName;
         Play(masterMusicName, true, true);
     }
@@ -228,6 +233,7 @@ public class MusicManager : MonoBehaviour {
 
         if (masterMusicName != null) {
             this.totalTimer = GetTrackPosition(masterMusicName);
+            this.totalTimerDelayed = GetTrackPosition(masterMusicName) - audioDelay;
         }
         
         if (this.conditionsDirty && onBeat) {
@@ -323,8 +329,12 @@ public class MusicManager : MonoBehaviour {
         }
     }
 
-    public float GetTotalTimer() {
-        return this.totalTimer;
+    public float GetTotalTimer(bool delayed = true) {
+        return delayed ? this.totalTimerDelayed : this.totalTimer;
+    }
+
+    public float GetTotalTimerDelayed() {
+        return this.totalTimerDelayed;
     }
 
     public float BeatToTime(float beat, int beatsPerCycle) {
@@ -335,12 +345,37 @@ public class MusicManager : MonoBehaviour {
         return time / (beatLength * (BEAT_VALUE / beatsPerCycle));
     }
 
-    public float GetBeatIndex(int beatsPerCycle) {
-        return TimeToBeat(this.totalTimer,beatsPerCycle) % beatsPerCycle;
+    public float GetBeatIndex(int beatsPerCycle, bool delayed = true) {
+        return TimeToBeat(delayed ? this.totalTimerDelayed : this.totalTimer, beatsPerCycle) % beatsPerCycle;
     }
 
-    public int GetCycleIndex(int beatsPerCycle) {
-        return ((int) Mathf.Floor(this.totalTimer / (this.beatLength * BEAT_VALUE)));
+    /// <summary>
+    ///   Return current beat's relative position to cycle, in [0, 1].
+    /// </summary>
+    public float GetBeatPosition(int beatsPerCycle, bool delayed = true) {
+        return GetBeatIndex(beatsPerCycle, delayed) / beatsPerCycle;
+    }
+
+    /// <summary>
+    ///   Returns closest signed distance from current beat to beatIndex,
+    ///   assuming the beatIndex can be in previous or next cycle.
+    /// </summary>
+    public float GetDistanceToBeat(float beatIndex, int beatsPerCycle, bool delayed = true) {
+        float currentBeat = GetBeatIndex(beatsPerCycle, delayed);
+        float distance = beatIndex - currentBeat;
+        float newDistance = (beatIndex + beatsPerCycle) - currentBeat;
+        if (Mathf.Abs(newDistance) < Mathf.Abs(distance)) {
+            distance = newDistance;
+        }
+        newDistance = (beatIndex - beatsPerCycle) - currentBeat;
+        if (Mathf.Abs(newDistance) < Mathf.Abs(distance)) {
+            distance = newDistance;
+        }
+        return distance;
+    }
+
+    public int GetCycleIndex(int beatsPerCycle, bool delayed = true) {
+        return ((int) Mathf.Floor((delayed ? this.totalTimerDelayed : this.totalTimer) / (this.beatLength * BEAT_VALUE)));
     }
     
 }
