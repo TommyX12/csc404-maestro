@@ -102,7 +102,7 @@ public class MusicManager : MonoBehaviour {
     public float DefaultFadeOutTime = 2.5f;
     public float DefaultStartFadeInTime = 1.0f;
     
-    public TextAsset DefaultConfigText;
+    // public TextAsset DefaultConfigText; // currently disabled
     
     public float MasterVolume = 1.0f;
     public float ContextVolume = 1.0f;
@@ -115,10 +115,11 @@ public class MusicManager : MonoBehaviour {
     private float totalTimer = 0;
     private string masterMusicName;
     private double startingDSPTime = 0;
-    private float bpm = 0;
-    public float CurrentBPM {
+    private float _bpm = 0;
+    public float defaultBPM = 60;
+    public float bpm {
         get {
-            return bpm;
+            return _bpm;
         }
         set {
             if (value == 0) {
@@ -127,8 +128,12 @@ public class MusicManager : MonoBehaviour {
             else {
                 this.beatLength = 60 / value;
             }
-            this.bpm = value;
+            this._bpm = value;
         }
+    }
+
+    public MusicManager() {
+        bpm = defaultBPM;
     }
     
     private bool conditionsDirty = true;
@@ -136,9 +141,9 @@ public class MusicManager : MonoBehaviour {
     void Awake() {
         Current = this;
         this.audioSourceContainer = Util.MakeEmptyContainer(this.gameObject.transform);
-        if (DefaultConfigText != null) {
-            this.LoadConfig(Util.FromJson<Config>(this.DefaultConfigText.text));
-        }
+        // if (DefaultConfigText != null) {
+        //     this.LoadConfig(Util.FromJson<Config>(this.DefaultConfigText.text));
+        // }
     }
 
     void Start() {
@@ -173,7 +178,7 @@ public class MusicManager : MonoBehaviour {
         this.beatTimer = 0;
         this.totalTimer = 0;
         this.startingDSPTime = 0;
-        this.CurrentBPM = config.bpm;
+        this.bpm = config.bpm;
     }
     
     public void SetCondition(string condition, bool value) {
@@ -203,7 +208,7 @@ public class MusicManager : MonoBehaviour {
 
     public void StartRiff(string masterMusicName, float bpm = 0) {
         if (bpm > 0) {
-            CurrentBPM = bpm;
+            this.bpm = bpm;
         }
         
         startingDSPTime = AudioSettings.dspTime;

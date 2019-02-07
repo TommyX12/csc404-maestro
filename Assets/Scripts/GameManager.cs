@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
         riff = new Riff(4, notes, musicManager);
         riff.noteHitEvent += noteHitEventHandler;
 
-        musicManager.StartRiff("csc404-test-1");
+        musicManager.StartRiff("csc404-test-1", 80);
     }
 
     protected void FixedUpdate() {
