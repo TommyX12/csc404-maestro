@@ -11,6 +11,11 @@ public class FireTileScript : MonoBehaviour
 
     public HazardZone KillZone;
 
+    private void Start()
+    {
+        StateHelper();
+    }
+
     public void Toggle() {
         On = !On;
         StateHelper();

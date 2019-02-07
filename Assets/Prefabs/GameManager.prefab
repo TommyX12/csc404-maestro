@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 6933938287685056985}
+  ConfigName: csc404-test-1
+  Track: csc404-test-1
+  TrackBPM: 100
 --- !u!114 &6933938287685056985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,9 +67,9 @@ MonoBehaviour:
   DefaultFadeInTime: 1.5
   DefaultFadeOutTime: 2.5
   DefaultStartFadeInTime: 1
-  DefaultConfigText: {fileID: 4900000, guid: d7957e917c9044094a15f10aac115ddc, type: 3}
   MasterVolume: 1
   ContextVolume: 1
+  defaultBPM: 100
 --- !u!114 &6933938287685056986
 MonoBehaviour:
   m_ObjectHideFlags: 0

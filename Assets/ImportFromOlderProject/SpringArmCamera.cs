@@ -20,6 +20,7 @@ public class SpringArmCamera : MonoBehaviour
                 Vector3 parentPos = transform.parent.position;
                 parentObj = transform.parent.gameObject;
                 offset = transform.position - parentPos;
+                cameraObject.transform.SetParent(null);
             }
         }
     }

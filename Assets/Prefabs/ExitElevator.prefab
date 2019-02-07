@@ -139,6 +139,7 @@ Transform:
   - {fileID: 2857789228786024908}
   - {fileID: 2857789229986494330}
   - {fileID: 4835491143667066974}
+  - {fileID: 3000055618420004740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2830,10 +2831,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835491143667066974}
-  - component: {fileID: 4835491143667066973}
-  - component: {fileID: 4835491143667066972}
+  - component: {fileID: 321170967031424369}
   m_Layer: 0
-  m_Name: ProximityTrigger
+  m_Name: TrackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2853,7 +2853,7 @@ Transform:
   m_Father: {fileID: 4835491142183843922}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4835491143667066973
+--- !u!114 &321170967031424369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2862,14 +2862,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4835491143667066975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eacf6f9c6e2eb9047bbabbe344c86c0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2da9f683050c270409fc1a3c3c642816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerEnter:
+  OnBeat:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2857789228786024907}
-        m_MethodName: Open
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2880,7 +2880,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2857789229986494333}
-        m_MethodName: Open
+        m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2892,57 +2892,13 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TriggerLeave:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2857789229986494333}
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2857789228786024907}
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9103130558821463242}
-        m_MethodName: BeginTransition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!65 &4835491143667066972
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4835491143667066975}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  tol: 0.05
+  bars: 1
+  notes:
+  - index: 0
+    unitPerBeat: 1
+  - index: 2
+    unitPerBeat: 1
 --- !u!1 &4835491143805548099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,6 +3383,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GridPos: {x: 3, y: 0, z: -1}
   Sizes: {x: 1, y: 1, z: 1}
+--- !u!1 &8921855318422128281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3000055618420004740}
+  - component: {fileID: 6852963535233914034}
+  - component: {fileID: 7205283171225591762}
+  m_Layer: 0
+  m_Name: ProximityTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3000055618420004740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921855318422128281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4835491142183843922}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6852963535233914034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921855318422128281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7205283171225591762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921855318422128281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacf6f9c6e2eb9047bbabbe344c86c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9103130558821463242}
+        m_MethodName: BeginTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  TriggerLeave:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &4835491142647925491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3643,12 +3677,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8775090cdeebe4e85a015db8c54974, type: 3}
---- !u!4 &2857789229986494330 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7256413606800608063, guid: fb8775090cdeebe4e85a015db8c54974,
-    type: 3}
-  m_PrefabInstance: {fileID: 4835491143869365317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2857789229986494333 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7256413606800608056, guid: fb8775090cdeebe4e85a015db8c54974,
@@ -3661,3 +3689,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f28a855fa7bc7498ba4cd40f68a699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2857789229986494330 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7256413606800608063, guid: fb8775090cdeebe4e85a015db8c54974,
+    type: 3}
+  m_PrefabInstance: {fileID: 4835491143869365317}
+  m_PrefabAsset: {fileID: 0}

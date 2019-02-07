@@ -1,0 +1,12 @@
+{
+  "bpm": 100,
+  "tracks": [
+    {
+      "name": "Baseline_0_100bpm",
+      "volume": 1.0,
+      "synced": false,
+      "loop": true
+    }
+  ],
+  "snapshots": []
+}
