@@ -378,6 +378,13 @@ static public class Util
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, screenPos, camera, out pos);
         elementTransform.position = canvas.transform.TransformPoint(pos);
     }
+
+    static public Vector3 WorldToScreen(Vector3 position, Camera camera = null) {
+        if (camera == null) {
+            camera = Camera.main;
+        }
+        return camera.WorldToScreenPoint(position);
+    }
     
     static public string ColoredRichText(string color, string text) {
         return "<color=" + color + ">" + text + "</color>";

@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour {
 
     public static MusicManager Current;
 
-    private const float audioDelay = 0.2f;
+    private const float audioDelay = 0.21f;
     
     public class TrackConfig {
         public string name = null;
@@ -200,7 +200,7 @@ public class MusicManager : MonoBehaviour {
     }
     
     public MusicTrack AddMusicTrack(string name) {
-        MusicTrack track = new MusicTrack(name, this.GetAudioClip(name), this.audioSourceContainer, this.Mixer);
+        MusicTrack track = new MusicTrack(this, name, this.GetAudioClip(name), this.audioSourceContainer, this.Mixer);
         
         activeTracks.Add(name, track);
         return track;
@@ -295,6 +295,16 @@ public class MusicManager : MonoBehaviour {
         }
         return track;
     }
+
+    public MusicTrack PlayPattern(string name, float beatsPerCycle, float fadeInTime = -1) {
+        MusicTrack track = GetMusicTrack(name, true);
+        track.ForceStop();
+
+        if (fadeInTime < 0) fadeInTime = this.DefaultFadeInTime;
+        
+        track.PlayAsPattern(beatsPerCycle, fadeInTime);
+        return track;
+    }
     
     public void Stop(string name, bool forceStop = false, float fadeOutTime = -1) {
         if (!this.HasMusicTrack(name)) return;
@@ -337,22 +347,22 @@ public class MusicManager : MonoBehaviour {
         return this.totalTimerDelayed;
     }
 
-    public float BeatToTime(float beat, int beatsPerCycle) {
-        return beat * beatLength * (BEAT_VALUE/beatsPerCycle);
+    public float BeatToTime(float beat, float beatsPerCycle = 0) {
+        return beat * beatLength;
     }
 
-    public float TimeToBeat(float time, int beatsPerCycle) {
-        return time / (beatLength * (BEAT_VALUE / beatsPerCycle));
+    public float TimeToBeat(float time, float beatsPerCycle = 0) {
+        return time / beatLength;
     }
 
-    public float GetBeatIndex(int beatsPerCycle, bool delayed = true) {
+    public float GetBeatIndex(float beatsPerCycle, bool delayed = true) {
         return TimeToBeat(delayed ? this.totalTimerDelayed : this.totalTimer, beatsPerCycle) % beatsPerCycle;
     }
 
     /// <summary>
     ///   Return current beat's relative position to cycle, in [0, 1].
     /// </summary>
-    public float GetBeatPosition(int beatsPerCycle, bool delayed = true) {
+    public float GetBeatPosition(float beatsPerCycle, bool delayed = true) {
         return GetBeatIndex(beatsPerCycle, delayed) / beatsPerCycle;
     }
 
@@ -360,7 +370,7 @@ public class MusicManager : MonoBehaviour {
     ///   Returns closest signed distance from current beat to beatIndex,
     ///   assuming the beatIndex can be in previous or next cycle.
     /// </summary>
-    public float GetDistanceToBeat(float beatIndex, int beatsPerCycle, bool delayed = true) {
+    public float GetDistanceToBeat(float beatIndex, float beatsPerCycle, bool delayed = true) {
         float currentBeat = GetBeatIndex(beatsPerCycle, delayed);
         float distance = beatIndex - currentBeat;
         float newDistance = (beatIndex + beatsPerCycle) - currentBeat;
@@ -374,7 +384,7 @@ public class MusicManager : MonoBehaviour {
         return distance;
     }
 
-    public int GetCycleIndex(int beatsPerCycle, bool delayed = true) {
+    public int GetCycleIndex(float beatsPerCycle, bool delayed = true) {
         return ((int) Mathf.Floor((delayed ? this.totalTimerDelayed : this.totalTimer) / (this.beatLength * BEAT_VALUE)));
     }
     

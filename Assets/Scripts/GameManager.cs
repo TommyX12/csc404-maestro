@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     
     // references
     public MusicManager musicManager;
+    public Gladiator player;
 
     private Riff riff;
 
@@ -31,7 +32,8 @@ public class GameManager : MonoBehaviour {
         riff = new Riff(4, notes, musicManager);
         riff.noteHitEvent += noteHitEventHandler;
 
-        musicManager.StartRiff("csc404-test-1", 80);
+        musicManager.StartRiff("csc404-test-base", 80);
+        musicManager.PlayPattern("csc404-test-weapon-1", 4);
     }
 
     protected void FixedUpdate() {

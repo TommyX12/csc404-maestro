@@ -21,6 +21,9 @@ public class Riff {
     public float hitMarginBefore = 0.2f; // in seconds
     public float hitMarginAfter = 0.2f; // in seconds
     public float hitOffset = 0.0f; // in seconds. already taken care of in MusicManager
+    public float hitFailedBlockBeats = 0.5f; // in beats
+
+    private float blockTimer = 0;
 
     private MusicManager musicManager;
 
@@ -105,6 +108,13 @@ public class Riff {
     public void Update() {
         UpdatePosition(false);
         UpdatePosition(true);
+
+        if (blockTimer > 0) {
+            blockTimer -= Time.deltaTime;
+            if (blockTimer < 0) {
+                blockTimer = 0;
+            }
+        }
     }
 
     private RiffPosition GetCurrentPosition(bool delayed = true) {
@@ -144,7 +154,7 @@ public class Riff {
         // find coordinates
         // Debug.Log("time: " + position.time + ", beat: " + position.beat + ", cycle: " + position.cycle);
         // Debug.Log("track position: " + musicManager.GetMusicTrack("csc404-test-1").GetPosition());
-        
+
         NoteHitEvent result = new NoteHitEvent();
         result.automatic = false;
         
@@ -174,16 +184,22 @@ public class Riff {
                          ref next,
                          ref result.deltaTime);
         
-        if (bestError < 0) {
+        if (bestError < 0) { // failed to hit
             next.noteIndex = -1;
+            blockTimer = musicManager.BeatToTime(hitFailedBlockBeats);
         }
-        else {
+        else { // hit successful
             position.lastHit = next;
         }
 
+        if (blockTimer <= 0) {
+            result.noteIndex = next.noteIndex;
+        }
+        else {
+            result.noteIndex = -1;
+        }
+        
         // Debug.Log("next: " + next.noteIndex + ", cycle: " + next.cycle);
-
-        result.noteIndex = next.noteIndex;
 
         DispatchNoteHitEvent(result, delayed);
 

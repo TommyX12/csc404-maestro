@@ -18,8 +18,8 @@ public class TrackTrigger : MonoBehaviour
         riff.noteHitEvent += noteHitEventHandler;
     }
 
-    private void Update()
-    {
+    private void Update() {
+        
     }
 
     private void FixedUpdate()
