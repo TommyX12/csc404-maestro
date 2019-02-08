@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public string ConfigName = "default-music-config";
     public string Track = "csc404-test-1";
     public int TrackBPM = 80;
+    public Gladiator player;
+
     private Riff riff;
 
     protected void Awake() {

@@ -19,8 +19,8 @@ public class TrackTrigger : MonoBehaviour
         riff.hitOffset = -0.2f;
     }
 
-    private void Update()
-    {
+    private void Update() {
+        
     }
 
     private void FixedUpdate()

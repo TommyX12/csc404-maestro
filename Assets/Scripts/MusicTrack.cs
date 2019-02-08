@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class MusicTrack {
+
+    private double preplayOffset = 1.0;
     
     public string Name {
         get; private set;
@@ -22,29 +24,45 @@ public class MusicTrack {
     public float Volume = 1.0f;
     private float volumeMul = 0.0f;
     private float volumeMulFade = 0.0f;
+
+    private float beatsPerCycle = -1; // negative means not a pattern
+    private double nextPlayDSPTime = -1;
+    private double nextScheduledTime = -1;
+
+    private AudioSource[] audioSources = new AudioSource[2];
+    private int flipID = 0;
     
-    private AudioSource audioSource;
+    private AudioSource audioSource {
+        get {
+            return this.audioSources[flipID];
+        }
+    }
+
+    private MusicManager musicManager;
     
-    public MusicTrack(string name, AudioClip clip, GameObject audioSourceContainer, AudioMixerGroup mixer) {
-        this.audioSource = this.CreateAudioSource(clip, audioSourceContainer, mixer);
+    public MusicTrack(MusicManager musicManager, string name, AudioClip clip, GameObject audioSourceContainer, AudioMixerGroup mixer) {
+        this.musicManager = musicManager;
         this.Name        = name;
-        
         this.Stopping    = false;
+        
+        this.CreateAudioSource(clip, audioSourceContainer, mixer);
     }
     
-    public AudioSource CreateAudioSource(AudioClip clip, GameObject audioSourceContainer, AudioMixerGroup mixer) {
-        AudioSource audioSource = audioSourceContainer.AddComponent<AudioSource>();
-        audioSource.clip = clip;
-        audioSource.outputAudioMixerGroup = mixer;
-        audioSource.bypassEffects = true;
-        audioSource.bypassListenerEffects = true;
-        audioSource.bypassReverbZones = true;
-        audioSource.dopplerLevel = 0;
-        audioSource.playOnAwake = false;
-        audioSource.reverbZoneMix = 0;
-        audioSource.spatialize = false;
+    public void CreateAudioSource(AudioClip clip, GameObject audioSourceContainer, AudioMixerGroup mixer) {
+        for (int i = 0; i < 2; ++i) {
+            AudioSource a = audioSourceContainer.AddComponent<AudioSource>();
+            a.clip = clip;
+            a.outputAudioMixerGroup = mixer;
+            a.bypassEffects = true;
+            a.bypassListenerEffects = true;
+            a.bypassReverbZones = true;
+            a.dopplerLevel = 0;
+            a.playOnAwake = false;
+            a.reverbZoneMix = 0;
+            a.spatialize = false;
         
-        return audioSource;
+            audioSources[i] = a;
+        }
     }
     
     public void Update(float deltaTime) {
@@ -56,13 +74,40 @@ public class MusicTrack {
             this.audioSource.Stop();
         }
         this.UpdateVolume();
+        if (beatsPerCycle > 0) {
+            this.UpdatePattern();
+        }
     }
-    
+
     public void UpdateVolume() {
         this.audioSource.volume = 
-            MusicManager.Current.MasterVolume * 
-            MusicManager.Current.ContextVolume * 
+            musicManager.MasterVolume * 
+            musicManager.ContextVolume * 
             this.Volume * this.volumeMul;
+    }
+
+    public void UpdatePattern() {
+        if (AudioSettings.dspTime >= nextScheduledTime) {
+            float timeToNextBeat = musicManager.BeatToTime(beatsPerCycle - musicManager.GetBeatIndex(beatsPerCycle, false));
+            nextPlayDSPTime = Math.Max(AudioSettings.dspTime + timeToNextBeat, nextPlayDSPTime);
+
+            if ((nextPlayDSPTime - AudioSettings.dspTime) < preplayOffset) {
+                Debug.Log("test this");
+                // THANKS THOMMY ITS NOT LIKE I WAS USING UR MUSIC MANAGER OR ANYTHING >:((((
+                this.audioSource.PlayScheduled(nextPlayDSPTime);
+                nextScheduledTime = nextPlayDSPTime;
+                FlipAudioSource();
+            }
+        }
+    }
+
+    private void FlipAudioSource() {
+        flipID = flipID == 0 ? 1 : 0;
+    }
+
+    public void PlayAsPattern(float beatsPerCycle, float fadeInTime) {
+        this.beatsPerCycle = beatsPerCycle;
+        this.Start(fadeInTime, false);
     }
     
     public void Start(float fadeInTime, bool loop) {

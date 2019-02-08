@@ -8224,6 +8224,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299374832}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &299711920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2019072337842220124, guid: 9e51398303045a4449ec35a927828312,
+    type: 3}
+  m_PrefabInstance: {fileID: 2019072339720892201}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a107f9b3d34959e42a54be90699edccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &300314334
 GameObject:
   m_ObjectHideFlags: 0
@@ -11826,7 +11838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 16.699951, y: 162.5}
+  m_AnchoredPosition: {x: 16.700195, y: 162.5}
   m_SizeDelta: {x: -33.4, y: -361.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517530572
@@ -14963,7 +14975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.4001465, y: -162.5}
+  m_AnchoredPosition: {x: 11.400391, y: -162.5}
   m_SizeDelta: {x: -22.7, y: -361.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695926064
@@ -32951,26 +32963,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952839122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1957463949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1074374738343463450, guid: c0d898e21f4144fe9806ac0933601714,
-    type: 3}
-  m_PrefabInstance: {fileID: 9219373923240604511}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1957463953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957463949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a454115f0f6f4b9a96f69d5e5dd7f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sequencerNotePrefab: {fileID: 3433070804693508370, guid: 6eea3ff1e784949879b5235074dcff17,
-    type: 3}
 --- !u!1 &1957843037
 GameObject:
   m_ObjectHideFlags: 0
@@ -35266,6 +35258,11 @@ PrefabInstance:
       propertyPath: DefaultConfigText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6933938287685056983, guid: 7197afd4059aef045b758d2933e5e6b2,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 299711920}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7197afd4059aef045b758d2933e5e6b2, type: 3}
 --- !u!1001 &7256413607958957747
@@ -35462,32 +35459,32 @@ PrefabInstance:
     - target: {fileID: 9219373923085145758, guid: c0d898e21f4144fe9806ac0933601714,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9219373923085145758, guid: c0d898e21f4144fe9806ac0933601714,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.000015258789
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9219373923085145758, guid: c0d898e21f4144fe9806ac0933601714,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9219373923085145758, guid: c0d898e21f4144fe9806ac0933601714,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9219373923085145758, guid: c0d898e21f4144fe9806ac0933601714,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9219373923085145758, guid: c0d898e21f4144fe9806ac0933601714,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.23374495
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9219373923085145758, guid: c0d898e21f4144fe9806ac0933601714,
         type: 3}
