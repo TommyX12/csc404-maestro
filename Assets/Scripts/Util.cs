@@ -379,11 +379,16 @@ static public class Util
         elementTransform.position = canvas.transform.TransformPoint(pos);
     }
 
-    static public Vector3 WorldToScreen(Vector3 position, Camera camera = null) {
+    static public Vector3 WorldToScreenAnchor(Canvas canvas, Vector3 position, Camera camera = null) {
         if (camera == null) {
             camera = Camera.main;
         }
-        return camera.WorldToScreenPoint(position);
+        float ch = canvas.GetComponent<RectTransform>().rect.height;
+        float cw = canvas.GetComponent<RectTransform>().rect.width;
+        Vector3 result = camera.WorldToScreenPoint(position);
+        result.x /= cw * canvas.scaleFactor;
+        result.y /= ch * canvas.scaleFactor;
+        return result;
     }
     
     static public string ColoredRichText(string color, string text) {

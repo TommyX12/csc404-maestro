@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour {
     
     // references
     public MusicManager musicManager;
-    public string ConfigName = "default-music-config";
     public string Track = "csc404-test-1";
     public int TrackBPM = 80;
     public Gladiator player;
@@ -21,7 +20,6 @@ public class GameManager : MonoBehaviour {
     }
     
     protected void Start() {
-        musicManager.LoadConfig(ConfigName);
         List<Riff.Note> notes = new List<Riff.Note>() {
             new Riff.Note(0, 4.0f),
             new Riff.Note(2, 4.0f),

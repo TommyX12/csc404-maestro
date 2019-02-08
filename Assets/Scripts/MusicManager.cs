@@ -157,11 +157,13 @@ public class MusicManager : MonoBehaviour {
         return this.trackConfigs;
     }
     
-    public void LoadConfig(string name) {
+    // disabled due to json issue
+    private void LoadConfig(string name) {
         this.LoadConfig(Util.FromJson<Config>(ResourceManager.GetText(name)));
     }
     
-    public void LoadConfig(Config config) {
+    // disabled due to json issue
+    private void LoadConfig(Config config) {
         this.StopAll(true);
         
         this.trackConfigs = new Dictionary<string, TrackConfig>();

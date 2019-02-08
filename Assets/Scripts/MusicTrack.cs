@@ -92,8 +92,6 @@ public class MusicTrack {
             nextPlayDSPTime = Math.Max(AudioSettings.dspTime + timeToNextBeat, nextPlayDSPTime);
 
             if ((nextPlayDSPTime - AudioSettings.dspTime) < preplayOffset) {
-                Debug.Log("test this");
-                // THANKS THOMMY ITS NOT LIKE I WAS USING UR MUSIC MANAGER OR ANYTHING >:((((
                 this.audioSource.PlayScheduled(nextPlayDSPTime);
                 nextScheduledTime = nextPlayDSPTime;
                 FlipAudioSource();
