@@ -615,10 +615,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 00bd291f-a8b0-408c-9b4b-0050952c4284
+  cloudProjectId: decf6844-c41c-4c93-b95e-2dd31a14fbb1
   framebufferDepthMemorylessMode: 0
-  projectName: csc404-maestro
-  organizationId: tommyx12
+  projectName: Maestro (1)
+  organizationId: raymond-gao
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -33,7 +33,7 @@ public class EntryElevatorScript : MonoBehaviour
         }
         cachedStartPos = transform.position;
         transform.position += Vector3.down * StartOffset;
-        Gladiator.GetInstance().transform.position = PlayerStartPosition.transform.position;
+        Player.instance.transform.position = PlayerStartPosition.transform.position;
         InnerProximityTrigger.SetActive(false);
     }
 

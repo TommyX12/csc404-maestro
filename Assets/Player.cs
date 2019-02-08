@@ -6,6 +6,13 @@ using UnityEngine;
 public class Player : Damageable
 {
 
+    public static Player instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // interp collider to model
     public GameObject Collider;
     public GameObject Model;
@@ -31,7 +38,9 @@ public class Player : Damageable
         notes.Add(new Riff.Note(2));
         notes.Add(new Riff.Note(3));
         riff = new Riff(4, notes, MusicManager.Current);
-        riff.hitOffset = 0;
+        riff.hitMarginBefore = 0.2f;
+        riff.hitMarginAfter = 0.2f;
+        riff.hitOffset = -0.2f;
     }
 
     private void Start()

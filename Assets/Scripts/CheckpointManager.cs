@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckpointManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CheckpointManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        SceneManager.sceneLoaded += OnLeveLoad;
     }
 
     private List<Checkpoint> Checkpoints = new List<Checkpoint>();
@@ -44,4 +46,11 @@ public class CheckpointManager : MonoBehaviour
 
         active_checkpoint = id;
     }
+
+    private void OnLeveLoad(Scene scene, LoadSceneMode mode)
+    {
+        Checkpoints.Clear();
+        active_checkpoint = -1;
+    }
+
 }
