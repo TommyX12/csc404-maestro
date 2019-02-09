@@ -162,9 +162,12 @@ The feedback obtained, as with all the feedback these experts give us, was very 
 - How do people interact with the tempo? 
 - ~~When is Half-Life 3 coming out?~~
 
+All of these concerns are valuable ones we plan to keep to heart & fully answer. ~~Especially that last one~~
+
+
 ##### The Meeting
 In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For their privacy, I won't say who.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord. They agreed with the decisions.
 
 In our discussion, we considered a shift away from shooting & weaponry & towards more puzzles. While we considered doing both rhythm based combat & puzzles, we encountered difficulties balancing them without risks of overwhelming the player. As mentioned before, these were concerns from the panelists of different presentations, not just this one. We've decided to go with rhythm puzzles more than combat, scrapping weapons in favor of the puzzles we put. 
 
-
+In fact, we're considering a few shifts from where were originally. One concern we all have is regarding fun. **How can we make it fun?** A few of our members presented what we have to friends. The feedback was that it wasn't very fun to play. This is a pressing issue we plan to solve. It's the **how** that's the biggest problem.
