@@ -139,7 +139,7 @@ Overall, our team is making good progress towards the next milestone, however we
 ## Design Blog Feb 3rd, 2019 - Feb 11, 2019
 
 ##### Design Presentation & Design Document
-We had a presentation to another series of panelists this week. This time, it was one of the most important stages in development. When a game studio's producing a game for another group, they must showcase beyond their idea. The best ideas can have poor implementation. The Design Presentantion goes deep into technical description, in as much detail as it can, to describe every aspect. In the 5-10 minutes given, we had to explain it all. Our core gameplay, the mechanics, what goals are achieved in gameplay, a sample of the music, level design and samples of levels, the visual design and aesthetic, the list goes on. 
+We had a presentation to another series of panelists this week.  When a game studio's producing a game for another group, they must showcase beyond their idea. The best ideas can have poor implementation. The Design Presentantion goes deep into technical description, in as much detail as it can, to describe every aspect. In the 5-10 minutes given, we had to explain it all. Our core gameplay, the mechanics, what goals are achieved in gameplay, a sample of the music, level design and samples of levels, the visual design and aesthetic, the list goes on. 
 
 Slides we used: 
 https://docs.google.com/presentation/d/1nw-467-qcknn7Q0F5kbEFkOCfnJglWwER3KLiApI-Sc/edit#slide=id.g4ebe9dad3f_0_155
@@ -164,6 +164,7 @@ The feedback obtained, as with all the feedback these experts give us, was very 
 
 All of these concerns are valuable ones we plan to keep to heart & fully answer. ~~Especially that last one~~
 
+As for the doc, it was one of the most important stages in development. We want to ensure our reader knows everything.
 
 ##### The Meeting
 In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For their privacy, I won't say who.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord. They agreed with the decisions.
