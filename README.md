@@ -147,8 +147,12 @@ In the end, the group (or the members who were there) felt we presented things a
 
 The feedback obtained, as with all the feedback these experts give us, was very valuable. 
 - As music is our game's focus, rhythm game after all, music should be front & center in our presentations. It should be explained very soon.
--Player interaction is also important to explain
--
+- Player interaction is also important to explain
+- More clarity with how the music & rhythm will work i.e. time synchs
+- How is the game a rhythm game? (Indeed, even from the start we're more like a dungeon crawler that uses rhythm & rhythm aspects than all-rhythm game like Elite Beat Agents or Theatrhythm Final Fantasy. We do admit this)
+- They recommended we check out Sound Shapes & Everyday Shooter. Some of our group are already familiar with these games.
+https://media.playstation.com/is/image/SCEA/sound-shapes-screenshots-01-ps4-us-20mar15?$MediaCarousel_Original$
+https://www.everydayshooter.com/EverydayShooter_1.jpg
 
 ##### The Meeting
 In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For their privacy, I won't say who.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord. They agreed with the decisions.
