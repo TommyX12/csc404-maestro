@@ -98,10 +98,10 @@ This week, we focused mostly on design and aesthetics. The team wants to settle 
 The first thing that the team agreed on was the central theme of the game. We have already decided to stick with the colour palette demonstrated in the previous blog post. The team decided that a sci-fi theme would be very fitting with this palette.
 
 Prior to this meeting, team member Meena created a character which could be used for the protagonist of the game:
-![Image Failed To Load](https://cdn.discordapp.com/attachments/538651386951368714/539623267304996884/received_2035285553216494.png "Initial protagonist character art")
+![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/539623267304996884/received_2035285553216494.png "Initial protagonist character art")
 
 The team liked how the character looked. However, during the meeting, we came to the consensus that the chibi-style character would not be a good fit in our game and opted for a more human-like character. One such character that we may be looking at for reference is the character Lea from the game CrossCode, shown below.
-![Image Failed To Load](https://gamepedia.cursecdn.com/crosscode_gamepedia/thumb/1/12/Lea.png/508px-Lea.png "Lea from CrossCode")
+![ScreenShot](https://gamepedia.cursecdn.com/crosscode_gamepedia/thumb/1/12/Lea.png/508px-Lea.png "Lea from CrossCode")
 
 We also looked at another game that we can take inspiration from: Furi. Furi has a colour palette similar to what the team has in mind, as well as a similar sci-fi theme going on too.
 
@@ -149,7 +149,7 @@ The feedback obtained, as with all the feedback these experts give us, was very 
 - As music is our game's focus, rhythm game after all, music should be front & center in our presentations. It should be explained very soon.
 - Player interaction is also important to explain
 - More clarity with how the music & rhythm will work i.e. time synchs
-- How is the game a rhythm game? (Indeed, even from the start we're more like a dungeon crawler that uses rhythm & rhythm aspects than all-rhythm game like Elite Beat Agents or Theatrhythm Final Fantasy. We do admit this)
+- How is it rhythm or how does it use rhythm? (Indeed, even from the start we're more like a dungeon crawler that uses rhythm & rhythm aspects than all-rhythm game like Elite Beat Agents or Theatrhythm Final Fantasy. )
 - They recommended we check out Sound Shapes & Everyday Shooter. Some of our group are already familiar with these games.
 ![ScreenShot](https://media.playstation.com/is/image/SCEA/sound-shapes-screenshots-01-ps4-us-20mar15?$MediaCarousel_Original$)
 ![ScreenShot](https://www.everydayshooter.com/EverydayShooter_1.jpg)
