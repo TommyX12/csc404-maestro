@@ -141,7 +141,8 @@ Overall, our team is making good progress towards the next milestone, however we
 ##### Design Presentation & Design Document
 We had a presentation to another series of panelists this week. This time, it was one of the most important stages in development. When a game studio's producing a game for another group, they must showcase beyond their idea. The best ideas can have poor implementation. The Design Presentantion goes deep into technical description, in as much detail as it can, to describe every aspect. In the 5-10 minutes given, we had to explain it all. Our core gameplay, the mechanics, what goals are achieved in gameplay, a sample of the music, level design and samples of levels, the visual design and aesthetic, the list goes on. 
 
-Slides we used: https://docs.google.com/presentation/d/1nw-467-qcknn7Q0F5kbEFkOCfnJglWwER3KLiApI-Sc/edit#slide=id.g4ebe9dad3f_0_155
+Slides we used: 
+https://docs.google.com/presentation/d/1nw-467-qcknn7Q0F5kbEFkOCfnJglWwER3KLiApI-Sc/edit#slide=id.g4ebe9dad3f_0_155
 
 In the end, the group (or the members who were there) felt we presented things adequately but with various areas of improvement for presentations. 
 
@@ -153,10 +154,17 @@ The feedback obtained, as with all the feedback these experts give us, was very 
 - They recommended we check out Sound Shapes & Everyday Shooter. Some of our group are already familiar with these games.
 ![ScreenShot](https://media.playstation.com/is/image/SCEA/sound-shapes-screenshots-01-ps4-us-20mar15?$MediaCarousel_Original$)
 ![ScreenShot](https://www.everydayshooter.com/EverydayShooter_1.jpg)
+- It's hard to balance both shooter, puzzle & rhythm at the same time.
+- How's sound triggered? (Current answer: By the player, enemies & actions performed in the environment. A more detailed answer is still in progress.)
+- If iteraction is with the tempo, consider visual cues. Not everyone is super keen on audio cues. For rhythm games to be more accessible to a general audience, they'll need to see cues too.
+- Biggest thing: Figure out the rhythm mechanic
+- How's it all going to be integrated?
+- How do people interact with the tempo? 
+- ~~When is Half-Life 3 coming out?~~
 
 ##### The Meeting
 In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For their privacy, I won't say who.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord. They agreed with the decisions.
 
-In our discussion, we considered a shift away from shooting & weaponry & towards more puzzles. While we considered doing both rhythm based combat & puzzles, we encountered difficulties balancing them without risks of overwhelming the player. Within our Design Presentation & even presentations before, these were concerns from the panelists of different presentations. We've decided to go with rhythm puzzles more than combat, scrapping weapons in favor of the puzzles we put. 
+In our discussion, we considered a shift away from shooting & weaponry & towards more puzzles. While we considered doing both rhythm based combat & puzzles, we encountered difficulties balancing them without risks of overwhelming the player. As mentioned before, these were concerns from the panelists of different presentations, not just this one. We've decided to go with rhythm puzzles more than combat, scrapping weapons in favor of the puzzles we put. 
 
 
