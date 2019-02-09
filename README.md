@@ -135,3 +135,13 @@ Meena has also created more sketches of what the protagonist could look like:
 Our music team member Paul has also created some tracks for attacks, background loops, and so on. Unfortunately, I have no means of uploading such files to the blog (Should I be able to, I will update this section, and add the files).
 
 Overall, our team is making good progress towards the next milestone, however we are also aware that there is still much to be done before the final product is complete and ready for launch.
+
+## Design Blog Feb 3rd, 2019 - Feb 11, 2019
+
+##### Design Presentation & Design Document
+We had a presentation to another series of panelists this week. 
+
+##### The Meeting
+In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For their privacy, I won't say who.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord.
+
+In our discussion, we considered a shift away from shooting & weaponry & towards more puzzles. While we considered doing both rhythm based combat & puzzles, we encountered difficulties balancing them without risks of overwhelming the player. Within our Design Presentation & even presentations before, these were concerns from the panelists of different presentations. We've decided to go with rhythm puzzles more than combat, scrapping weapons in favor of the puzzles we put. 
