@@ -171,3 +171,7 @@ In spite of many members being too busy or the location of our meeting too incon
 In our discussion, we considered a shift away from shooting & weaponry & towards more puzzles. While we considered doing both rhythm based combat & puzzles, we encountered difficulties balancing them without risks of overwhelming the player. As mentioned before, these were concerns from the panelists of different presentations, not just this one. We've decided to go with rhythm puzzles more than combat, scrapping weapons in favor of the puzzles we put. 
 
 In fact, we're considering a few shifts from where were originally. One concern we all have is regarding fun. **How can we make it fun?** A few of our members presented what we have to friends. The feedback was that it wasn't very fun to play. This is a pressing issue we plan to solve. It's the **how** that's the biggest problem.
+
+Another issue is the puzzles themselves. Good puzzles don't grow on trees. (Or do they?) We could theoretically have the best base game yet poor puzzles can bring everything down. ~~That Ubisoft game Breath of the Wild suffers from this.~~ We do have volunteers in the group to create fun puzzles but if we focus on puzzles, their quality is a make or break thing.
+
+On a side note, it was Whopper Wednesday thus the members who attended got Burger King. Between the bad weather, the tests coming up & everything, I suppose the members who arrived deserve something special.
