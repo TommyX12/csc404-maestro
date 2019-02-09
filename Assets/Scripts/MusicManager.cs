@@ -11,90 +11,7 @@ public class MusicManager : MonoBehaviour {
     public static MusicManager Current;
 
     private const float audioDelay = 0.21f;
-    
-    public class TrackConfig {
-        public string name = null;
-        public float volume = 1.0f;
-        public bool synced = true;
-        public bool synced_on_awake = true;
-        public bool loop = true;
-        
-        public float fade_in_time = -1;
-        public float fade_out_time = -1;
-        public float start_fade_in_time = -1;
-        
-        public void Init() {
-            if (this.synced_on_awake) {
-                MusicManager.Current.Play(this.name, true, true, 999.0f, 999.0f);
-                MusicManager.Current.Silence(this.name, 0.01f);
-            }
-        }
-        
-        public void Enable(float volumeMul, float fadeInTime = -1, float startFadeInTime = -1) {
-            if (fadeInTime < 0) fadeInTime = this.fade_in_time;
-            if (startFadeInTime < 0) startFadeInTime = this.start_fade_in_time;
-            
-            MusicManager.Current.GetMusicTrack(this.name, true).Volume = this.volume * volumeMul;
-            MusicManager.Current.Play(this.name, this.loop, false, fadeInTime, startFadeInTime);
-        }
-        
-        public void Disable(float fadeOutTime = -1) {
-            if (fadeOutTime < 0) fadeOutTime = this.fade_out_time;
-            
-            if (this.synced) {
-                MusicManager.Current.Silence(this.name, fadeOutTime);
-            }
-            else {
-                MusicManager.Current.Stop(this.name, false, fadeOutTime);
-            }
-        }
-    }
-    
-    public class SnapshotConfig {
-        public Dictionary<string, float> tracks = new Dictionary<string, float>();
-        public List<List<string>> conditions = new List<List<string>>();
-        
-        public float fade_in_time = -1;
-        public float fade_out_time = -1;
-        public float start_fade_in_time = -1;
-        
-        public bool ConditionSatisfied() {
-            if (this.conditions.Count == 0) return true;
-            
-            foreach (var c in this.conditions) {
-                bool passed = true;
-                foreach (string d in c) {
-                    if (!MusicManager.Current.GetCondition(d)) {
-                        passed = false;
-                        break;
-                    }
-                }
-                
-                if (passed) {
-                    return true;
-                }
-            }
-            
-            return false;
-        }
-        
-        public void Play() {
-            foreach (var entry in this.tracks) {
-                string name = entry.Key;
-                float volumeMul = entry.Value;
-                MusicManager.Current.GetTrackConfigs()[name].Enable(volumeMul, this.fade_in_time, this.start_fade_in_time);
-            }
-        }
-    }
-    
-    public class Config {
-        public List<TrackConfig> tracks = new List<TrackConfig>();
-        public List<SnapshotConfig> snapshots = new List<SnapshotConfig>();
-        public float fade_in_time = -1;
-        public float fade_out_time = -1;
-        public float start_fade_in_time = -1;
-        public float bpm = 0;
-    }
+    private const float audioMinLoadTime = 0.02f;
     
     private Dictionary<string, MusicTrack> activeTracks = new Dictionary<string, MusicTrack>();
     private GameObject audioSourceContainer;
@@ -298,6 +215,17 @@ public class MusicManager : MonoBehaviour {
         return track;
     }
 
+    /// <summary>
+    ///   Play audioSource at the next aligned unit. The length of each unit is a beat divided by unitPerBeat.
+    /// </summary>
+    public void PlayAudioSourceAligned(AudioSource audioSource, float unitPerBeat = 4) {
+        double timePerUnit = BeatToTime(1.0f / unitPerBeat);
+        double timeToNextUnit = Math.Ceiling((totalTimer + audioMinLoadTime) / timePerUnit) * timePerUnit - totalTimer;
+        double nextPlayDSPTime = AudioSettings.dspTime + timeToNextUnit;
+        Debug.Log(timeToNextUnit);
+        audioSource.PlayScheduled(nextPlayDSPTime);
+    }
+
     public MusicTrack PlayPattern(string name, float beatsPerCycle, float fadeInTime = -1) {
         MusicTrack track = GetMusicTrack(name, true);
         track.ForceStop();
@@ -388,6 +316,90 @@ public class MusicManager : MonoBehaviour {
 
     public int GetCycleIndex(float beatsPerCycle, bool delayed = true) {
         return ((int) Mathf.Floor((delayed ? this.totalTimerDelayed : this.totalTimer) / (this.beatLength * BEAT_VALUE)));
+    }
+    
+    public class TrackConfig {
+        public string name = null;
+        public float volume = 1.0f;
+        public bool synced = true;
+        public bool synced_on_awake = true;
+        public bool loop = true;
+        
+        public float fade_in_time = -1;
+        public float fade_out_time = -1;
+        public float start_fade_in_time = -1;
+        
+        public void Init() {
+            if (this.synced_on_awake) {
+                MusicManager.Current.Play(this.name, true, true, 999.0f, 999.0f);
+                MusicManager.Current.Silence(this.name, 0.01f);
+            }
+        }
+        
+        public void Enable(float volumeMul, float fadeInTime = -1, float startFadeInTime = -1) {
+            if (fadeInTime < 0) fadeInTime = this.fade_in_time;
+            if (startFadeInTime < 0) startFadeInTime = this.start_fade_in_time;
+            
+            MusicManager.Current.GetMusicTrack(this.name, true).Volume = this.volume * volumeMul;
+            MusicManager.Current.Play(this.name, this.loop, false, fadeInTime, startFadeInTime);
+        }
+        
+        public void Disable(float fadeOutTime = -1) {
+            if (fadeOutTime < 0) fadeOutTime = this.fade_out_time;
+            
+            if (this.synced) {
+                MusicManager.Current.Silence(this.name, fadeOutTime);
+            }
+            else {
+                MusicManager.Current.Stop(this.name, false, fadeOutTime);
+            }
+        }
+    }
+    
+    public class SnapshotConfig {
+        public Dictionary<string, float> tracks = new Dictionary<string, float>();
+        public List<List<string>> conditions = new List<List<string>>();
+        
+        public float fade_in_time = -1;
+        public float fade_out_time = -1;
+        public float start_fade_in_time = -1;
+        
+        public bool ConditionSatisfied() {
+            if (this.conditions.Count == 0) return true;
+            
+            foreach (var c in this.conditions) {
+                bool passed = true;
+                foreach (string d in c) {
+                    if (!MusicManager.Current.GetCondition(d)) {
+                        passed = false;
+                        break;
+                    }
+                }
+                
+                if (passed) {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
+        public void Play() {
+            foreach (var entry in this.tracks) {
+                string name = entry.Key;
+                float volumeMul = entry.Value;
+                MusicManager.Current.GetTrackConfigs()[name].Enable(volumeMul, this.fade_in_time, this.start_fade_in_time);
+            }
+        }
+    }
+    
+    public class Config {
+        public List<TrackConfig> tracks = new List<TrackConfig>();
+        public List<SnapshotConfig> snapshots = new List<SnapshotConfig>();
+        public float fade_in_time = -1;
+        public float fade_out_time = -1;
+        public float start_fade_in_time = -1;
+        public float bpm = 0;
     }
     
 }

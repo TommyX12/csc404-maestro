@@ -46,17 +46,17 @@ public class Shotgun : Weapon
             switch (press.noteIndex) {
                 case 0:
                     psystem.Emit(25);
-                    FireSoundReload1.Play();
+                    MusicManager.Current.PlayAudioSourceAligned(FireSoundReload1, 4);
                     RaycastAndDamage();
                     break;
                 case 1:
                     psystem.Emit(25);
-                    FireSound.Play();
+                    MusicManager.Current.PlayAudioSourceAligned(FireSound, 4);
                     RaycastAndDamage();
                     break;
                 case 2:
                     psystem.Emit(25);
-                    FireSoundReload2.Play();
+                    MusicManager.Current.PlayAudioSourceAligned(FireSoundReload2, 4);
                     RaycastAndDamage();
                     break;
                 default:
