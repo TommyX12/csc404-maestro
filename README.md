@@ -175,3 +175,4 @@ In fact, we're considering a few shifts from where were originally. One concern 
 Another issue is the puzzles themselves. Good puzzles don't grow on trees. (Or do they?) We could theoretically have the best base game yet poor puzzles can bring everything down. ~~That Ubisoft game Breath of the Wild suffers from this.~~ We do have volunteers in the group to create fun puzzles but if we focus on puzzles, their quality is a make or break thing.
 
 On a side note, it was Whopper Wednesday thus the members who attended got Burger King. Between the bad weather, the tests coming up & everything, I suppose the members who arrived deserve something special.
+##### New pictures, assets & more since last time
