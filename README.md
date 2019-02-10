@@ -164,7 +164,10 @@ The feedback obtained, as with all the feedback these experts give us, was very 
 
 All of these concerns are valuable ones we plan to keep to heart & fully answer. ~~Especially that last one~~
 
-As for the doc, it was one of the most important stages in development. We want to ensure our reader knows everything.
+As for the doc, it was one of the most important stages in development. We want to ensure our reader knows everything. We want the professor & whoever's reading to know everything It's on its way as of this writing, nearly there.
+
+https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/edit#
+
 
 ##### The Meeting
 In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For their privacy, I won't say who.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord. They agreed with the decisions.
@@ -176,4 +179,7 @@ In fact, we're considering a few more shifts from where were originally. One con
 Another issue is the puzzles themselves. Good puzzles don't grow on trees. (Or do they?) We could theoretically have the best base game yet poor puzzles, poor level design, etc can bring everything down. ~~That Ubisoft game Breath of the Wild suffers from this.~~ We do have volunteers in the group to create fun puzzles but if we focus on puzzles, their quality is a make or break thing.
 
 On a side note, it was Whopper Wednesday thus the members who attended got Burger King. Between the bad weather, the tests coming up & everything, I suppose the members who arrived deserve something special.
+
 ##### New pictures, assets & more since last time
+
+We had some new art & models since last time.
