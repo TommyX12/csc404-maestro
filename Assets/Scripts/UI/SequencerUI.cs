@@ -33,6 +33,13 @@ public class SequencerUI : MonoBehaviour {
         pointerBar.gameObject.SetActive(true);
     }
 
+    public void SetRiff(Riff OuterRiff, Riff InnerRiff) {
+        sequences[0].SetRiff(OuterRiff);
+        sequences[0].SetColor(new Color(0.2f, 0.4f, 0.8f));
+        sequences[1].SetRiff(InnerRiff);
+        sequences[1].SetColor(new Color(0.8f, 0.4f, 0.8f));
+    }
+
     protected void Start() {
         List<Riff.Note> notes = new List<Riff.Note>() {
             new Riff.Note(0, 2.0f),

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4417694, g: 0.48345983, b: 0.531685, a: 1}
+  m_IndirectSpecularColor: {r: 0.44176966, g: 0.48346025, b: 0.5316856, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19549,6 +19549,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 76e1b3e7258cf8a4eb7501ec42680a2d, type: 2}
+    - target: {fileID: 7256413606800608056, guid: fb8775090cdeebe4e85a015db8c54974,
+        type: 3}
+      propertyPath: GridPos.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7256413606800608062, guid: fb8775090cdeebe4e85a015db8c54974,
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -19768,11 +19773,6 @@ PrefabInstance:
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[9].outSlope
       value: -0.002000801
-      objectReference: {fileID: 0}
-    - target: {fileID: 7256413606800608056, guid: fb8775090cdeebe4e85a015db8c54974,
-        type: 3}
-      propertyPath: GridPos.x
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb8775090cdeebe4e85a015db8c54974, type: 3}
@@ -43347,5 +43347,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9219373923085145757, guid: c0d898e21f4144fe9806ac0933601714,
+        type: 3}
+      propertyPath: sequences.Array.data[0]
+      value: 
+      objectReference: {fileID: 9219373923240604512}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0d898e21f4144fe9806ac0933601714, type: 3}
+--- !u!114 &9219373923240604512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7431159486319744913, guid: c0d898e21f4144fe9806ac0933601714,
+    type: 3}
+  m_PrefabInstance: {fileID: 9219373923240604511}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a454115f0f6f4b9a96f69d5e5dd7f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
