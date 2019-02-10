@@ -65,7 +65,7 @@ public class Gladiator : Damageable {
         if (Input.GetButtonDown("A")) {
             MusicManager.Current.Mixer.audioMixer.SetFloat("Volume", -30);
             if (Weapons.Count > 0) {
-                Weapons[0].BeginPreview();
+                // Weapons[0].BeginPreview();
             }
         }
 
@@ -74,7 +74,7 @@ public class Gladiator : Damageable {
             MusicManager.Current.Mixer.audioMixer.SetFloat("Volume", -10);
             if (Weapons.Count > 0)
             {
-                Weapons[0].StopPreview();
+                // Weapons[0].StopPreview();
             }
         }
 

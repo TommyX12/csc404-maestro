@@ -14,16 +14,4 @@ public abstract class Weapon : MonoBehaviour
 
     public abstract void Fire();
 
-    public virtual void OnBeat(int beatIdx) {
-        Debug.Log("FIRE");
-    }
-
-    public virtual void BeginPreview() {
-        PreviewRhythm = true;
-    }
-
-    public virtual void StopPreview() {
-        PreviewRhythm = false;
-    }
-
 }

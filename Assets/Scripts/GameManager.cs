@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     
     // references
     public MusicManager musicManager;
-    public string Track = "csc404-test-1";
+    public string Track = "csc404-test-base";
     public int TrackBPM = 80;
     public Gladiator player;
 

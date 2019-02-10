@@ -53,7 +53,7 @@ public class SequencerUI : MonoBehaviour {
     }
 
     private void TrackPlayerPosition() {
-        rectTransform.anchorMin = rectTransform.anchorMax = Util.WorldToScreenAnchor(canvas, GameManager.current.player.transform.position);
+        rectTransform.anchorMin = rectTransform.anchorMax = Util.WorldToScreenAnchor(canvas, CombatGameManager.current.player.transform.position);
     }
 
     protected void Update() {

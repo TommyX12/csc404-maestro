@@ -80,11 +80,6 @@ public class Shotgun : Weapon
         }
     }
 
-    public override void OnBeat(int beatIdx)
-    {
-        Debug.Log("BEAT " + beatIdx);
-    }
-
     private void noteHitEventHandler(Riff.NoteHitEvent e) {
         if (PreviewRhythm) {
             if (e.automatic) {
