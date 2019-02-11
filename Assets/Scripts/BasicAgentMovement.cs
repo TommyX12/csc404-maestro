@@ -20,16 +20,23 @@ public class BasicAgentMovement : AgentMovement {
     protected Rigidbody rigidbody;
 
     // exposed parameters
-    public float thrust = 0.01f;
-    public float friction = 0.875f;
+    public float maxSpeedPerSecond = 2.0f;
+    public float friction = 0.125f;
+    public float rotationFriction = 0.925f;
     
     public BasicAgentMovement() {
         
     }
 
+    /// <summary>
+    ///   Should be in FixedUpdate
+    /// </summary>
     public override void ReceiveEvent(Event.DirectionalMove directionalMove) {
         if (directionalMove.right != 0 || directionalMove.up != 0) {
             Vector3 direction = Vector3.ClampMagnitude(directionalMove.right * right + directionalMove.up * forward, 1);
+
+            float thrust = (friction * (maxSpeedPerSecond * Time.fixedDeltaTime)) / (1 - friction);
+
             force = direction * thrust;
             targetRotation = Quaternion.LookRotation(direction);
         }
@@ -51,10 +58,10 @@ public class BasicAgentMovement : AgentMovement {
         force = Vector3.zero;
         
         // friction
-        velocity *= friction;
+        velocity *= 1 - friction;
         
         // rotation and finalize
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.5f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 1 - rotationFriction);
         rigidbody.position += velocity;
     }
 

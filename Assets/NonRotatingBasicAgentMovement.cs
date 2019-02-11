@@ -17,7 +17,7 @@ public class NonRotatingBasicAgentMovement : BasicAgentMovement
         if (directionalMove.right != 0 || directionalMove.up != 0)
         {
             Vector3 direction = Vector3.ClampMagnitude(directionalMove.right * right + directionalMove.up * forward, 1);
-            force = direction * thrust;
+            // force = direction * thrust;
         }
     }
 }

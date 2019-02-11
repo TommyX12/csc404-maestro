@@ -6,9 +6,13 @@ public class PlayerAgent : BasicAgent
 {
     public AudioSource OnDeathClip;
 
-    public override void OnDeath()
+    public PlayerAgent() : base() {
+        onDeath += PlayerOnDeath;
+    }
+
+    private void PlayerOnDeath(Agent agent)
     {
-        this.initialHitPoint = 100;
+        this.hitPoint = initialHitPoint;
         transform.position = CheckpointManager.instance.GetActiveCheckpoint().transform.position;
         OnDeathClip.Play();
     }

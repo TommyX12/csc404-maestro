@@ -6,18 +6,20 @@ using UnityEngine;
 
 public class BasicAgent : Agent {
 
-    private float hitPoint;
-
     // exposed parameters
     public float initialHitPoint = 100;
+    public float hitPoint;
 
-    public List<GameObject> WeaponPositions;
-    public List<Weapon> Weapons;
+    public List<Weapon> weapons;
     
     // self reference
     
     public BasicAgent() {
-        
+        onDeath += DestroySelf;
+    }
+
+    protected void Awake() {
+        hitPoint = initialHitPoint;
     }
 
     public override void ReceiveEvent(Event.Damage damage) {
@@ -26,20 +28,39 @@ public class BasicAgent : Agent {
             OnDeath();
         }
     }
-    
-    public virtual void OnDeath() {
-        GameObject.Destroy(this);
+
+    public override void ReceiveEvent(Event.FireWeapon fireWeapon) {
+        foreach (var weapon in weapons) {
+            weapon.Fire();
+        }
     }
 
-    public bool AddWeapon(Weapon w) {
-        if (Weapons.Count < WeaponPositions.Count) {
-            Weapons.Add(w);
-            w.gameObject.transform.SetParent(WeaponPositions[Weapons.Count - 1].transform);
-            w.gameObject.transform.localPosition = Vector3.zero;
-            return true;
+    public override void ReceiveEvent(Event.AimAt aimAt) {
+        foreach (var weapon in weapons) {
+            weapon.transform.LookAt(aimAt.target);
         }
-        else {
-            return false;
+    }
+
+    public override void ReceiveEvent(Event.AddWeapon addWeapon) {
+        AddWeapon(addWeapon.weapon);
+    }
+    
+    protected void DestroySelf(Agent agent) {
+        GameObject.Destroy(agent.gameObject);
+    }
+
+    public void AddWeapon(Weapon weapon) {
+        weapons.Add(weapon);
+        weapon.SetHost(this);
+    }
+
+    public void RemoveWeapon(Weapon weapon) {
+        for (int i = 0; i < weapons.Count; ++i) {
+            if (weapons[i] == weapon) {
+                weapon.SetHost(null);
+                weapons.RemoveAt(i);
+                break;
+            }
         }
     }
 }
