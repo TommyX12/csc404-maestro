@@ -231,7 +231,7 @@ public class MusicManager : MonoBehaviour {
         double timePerUnit = BeatToTime(1.0f / unitPerBeat);
         double timeToNextUnit = Math.Ceiling((totalTimer + audioMinLoadTime) / timePerUnit) * timePerUnit - totalTimer;
         double nextPlayDSPTime = AudioSettings.dspTime + timeToNextUnit;
-        Debug.Log(timeToNextUnit);
+        // Debug.Log(timeToNextUnit);
         audioSource.PlayScheduled(nextPlayDSPTime);
     }
 

@@ -145,7 +145,7 @@ public class Riff {
         float delaySeconds = Mathf.Max(0, nextTotalTime - currentTotalTime);
         if (delaySeconds <= soundPreloadTime) {
             if (playing) {
-                Debug.Log(delaySeconds);
+                // Debug.Log(delaySeconds);
                 string sound = notes[next.noteIndex].sound;
                 if (sound == null || sound == "") {
                     sound = defaultSound;
