@@ -170,7 +170,7 @@ https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/
 
 
 ##### The Meeting
-In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For their privacy, I won't say who.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord. They agreed with the decisions.
+In spite of many members being too busy or the location of our meeting too inconvenient to attend (About only 4 of our members attended. For the privacy of all those in the group, who came or didn't come won't be revealed.) we still got progress. Throughout the week, there were classes cancelled at U of T & even alarms at OCAD for severe weather. Therefore, our previous meeting place was unusable. Next, many of our members had their own assignments, tests, etc due thus they couldn't make it. We kept them updated post-meeting on Discord. They agreed with the decisions.
 
 In our discussion, we considered a shift away from shooting & weaponry & towards more puzzles. While we considered doing both rhythm based combat & puzzles, we encountered difficulties balancing them without risks of overwhelming the player. As mentioned before, these were concerns from the panelists of different presentations, not just this one. We've decided to go with rhythm puzzles more than combat, scrapping weapons in favor of the puzzles we put.
 
@@ -194,6 +194,8 @@ Sequence activator
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542850499234234368/20190206_182941.jpg)
 Protagonist Linework
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542882165562540043/Protagonist_Linework.png)
+Ship exterior
+![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542994126967275520/shipexteriorx.jpg)
 Roughs of enemies
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542992897763442689/enemyroughs.jpg)
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/543982712101535755/image0.jpg)

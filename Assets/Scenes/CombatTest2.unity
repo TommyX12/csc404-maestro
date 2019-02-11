@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4417694, g: 0.48345983, b: 0.531685, a: 1}
+  m_IndirectSpecularColor: {r: 0.44176966, g: 0.48346025, b: 0.5316856, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28843,41 +28843,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1626415801385244380, guid: aa960a7215fdb49d185fc30fb7951c1a,
+    - target: {fileID: 1860967466984188486, guid: aa960a7215fdb49d185fc30fb7951c1a,
         type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626415801385244380, guid: aa960a7215fdb49d185fc30fb7951c1a,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626415801385244380, guid: aa960a7215fdb49d185fc30fb7951c1a,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626415801385244380, guid: aa960a7215fdb49d185fc30fb7951c1a,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.ctime0
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626415801385244380, guid: aa960a7215fdb49d185fc30fb7951c1a,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.ctime1
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626415801385244380, guid: aa960a7215fdb49d185fc30fb7951c1a,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1626415801385244380, guid: aa960a7215fdb49d185fc30fb7951c1a,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.g
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 576ceec301fec42ffb235347fb3853fe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa960a7215fdb49d185fc30fb7951c1a, type: 3}
 --- !u!1 &1687399831
