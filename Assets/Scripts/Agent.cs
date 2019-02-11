@@ -30,6 +30,7 @@ public class Agent : MonoBehaviour {
     public virtual void ReceiveEvent(Event.AimAt aimAt) {}
 
     public class Event {
+        [Serializable]
         public struct Damage {
             public float amount;
         }
