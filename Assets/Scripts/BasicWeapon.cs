@@ -17,7 +17,6 @@ public class BasicWeapon : Weapon {
     // exposed parameters
     public List<Riff.Note> notes = new List<Riff.Note>{new Riff.Note(0)};
     public string defaultSound = "kick-1";
-    public Agent.Event.Damage damage = new Agent.Event.Damage{amount = 10.0f};
     public Color color = new Color(0.2f, 0.4f, 0.8f);
     public Projectile projectilePrefab = null;
     public Projectile.SpawnParameters projectileParameters = new Projectile.SpawnParameters {
