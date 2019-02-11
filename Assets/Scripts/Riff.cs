@@ -28,7 +28,7 @@ public class Riff {
     public bool playing = false;
 
     private NoteIndexWithCycle lastPlayed;
-    public float soundPreloadTime = 0.2f;
+    public float soundPreloadTime = 0.25f;
     private double lastScheduledPlayDSPTime;
 
     private float blockTimer = 0;
@@ -124,6 +124,7 @@ public class Riff {
         
         if (time < position.time) {
             ResetLastHit(delayed);
+            ResetLastPlayed();
         }
         position.time = time;
         
@@ -144,6 +145,7 @@ public class Riff {
         float delaySeconds = Mathf.Max(0, nextTotalTime - currentTotalTime);
         if (delaySeconds <= soundPreloadTime) {
             if (playing) {
+                Debug.Log(delaySeconds);
                 string sound = notes[next.noteIndex].sound;
                 if (sound == null || sound == "") {
                     sound = defaultSound;

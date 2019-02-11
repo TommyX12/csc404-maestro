@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44176966, g: 0.48346025, b: 0.5316856, a: 1}
+  m_IndirectSpecularColor: {r: 0.4417694, g: 0.48345983, b: 0.531685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8758,6 +8758,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669906}
+  - component: {fileID: 534669908}
   - component: {fileID: 534669903}
   - component: {fileID: 534669907}
   m_Layer: 0
@@ -8912,6 +8913,24 @@ MonoBehaviour:
   followTarget: {fileID: 178404991}
   smoothTime: 0.1
   distance: 10
+--- !u!114 &534669908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6af5eaa8d821f4e93093fd37ee3484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &535164988
 GameObject:
   m_ObjectHideFlags: 0
@@ -37375,6 +37394,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808056926108018533, guid: 903ad656a225f4913bfb93d1f635096d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808056926108018533, guid: 903ad656a225f4913bfb93d1f635096d,
+        type: 3}
+      propertyPath: isGlobal
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 903ad656a225f4913bfb93d1f635096d, type: 3}
