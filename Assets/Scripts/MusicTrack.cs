@@ -107,6 +107,15 @@ public class MusicTrack {
         this.beatsPerCycle = beatsPerCycle;
         this.Start(fadeInTime, false);
     }
+
+    public void PlayAfter(float seconds, float fadeInTime) {
+        nextPlayDSPTime = AudioSettings.dspTime + seconds;
+        this.Stopping = false;
+        this.SetFade(true, fadeInTime);
+        this.audioSource.PlayScheduled(nextPlayDSPTime);
+        nextScheduledTime = nextPlayDSPTime;
+        FlipAudioSource();
+    }
     
     public void Start(float fadeInTime, bool loop) {
         this.audioSource.loop = loop;
@@ -144,7 +153,13 @@ public class MusicTrack {
     }
     
     private void SetFade(bool fadeIn, float fadeTime) {
-        this.volumeMulFade = (fadeIn ? 1 : -1) / (fadeTime == 0 ? 0.0001f : fadeTime);
+        if (fadeTime == 0) {
+            this.volumeMul = fadeIn ? 1 : 0;
+            this.volumeMulFade = 0;
+        }
+        else {
+            this.volumeMulFade = (fadeIn ? 1 : -1) / (fadeTime == 0 ? 0.0001f : fadeTime);
+        }
     }
     
     public void ForceStop() {

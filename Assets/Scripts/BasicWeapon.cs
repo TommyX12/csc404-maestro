@@ -16,6 +16,7 @@ public class BasicWeapon : Weapon {
 
     // exposed parameters
     public List<Riff.Note> notes = new List<Riff.Note>{new Riff.Note(0)};
+    public string defaultSound = "kick-1";
     public Agent.Event.Damage damage = new Agent.Event.Damage{amount = 10.0f};
     public Color color = new Color(0.2f, 0.4f, 0.8f);
     public Projectile projectilePrefab = null;
@@ -57,6 +58,16 @@ public class BasicWeapon : Weapon {
         }
     }
 
+    protected void NoteHitEventHandler(Riff.NoteHitEvent e) {
+        if (e.automatic) {
+            OnBeat();
+        }
+    }
+
+    protected virtual void OnBeat() {
+        // MusicManager.Current.PlayOnce("kick-1");
+    }
+
     protected virtual void OnFire() {
         ProjectileManager.current.SpawnProjectile 
             (projectilePrefab,
@@ -77,6 +88,9 @@ public class BasicWeapon : Weapon {
     protected void Awake() {
         riff = new Riff(beatsPerCycle, notes, MusicManager.Current);
         riff.delayedNoteHitEvent += DelayedNoteHitEventHandler;
+        riff.noteHitEvent += NoteHitEventHandler;
+        riff.defaultSound = defaultSound;
+        riff.playing = true;
 
         if (renderer) {
             renderer.material.color = color;

@@ -9411,10 +9411,13 @@ MonoBehaviour:
   notes:
   - index: 0
     unitPerBeat: 1
+    sound: 
   - index: 1
     unitPerBeat: 1
+    sound: 
   - index: 2
     unitPerBeat: 1
+    sound: 
 --- !u!1 &601957025
 GameObject:
   m_ObjectHideFlags: 0

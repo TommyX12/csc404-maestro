@@ -21,7 +21,7 @@ public class CombatGameManager : MonoBehaviour {
     
     protected void Start() {
         musicManager.StartRiff(track, trackBPM);
-        musicManager.PlayPattern("csc404-test-weapon-1", 4);
+        // musicManager.PlayPattern("csc404-test-weapon-1", 4);
     }
 
     protected void FixedUpdate() {

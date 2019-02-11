@@ -215,6 +215,15 @@ public class MusicManager : MonoBehaviour {
         return track;
     }
 
+    public MusicTrack PlayOnce(string name, float delaySeconds = 0, float fadeInTime = -1) {
+        MusicTrack track = this.GetMusicTrack(name, true);
+        if (fadeInTime < 0) {
+            fadeInTime = this.DefaultFadeInTime;
+        }
+        track.PlayAfter(delaySeconds, fadeInTime);
+        return track;
+    }
+
     /// <summary>
     ///   Play audioSource at the next aligned unit. The length of each unit is a beat divided by unitPerBeat.
     /// </summary>
