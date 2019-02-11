@@ -4,17 +4,20 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class AgentMovement : MonoBehaviour {
+public abstract class AgentMovement : MonoBehaviour {
 
     public class Event {
         public struct DirectionalMove {
             public float up;
             public float right;
         }
+        
+        public struct LookAt {
+            public Vector3 position;
+        }
     }
 
-    public virtual void ReceiveEvent(Event.DirectionalMove directionalMove) {
-        
-    }
+    public abstract void ReceiveEvent(Event.DirectionalMove directionalMove);
+    public abstract void ReceiveEvent(Event.LookAt lookAt);
 
 }

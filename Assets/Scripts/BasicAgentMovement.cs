@@ -42,6 +42,10 @@ public class BasicAgentMovement : AgentMovement {
         }
     }
 
+    public override void ReceiveEvent(Event.LookAt lookAt) {
+        targetRotation = Quaternion.LookRotation(lookAt.position - transform.position);
+    }
+
     protected void Awake() {
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.useGravity = false;
