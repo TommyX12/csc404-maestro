@@ -183,6 +183,7 @@ On a side note, it was Whopper Wednesday thus the members who attended got Burge
 ##### New pictures, assets & more since last time
 
 We had some new art & models since last time.
+
 Floaty ball activator - 1
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542849995343396864/20190206_182918.jpg)
 Button activator - 2
@@ -193,6 +194,8 @@ Sequence activator
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542850499234234368/20190206_182941.jpg)
 Protagonist Linework
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542882165562540043/Protagonist_Linework.png)
+Ship exterior
+![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542994126967275520/shipexteriorx.jpg)
 Roughs of enemies
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542992897763442689/enemyroughs.jpg)
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/543982712101535755/image0.jpg)
