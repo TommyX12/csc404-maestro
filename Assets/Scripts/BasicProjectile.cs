@@ -21,9 +21,14 @@ public class BasicProjectile : Projectile {
 
     protected void OnTriggerEnter(Collider other) {
         Agent agent = other.gameObject.GetComponent<Agent>();
-        if (agent && agent.type != bypassAgentType) {
-            // Debug.Log("talk shit, get hit");
-            agent.ReceiveEvent(damage);
+        if (agent) {
+            if (agent.type != bypassAgentType) {
+                // Debug.Log("talk shit, get hit");
+                agent.ReceiveEvent(damage);
+                GameObject.Destroy(this.gameObject);
+            }
+        }
+        else {
             GameObject.Destroy(this.gameObject);
         }
     }
