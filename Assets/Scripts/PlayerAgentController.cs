@@ -13,7 +13,7 @@ public class PlayerAgentController : AgentController {
     
     // self reference
     private AgentMovement agentMovement;
-    private Agent agent;
+    private BasicAgent agent;
 
     public PlayerAgentController() {
 
@@ -21,7 +21,7 @@ public class PlayerAgentController : AgentController {
 
     protected void Awake() {
         agentMovement = GetComponent<AgentMovement>();
-        agent = GetComponent<Agent>();
+        agent = GetComponent<BasicAgent>();
     }
 
     protected void Start() {
@@ -40,6 +40,10 @@ public class PlayerAgentController : AgentController {
                 return agent != target && IsValidTarget(agent);
             }
         );
+    }
+
+    public Weapon GetCurrentWeapon() {
+        return agent.GetCurrentWeapon();
     }
 
     protected void UpdateTarget() {
