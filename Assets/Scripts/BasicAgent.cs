@@ -11,6 +11,7 @@ public class BasicAgent : Agent {
     public float hitPoint;
 
     public List<Weapon> weapons;
+    public int currentWeaponIndex = 0;
     
     // self reference
     
@@ -20,6 +21,22 @@ public class BasicAgent : Agent {
 
     protected void Awake() {
         hitPoint = initialHitPoint;
+        if (HasWeapon()) {
+            ModWeaponIndex(ref currentWeaponIndex);
+        }
+    }
+
+    public Weapon GetCurrentWeapon() {
+        if (!HasWeapon()) return null;
+        return weapons[currentWeaponIndex];
+    }
+
+    protected bool HasWeapon() {
+        return weapons.Count > 0;
+    }
+
+    protected void ModWeaponIndex(ref int index) {
+        index = ((index % weapons.Count) + weapons.Count) % weapons.Count;
     }
 
     public override void ReceiveEvent(Event.Damage damage) {
@@ -30,9 +47,16 @@ public class BasicAgent : Agent {
     }
 
     public override void ReceiveEvent(Event.FireWeapon fireWeapon) {
-        foreach (var weapon in weapons) {
-            weapon.Fire();
-        }
+        if (!HasWeapon()) return;
+        int index = currentWeaponIndex + fireWeapon.indexDelta;
+        ModWeaponIndex(ref index);
+        weapons[index].Fire();
+    }
+
+    public override void ReceiveEvent(Event.SelectNextWeapon selectNextWeapon) {
+        if (!HasWeapon()) return;
+        currentWeaponIndex += selectNextWeapon.indexDelta;
+        ModWeaponIndex(ref currentWeaponIndex);
     }
 
     public override void ReceiveEvent(Event.AimAt aimAt) {
@@ -50,6 +74,9 @@ public class BasicAgent : Agent {
     }
 
     public void AddWeapon(Weapon weapon) {
+        if (!HasWeapon()) {
+            currentWeaponIndex = 0;
+        }
         weapons.Add(weapon);
         weapon.SetHost(this);
     }

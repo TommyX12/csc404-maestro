@@ -37588,6 +37588,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[0].unitPerBeat
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[1].unitPerBeat
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[2].unitPerBeat
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[3].index
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[3].unitPerBeat
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[3].sound
+      value: clap-1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043c4ba7c070849f1bf713e48e371cda, type: 3}
 --- !u!1001 &9219373923240604511
