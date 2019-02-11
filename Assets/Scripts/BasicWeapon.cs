@@ -18,6 +18,7 @@ public class BasicWeapon : Weapon {
     public List<Riff.Note> notes = new List<Riff.Note>{new Riff.Note(0)};
     public string defaultSound = "kick-1";
     public Color color = new Color(0.2f, 0.4f, 0.8f);
+    public bool noisyFollow = false;
     public Projectile projectilePrefab = null;
     public Projectile.SpawnParameters projectileParameters = new Projectile.SpawnParameters {
         damage = new Agent.Event.Damage {amount = 10.0f},
@@ -37,7 +38,7 @@ public class BasicWeapon : Weapon {
         host = agent;
         
         if (host) {
-            if (!GetComponent<NoisyFollow>()) {
+            if (!GetComponent<NoisyFollow>() && noisyFollow) {
                 NoisyFollow follow = gameObject.AddComponent<NoisyFollow>();
                 follow.target = host.transform;
             }

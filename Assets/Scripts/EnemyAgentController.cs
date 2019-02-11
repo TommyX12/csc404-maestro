@@ -69,6 +69,9 @@ public class EnemyAgentController : AgentController {
         Vector3 TargetDelta = TargetPos - transform.position;
         if (ShouldChasePlayer()) {
             agentMovement.ReceiveEvent(new AgentMovement.Event.DirectionalMove { right = TargetDelta.x, up = TargetDelta.z});
+            AgentMovement.Event.LookAt aim;
+            aim.position = player.transform.position;
+            agentMovement.ReceiveEvent(aim);
         }
     }
 }

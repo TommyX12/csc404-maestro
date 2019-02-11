@@ -24,9 +24,8 @@ public class BasicProjectile : Projectile {
         if (agent && agent.type != bypassAgentType) {
             // Debug.Log("talk shit, get hit");
             agent.ReceiveEvent(damage);
+            GameObject.Destroy(this.gameObject);
         }
-
-        GameObject.Destroy(this.gameObject);
     }
 
     public override void SetSpawnParameters(SpawnParameters param) {

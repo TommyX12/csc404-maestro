@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5697607633034519570}
   - component: {fileID: 1195658305762846865}
   - component: {fileID: 923865020638863576}
+  - component: {fileID: 5171614739539059537}
+  - component: {fileID: 5303795586194015039}
   m_Layer: 0
   m_Name: CombatEnemy
   m_TagString: Player
@@ -180,6 +182,7 @@ MonoBehaviour:
   initialHitPoint: 100
   hitPoint: 0
   weapons: []
+  currentWeaponIndex: 0
 --- !u!114 &1195658305762846865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be8550f79f44612982254feae38df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CutoffRange: 6
+  VisionDistance: 4
+  KeepDistance: 2.5
 --- !u!135 &923865020638863576
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -205,6 +211,53 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5171614739539059537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379201374164523625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393230a387ea1ad4dabb37b0a4be5858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5303795586194015039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379201374164523625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553df7efb861bfc45ae281ae4365f966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 0}
+  notes:
+  - index: 0
+    unitPerBeat: 1
+    sound: clap-1
+  defaultSound: kick-1
+  color: {r: 0, g: 0, b: 0, a: 1}
+  noisyFollow: 0
+  projectilePrefab: {fileID: 6679540010574868972, guid: 17663efa82766d542ad83d82b119053c,
+    type: 3}
+  projectileParameters:
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+    damage:
+      amount: 0
+    color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
+    speed: 1
+    scale: 1
+    distance: 100
+    bypassAgentType: 2
+  Charge: {fileID: 4420728860838929381}
+  Death: {fileID: 8491808949533256185}
+  Muzzle: {fileID: 4420728862020728513}
 --- !u!1 &1379201375393942548
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,11 +356,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1931141227, guid: 0b80d438dd61e62478a86f47e6beac93, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224565095059450487, guid: 0b80d438dd61e62478a86f47e6beac93,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b80d438dd61e62478a86f47e6beac93, type: 3}
 --- !u!4 &1914920332731136108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
+    type: 3}
+  m_PrefabInstance: {fileID: 4420728862162666382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8491808949533256185 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5224565095059450487, guid: 0b80d438dd61e62478a86f47e6beac93,
+    type: 3}
+  m_PrefabInstance: {fileID: 4420728862162666382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4420728860838929381 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1931141227, guid: 0b80d438dd61e62478a86f47e6beac93,
+    type: 3}
+  m_PrefabInstance: {fileID: 4420728862162666382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4420728862020728513 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 948581711, guid: 0b80d438dd61e62478a86f47e6beac93,
     type: 3}
   m_PrefabInstance: {fileID: 4420728862162666382}
   m_PrefabAsset: {fileID: 0}
