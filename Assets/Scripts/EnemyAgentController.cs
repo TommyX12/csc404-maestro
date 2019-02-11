@@ -12,11 +12,16 @@ public class EnemyAgentController : AgentController {
         
     }
 
-    protected void Awake() {
+    protected new void Awake() {
         agentMovement = GetComponent<AgentMovement>();
     }
 
-    protected void Start() {
+    protected new void Start() {
+        
+    }
+
+    protected new void Update()
+    {
         
     }
 
