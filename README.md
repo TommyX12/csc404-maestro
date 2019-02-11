@@ -183,7 +183,6 @@ On a side note, it was Whopper Wednesday thus the members who attended got Burge
 ##### New pictures, assets & more since last time
 
 We had some new art & models since last time.
-
 Floaty ball activator - 1
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542849995343396864/20190206_182918.jpg)
 Button activator - 2
