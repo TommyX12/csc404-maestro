@@ -14,7 +14,7 @@ static public class Util
     public const float PI2 = Mathf.PI * 2.0f;
     
     private static Stack<Random.State> _randomSeedStack = new Stack<Random.State>();
-    
+
     static public void PushRandomSeed(int seed)
     {
         _randomSeedStack.Push(Random.state);

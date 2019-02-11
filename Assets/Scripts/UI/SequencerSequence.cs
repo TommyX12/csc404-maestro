@@ -16,6 +16,11 @@ public class SequencerSequence : MonoBehaviour{
     private Color hitColor = new Color(0.0f, 1.0f, 0.0f, 1.0f);
     private Color missColor = new Color(1.0f, 0.0f, 0.0f, 1.0f);
 
+    protected float targetScale = 1.0f;
+    protected float currentScale = 1.0f;
+    protected float scaleSmoothFriction = 0.7f;
+    protected float staticScale = 1.0f;
+
     private SequenceNote[] noteObjects;
     private SequenceMarker[] markerObjects;
 
@@ -28,6 +33,9 @@ public class SequencerSequence : MonoBehaviour{
     private float hitEffectTimer = 0;
     private float hitEffectDuration= 0.5f;
     private bool hitSuccessful = false;
+
+    // self reference
+    private RectTransform rectTransform;
     
     public SequencerSequence() {
         
@@ -85,8 +93,24 @@ public class SequencerSequence : MonoBehaviour{
         idleColor.b = color.b;
     }
 
+    public void SetVisible(bool visible) {
+        if (visible) {
+            targetScale = 1.0f;
+        }
+        else {
+            targetScale = 0.0f;
+        }
+    }
+
+    protected void UpdateTransform() {
+        currentScale = Mathf.Lerp(currentScale, targetScale, 1 - scaleSmoothFriction);
+        rectTransform.localScale = new Vector3(currentScale, currentScale, currentScale) * staticScale;
+    }
+
     protected void Awake() {
         musicManager = MusicManager.Current;
+        rectTransform = GetComponent<RectTransform>();
+        staticScale = rectTransform.localScale.x;
     }
 
     protected void Start() {
@@ -103,6 +127,10 @@ public class SequencerSequence : MonoBehaviour{
         foreach (var obj in markerObjects) {
             Destroy(obj);
         }
+    }
+
+    protected void FixedUpdate() {
+        UpdateTransform();
     }
 
     protected void Update() {

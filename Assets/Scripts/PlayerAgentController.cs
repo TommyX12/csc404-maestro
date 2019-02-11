@@ -6,18 +6,65 @@ using UnityEngine;
 
 public class PlayerAgentController : AgentController {
 
-    private AgentMovement agentMovement;
+    protected Agent target;
+
+    // exposed parameters
+    public float targetRadius = 5.0f;
     
+    // self reference
+    private AgentMovement agentMovement;
+    private Agent agent;
+
     public PlayerAgentController() {
 
     }
 
     protected void Awake() {
         agentMovement = GetComponent<AgentMovement>();
+        agent = GetComponent<Agent>();
     }
 
     protected void Start() {
         
+    }
+
+    private bool IsValidTarget(Agent agent) {
+        return agent != null && AgentManager.AgentInRange(agent, transform.position, targetRadius);
+    }
+
+    protected void AcquireNextTarget() {
+        target = AgentManager.current.FindClosestAgentTo(
+            transform.position,
+            Agent.Type.ENEMY,
+            delegate(Agent agent) {
+                return agent != target && IsValidTarget(agent);
+            }
+        );
+    }
+
+    protected void UpdateTarget() {
+        if (!IsValidTarget(target)) {
+            AcquireNextTarget();
+        }
+        if (target) {
+            agent.ReceiveEvent(new Agent.Event.AimAt {target = target.transform});
+        }
+    }
+
+    public void AddWeapon(Weapon weapon) {
+        agent.ReceiveEvent(new Agent.Event.AddWeapon {weapon = weapon});
+    }
+
+    public Agent GetTarget() {
+        return target;
+    }
+
+    protected void Update() {
+        UpdateTarget();
+
+        if (Input.GetButtonDown("RB")) {
+            agent.ReceiveEvent(new Agent.Event.FireWeapon());
+        }
     }
 
     protected void FixedUpdate() {

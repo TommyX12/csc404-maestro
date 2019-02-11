@@ -4,7 +4,7 @@ using UnityEngine;
 // testing
 // currently this shotgun only raycasts
 // Think of it as firing a "slug"
-public class Shotgun : Weapon
+public class Shotgun : MonoBehaviour
 {
     public AudioSource FireSound;
     public AudioSource FireSoundReload1;
@@ -21,6 +21,15 @@ public class Shotgun : Weapon
 
     private GameObject target = null;
 
+    public List<Riff.Note> notes;
+    public int BeatsPerBar;
+    public bool PreviewRhythm = false;
+    protected Riff riff;
+    
+    protected void Init() {
+        riff = new Riff(BeatsPerBar, notes, MusicManager.Current);
+    }
+
     private void Start()
     {
         Init();
@@ -35,7 +44,7 @@ public class Shotgun : Weapon
         JammedSound.Stop();
     }
 
-    public override void Fire()
+    public void Fire()
     {
         Riff.NoteHitEvent press = riff.ButtonPress();
         // if (Jammed) {

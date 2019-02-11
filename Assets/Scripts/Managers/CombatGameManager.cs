@@ -12,9 +12,7 @@ public class CombatGameManager : MonoBehaviour {
     public MusicManager musicManager;
     public string track = "csc404-test-base";
     public int trackBPM = 80;
-    public Agent player;
-
-    public List<Agent> enemies = new List<Agent>();
+    public PlayerAgentController player;
 
     protected void Awake() {
         CombatGameManager.current = this;

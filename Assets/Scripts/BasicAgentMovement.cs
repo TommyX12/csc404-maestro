@@ -22,7 +22,7 @@ public class BasicAgentMovement : AgentMovement {
     // exposed parameters
     public float maxSpeedPerSecond = 2.0f;
     public float friction = 0.125f;
-    public float rotationFriction = 0.075f;
+    public float rotationFriction = 0.925f;
     
     public BasicAgentMovement() {
         
@@ -61,7 +61,7 @@ public class BasicAgentMovement : AgentMovement {
         velocity *= 1 - friction;
         
         // rotation and finalize
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationFriction);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 1 - rotationFriction);
         rigidbody.position += velocity;
     }
 

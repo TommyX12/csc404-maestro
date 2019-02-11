@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour
 {
     public GameObject followTarget;
-    public float smoothTime = 0.5f;
+    public float smoothTime = 0.1f;
     public float distance;
     private Vector3 offset;
 

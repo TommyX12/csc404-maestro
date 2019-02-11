@@ -19,6 +19,10 @@ public class SequencerUI : MonoBehaviour {
     private Riff riff2;
 
     private Canvas canvas;
+
+    protected Vector3 targetPosition = new Vector3(0.5f, 0.5f, 10.0f);
+    protected Vector3 currentPosition = new Vector3(0.5f, 0.5f, 10.0f);
+    protected float positionSmoothFriction = 0.7f;
     
     public SequencerUI() {
         
@@ -59,13 +63,27 @@ public class SequencerUI : MonoBehaviour {
         sequences[1].SetColor(new Color(0.8f, 0.4f, 0.8f));
     }
 
-    private void TrackPlayerPosition() {
-        rectTransform.anchorMin = rectTransform.anchorMax = Util.WorldToScreenAnchor(canvas, CombatGameManager.current.player.transform.position);
+    private void UpdateTransform() {
+        Agent target = CombatGameManager.current.player.GetTarget();
+        if (target) {
+            targetPosition = target.transform.position;
+            sequences[1].SetVisible(true);
+        }
+        else {
+            targetPosition = CombatGameManager.current.player.transform.position;
+            sequences[1].SetVisible(false);
+        }
+        targetPosition = Util.WorldToScreenAnchor(canvas, targetPosition);
+        Vector3 v = new Vector3();
+        currentPosition = Vector3.Lerp(currentPosition, targetPosition, 1 - positionSmoothFriction);
+        rectTransform.anchorMin = rectTransform.anchorMax = currentPosition;
+    }
+
+    protected void FixedUpdate() {
+        UpdateTransform();
     }
 
     protected void Update() {
-        TrackPlayerPosition();
-        
         Vector3 eulerAngles = pointerBar.eulerAngles;
         eulerAngles.z = -360.0f * ((musicManager.GetBeatIndex(4)) / 4);
         pointerBar.eulerAngles = eulerAngles;
