@@ -23,6 +23,14 @@ public class Riff {
     public float hitOffset = 0.0f; // in seconds. already taken care of in MusicManager
     public float hitFailedBlockBeats = 0.5f; // in beats
 
+    public string defaultSound = null;
+
+    public bool playing = false;
+
+    private NoteIndexWithCycle lastPlayed;
+    public float soundPreloadTime = 0.2f;
+    private double lastScheduledPlayDSPTime;
+
     private float blockTimer = 0;
 
     private MusicManager musicManager;
@@ -36,6 +44,7 @@ public class Riff {
 
         this.currentPosition = new RiffPosition();
         this.currentPositionDelayed = new RiffPosition();
+        this.lastPlayed = new NoteIndexWithCycle();
 
         this.musicManager = musicManager;
 
@@ -55,11 +64,28 @@ public class Riff {
         currentPositionDelayed.Reset();
         ResetLastHit(false);
         ResetLastHit(true);
+        ResetLastPlayed();
     }
 
     private void ResetLastHit(bool delayed = true) {
         currentPosition.ResetLastHit(this);
         currentPositionDelayed.ResetLastHit(this);
+    }
+
+    private void ResetLastPlayed() {
+        lastPlayed.cycle = currentPosition.cycle;
+        lastPlayed.noteIndex = -1;
+        for (int i = 0; i < notes.Count; ++i) {
+            Note note = notes[i];
+            if (note.beat < currentPosition.beat) {
+                lastPlayed.noteIndex = i;
+                break;
+            }
+        }
+        if (lastPlayed.noteIndex == -1) {
+            lastPlayed.noteIndex = notes.Count - 1;
+            lastPlayed.cycle--;
+        }
     }
 
     private void CheckAutoHit(bool delayed = true) {
@@ -104,17 +130,48 @@ public class Riff {
         CheckAutoHit(delayed);
     }
 
-    // call this in FixedUpdate
-    public void Update() {
-        UpdatePosition(false);
-        UpdatePosition(true);
+    protected void PlaySound() {
+        // if (!playing) return;
+        if (AudioSettings.dspTime < lastScheduledPlayDSPTime) {
+            return;
+        }
+        RiffPosition position = GetCurrentPosition(false);
+        NoteIndexWithCycle next = lastPlayed.next(this);
+        float currentTotalBeat = GetCurrentTotalBeat(false);
+        float nextTotalBeat = GetNoteTotalBeat(next);
+        float currentTotalTime = musicManager.BeatToTime(currentTotalBeat);
+        float nextTotalTime = musicManager.BeatToTime(nextTotalBeat);
+        float delaySeconds = Mathf.Max(0, nextTotalTime - currentTotalTime);
+        if (delaySeconds <= soundPreloadTime) {
+            if (playing) {
+                string sound = notes[next.noteIndex].sound;
+                if (sound == null || sound == "") {
+                    sound = defaultSound;
+                }
+                if (sound != null && sound != "") {
+                    musicManager.PlayOnce(sound, delaySeconds);
+                    lastScheduledPlayDSPTime = AudioSettings.dspTime + delaySeconds;
+                }
+            }
+            lastPlayed = next;
+        }
+    }
 
+    protected void UpdateBlockTimer() {
         if (blockTimer > 0) {
             blockTimer -= Time.deltaTime;
             if (blockTimer < 0) {
                 blockTimer = 0;
             }
         }
+    }
+
+    // call this in FixedUpdate
+    public void Update() {
+        UpdatePosition(false);
+        UpdatePosition(true);
+        PlaySound();
+        UpdateBlockTimer();
     }
 
     private RiffPosition GetCurrentPosition(bool delayed = true) {
@@ -255,6 +312,8 @@ public class Riff {
         [SerializeField]
         public float index; // position, in beats relative to start of rift
         public float unitPerBeat; // position, in beats relative to start of rift
+        public string sound = null;
+        
         public float beat {
             get {
                 return index / unitPerBeat;
