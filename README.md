@@ -184,11 +184,11 @@ On a side note, it was Whopper Wednesday thus the members who attended got Burge
 
 We had some new art & models since last time.
 Floaty ball activator - 1
-https://cdn.discordapp.com/attachments/538651386951368714/542849995343396864/20190206_182918.jpg
+![ScreenShot]https://cdn.discordapp.com/attachments/538651386951368714/542849995343396864/20190206_182918.jpg
 Button activator - 2
-https://cdn.discordapp.com/attachments/538651386951368714/542850156266127360/20190206_182926.jpg
+![ScreenShot]https://cdn.discordapp.com/attachments/538651386951368714/542850156266127360/20190206_182926.jpg
 Radio activator - 1
-https://cdn.discordapp.com/attachments/538651386951368714/542850405781078020/20190206_182931.jpg
+![ScreenShot]https://cdn.discordapp.com/attachments/538651386951368714/542850405781078020/20190206_182931.jpg
 Sequence activator
-https://cdn.discordapp.com/attachments/538651386951368714/542850499234234368/20190206_182941.jpg
+![ScreenShot]https://cdn.discordapp.com/attachments/538651386951368714/542850499234234368/20190206_182941.jpg
 
