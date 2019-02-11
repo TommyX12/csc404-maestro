@@ -109,14 +109,20 @@ public class SequencerUI : MonoBehaviour {
         // notes update
         Weapon currentWeapon = player.GetCurrentWeapon();
         if (currentWeapon != lastWeapon) {
-            lastWeapon = currentWeapon;
+            if (lastWeapon != null) {
+                lastWeapon.GetRiff().playing = false;
+            }
+            
             if (currentWeapon) {
                 outerSequence.SetRiff(currentWeapon.GetRiff());
                 outerSequence.SetVisible(true);
+                currentWeapon.GetRiff().playing = true;
             }
             else {
                 outerSequence.SetVisible(false);
             }
+            
+            lastWeapon = currentWeapon;
         }
     }
 

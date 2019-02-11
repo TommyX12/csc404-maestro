@@ -37591,7 +37591,7 @@ PrefabInstance:
     - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
@@ -37611,7 +37611,7 @@ PrefabInstance:
     - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[3].index
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
@@ -37621,6 +37621,36 @@ PrefabInstance:
     - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[3].sound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[4].index
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[4].unitPerBeat
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[4].sound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[5].index
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[5].unitPerBeat
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937628077339643234, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[5].sound
       value: clap-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

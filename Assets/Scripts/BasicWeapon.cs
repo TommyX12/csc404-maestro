@@ -89,7 +89,7 @@ public class BasicWeapon : Weapon {
         riff.delayedNoteHitEvent += DelayedNoteHitEventHandler;
         riff.noteHitEvent += NoteHitEventHandler;
         riff.defaultSound = defaultSound;
-        riff.playing = true;
+        riff.playing = false;
 
         if (renderer) {
             renderer.material.color = color;
