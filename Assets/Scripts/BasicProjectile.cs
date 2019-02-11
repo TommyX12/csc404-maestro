@@ -28,9 +28,6 @@ public class BasicProjectile : Projectile {
                 GameObject.Destroy(this.gameObject);
             }
         }
-        else {
-            GameObject.Destroy(this.gameObject);
-        }
     }
 
     public override void SetSpawnParameters(SpawnParameters param) {

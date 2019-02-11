@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class WooferEnemy : BasicAgent
 {
-    private void Awake()
-    {
+    public ParticleSystem deathSystem;
 
+    private new void Awake()
+    {
+        onDeath += DeathAnimation;
         base.Awake();
     }
 
-    void DeathAnimation() {
-
+    void DeathAnimation(Agent agent) {
+        deathSystem.transform.SetParent(null);
+        deathSystem.Emit(50);
+        Destroy(deathSystem.gameObject, 2);
     }
 
 }
