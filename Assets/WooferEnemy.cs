@@ -6,16 +6,15 @@ public class WooferEnemy : BasicAgent
 {
     public ParticleSystem deathSystem;
 
-    private new void Awake()
+    public WooferEnemy()
     {
-        onDeath += DeathAnimation;
-        base.Awake();
     }
 
-    void DeathAnimation(Agent agent) {
+    protected override void OnDeath()
+    {
         deathSystem.transform.SetParent(null);
-        deathSystem.Emit(50);
-        Destroy(deathSystem.gameObject, 2);
+        deathSystem.Play();
+        deathSystem.Emit(100);
+        base.OnDeath();
     }
-
 }

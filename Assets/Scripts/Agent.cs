@@ -19,7 +19,7 @@ public class Agent : MonoBehaviour {
         
     }
 
-    protected void OnDeath() {
+    protected virtual void OnDeath() {
         onDeath(this);
     }
 

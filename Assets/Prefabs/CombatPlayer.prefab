@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1379201374164523639}
   - component: {fileID: 1379201374164523637}
   - component: {fileID: 7957643589598323029}
-  - component: {fileID: 8719225953954304586}
+  - component: {fileID: 5635118141847681944}
   - component: {fileID: 178404993}
   - component: {fileID: 4467457376947489151}
   - component: {fileID: 1626415801385244380}
@@ -75,7 +75,8 @@ AudioSource:
   m_GameObject: {fileID: 1379201374164523625}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 55f1ba7b7af5d4644a2c0125adc72579,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: ca9284295ba480c4697bbd261f9aff25, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -162,7 +163,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8719225953954304586
+--- !u!114 &5635118141847681944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1379201374164523625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08ae5fa02d43648898647a4284635b4e, type: 3}
+  m_Script: {fileID: 11500000, guid: ac5747445cf543847969d3e716045e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
@@ -179,6 +180,7 @@ MonoBehaviour:
   hitPoint: 0
   weapons: []
   currentWeaponIndex: 0
+  OnDeathClip: {fileID: 0}
 --- !u!114 &178404993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,9 +480,9 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 0
     m_StartRange: 0
-    m_EndRange: 9.505315
+    m_EndRange: 19.114824
     m_Length: 1
-    m_GravityFocus: 0
+    m_GravityFocus: 0.03
     m_RotationRandomness: {x: 0, y: 0}
     m_DirectionCurveX:
       serializedVersion: 2
@@ -644,7 +646,7 @@ ParticleSystemForceField:
     m_GravityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 10
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -803,7 +805,7 @@ ParticleSystemForceField:
     m_DragCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1157,4 +1159,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  Proxy: {fileID: 8719225953954304586}
+  Proxy: {fileID: 0}

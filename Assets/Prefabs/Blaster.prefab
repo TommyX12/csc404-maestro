@@ -140,20 +140,28 @@ MonoBehaviour:
   notes:
   - index: 0
     unitPerBeat: 2
+    sound: 
   - index: 4
     unitPerBeat: 2
+    sound: 
   - index: 5
     unitPerBeat: 2
+    sound: 
+  defaultSound: kick-1
   color: {r: 1, g: 1, b: 1, a: 1}
+  noisyFollow: 1
   projectilePrefab: {fileID: 5213244232771709077, guid: bfad838f006e7441793d19bc11066f19,
     type: 3}
   projectileParameters:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
+    damage:
+      amount: 10
     color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
     speed: 40
     scale: 1
     distance: 50
+    bypassAgentType: 0
 --- !u!114 &8081701950022645170
 MonoBehaviour:
   m_ObjectHideFlags: 0

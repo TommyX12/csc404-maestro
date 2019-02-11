@@ -6,8 +6,9 @@ public class PlayerAgent : BasicAgent
 {
     public AudioSource OnDeathClip;
 
-    public PlayerAgent() : base() {
-        onDeath += PlayerOnDeath;
+    protected override void OnDeath()
+    {
+        PlayerOnDeath(this);
     }
 
     private void PlayerOnDeath(Agent agent)

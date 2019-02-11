@@ -49,7 +49,9 @@ public class BasicAgentMovement : AgentMovement {
     protected void Awake() {
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.useGravity = false;
-        rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
+        rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX 
+            | RigidbodyConstraints.FreezeRotationY
+            | RigidbodyConstraints.FreezeRotationZ;
     }
 
     protected void Update() {
