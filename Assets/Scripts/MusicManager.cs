@@ -279,11 +279,17 @@ public class MusicManager : MonoBehaviour {
     }
 
     public float GetTotalTimer(bool delayed = true) {
-        return delayed ? this.totalTimerDelayed : this.totalTimer;
-    }
-
-    public float GetTotalTimerDelayed() {
-        return this.totalTimerDelayed;
+        if (masterMusicName != null) {
+            if (delayed) {
+                return GetTrackPosition(masterMusicName) - audioDelay;
+            }
+            else {
+                return GetTrackPosition(masterMusicName);
+            }
+        }
+        else {
+            return 0;
+        }
     }
 
     public float BeatToTime(float beat, float beatsPerCycle = 0) {
