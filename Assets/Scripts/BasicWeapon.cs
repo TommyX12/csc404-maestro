@@ -59,7 +59,7 @@ public class BasicWeapon : Weapon {
     }
 
     protected void NoteHitEventHandler(Riff.NoteHitEvent e) {
-        if (e.automatic) {
+        if (autoFire == e.automatic) {
             OnBeat();
         }
     }
