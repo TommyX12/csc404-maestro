@@ -15,11 +15,11 @@ TagManager:
   - 
   - PostProcessing
   - Particles
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerOnly
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 
