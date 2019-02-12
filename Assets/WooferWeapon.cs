@@ -6,13 +6,14 @@ public class WooferWeapon : BasicWeapon
 {
     public ParticleSystem MuzzleFlash;
     public ParticleSystem Charge;
-
-    protected override void OnFire()
+    public AudioSource FireSound;
+    protected override void OnBeat()
     {
-        base.OnFire();
         // MuzzleFlash.Play();
         MuzzleFlash.Emit(50);
         // Charge.Play();
         Charge.Emit(50);
+        FireSound.Play();
     }
+
 }

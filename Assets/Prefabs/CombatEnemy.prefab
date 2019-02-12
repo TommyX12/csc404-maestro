@@ -149,6 +149,7 @@ MonoBehaviour:
     bypassAgentType: 2
   MuzzleFlash: {fileID: 4420728862020728513}
   Charge: {fileID: 4420728860838929381}
+  FireSound: {fileID: 9104291806643182930}
 --- !u!114 &9208601067335843955
 MonoBehaviour:
   m_ObjectHideFlags: 0
