@@ -180,7 +180,7 @@ MonoBehaviour:
   hitPoint: 0
   weapons: []
   currentWeaponIndex: 0
-  OnDeathClip: {fileID: 0}
+  OnDeathClip: {fileID: 7957643589598323029}
 --- !u!114 &178404993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeedPerSecond: 3.5
   friction: 0.25
-  rotationFriction: 0.925
+  rotationFriction: 1
 --- !u!114 &4467457376947489151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,5 +1158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3a0d1042c3aa24d8080cedf99359c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  Proxy: {fileID: 0}
+  type: 1
+  Proxy: {fileID: 5635118141847681944}

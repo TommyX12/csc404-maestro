@@ -8,9 +8,11 @@ public class KillPlane : MonoBehaviour
 
     private void Update()
     {
-        if (Player.instance) {
-            if (Player.instance.transform.position.y < this.transform.position.y) {
-                Player.instance.OnHit(9999, 1);
+        if (CombatGameManager.current.player) {
+            PlayerAgentController player = CombatGameManager.current.player;
+            if (player.transform.position.y < this.transform.position.y) {
+                player.gameObject.GetComponent<Agent>().ReceiveEvent(
+                    new Agent.Event.Damage { amount = 100 });
             }
         }
     }

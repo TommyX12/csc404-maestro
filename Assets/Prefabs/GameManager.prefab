@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6933938287685056984}
-  - component: {fileID: 6933938287685056983}
   - component: {fileID: 6933938287685056985}
   - component: {fileID: 6933938287685056986}
   - component: {fileID: 6933938287685056987}
@@ -38,21 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6933938287685056983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6933938287685056982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 476800860eca94ee2b639eeaea0f18ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicManager: {fileID: 6933938287685056985}
-  Track: csc404-test-1
-  TrackBPM: 80
 --- !u!114 &6933938287685056985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c69dc1c20dc4e608284b529da09e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staticallyLinkedAgents:
-  - {fileID: 0}
+  staticallyLinkedAgents: []
 --- !u!114 &6054700694467437026
 MonoBehaviour:
   m_ObjectHideFlags: 0

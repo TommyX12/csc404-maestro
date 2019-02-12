@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-
+using UnityEngine.Events;
 public class BasicProjectile : Projectile {
+
+    public UnityEvent OnHit;
 
     protected Agent.Event.Damage damage;
     protected float speed;
@@ -25,6 +27,7 @@ public class BasicProjectile : Projectile {
             if (agent.type != bypassAgentType) {
                 // Debug.Log("talk shit, get hit");
                 agent.ReceiveEvent(damage);
+                OnHit.Invoke();
                 GameObject.Destroy(this.gameObject);
             }
         }

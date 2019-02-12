@@ -70,11 +70,11 @@ InputManager:
     axis: 4
     joyNum: 0
   - serializedVersion: 3
-    m_Name: RB
+    m_Name: fire_0
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 5
+    positiveButton: joystick button 0
     altNegativeButton: 
     altPositiveButton: z
     gravity: 1000

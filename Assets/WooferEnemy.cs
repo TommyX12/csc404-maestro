@@ -5,7 +5,7 @@ using UnityEngine;
 public class WooferEnemy : BasicAgent
 {
     public ParticleSystem deathSystem;
-
+    public AudioSource deathSound;
     public WooferEnemy()
     {
     }
@@ -15,6 +15,7 @@ public class WooferEnemy : BasicAgent
         deathSystem.transform.SetParent(null);
         deathSystem.Play();
         deathSystem.Emit(100);
+        deathSound.Play();
         base.OnDeath();
     }
 }

@@ -59,7 +59,7 @@ public class Player : Damageable
             maxRange = Mathf.Min(rayHit.distance, maxRange);
         }
 
-        if (ControllerProxy.GetButton("RB"))
+        if (ControllerProxy.GetButton("fire_0"))
         {
             maxRange = maxRange / 2;
         }
@@ -86,7 +86,7 @@ public class Player : Damageable
             maxRange = Mathf.Min(rayHit.distance, maxRange);
         }
 
-        if (ControllerProxy.GetButton("RB"))
+        if (ControllerProxy.GetButton("fire_0"))
         {
             maxRange = maxRange / 2;
         }

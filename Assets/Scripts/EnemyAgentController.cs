@@ -44,8 +44,8 @@ public class EnemyAgentController : AgentController {
         // raycast to player
         RaycastHit hit;
 
-        Physics.Raycast(transform.position, delta, out hit, 10);
-        if (hit.collider.gameObject.CompareTag("Player")) {
+        Physics.Raycast(transform.position, delta, out hit, VisionDistance);
+        if (hit.collider && hit.collider.gameObject.CompareTag("Player")) {
             ChaseTimer = 1;
             return true;
         }
