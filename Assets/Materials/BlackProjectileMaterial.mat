@@ -63,11 +63,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-<<<<<<< HEAD
-    - _pulse: 0.916785
-=======
     - _pulse: 0.9834718
->>>>>>> 872ce0f3a9fe9d15d454fd8e54ad9a5e7e0507a0
     m_Colors:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
