@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1626415801385244380}
   - component: {fileID: 8225884587164424324}
   - component: {fileID: 5818015732250305110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CombatPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3465988277073958010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Physical
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 4560491755031831014}
   - component: {fileID: 5990287399758034806}
   - component: {fileID: 1895580506819308755}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392659389550170558}
   - component: {fileID: 169190128392384619}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: PsysForcefield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,7 +977,7 @@ GameObject:
   - component: {fileID: 1860967466984188486}
   - component: {fileID: 5177386473784011552}
   - component: {fileID: 2341810649070711475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 2498553620239106028}
   - component: {fileID: 3607669955454877097}
   - component: {fileID: 1883754061679348916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Player
   m_Icon: {fileID: 0}

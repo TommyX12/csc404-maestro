@@ -11,8 +11,6 @@ public class EnemyGroup : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(obj.Count);
-
         List<GameObject> obj2 = new List<GameObject>();
         foreach (GameObject o in obj) {
             if (o) {
