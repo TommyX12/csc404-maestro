@@ -8,16 +8,27 @@ public class SnapshotManager : MonoBehaviour
     public static SnapshotManager current;
 
     public List<AudioMixerSnapshot> snapshots;
+    public List<AudioMixerSnapshot> defaultSnapshots;
     public AudioMixer master;
     private void Update()
     {
-        float[] weights = new float[snapshots.Count];
-        for (int i = 0; i < snapshots.Count; i++) {
-            weights[i] = 1;
-        }
+       
         if (snapshots.Count > 0)
         {
+            float[] weights = new float[snapshots.Count];
+            for (int i = 0; i < snapshots.Count; i++)
+            {
+                weights[i] = 1;
+            }
             master.TransitionToSnapshots(snapshots.ToArray(), weights, 1f);
+        }
+        else {
+            float[] weights = new float[defaultSnapshots.Count];
+            for (int i = 0; i < defaultSnapshots.Count; i++)
+            {
+                weights[i] = 1;
+            }
+            master.TransitionToSnapshots(defaultSnapshots.ToArray(), weights, 1f);
         }
     }
 

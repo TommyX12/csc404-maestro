@@ -15,8 +15,10 @@ public class CombatGameManager : MonoBehaviour {
     public PlayerAgentController player;
 
     protected void Awake() {
+        if (CombatGameManager.current) {
+            Destroy(gameObject);
+        }
         CombatGameManager.current = this;
-        DontDestroyOnLoad(this);
     }
     
     protected void Start() {
