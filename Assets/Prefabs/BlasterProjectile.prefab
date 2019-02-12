@@ -181,7 +181,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImpactParticles
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 4660869147371354957, guid: 1e2040929b21eaa4a83bf2d6f27ea011,
         type: 3}
       propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.size
@@ -511,12 +510,6 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSpeed.minMaxState
       value: 3
-=======
-    - target: {fileID: 4660869147371354944, guid: 1e2040929b21eaa4a83bf2d6f27ea011,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
->>>>>>> 872ce0f3a9fe9d15d454fd8e54ad9a5e7e0507a0
       objectReference: {fileID: 0}
     - target: {fileID: 4660869147371354959, guid: 1e2040929b21eaa4a83bf2d6f27ea011,
         type: 3}
