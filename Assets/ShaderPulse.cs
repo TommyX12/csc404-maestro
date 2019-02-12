@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShaderPulse : MonoBehaviour
 {
-    public Material material;
+    public List<Material> materials;
     private int pulseID;
     float pulse = 0;
 
@@ -19,9 +19,13 @@ public class ShaderPulse : MonoBehaviour
 
     public void Update()
     {
-        material.SetFloat(pulseID, pulse);
-        if (pulse > 0) {
-            pulse -= Time.deltaTime;
+        foreach (Material m in materials)
+        {
+            m.SetFloat(pulseID, pulse);
+            if (pulse > 0)
+            {
+                pulse -= Time.deltaTime;
+            }
         }
     }
 

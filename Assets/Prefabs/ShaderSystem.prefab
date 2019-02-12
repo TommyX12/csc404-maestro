@@ -90,4 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b0516d27fbcb842b8d647af5b72fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 98a2f833573a1484ab7e13a80675ddb5, type: 2}
+  materials:
+  - {fileID: 2100000, guid: 98a2f833573a1484ab7e13a80675ddb5, type: 2}
+  - {fileID: 2100000, guid: 6afb3cc3141a204418b22fe581861e66, type: 2}

@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be8550f79f44612982254feae38df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CutoffRange: 6
-  VisionDistance: 5
+  CutoffRange: 10
+  VisionDistance: 10
   KeepDistance: 5
 --- !u!114 &5171614739539059537
 MonoBehaviour:
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  initialHitPoint: 100
-  hitPoint: 100
+  initialHitPoint: 50
+  hitPoint: 50
   weapons: []
   currentWeaponIndex: 0
   deathSystem: {fileID: 8491808949533256185}
