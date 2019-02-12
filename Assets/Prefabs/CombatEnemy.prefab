@@ -356,12 +356,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1379201375393942549}
-<<<<<<< HEAD
   - component: {fileID: 2157487114613592702}
   m_Layer: 0
-=======
-  m_Layer: 11
->>>>>>> 872ce0f3a9fe9d15d454fd8e54ad9a5e7e0507a0
   m_Name: Physical
   m_TagString: Player
   m_Icon: {fileID: 0}
