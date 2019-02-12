@@ -31,8 +31,8 @@ public class SequencerUI : MonoBehaviour {
 
     private Canvas canvas;
 
-    protected Vector3 targetPosition = new Vector3(0.5f, 0.5f, 10.0f);
-    protected Vector3 currentPosition = new Vector3(0.5f, 0.5f, 10.0f);
+    protected Vector3 playerPosition = new Vector3(0.5f, 0.5f, 10.0f);
+    protected Vector3 sequencePosition = new Vector3(0.5f, 1.5f, 10.0f);
     protected float positionSmoothFriction = 0.7f;
 
     protected Weapon lastWeapon = null;
@@ -91,38 +91,40 @@ public class SequencerUI : MonoBehaviour {
 
         var player = CombatGameManager.current.player;
 
-        // transform update
-        Agent target = player.GetTarget();
-        if (target) {
-            targetPosition = target.transform.position;
-            innerSequence.SetVisible(true);
+        if (player) {
+            // transform update
+            Vector3 v = new Vector3();
+            playerPosition = player.transform.position;
+            Agent target = player.GetTarget();
+            innerSequence.SetVisible(target != null);
+
+            playerPosition = Util.WorldToScreenAnchor(canvas, playerPosition);
+            sequencePosition = Vector3.Lerp(sequencePosition, playerPosition, 1 - positionSmoothFriction);
+            rectTransform.anchorMin = rectTransform.anchorMax = sequencePosition;
+
+            // notes update
+            Weapon currentWeapon = player.GetCurrentWeapon();
+            if (currentWeapon != lastWeapon) {
+                if (lastWeapon != null) {
+                    lastWeapon.GetRiff().playing = false;
+                }
+
+                if (currentWeapon) {
+                    outerSequence.SetRiff(currentWeapon.GetRiff());
+                    outerSequence.SetVisible(true);
+                    currentWeapon.GetRiff().playing = true;
+                }
+                else {
+                    outerSequence.SetVisible(false);
+                }
+
+                lastWeapon = currentWeapon;
+            }
         }
         else {
-            targetPosition = player.transform.position;
             innerSequence.SetVisible(false);
-        }
-        targetPosition = Util.WorldToScreenAnchor(canvas, targetPosition);
-        Vector3 v = new Vector3();
-        currentPosition = Vector3.Lerp(currentPosition, targetPosition, 1 - positionSmoothFriction);
-        rectTransform.anchorMin = rectTransform.anchorMax = currentPosition;
-
-        // notes update
-        Weapon currentWeapon = player.GetCurrentWeapon();
-        if (currentWeapon != lastWeapon) {
-            if (lastWeapon != null) {
-                lastWeapon.GetRiff().playing = false;
-            }
-            
-            if (currentWeapon) {
-                outerSequence.SetRiff(currentWeapon.GetRiff());
-                outerSequence.SetVisible(true);
-                currentWeapon.GetRiff().playing = true;
-            }
-            else {
-                outerSequence.SetVisible(false);
-            }
-            
-            lastWeapon = currentWeapon;
+            outerSequence.SetVisible(false);
+            lastWeapon = null;
         }
     }
 

@@ -64,6 +64,7 @@ MonoBehaviour:
   sequences:
   - {fileID: 7431159486319744913}
   - {fileID: 5008426160378725865}
+  crosshair: {fileID: 0}
 --- !u!1001 &572696426625261290
 PrefabInstance:
   m_ObjectHideFlags: 0
