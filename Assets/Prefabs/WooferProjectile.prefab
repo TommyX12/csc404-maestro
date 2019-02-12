@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3592417603076027126}
   - component: {fileID: 3592417603076027121}
   - component: {fileID: 6679540010574868972}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: WooferProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3592417603887884190}
   - component: {fileID: 3592417603887884191}
   - component: {fileID: 5556620166355580680}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4925,7 +4925,7 @@ PrefabInstance:
     - target: {fileID: 4660869147371354944, guid: 1e2040929b21eaa4a83bf2d6f27ea011,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4660869147371354957, guid: 1e2040929b21eaa4a83bf2d6f27ea011,
         type: 3}

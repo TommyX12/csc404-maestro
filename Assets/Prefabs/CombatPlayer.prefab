@@ -448,7 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392659389550170558}
   - component: {fileID: 169190128392384619}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PsysForcefield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
