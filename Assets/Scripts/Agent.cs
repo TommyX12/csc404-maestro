@@ -33,6 +33,13 @@ public class Agent : MonoBehaviour {
         [Serializable]
         public struct Damage {
             public float amount;
+            public float force;
+            public Vector3 forceDirection;
+
+            public Damage WithForceDirection(Vector3 forceDirection) {
+                this.forceDirection = forceDirection;
+                return this;
+            }
         }
 
         public struct FireWeapon {

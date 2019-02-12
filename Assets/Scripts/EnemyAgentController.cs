@@ -13,12 +13,16 @@ public class EnemyAgentController : AgentController {
     public float KeepDistance = 2.5f;
     private float ChaseTimer = 1f;
 
+    // self reference
+    private BasicWeapon basicWeapon;
+
     public EnemyAgentController() {
         
     }
 
     protected void Awake() {
         agentMovement = GetComponent<AgentMovement>();
+        basicWeapon = GetComponent<BasicWeapon>();
     }
 
     protected void Start() {
@@ -68,10 +72,14 @@ public class EnemyAgentController : AgentController {
         Vector3 TargetPos = player.transform.position - new Vector3(delta.x, 0, delta.z).normalized * KeepDistance;
         Vector3 TargetDelta = TargetPos - transform.position;
         if (ShouldChasePlayer()) {
+            basicWeapon.SetAutoFire(true);
             agentMovement.ReceiveEvent(new AgentMovement.Event.DirectionalMove { right = TargetDelta.x, up = TargetDelta.z});
             AgentMovement.Event.LookAt aim;
             aim.position = player.transform.position;
             agentMovement.ReceiveEvent(aim);
+        }
+        else {
+            basicWeapon.SetAutoFire(false);
         }
     }
 }

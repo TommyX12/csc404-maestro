@@ -26,7 +26,7 @@ public class BasicProjectile : Projectile {
         if (agent) {
             if (agent.type != bypassAgentType) {
                 // Debug.Log("talk shit, get hit");
-                agent.ReceiveEvent(damage);
+                agent.ReceiveEvent(damage.WithForceDirection(transform.forward));
                 OnHit.Invoke();
                 GameObject.Destroy(this.gameObject);
             }

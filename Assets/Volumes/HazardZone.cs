@@ -9,7 +9,7 @@ public class HazardZone : MonoBehaviour
     // some things for tick rate and stuff later
 
     private void DoDamage(BasicAgent other) {
-        BasicAgent.Event.Damage damage;
+        BasicAgent.Event.Damage damage = new BasicAgent.Event.Damage();
         damage.amount = 100;
         other.ReceiveEvent(damage);
     }

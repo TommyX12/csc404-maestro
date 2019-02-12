@@ -93,12 +93,12 @@ public class SequencerSequence : MonoBehaviour{
         idleColor.b = color.b;
     }
 
-    public void SetVisible(bool visible) {
+    public void SetVisible(bool visible, bool immediate = false) {
         if (visible) {
             targetScale = 1.0f;
         }
         else {
-            targetScale = 0.0f;
+            targetScale = 0.01f;
         }
     }
 

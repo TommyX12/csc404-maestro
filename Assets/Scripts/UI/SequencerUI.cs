@@ -49,8 +49,8 @@ public class SequencerUI : MonoBehaviour {
         
         pointerBar.gameObject.SetActive(true);
 
-        innerSequence.SetVisible(false);
-        outerSequence.SetVisible(false);
+        innerSequence.SetVisible(false, true);
+        outerSequence.SetVisible(false, true);
 
         innerSequence.SetColor(new Color(0.8f, 0.4f, 0.8f));
         outerSequence.SetColor(new Color(0.2f, 0.4f, 0.8f));

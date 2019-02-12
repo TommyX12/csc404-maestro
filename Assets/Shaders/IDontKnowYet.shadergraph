@@ -4,13 +4,13 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Value\": {\n        \"r\": 1.0,\n        \"g\": 0.0,\n        \"b\": 0.0,\n        \"a\": 0.0\n    },\n    \"m_Name\": \"Albedo\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"0be6a0b0-50c7-474c-a259-67c8f3e5d300\"\n    },\n    \"m_OverrideReferenceName\": \"_albedo\",\n    \"m_ColorMode\": 0,\n    \"m_Hidden\": false\n}"
+            "JSONnodeData": "{\n    \"m_Value\": {\n        \"r\": 1.4980392456054688,\n        \"g\": 0.0,\n        \"b\": 0.0,\n        \"a\": 0.0\n    },\n    \"m_Name\": \"Albedo\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"0be6a0b0-50c7-474c-a259-67c8f3e5d300\"\n    },\n    \"m_OverrideReferenceName\": \"_albedo\",\n    \"m_ColorMode\": 0,\n    \"m_Hidden\": false\n}"
         },
         {
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Value\": {\n        \"r\": 0.0,\n        \"g\": 0.03532814979553223,\n        \"b\": 1.0,\n        \"a\": 0.0\n    },\n    \"m_Name\": \"Emission\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"7b13cfcb-bfab-46c8-9407-c588e773613d\"\n    },\n    \"m_OverrideReferenceName\": \"_emission\",\n    \"m_ColorMode\": 0,\n    \"m_Hidden\": false\n}"
+            "JSONnodeData": "{\n    \"m_Value\": {\n        \"r\": 2.0,\n        \"g\": 0.0,\n        \"b\": 0.0,\n        \"a\": 0.0\n    },\n    \"m_Name\": \"Emission\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"7b13cfcb-bfab-46c8-9407-c588e773613d\"\n    },\n    \"m_OverrideReferenceName\": \"_emission\",\n    \"m_ColorMode\": 1,\n    \"m_Hidden\": false\n}"
         },
         {
             "typeInfo": {

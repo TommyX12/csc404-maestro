@@ -76,7 +76,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Size: {x: 0.3, y: 1, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3383577330815277468
 GameObject:
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActivationSound: {fileID: 4684510371961319284}
-  OffMaterial: {fileID: 2100000, guid: ee37aa7b1e2a63b49ab21403e2d776f5, type: 2}
-  OnMaterial: {fileID: 2100000, guid: 5a4fcdb4916596541b7e6f41b3bdb45e, type: 2}
+  OffMaterial: {fileID: 2100000, guid: 418fe1bceadc24954a8924f78b2f72e9, type: 2}
+  OnMaterial: {fileID: 2100000, guid: ab2d8bdc25d174f09ac6aba9dbef6bcd, type: 2}
   Active: 0
   OnOffPlatform: {fileID: 3383577330815277465}
   DefaultCheckpoint: 0

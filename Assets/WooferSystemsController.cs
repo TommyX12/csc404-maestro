@@ -15,7 +15,7 @@ public class WooferSystemsController : MonoBehaviour
     private void Start()
     {
         BasicWeapon w = GetComponent<BasicWeapon>();
-        w.SetAutoFire(true);
+        // w.SetAutoFire(true);
         w.SetHost(GetComponent<Agent>());
     }
 

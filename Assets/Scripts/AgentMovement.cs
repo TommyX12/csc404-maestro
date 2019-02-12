@@ -15,9 +15,14 @@ public abstract class AgentMovement : MonoBehaviour {
         public struct LookAt {
             public Vector3 position;
         }
+
+        public struct ApplyForce {
+            public Vector3 force;
+        }
     }
 
     public abstract void ReceiveEvent(Event.DirectionalMove directionalMove);
     public abstract void ReceiveEvent(Event.LookAt lookAt);
+    public abstract void ReceiveEvent(Event.ApplyForce applyForce);
 
 }

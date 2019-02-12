@@ -37,13 +37,17 @@ public class BasicAgentMovement : AgentMovement {
 
             float thrust = (friction * (maxSpeedPerSecond * Time.fixedDeltaTime)) / (1 - friction);
 
-            force = direction * thrust;
+            force += direction * thrust;
             targetRotation = Quaternion.LookRotation(direction);
         }
     }
 
     public override void ReceiveEvent(Event.LookAt lookAt) {
         targetRotation = Quaternion.LookRotation(lookAt.position - transform.position);
+    }
+
+    public override void ReceiveEvent(Event.ApplyForce applyForce) {
+        force += applyForce.force;
     }
 
     protected void Awake() {

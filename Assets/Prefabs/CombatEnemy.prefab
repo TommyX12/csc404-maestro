@@ -141,11 +141,13 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
     damage:
-      amount: 0
+      amount: 50
+      force: 0.5
+      forceDirection: {x: 0, y: 0, z: 0}
     color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
     speed: 3
     scale: 1
-    distance: 100
+    distance: 10
     bypassAgentType: 2
 --- !u!114 &9208601067335843955
 MonoBehaviour:
@@ -354,6 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1379201375393942549}
+  - component: {fileID: 2157487114613592702}
   m_Layer: 0
   m_Name: Physical
   m_TagString: Player
@@ -376,6 +379,44 @@ Transform:
   m_Father: {fileID: 1379201374164523638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &2157487114613592702
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379201375393942548}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 2
+  m_Range: 3
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!82 &5667743251582890003
 AudioSource:
   m_ObjectHideFlags: 0
@@ -488,17 +529,17 @@ PrefabInstance:
     - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.021564
       objectReference: {fileID: 0}
     - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.13167
       objectReference: {fileID: 0}
     - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.15494
       objectReference: {fileID: 0}
     - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
         type: 3}
@@ -539,6 +580,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9385
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9385
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9385
       objectReference: {fileID: 0}
     - target: {fileID: 1931141227, guid: 0b80d438dd61e62478a86f47e6beac93, type: 3}
       propertyPath: playOnAwake

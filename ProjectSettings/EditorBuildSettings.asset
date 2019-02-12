@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CombatTest2.unity
     guid: 9a66655e5ef9b467fb531726f9132fdf
+  - enabled: 1
+    path: Assets/Scenes/Levels/CombatLevels/Demo.unity
+    guid: 488e2fcabce8fc444ba9e4253f0f8c0b
   m_configObjects: {}
