@@ -1,11 +1,3 @@
-## TODO
-- Shotgun should be pellet based
-- Shotgun shell particles
-- Improve Shotgun Particle effects
-- Expose shotgun damage
-- Create a better damage model (Damage model abstract class?)
-- Improve enemy manager
-
 # Maestro
 
 An RPG game in which the player must utilize music, rhythm, and composition to defeat enemies and solve puzzles.
@@ -199,3 +191,8 @@ Ship exterior
 Roughs of enemies
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542992897763442689/enemyroughs.jpg)
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/543982712101535755/image0.jpg)
+
+
+## Demo 1
+
+https://www.youtube.com/watch?v=NzPD-uGhl2U&feature=youtu.be
