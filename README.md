@@ -196,3 +196,7 @@ Roughs of enemies
 ## Demo 1
 
 https://www.youtube.com/watch?v=NzPD-uGhl2U&feature=youtu.be
+
+## Design Doc
+
+https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/edit#
