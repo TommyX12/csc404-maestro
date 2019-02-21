@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinnerWeapon : BasicWeapon
+public class MultiWeapon : BasicWeapon
 {
     public List<GameObject> firePoints;
 
@@ -28,11 +28,14 @@ public class SpinnerWeapon : BasicWeapon
                             obj.transform.forward)
              .WithBypassAgentType(host.type));
         }
-        weaponAnim.SetTrigger(triggerIndex);
+        if (weaponAnim)
+        {
+            weaponAnim.SetTrigger(triggerIndex);
+        }
     }
 
     private void PlaySound(Riff.NoteHitEvent evt) {
-        if (evt.noteIndex != -1) {
+        if (autoFire && evt.noteIndex != -1) {
             noteSounds[evt.noteIndex].Play();
         }
     }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public abstract class Projectile : MonoBehaviour {
+public abstract class Projectile : MonoBehaviour, ObjectPoolable<Projectile> {
+
+    private int poolID;
 
     [Serializable]
     public struct SpawnParameters {
@@ -28,10 +30,27 @@ public abstract class Projectile : MonoBehaviour {
             return this;
         }
     }
-    
+
+    public void SetPoolID(int id) {
+        this.poolID = id;
+    }
+
+    public int GetPoolID() {
+        return poolID;
+    }
+
     public Projectile() {
         
     }
 
     public abstract void SetSpawnParameters(SpawnParameters param);
+
+    public Projectile CreateNew() {
+        Projectile projectile = GameObject.Instantiate(this);
+        projectile.gameObject.SetActive(false);
+        projectile.name = this.name;
+        projectile.transform.SetParent(ProjectileManager.current.transform);
+        return projectile;
+    }
+
 }
