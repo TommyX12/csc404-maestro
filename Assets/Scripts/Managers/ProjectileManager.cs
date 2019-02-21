@@ -17,7 +17,7 @@ public class ProjectileManager : MonoBehaviour {
     public void SpawnProjectile(Projectile projectilePrefab, Projectile.SpawnParameters param) {
         if (!pools.ContainsKey(projectilePrefab.name))
         {
-            pools.Add(projectilePrefab.name, new ObjectPool<Projectile>(projectilePrefab.CreateNew, 1, ReleaseDelegate, RequestDelegate)); // 1 for testing
+            pools.Add(projectilePrefab.name, new ObjectPool<Projectile>(projectilePrefab.CreateNew, 100, ReleaseDelegate, RequestDelegate));
         }
         Projectile projectile = pools[projectilePrefab.name].Request();
         projectile.SetSpawnParameters(param);
