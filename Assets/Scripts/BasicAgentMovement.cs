@@ -6,6 +6,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BasicAgentMovement : AgentMovement {
+    public bool overrideRigidBody = true;
 
     protected Vector3 up = Vector3.up;
     protected Vector3 forward = Vector3.fwd;
@@ -52,10 +53,13 @@ public class BasicAgentMovement : AgentMovement {
 
     protected void Awake() {
         rigidbody = GetComponent<Rigidbody>();
-        rigidbody.useGravity = false;
-        rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX 
-            | RigidbodyConstraints.FreezeRotationY
-            | RigidbodyConstraints.FreezeRotationZ;
+        if (overrideRigidBody)
+        {
+            rigidbody.useGravity = false;
+            rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX
+                | RigidbodyConstraints.FreezeRotationY
+                | RigidbodyConstraints.FreezeRotationZ;
+        }
     }
 
     protected void Update() {
