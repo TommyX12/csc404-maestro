@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using Random = UnityEngine.Random;
 using Newtonsoft.Json;
@@ -14,6 +15,66 @@ static public class Util
     public const float PI2 = Mathf.PI * 2.0f;
     
     private static Stack<Random.State> _randomSeedStack = new Stack<Random.State>();
+
+    public static T AddComponent<T>(this GameObject go, T toAdd) where T : Component
+    {
+        return go.AddComponent<T>().GetCopyOf(toAdd) as T;
+    }
+
+    public static T GetCopyOf<T>(this Component comp, T other) where T : Component
+    {
+        Type type = comp.GetType();
+        if (type != other.GetType()) return null; // type mis-match
+        BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Default | BindingFlags.DeclaredOnly;
+        PropertyInfo[] pinfos = type.GetProperties(flags);
+        foreach (var pinfo in pinfos)
+        {
+            if (pinfo.CanWrite)
+            {
+                try
+                {
+                    pinfo.SetValue(comp, pinfo.GetValue(other, null), null);
+                }
+                catch { } // In case of NotImplementedException being thrown. For some reason specifying that exception didn't seem to catch it, so I didn't catch anything specific.
+            }
+        }
+        FieldInfo[] finfos = type.GetFields(flags);
+        foreach (var finfo in finfos)
+        {
+            finfo.SetValue(comp, finfo.GetValue(other));
+        }
+        return comp as T;
+    }
+
+    public static void CopyAudioSource(AudioSource source, AudioSource dest) {
+        dest.bypassEffects = source.bypassEffects;
+        dest.bypassListenerEffects = source.bypassListenerEffects;
+        dest.bypassReverbZones = source.bypassReverbZones;
+        dest.clip = source.clip;
+        dest.dopplerLevel = source.dopplerLevel;
+        dest.enabled = source.enabled;
+        dest.hideFlags = source.hideFlags;
+        dest.ignoreListenerPause = source.ignoreListenerPause;
+        dest.ignoreListenerVolume = source.ignoreListenerVolume;
+        dest.loop = source.loop;
+        dest.maxDistance = source.maxDistance;
+        dest.minDistance = source.minDistance;
+        dest.mute = source.mute;
+        dest.outputAudioMixerGroup = source.outputAudioMixerGroup;
+        dest.panStereo = source.panStereo;
+        dest.pitch = source.pitch;
+        dest.priority = source.priority;
+        dest.reverbZoneMix = source.reverbZoneMix;
+        dest.rolloffMode = source.rolloffMode;
+        dest.spatialBlend = source.spatialBlend;
+        dest.spatialize = source.spatialize;
+        dest.spatializePostEffects = source.spatializePostEffects;
+        dest.spread = source.spread;
+        dest.time = source.time;
+        dest.timeSamples = source.timeSamples;
+        dest.velocityUpdateMode = source.velocityUpdateMode;
+        dest.volume = source.volume;
+    }
 
     static public void PushRandomSeed(int seed)
     {
