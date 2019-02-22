@@ -30,12 +30,12 @@ public class BasicProjectile : Projectile {
                 // Debug.Log("talk shit, get hit");
                 agent.ReceiveEvent(damage.WithForceDirection(transform.forward));
                 OnHit.Invoke();
-                GameObject.Destroy(this.gameObject);
+                ProjectileManager.current.KillProjectile(this);
             }
         }
         else {
             OnHit.Invoke();
-            GameObject.Destroy(this.gameObject);
+            ProjectileManager.current.KillProjectile(this);
         }
     }
 
@@ -63,7 +63,7 @@ public class BasicProjectile : Projectile {
     protected void Update() {
         lifespan -= Time.deltaTime;
         if (lifespan < 0) {
-            GameObject.Destroy(this.gameObject);
+            ProjectileManager.current.KillProjectile(this);
         }
     }
 

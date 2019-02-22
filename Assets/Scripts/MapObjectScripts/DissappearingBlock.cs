@@ -3,32 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DissappearingBlock : MonoBehaviour
+[RequireComponent(typeof(MeshRenderer))]
+[RequireComponent(typeof(Collider))]
+public class DissappearingBlock : RhythmObject
 {
+    private bool appeared = true;
 
-    public UnityEvent OnDissappear;
-    public UnityEvent OnAppear;
+    MeshRenderer rendy;
+    Collider collidy;
 
-    public bool Appeared = true;
-
-    public void Dissappear() {
-        OnDissappear.Invoke();
-        Appeared = false;
+    private void Start()
+    {
+        Init();
+        rendy = GetComponent<MeshRenderer>();
+        collidy = GetComponent<Collider>();
     }
 
-    public void Appear() {
-        OnAppear.Invoke();
-        Appeared = true;
+    protected override void RhythmAction(Riff.NoteHitEvent e)
+    {
+        rendy.enabled = !appeared;
+        collidy.enabled = !appeared;
+        appeared = !appeared;
     }
-
-    public void Toggle() {
-        if (Appeared)
-        {
-            Dissappear();
-        }
-        else {
-            Appear();
-        }
-    }
-
 }

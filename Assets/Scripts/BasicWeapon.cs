@@ -29,7 +29,9 @@ public class BasicWeapon : Weapon {
     };
 
     protected bool autoFire = false;
-    
+
+    protected List<AudioSource> noteSounds = new List<AudioSource> ();
+
     public BasicWeapon() {
         
     }
@@ -94,6 +96,50 @@ public class BasicWeapon : Weapon {
 
         if (renderer) {
             renderer.material.color = color;
+        }
+
+
+
+        // create audio listeners for reach note
+        List<string> uniqueAudioSounds = new List<string>();
+        foreach (Riff.Note note in riff.GetNotes()) {
+            if (!uniqueAudioSounds.Contains(note.sound)) {
+                uniqueAudioSounds.Add(note.sound);
+            }
+        }
+
+        AudioClip defaultClip = ResourceManager.GetMusic(riff.defaultSound);
+
+        if (!defaultClip) {
+            Debug.LogError("No default clip " + defaultClip);
+        }
+
+        AudioSource defaultSource = gameObject.AddComponent<AudioSource>();
+        defaultSource.clip = defaultClip;
+        defaultSource.outputAudioMixerGroup = MusicManager.Current.Mixer; //  temp set do better @TODO;
+
+        Dictionary<string, AudioSource> soundMapping = new Dictionary<string, AudioSource>();
+
+        foreach (string audioSound in uniqueAudioSounds) {
+            AudioClip clip = ResourceManager.GetMusic(audioSound);
+            
+            if (clip) {
+                AudioSource source = gameObject.AddComponent<AudioSource>();
+                source.clip = clip;
+                source.outputAudioMixerGroup = MusicManager.Current.Mixer; // temp set. do better later
+                // @todo set a mixer
+                soundMapping[audioSound] = source;
+            }
+
+        }
+        foreach (Riff.Note note in riff.GetNotes()) {
+            if (soundMapping.ContainsKey(note.sound))
+            {
+                this.noteSounds.Add(soundMapping[note.sound]);
+            }
+            else {
+                this.noteSounds.Add(defaultSource);
+            }
         }
     }
 

@@ -68,6 +68,9 @@ public class EnemyAgentController : AgentController {
 
     protected void FixedUpdate() {
         PlayerAgentController player = CombatGameManager.current.player;
+        if (player == null) {
+            return;
+        }
         Vector3 delta = player.transform.position - transform.position;
         Vector3 TargetPos = player.transform.position - new Vector3(delta.x, 0, delta.z).normalized * KeepDistance;
         Vector3 TargetDelta = TargetPos - transform.position;

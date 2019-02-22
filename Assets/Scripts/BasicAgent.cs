@@ -22,6 +22,9 @@ public class BasicAgent : Agent {
 
     protected void Awake() {
         hitPoint = initialHitPoint;
+        foreach (Weapon wep in weapons) {
+            wep.SetHost(this);
+        }
         if (HasWeapon()) {
             ModWeaponIndex(ref currentWeaponIndex);
         }

@@ -148,4 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapshots: []
+  defaultSnapshots:
+  - {fileID: 245442470246304556, guid: 55f1ba7b7af5d4644a2c0125adc72579, type: 2}
   master: {fileID: 24100000, guid: 55f1ba7b7af5d4644a2c0125adc72579, type: 2}
