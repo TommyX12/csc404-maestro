@@ -4783,6 +4783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5269707665725144198}
+  - component: {fileID: 8969948887933403226}
   m_Layer: 0
   m_Name: ProjectileHit
   m_TagString: Untagged
@@ -4805,6 +4806,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8969948887933403226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269707665725144199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf6009638b87f244a12e4317a9b20ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystems:
+  - {fileID: 5269707667019858778}
+  - {fileID: 5269707665212548503}
+  - {fileID: 5269707666704075555}
+  - {fileID: 5269707666569172827}
+  - {fileID: 5269707666671631056}
+  emissionNums: 030000001e0000001e0000001e0000000f000000
 --- !u!1 &5269707666569172822
 GameObject:
   m_ObjectHideFlags: 0

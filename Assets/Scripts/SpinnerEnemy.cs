@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(LerpMovement))]
 public class SpinnerEnemy : BasicAgent
 {
+    public PoolableAudioSource deathNoisePrefab;
+
     public int beatsPerTransition = 1;
 
     public List<GameObject> patrolPoints;
@@ -84,6 +86,19 @@ public class SpinnerEnemy : BasicAgent
         {
             rotationIndex = (rotationIndex + 1) % rotations.Count;
             spinnerRotateComponent.SetTargetRotation(new Vector3(0,rotations[rotationIndex],0));
+        }
+    }
+
+    protected override void OnDeath()
+    {
+        base.OnDeath();
+        if (deathNoisePrefab)
+        {
+            PoolableAudioSource source = AudioSourceManager.current.SpawnAudioSource(deathNoisePrefab);
+            if (source) {
+                source.transform.position = this.transform.position;
+                source.Play();
+            }
         }
     }
 }
