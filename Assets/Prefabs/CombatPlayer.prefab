@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  initialHitPoint: 100
+  initialHitPoint: 8
   hitPoint: 0
   weapons: []
   currentWeaponIndex: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3112b34533145e59d6d7f6dd7c258e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overrideRigidBody: 1
   maxSpeedPerSecond: 3.5
   friction: 0.25
   rotationFriction: 1
