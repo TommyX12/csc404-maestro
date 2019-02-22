@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/CombatTest2.unity
     guid: 9a66655e5ef9b467fb531726f9132fdf
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/488e2fcabce8fc444ba9e4253f0f8c0b
+    guid: 488e2fcabce8fc444ba9e4253f0f8c0b
   - enabled: 1
     path: Assets/Scenes/Levels/CombatLevels/Demo.unity
-    guid: 488e2fcabce8fc444ba9e4253f0f8c0b
+    guid: 1f5b15dc84f6bd242b55dd3083c15b1d
   m_configObjects: {}
