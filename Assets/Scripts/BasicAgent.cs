@@ -47,7 +47,10 @@ public class BasicAgent : Agent {
 
     public override void ReceiveEvent(Event.Damage damage) {
         hitPoint -= damage.amount;
-        agentMovement.ReceiveEvent(new AgentMovement.Event.ApplyForce {force = damage.force * damage.forceDirection});
+        if (agentMovement)
+        {
+            agentMovement.ReceiveEvent(new AgentMovement.Event.ApplyForce { force = damage.force * damage.forceDirection });
+        }
         if (hitPoint <= 0) {
             OnDeath();
         }

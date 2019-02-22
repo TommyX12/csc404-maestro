@@ -6,8 +6,8 @@ using UnityEngine;
 using UnityEngine.Events;
 public class BasicProjectile : Projectile {
 
-    public UnityEvent OnHit;
-
+    public UnityEvent onHit;
+    public ParticleGroup hitEffectPrefab;
     protected Agent.Event.Damage damage;
     protected float speed;
     protected float scale;
@@ -21,6 +21,18 @@ public class BasicProjectile : Projectile {
         
     }
 
+    private void PlayHitEffect() {
+        if (hitEffectPrefab)
+        {
+            ParticleGroup pg = ParticleManager.instance.GetParticleGroup(hitEffectPrefab);
+            if (pg)
+            {
+                pg.transform.position = transform.position;
+                pg.PlayOnce();
+            }
+        }
+    }
+
     protected void OnTriggerEnter(Collider other) {
         Agent agent = other.gameObject.GetComponent<Agent>();
         if (agent)
@@ -29,12 +41,14 @@ public class BasicProjectile : Projectile {
             {
                 // Debug.Log("talk shit, get hit");
                 agent.ReceiveEvent(damage.WithForceDirection(transform.forward));
-                OnHit.Invoke();
+                onHit.Invoke();
+                PlayHitEffect();
                 ProjectileManager.current.KillProjectile(this);
             }
         }
         else {
-            OnHit.Invoke();
+            onHit.Invoke();
+            PlayHitEffect();
             ProjectileManager.current.KillProjectile(this);
         }
     }
@@ -63,6 +77,7 @@ public class BasicProjectile : Projectile {
     protected void Update() {
         lifespan -= Time.deltaTime;
         if (lifespan < 0) {
+            PlayHitEffect();
             ProjectileManager.current.KillProjectile(this);
         }
     }

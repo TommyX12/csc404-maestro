@@ -13,5 +13,4 @@ public class AddToEnemyManagement : MonoBehaviour
     {
         EnemyManagementSystem.current.RemoveEnemy(gameObject);
     }
-
 }
