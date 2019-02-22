@@ -97,7 +97,7 @@ public class SpinnerEnemy : BasicAgent
             PoolableAudioSource source = AudioSourceManager.current.SpawnAudioSource(deathNoisePrefab);
             if (source) {
                 source.transform.position = this.transform.position;
-                source.Play();
+                source.StartCoroutine("Play");
             }
         }
     }
