@@ -66,14 +66,14 @@ public class PlayerAgentController : AgentController {
     protected void Update() {
         UpdateTarget();
 
-        if (Input.GetButtonDown("fire_0")) {
+        if (ControllerProxy.GetButtonDown("fire_0")) {
             agent.ReceiveEvent(new Agent.Event.FireWeapon());
         }
     }
 
     protected void FixedUpdate() {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = ControllerProxy.GetAxisRaw("Horizontal");
+        float vertical = ControllerProxy.GetAxisRaw("Vertical");
         agentMovement.ReceiveEvent(new AgentMovement.Event.DirectionalMove {
             up = vertical,
             right = horizontal,

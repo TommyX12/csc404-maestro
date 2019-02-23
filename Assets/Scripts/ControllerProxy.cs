@@ -5,17 +5,37 @@ using UnityEngine;
 public static class ControllerProxy
 {
 
+    public static bool inputEnabled = true;
+
     public static bool GetButtonDown(string id) {
-        return Input.GetButtonDown(id);
+        if (inputEnabled)
+        {
+            return Input.GetButtonDown(id);
+        }
+        else {
+            return false;
+        }
     }
 
     public static bool GetButton(string id) {
-        return Input.GetButton(id);
+        if (inputEnabled)
+        {
+            return Input.GetButton(id);
+        }
+        else {
+            return false;
+        }
     }
 
     public static float GetAxisRaw(string id)
     {
-        return Input.GetAxisRaw(id);
+        if (inputEnabled)
+        {
+            return Input.GetAxisRaw(id);
+        }
+        else
+        {
+            return 0;
+        }
     }
-
 }
