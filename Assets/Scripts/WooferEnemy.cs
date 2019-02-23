@@ -6,8 +6,8 @@ public class WooferEnemy : BasicAgent
 {
     public ParticleSystem deathSystem;
     public AudioSource deathSound;
-    public WooferEnemy()
-    {
+    public WooferEnemy() {
+        
     }
 
     protected override void OnDeath()
