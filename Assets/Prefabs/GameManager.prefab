@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2592747551595928725}
   - component: {fileID: 6370476648903005599}
   - component: {fileID: 7923750777738053742}
+  - component: {fileID: 43683007582798906}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -177,7 +178,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70b756cdd072e34ea0f1bb558a5d30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: {fileID: 0}
+  master: {fileID: 24300002, guid: 55f1ba7b7af5d4644a2c0125adc72579, type: 2}
+  interpSpeed: 1
+  hpFreqBands:
+  - 95
+  - 170
+  - 387
+  - 1550
+  - 1550
+  - 3100
+  - 8500
+  - 22000
+  targetLowPass: 22000
+  targetHighPass: 0
 --- !u!114 &7923750777738053742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,3 +203,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245b77e6299fee64f929764e7373048d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &43683007582798906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933938287685056982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abe7aa22f7b28e438b6659dbf0306b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grayscaleEffect: {fileID: 0}
+  pixelizeEffect: {fileID: 0}
+  volume: {fileID: 0}
+  pixelizeHitEffectCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

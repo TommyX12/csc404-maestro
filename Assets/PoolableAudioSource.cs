@@ -15,6 +15,7 @@ public class PoolableAudioSource : MonoBehaviour, ObjectPoolable<PoolableAudioSo
         component.GetComponent<AudioSource>().playOnAwake = false;
         component.gameObject.SetActive(false);
         component.name = this.name;
+        component.gameObject.transform.SetParent(AudioSourceManager.current.transform);
         return component;
     }
 

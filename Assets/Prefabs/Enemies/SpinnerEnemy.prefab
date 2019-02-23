@@ -519,7 +519,7 @@ MonoBehaviour:
   - 0
   - 360
   - -405
-  active: 0
+  active: 1
   spinnerGameObject: {fileID: 3716920209854423091}
   movementComponent: {fileID: 3716920209616390514}
   spinnerRotateComponent: {fileID: 3716920209854423093}
@@ -957,6 +957,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.03
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &893853925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336734557978599826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3a0d1042c3aa24d8080cedf99359c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  Proxy: {fileID: 3716920209616390515}
 --- !u!1001 &3716920208568025190
 PrefabInstance:
   m_ObjectHideFlags: 0

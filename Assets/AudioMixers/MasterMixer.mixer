@@ -21,6 +21,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: f057acd83212d084799c27844077cd5f
     name: Volume
+  - guid: 2c07ce1073085274abb310906c5edfad
+    name: LowpassFreq
   m_AudioMixerGroupViews:
   - guids:
     - 4f208c8c34c16634b973c9b8e8853983
@@ -129,6 +131,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 6fe24e3cbce60e54e874bf5d6e466ae7
   m_FloatValues:
     2c07ce1073085274abb310906c5edfad: 22000
+    32fa6c301c4d6114ca0cd18e71876f62: 1
     1999b29068bbfda4bbe6be7c1ec8d3a8: 3.07
     e016f031fcf646149aa29b886c90e2fe: -0.002
     77399a021a172ca44a495379936318e0: 0.694
@@ -139,6 +142,7 @@ AudioMixerSnapshotController:
     a6e721a3f912d6d45a0e45806d5fddeb: 3.43
     06d331143315940cebdc00df26cefff8: 1
     51c8e7f484d46904e9f49f511ffef427: 0.08
+    6777c325c9d2fdf498830f9bdad9312b: 419
     132c07a555152094486cdc920518e560: 10592
     aadc1a064902d4381b430160a4333529: 1.2899994
     f77539a6945e2e54289fa930c4274892: 29.4
@@ -148,6 +152,7 @@ AudioMixerSnapshotController:
     b9d4bfb8eccf3da41a2ed714c7e440f8: 6.7
     f057acd83212d084799c27844077cd5f: -4
     81f8842929413b7448ea064dc51b3077: 0.654
+    18fcdd1ab5d80ef44802ab158cc6334d: 1
     8c18ed1a40da8404b8c9f0fe8fe50375: 3.99
     68208fcaa7594d8498e0f123b6a77630: 845
     e0a9e3ea023ebf249b3b08a465692e25: 4748.079

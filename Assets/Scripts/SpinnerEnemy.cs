@@ -54,6 +54,9 @@ public class SpinnerEnemy : BasicAgent
         spinnerRotateComponent.moveTime = 60f / MusicManager.Current.bpm / 2f;
         weapon = GetComponent<BasicWeapon>();
         weapon.SetHost(this);
+
+        AgentManager.current.AddAgent(this);
+
     }
 
     public void Update()
@@ -88,6 +91,10 @@ public class SpinnerEnemy : BasicAgent
             rotationIndex = (rotationIndex + 1) % rotations.Count;
             spinnerRotateComponent.SetTargetRotation(new Vector3(0,rotations[rotationIndex],0));
         }
+    }
+
+    public void Activate() {
+        active = true;
     }
 
     protected override void OnDeath()
