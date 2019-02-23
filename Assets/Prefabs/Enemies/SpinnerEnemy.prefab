@@ -505,6 +505,8 @@ MonoBehaviour:
   currentWeaponIndex: 0
   deathNoisePrefab: {fileID: 3010539009433156881, guid: 12179c019b20b28499eeb7bd6f8c6aea,
     type: 3}
+  deathExplosion: {fileID: 5821361603748503042, guid: bee74651780e8c74d92779284a399186,
+    type: 3}
   beatsPerTransition: 1
   patrolPoints:
   - {fileID: 128086842}

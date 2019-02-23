@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpinnerEnemy : BasicAgent
 {
     public PoolableAudioSource deathNoisePrefab;
+    public ParticleGroup deathExplosion;
 
     public int beatsPerTransition = 1;
 
@@ -98,6 +99,13 @@ public class SpinnerEnemy : BasicAgent
             if (source) {
                 source.transform.position = this.transform.position;
                 source.StartCoroutine("Play");
+            }
+
+            ParticleGroup pg = ParticleManager.instance.GetParticleGroup(deathExplosion);
+            if (pg)
+            {
+                pg.transform.position = transform.position;
+                pg.PlayOnce();
             }
         }
     }

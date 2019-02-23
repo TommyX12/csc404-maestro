@@ -30,9 +30,7 @@ public class PoolableAudioSource : MonoBehaviour, ObjectPoolable<PoolableAudioSo
 
     public IEnumerator Play() {
         source.Play();
-        Debug.Log("PLAYED");
         yield return new WaitForSeconds(source.clip.length);
-        Debug.Log("DESTROYED");
         AudioSourceManager.current.KillAudioSource(this);
     }
 
