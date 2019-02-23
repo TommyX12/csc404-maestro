@@ -9,7 +9,6 @@ public class BasicAgent : Agent {
     // exposed parameters
     public float initialHitPoint = 100;
     public float hitPoint;
-
     public List<Weapon> weapons;
     public int currentWeaponIndex = 0;
     
@@ -22,11 +21,19 @@ public class BasicAgent : Agent {
 
     protected void Awake() {
         hitPoint = initialHitPoint;
-        foreach (Weapon wep in weapons) {
-            wep.SetHost(this);
+        
+        foreach (Weapon weapon in weapons) {
+            weapon.SetHost(this);
         }
+        
         if (HasWeapon()) {
             ModWeaponIndex(ref currentWeaponIndex);
+        }
+        else {
+            Weapon weapon = GetComponent<Weapon>();
+            if (weapon) {
+                AddWeapon(weapon);
+            }
         }
 
         agentMovement = GetComponent<AgentMovement>();
@@ -41,13 +48,21 @@ public class BasicAgent : Agent {
         return weapons.Count > 0;
     }
 
+    public override Riff GetRiff() {
+        Weapon weapon = GetCurrentWeapon();
+        return weapon ? weapon.GetRiff() : null;
+    }
+
     protected void ModWeaponIndex(ref int index) {
         index = ((index % weapons.Count) + weapons.Count) % weapons.Count;
     }
 
     public override void ReceiveEvent(Event.Damage damage) {
         hitPoint -= damage.amount;
-        agentMovement.ReceiveEvent(new AgentMovement.Event.ApplyForce {force = damage.force * damage.forceDirection});
+        if (agentMovement)
+        {
+            agentMovement.ReceiveEvent(new AgentMovement.Event.ApplyForce { force = damage.force * damage.forceDirection });
+        }
         if (hitPoint <= 0) {
             OnDeath();
         }

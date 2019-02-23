@@ -23,6 +23,10 @@ public class Agent : MonoBehaviour {
         onDeath(this);
     }
 
+    public virtual Riff GetRiff() {
+        return null;
+    }
+
     public virtual void ReceiveEvent(Event.Damage damage) {}
     public virtual void ReceiveEvent(Event.FireWeapon fireWeapon) {}
     public virtual void ReceiveEvent(Event.SelectNextWeapon selectNextWeapon) {}

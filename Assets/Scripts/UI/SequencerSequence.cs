@@ -122,11 +122,13 @@ public class SequencerSequence : MonoBehaviour{
         this.riff = null;
 
         foreach (var obj in noteObjects) {
-            Destroy(obj);
+            GameObject.Destroy(obj.gameObject);
         }
         foreach (var obj in markerObjects) {
-            Destroy(obj);
+            GameObject.Destroy(obj.gameObject);
         }
+        noteObjects = null;
+        markerObjects = null;
     }
 
     protected void FixedUpdate() {

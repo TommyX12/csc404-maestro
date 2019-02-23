@@ -23,6 +23,8 @@ public class Riff {
     public float hitOffset = 0.0f; // in seconds. already taken care of in MusicManager
     public float hitFailedBlockBeats = 0.5f; // in beats
 
+    public float autoResetThreshold = 0.5f;
+
     public string defaultSound = null;
 
     public bool playing = false;
@@ -68,8 +70,12 @@ public class Riff {
     }
 
     private void ResetLastHit(bool delayed = true) {
-        currentPosition.ResetLastHit(this);
-        currentPositionDelayed.ResetLastHit(this);
+        if (delayed) {
+            currentPositionDelayed.ResetLastHit(this);
+        }
+        else {
+            currentPosition.ResetLastHit(this);
+        }
     }
 
     private void ResetLastPlayed() {
@@ -122,7 +128,7 @@ public class Riff {
         position.beat = beat;
         position.cycle = cycle;
         
-        if (time < position.time) {
+        if (time < position.time || time - position.time > autoResetThreshold) {
             ResetLastHit(delayed);
             ResetLastPlayed();
         }

@@ -35,7 +35,8 @@ public class SequencerUI : MonoBehaviour {
     protected Vector3 sequencePosition = new Vector3(0.5f, 1.5f, 10.0f);
     protected float positionSmoothFriction = 0.7f;
 
-    protected Weapon lastWeapon = null;
+    protected Riff outerRiff;
+    protected Riff innerRiff;
     
     public SequencerUI() {
         
@@ -102,29 +103,49 @@ public class SequencerUI : MonoBehaviour {
             sequencePosition = Vector3.Lerp(sequencePosition, playerPosition, 1 - positionSmoothFriction);
             rectTransform.anchorMin = rectTransform.anchorMax = sequencePosition;
 
-            // notes update
+            // outer ring
             Weapon currentWeapon = player.GetCurrentWeapon();
-            if (currentWeapon != lastWeapon) {
-                if (lastWeapon != null) {
-                    lastWeapon.GetRiff().playing = false;
+            Riff playerRiff = currentWeapon ? currentWeapon.GetRiff() : null;
+            if (playerRiff != outerRiff) {
+                if (outerRiff != null) {
+                    outerRiff.playing = false;
                 }
 
-                if (currentWeapon) {
-                    outerSequence.SetRiff(currentWeapon.GetRiff());
+                if (playerRiff != null) {
+                    outerSequence.SetRiff(playerRiff);
                     outerSequence.SetVisible(true);
-                    currentWeapon.GetRiff().playing = true;
+                    playerRiff.playing = true;
                 }
                 else {
                     outerSequence.SetVisible(false);
                 }
 
-                lastWeapon = currentWeapon;
+                outerRiff = playerRiff;
+            }
+            
+            // inner ring
+            Riff targetRiff = target ? target.GetRiff() : null;
+            if (targetRiff != innerRiff) {
+                if (innerRiff != null) {
+                    innerRiff.playing = false;
+                }
+
+                if (targetRiff != null) {
+                    innerSequence.SetRiff(targetRiff);
+                    innerSequence.SetVisible(true);
+                    targetRiff.playing = true;
+                }
+                else {
+                    innerSequence.SetVisible(false);
+                }
+
+                innerRiff = targetRiff;
             }
         }
         else {
             innerSequence.SetVisible(false);
             outerSequence.SetVisible(false);
-            lastWeapon = null;
+            outerRiff = null;
         }
     }
 
