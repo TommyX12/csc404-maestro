@@ -8,7 +8,7 @@ public class SpinnerEnemy : BasicAgent
     public PoolableAudioSource deathNoisePrefab;
     public ParticleGroup deathExplosion;
 
-    public int beatsPerTransition = 1;
+    public float beatsPerTransition = 1;
 
     public List<GameObject> patrolPoints;
     int patrolIndex = -1;
@@ -50,8 +50,8 @@ public class SpinnerEnemy : BasicAgent
             rotationIndex = -1;
         }
         
-        movementComponent.moveTime =  60f / MusicManager.Current.bpm / 2f;
-        spinnerRotateComponent.moveTime = 60f / MusicManager.Current.bpm / 2f;
+        movementComponent.moveTime =  (60f / MusicManager.Current.bpm) * beatsPerTransition;
+        spinnerRotateComponent.moveTime = (60f / MusicManager.Current.bpm)  * beatsPerTransition;
         weapon = GetComponent<BasicWeapon>();
         weapon.SetHost(this);
 

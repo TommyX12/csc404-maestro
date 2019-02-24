@@ -24,6 +24,7 @@ public class PostProcessEffectManager : MonoBehaviour
     {
         if (!volume) {
             Destroy(this);
+            return;
         }
         volume.profile.TryGetSettings(out grayscaleEffect);
         volume.profile.TryGetSettings(out pixelizeEffect);
