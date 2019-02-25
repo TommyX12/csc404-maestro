@@ -46,6 +46,10 @@ public class PlayerAgentController : AgentController {
         return agent.GetCurrentWeapon();
     }
 
+    public Countermeasure GetCurrentCountermeasure() {
+        return agent.GetCurrentCountermeasure();
+    }
+
     protected void UpdateTarget() {
         if (!IsValidTarget(target)) {
             AcquireNextTarget();
@@ -53,10 +57,18 @@ public class PlayerAgentController : AgentController {
         if (target) {
             agent.ReceiveEvent(new Agent.Event.AimAt {target = target.transform});
         }
+        Countermeasure countermeasure = GetCurrentCountermeasure();
+        if (countermeasure) {
+            countermeasure.SetTarget(target);
+        }
     }
 
     public void AddWeapon(Weapon weapon) {
         agent.ReceiveEvent(new Agent.Event.AddWeapon {weapon = weapon});
+    }
+
+    public void AddCountermeasure(Countermeasure countermeasure) {
+        agent.ReceiveEvent(new Agent.Event.AddCountermeasure {countermeasure = countermeasure});
     }
 
     public Agent GetTarget() {
@@ -66,8 +78,11 @@ public class PlayerAgentController : AgentController {
     protected void Update() {
         UpdateTarget();
 
-        if (ControllerProxy.GetButtonDown("fire_0")) {
+        if (ControllerProxy.GetButtonDown("Fire1")) {
             agent.ReceiveEvent(new Agent.Event.FireWeapon());
+        }
+        if (ControllerProxy.GetButtonDown("Fire2")) {
+            agent.ReceiveEvent(new Agent.Event.FireCountermeasure());
         }
     }
 

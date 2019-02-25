@@ -42,14 +42,12 @@ public class BasicProjectile : Projectile {
                 // Debug.Log("talk shit, get hit");
                 agent.ReceiveEvent(damage.WithForceDirection(transform.forward));
                 onHit.Invoke();
-                PlayHitEffect();
-                ProjectileManager.current.KillProjectile(this);
+                DestroySelf();
             }
         }
         else {
             onHit.Invoke();
-            PlayHitEffect();
-            ProjectileManager.current.KillProjectile(this);
+            DestroySelf();
         }
     }
 
@@ -77,12 +75,16 @@ public class BasicProjectile : Projectile {
     protected void Update() {
         lifespan -= Time.deltaTime;
         if (lifespan < 0) {
-            PlayHitEffect();
-            ProjectileManager.current.KillProjectile(this);
+            DestroySelf();
         }
     }
 
     protected void FixedUpdate() {
         transform.position += transform.forward * speed * Time.fixedDeltaTime;
+    }
+
+    public override void DestroySelf() {
+        PlayHitEffect();
+        ProjectileManager.current.KillProjectile(this);
     }
 }
