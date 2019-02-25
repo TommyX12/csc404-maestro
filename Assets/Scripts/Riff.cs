@@ -318,8 +318,8 @@ public class Riff {
     [Serializable]
     public class Note {
         [SerializeField]
-        public float index; // position, in beats relative to start of rift
-        public float unitPerBeat; // position, in beats relative to start of rift
+        public float index = 0; // position, in beats relative to start of rift
+        public float unitPerBeat = 2; // position, in beats relative to start of rift
         public string sound = null;
         
         public float beat {
@@ -334,8 +334,28 @@ public class Riff {
         }
 
         public static List<Note> MakeRandomNotes(int beatsPerCycle, int unitPerBeat, int numNotes) {
-            // TODO
-            return null;
+            int numUnits = beatsPerCycle * unitPerBeat;
+            bool[] units = new bool[numUnits];
+            numNotes = Math.Min(numUnits, numNotes);
+            for (int i = 0; i < numNotes; ++i) {
+                units[i] = true;
+            }
+
+            List<Note> notes = new List<Note>();
+            
+            // Fisher–Yates shuffle
+            for (int i = 0; i < units.Length; ++i) {
+                int j = Mathf.FloorToInt(UnityEngine.Random.Range(i, units.Length - 0.0001f));
+                bool temp = units[i];
+                units[i] = units[j];
+                units[j] = temp;
+
+                if (units[i]) {
+                    notes.Add(new Note(i, unitPerBeat));
+                }
+            }
+
+            return notes;
         }
     }
 

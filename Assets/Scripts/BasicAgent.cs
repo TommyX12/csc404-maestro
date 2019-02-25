@@ -14,12 +14,16 @@ public class BasicAgent : Agent {
     
     // self reference
     private AgentMovement agentMovement;
+
+    private Riff riff;
     
     public BasicAgent() {
         onDeath += DestroySelf;
     }
 
     protected void Awake() {
+        SetupRiff();
+        
         hitPoint = initialHitPoint;
         
         foreach (Weapon weapon in weapons) {
@@ -48,13 +52,40 @@ public class BasicAgent : Agent {
         return weapons.Count > 0;
     }
 
+    protected void SetupRiff() {
+        List<Riff.Note> notes = new List<Riff.Note>();
+        string rhythmDefaultSound = null;
+
+        BasicAgentRhythm rhythm = GetComponent<BasicAgentRhythm>();
+        if (rhythm) {
+            notes = rhythm.notes;
+            rhythmDefaultSound = rhythm.rhythmDefaultSound;
+        }
+
+        if (notes == null || notes.Count == 0) {
+            notes = Riff.Note.MakeRandomNotes(4, 2, 4);
+        }
+        riff = new Riff(4, notes, MusicManager.Current);
+        if (rhythmDefaultSound == null || rhythmDefaultSound == "") {
+            riff.defaultSound = "clap-2";
+        }
+        else {
+            riff.defaultSound = rhythmDefaultSound;
+        }
+    }
+
     public override Riff GetRiff() {
-        Weapon weapon = GetCurrentWeapon();
-        return weapon ? weapon.GetRiff() : null;
+        return riff;
+        // Weapon weapon = GetCurrentWeapon();
+        // return weapon ? weapon.GetRiff() : null;
     }
 
     protected void ModWeaponIndex(ref int index) {
         index = ((index % weapons.Count) + weapons.Count) % weapons.Count;
+    }
+
+    protected void Update() {
+        riff.Update();
     }
 
     public override void ReceiveEvent(Event.Damage damage) {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45005822, g: 0.49753118, b: 0.56163436, a: 1}
+  m_IndirectSpecularColor: {r: 0.4500578, g: 0.49753082, b: 0.56163365, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -670,6 +670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7315c8cfb8d8449d982ba619f336f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topDown: 0
+  obliqueAngle: 45
   followTarget: {fileID: 1805859462}
   smoothTime: 0.1
   distance: 10
@@ -732,7 +734,11 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: Grayscale, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - assemblyQualifiedName: Pixelize, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &145419634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6031,6 +6037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9208601067335843955, guid: 78ba28a8f6b1846b8b3ffaf8701a6424,
         type: 3}
+      propertyPath: notes.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208601067335843955, guid: 78ba28a8f6b1846b8b3ffaf8701a6424,
+        type: 3}
       propertyPath: initialHitPoint
       value: 200
       objectReference: {fileID: 0}
@@ -7925,6 +7936,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815ac7fa0b1caa4479097f4365ad5943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1784620530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784620527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e91e94b15924967b71b265009a05f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notes:
+  - index: 0
+    unitPerBeat: 4
+    sound: 
+  - index: 1
+    unitPerBeat: 4
+    sound: 
+  - index: 2
+    unitPerBeat: 4
+    sound: 
+  - index: 8
+    unitPerBeat: 4
+    sound: 
+  - index: 9
+    unitPerBeat: 4
+    sound: 
+  - index: 10
+    unitPerBeat: 4
+    sound: 
+  rhythmDefaultSound: 
 --- !u!1001 &1794520902
 PrefabInstance:
   m_ObjectHideFlags: 0
