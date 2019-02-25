@@ -101,7 +101,7 @@ public class BasicAgent : Agent {
         }
         riff = new Riff(4, notes, MusicManager.Current);
         if (rhythmDefaultSound == null || rhythmDefaultSound == "") {
-            riff.defaultSound = "clap-2";
+            riff.defaultSound = "chord-1";
         }
         else {
             riff.defaultSound = rhythmDefaultSound;
