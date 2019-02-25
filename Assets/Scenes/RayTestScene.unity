@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -112,6 +112,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &243932820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243932822}
+  - component: {fileID: 243932821}
+  m_Layer: 0
+  m_Name: BeatSeq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &243932821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243932820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058a806319b0f2641a20495067535e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useClip: 1
+  clip: {fileID: 8300000, guid: 8b24d9a7a58c14091afe33a88906430c, type: 3}
+  bpm: 80
+  beatNum: 100
+  trackNum: 12
+  tracks: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  sequencerOnTextureA: {fileID: 2800000, guid: b143eec9199a03647b3096a41d681ad8, type: 3}
+  sequencerOffTextureA: {fileID: 2800000, guid: c1e00523c3706c640b3405cd8200a3e1,
+    type: 3}
+  sequencerOnTextureB: {fileID: 2800000, guid: 60e5bc066043c0741865e59773f02885, type: 3}
+  sequencerOffTextureB: {fileID: 2800000, guid: 6f8c80183803d4c408b7ea86514d2f33,
+    type: 3}
+--- !u!4 &243932822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243932820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148.65321, y: -70.40442, z: 257.40698}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293029611
 GameObject:
   m_ObjectHideFlags: 0
