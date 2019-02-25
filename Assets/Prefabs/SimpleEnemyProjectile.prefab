@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20326cede07954b5bb6b18d1605bb94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  host: {fileID: 0}
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -143,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 3592417603887884176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 3592417603076027124}
   m_RootOrder: 0

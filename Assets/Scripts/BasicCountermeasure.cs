@@ -19,6 +19,11 @@ public class BasicCountermeasure : Countermeasure {
     // exposed parameters
     public Color color = new Color(0.2f, 0.4f, 0.8f);
     public bool noisyFollow = false;
+    public CounterProjectile projectilePrefab = null;
+    public Projectile.SpawnParameters projectileParameters = new Projectile.SpawnParameters {
+        scale = 1.0f,
+        duration = 0.1f
+    };
 
     public BasicCountermeasure() {
         
@@ -73,13 +78,15 @@ public class BasicCountermeasure : Countermeasure {
     }
 
     protected virtual void OnFire() {
-        // TODO
-        Debug.Log("Countermeasure fired.");
-
         if (target) {
             Projectile projectile = ProjectileManager.current.GetClosestProjectileOf(target);
             if (projectile != null) {
-                projectile.DestroySelf();
+                ProjectileManager.current.SpawnProjectile 
+                    (host,
+                     projectilePrefab,
+                     projectileParameters
+                     .WithCounterTarget(projectile),
+                     /* no pooling */ true);
             }
         }
     }

@@ -8000,22 +8000,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes:
-  - index: 0
+  - index: 4
     unitPerBeat: 4
     sound: 
-  - index: 1
+  - index: 5
     unitPerBeat: 4
     sound: 
-  - index: 2
+  - index: 6
     unitPerBeat: 4
     sound: 
-  - index: 8
+  - index: 12
     unitPerBeat: 4
     sound: 
-  - index: 9
+  - index: 13
     unitPerBeat: 4
     sound: 
-  - index: 10
+  - index: 14
     unitPerBeat: 4
     sound: 
   rhythmDefaultSound: 
