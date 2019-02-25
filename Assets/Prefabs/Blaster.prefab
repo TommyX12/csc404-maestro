@@ -4936,7 +4936,7 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
     damage:
-      amount: 10
+      amount: 1
       force: 0
       forceDirection: {x: 0, y: 0, z: 0}
     color: {r: 0.2, g: 0.4, b: 0.8, a: 1}

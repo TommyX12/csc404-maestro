@@ -6,8 +6,9 @@ using UnityEngine;
 public class SpinnerEnemy : BasicAgent
 {
     public PoolableAudioSource deathNoisePrefab;
+    public ParticleGroup deathExplosion;
 
-    public int beatsPerTransition = 1;
+    public float beatsPerTransition = 1;
 
     public List<GameObject> patrolPoints;
     int patrolIndex = -1;
@@ -49,10 +50,13 @@ public class SpinnerEnemy : BasicAgent
             rotationIndex = -1;
         }
         
-        movementComponent.moveTime =  60f / MusicManager.Current.bpm / 2f;
-        spinnerRotateComponent.moveTime = 60f / MusicManager.Current.bpm / 2f;
+        movementComponent.moveTime =  (60f / MusicManager.Current.bpm) * beatsPerTransition;
+        spinnerRotateComponent.moveTime = (60f / MusicManager.Current.bpm)  * beatsPerTransition;
         weapon = GetComponent<BasicWeapon>();
         weapon.SetHost(this);
+
+        AgentManager.current.AddAgent(this);
+
     }
 
     public void Update()
@@ -89,6 +93,10 @@ public class SpinnerEnemy : BasicAgent
         }
     }
 
+    public void Activate() {
+        active = true;
+    }
+
     protected override void OnDeath()
     {
         base.OnDeath();
@@ -98,6 +106,13 @@ public class SpinnerEnemy : BasicAgent
             if (source) {
                 source.transform.position = this.transform.position;
                 source.StartCoroutine("Play");
+            }
+
+            ParticleGroup pg = ParticleManager.instance.GetParticleGroup(deathExplosion);
+            if (pg)
+            {
+                pg.transform.position = transform.position;
+                pg.PlayOnce();
             }
         }
     }

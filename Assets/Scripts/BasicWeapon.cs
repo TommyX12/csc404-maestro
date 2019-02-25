@@ -101,6 +101,11 @@ public class BasicWeapon : Weapon {
 
 
         // create audio listeners for reach note
+
+        AudioSource templateSource = GetComponent<AudioSource>();
+
+
+
         List<string> uniqueAudioSounds = new List<string>();
         foreach (Riff.Note note in riff.GetNotes()) {
             if (!uniqueAudioSounds.Contains(note.sound)) {
@@ -115,6 +120,10 @@ public class BasicWeapon : Weapon {
         }
 
         AudioSource defaultSource = gameObject.AddComponent<AudioSource>();
+        if (templateSource)
+        {
+            Util.CopyAudioSource(templateSource, defaultSource);
+        }
         defaultSource.clip = defaultClip;
         defaultSource.outputAudioMixerGroup = MusicManager.Current.Mixer; //  temp set do better @TODO;
 
@@ -125,6 +134,10 @@ public class BasicWeapon : Weapon {
             
             if (clip) {
                 AudioSource source = gameObject.AddComponent<AudioSource>();
+                if (templateSource)
+                {
+                    Util.CopyAudioSource(templateSource, source);
+                }
                 source.clip = clip;
                 source.outputAudioMixerGroup = MusicManager.Current.Mixer; // temp set. do better later
                 // @todo set a mixer

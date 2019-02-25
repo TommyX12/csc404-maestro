@@ -15,6 +15,7 @@ public class PoolableAudioSource : MonoBehaviour, ObjectPoolable<PoolableAudioSo
         component.GetComponent<AudioSource>().playOnAwake = false;
         component.gameObject.SetActive(false);
         component.name = this.name;
+        component.gameObject.transform.SetParent(AudioSourceManager.current.transform);
         return component;
     }
 
@@ -30,9 +31,7 @@ public class PoolableAudioSource : MonoBehaviour, ObjectPoolable<PoolableAudioSo
 
     public IEnumerator Play() {
         source.Play();
-        Debug.Log("PLAYED");
         yield return new WaitForSeconds(source.clip.length);
-        Debug.Log("DESTROYED");
         AudioSourceManager.current.KillAudioSource(this);
     }
 
