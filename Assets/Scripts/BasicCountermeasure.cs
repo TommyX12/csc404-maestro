@@ -79,13 +79,14 @@ public class BasicCountermeasure : Countermeasure {
 
     protected virtual void OnFire() {
         if (target) {
-            Projectile projectile = ProjectileManager.current.GetClosestProjectileOf(target);
+            Projectile projectile = ProjectileManager.current.GetClosestProjectileTo(transform.position, target);
             if (projectile != null) {
                 ProjectileManager.current.SpawnProjectile 
                     (host,
                      projectilePrefab,
                      projectileParameters
-                     .WithCounterTarget(projectile),
+                     .WithCounterTarget(projectile)
+                     .WithTransform(transform.position, transform.forward),
                      /* no pooling */ true);
             }
         }

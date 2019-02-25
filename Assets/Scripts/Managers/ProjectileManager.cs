@@ -91,11 +91,10 @@ public class ProjectileManager : MonoBehaviour {
         
     }
 
-    public Projectile GetClosestProjectileOf(Agent agent) {
-        if (!agent) return null;
+    public Projectile GetClosestProjectileTo(Vector3 position, Agent host) {
+        if (!host) return null;
 
-        Vector3 agentPosition = agent.transform.position;
-        int uid = agent.GetUID();
+        int uid = host.GetUID();
         if (!hostToProjectiles.ContainsKey(uid)) {
             return null;
         }
@@ -103,8 +102,7 @@ public class ProjectileManager : MonoBehaviour {
         float bestDistance = Mathf.Infinity;
         Projectile result = null;
         foreach (var projectile in projectiles) {
-            Vector3 position = projectile.transform.position;
-            float distance = (position - agentPosition).sqrMagnitude;
+            float distance = (projectile.transform.position - position).sqrMagnitude;
             if (distance < bestDistance) {
                 bestDistance = distance;
                 result = projectile;

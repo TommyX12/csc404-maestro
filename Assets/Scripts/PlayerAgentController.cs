@@ -33,13 +33,16 @@ public class PlayerAgentController : AgentController {
     }
 
     protected void AcquireNextTarget() {
-        target = AgentManager.current.FindClosestAgentTo(
+        Agent newTarget = AgentManager.current.FindClosestAgentTo(
             transform.position,
             Agent.Type.ENEMY,
             delegate(Agent agent) {
                 return agent != target && IsValidTarget(agent);
             }
         );
+        if (newTarget) {
+            target = newTarget;
+        }
     }
 
     public Weapon GetCurrentWeapon() {
@@ -52,6 +55,7 @@ public class PlayerAgentController : AgentController {
 
     protected void UpdateTarget() {
         if (!IsValidTarget(target)) {
+            target = null;
             AcquireNextTarget();
         }
         if (target) {
@@ -79,10 +83,15 @@ public class PlayerAgentController : AgentController {
         UpdateTarget();
 
         if (ControllerProxy.GetButtonDown("Fire1")) {
-            agent.ReceiveEvent(new Agent.Event.FireWeapon());
+            if (target) {
+                agent.ReceiveEvent(new Agent.Event.FireWeapon());
+            }
         }
         if (ControllerProxy.GetButtonDown("Fire2")) {
             agent.ReceiveEvent(new Agent.Event.FireCountermeasure());
+        }
+        if (ControllerProxy.GetButtonDown("Target")) {
+            AcquireNextTarget();
         }
     }
 

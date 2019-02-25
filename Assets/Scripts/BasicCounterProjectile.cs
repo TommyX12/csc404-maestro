@@ -16,6 +16,7 @@ public class BasicCounterProjectile : CounterProjectile {
     protected float lifespan;
     protected float totalLifespan;
     protected Projectile counterTarget;
+    protected Vector3 origin;
 
     protected float linePosition;
     protected float lastLinePosition;
@@ -53,6 +54,7 @@ public class BasicCounterProjectile : CounterProjectile {
             renderer.material.color = param.color;
         }
         scale = param.scale;
+        origin = param.position;
         totalLifespan = lifespan = param.duration;
         counterTarget = param.counterTarget;
     }
@@ -90,8 +92,8 @@ public class BasicCounterProjectile : CounterProjectile {
         lineRenderer.enabled = true;
         lineRenderer.startWidth = lineRenderer.endWidth = scale * scaleMultiplier;
         lineRenderer.SetPositions(new Vector3[]{
-                Vector3.Lerp(host.transform.position, counterTarget.transform.position, lastLinePosition),
-                Vector3.Lerp(host.transform.position, counterTarget.transform.position, linePosition)
+                Vector3.Lerp(origin, counterTarget.transform.position, lastLinePosition),
+                Vector3.Lerp(origin, counterTarget.transform.position, linePosition)
             });
     }
 
