@@ -75,6 +75,11 @@ public class BasicAgent : Agent {
         weapons[index].Fire();
     }
 
+    public override void ReceiveEvent(Event.FireCountermeasure fireCountermeasure) {
+        // TODO not implemented
+        Debug.Log("FireCountermeasure called");
+    }
+
     public override void ReceiveEvent(Event.SelectNextWeapon selectNextWeapon) {
         if (!HasWeapon()) return;
         currentWeaponIndex += selectNextWeapon.indexDelta;

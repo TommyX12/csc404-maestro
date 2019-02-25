@@ -332,6 +332,11 @@ public class Riff {
             this.index = index;
             this.unitPerBeat = unitPerBeat;
         }
+
+        public static List<Note> MakeRandomNotes(int beatsPerCycle, int unitPerBeat, int numNotes) {
+            // TODO
+            return null;
+        }
     }
 
     public struct NoteHitEvent {

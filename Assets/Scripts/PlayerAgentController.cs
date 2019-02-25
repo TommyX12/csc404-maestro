@@ -66,8 +66,11 @@ public class PlayerAgentController : AgentController {
     protected void Update() {
         UpdateTarget();
 
-        if (Input.GetButtonDown("fire_0")) {
+        if (Input.GetButtonDown("Fire1")) {
             agent.ReceiveEvent(new Agent.Event.FireWeapon());
+        }
+        if (Input.GetButtonDown("Fire2")) {
+            agent.ReceiveEvent(new Agent.Event.FireCountermeasure());
         }
     }
 

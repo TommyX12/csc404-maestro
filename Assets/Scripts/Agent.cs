@@ -29,6 +29,7 @@ public class Agent : MonoBehaviour {
 
     public virtual void ReceiveEvent(Event.Damage damage) {}
     public virtual void ReceiveEvent(Event.FireWeapon fireWeapon) {}
+    public virtual void ReceiveEvent(Event.FireCountermeasure fireCountermeasure) {}
     public virtual void ReceiveEvent(Event.SelectNextWeapon selectNextWeapon) {}
     public virtual void ReceiveEvent(Event.AddWeapon addWeapon) {}
     public virtual void ReceiveEvent(Event.AimAt aimAt) {}
@@ -48,6 +49,10 @@ public class Agent : MonoBehaviour {
 
         public struct FireWeapon {
             public int indexDelta;
+        }
+        
+        public struct FireCountermeasure {
+            
         }
         
         public struct SelectNextWeapon {
