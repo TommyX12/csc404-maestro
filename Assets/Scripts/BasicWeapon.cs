@@ -72,7 +72,8 @@ public class BasicWeapon : Weapon {
 
     protected virtual void OnFire() {
         ProjectileManager.current.SpawnProjectile 
-            (projectilePrefab,
+            (host,
+             projectilePrefab,
              projectileParameters
              .WithTransform(transform.position,
                             transform.forward)

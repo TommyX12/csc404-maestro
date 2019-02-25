@@ -96,16 +96,15 @@ public class SequencerUI : MonoBehaviour {
             // transform update
             Vector3 v = new Vector3();
             playerPosition = player.transform.position;
-            Agent target = player.GetTarget();
-            innerSequence.SetVisible(target != null);
+            // Agent target = player.GetTarget();
 
             playerPosition = Util.WorldToScreenAnchor(canvas, playerPosition);
             sequencePosition = Vector3.Lerp(sequencePosition, playerPosition, 1 - positionSmoothFriction);
             rectTransform.anchorMin = rectTransform.anchorMax = sequencePosition;
 
             // outer ring
-            Weapon currentWeapon = player.GetCurrentWeapon();
-            Riff playerRiff = currentWeapon ? currentWeapon.GetRiff() : null;
+            Weapon weapon = player.GetCurrentWeapon();
+            Riff playerRiff = weapon ? weapon.GetRiff() : null;
             if (playerRiff != outerRiff) {
                 if (outerRiff != null) {
                     outerRiff.playing = false;
@@ -124,7 +123,8 @@ public class SequencerUI : MonoBehaviour {
             }
             
             // inner ring
-            Riff targetRiff = target ? target.GetRiff() : null;
+            Countermeasure countermeasure = player.GetCurrentCountermeasure();
+            Riff targetRiff = countermeasure ? countermeasure.GetTargetRiff() : null;
             if (targetRiff != innerRiff) {
                 if (innerRiff != null) {
                     innerRiff.playing = false;

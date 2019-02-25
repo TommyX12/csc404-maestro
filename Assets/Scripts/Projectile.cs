@@ -8,6 +8,8 @@ public abstract class Projectile : MonoBehaviour, ObjectPoolable<Projectile> {
 
     private int poolID;
 
+    public Agent host;
+
     [Serializable]
     public struct SpawnParameters {
         public Vector3 position;
@@ -39,6 +41,14 @@ public abstract class Projectile : MonoBehaviour, ObjectPoolable<Projectile> {
         return poolID;
     }
 
+    public void SetHost(Agent host) {
+        this.host = host;
+    }
+
+    public Agent GetHost() {
+        return host;
+    }
+
     public Projectile() {
         
     }
@@ -51,6 +61,10 @@ public abstract class Projectile : MonoBehaviour, ObjectPoolable<Projectile> {
         projectile.name = this.name;
         projectile.transform.SetParent(ProjectileManager.current.transform);
         return projectile;
+    }
+
+    public virtual void DestroySelf() {
+        ProjectileManager.current.KillProjectile(this);
     }
 
 }
