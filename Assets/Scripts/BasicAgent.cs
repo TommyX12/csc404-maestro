@@ -11,9 +11,13 @@ public class BasicAgent : Agent {
     public float hitPoint;
     public List<Weapon> weapons;
     public int currentWeaponIndex = 0;
+    public List<Countermeasure> countermeasures;
+    public int currentCountermeasureIndex = 0;
     
     // self reference
     private AgentMovement agentMovement;
+
+    private Riff riff;
     
     public BasicAgent() {
         onDeath += DestroySelf;
@@ -21,7 +25,14 @@ public class BasicAgent : Agent {
 
     protected void Awake() {
         hitPoint = initialHitPoint;
+
+        InitWeapon();
+        InitCountermeasure();
         
+        agentMovement = GetComponent<AgentMovement>();
+    }
+
+    protected void InitWeapon() {
         foreach (Weapon weapon in weapons) {
             weapon.SetHost(this);
         }
@@ -35,8 +46,26 @@ public class BasicAgent : Agent {
                 AddWeapon(weapon);
             }
         }
+    }
 
-        agentMovement = GetComponent<AgentMovement>();
+    protected void InitCountermeasure() {
+        foreach (Countermeasure countermeasure in countermeasures) {
+            countermeasure.SetHost(this);
+        }
+        
+        if (HasCountermeasure()) {
+            ModCountermeasureIndex(ref currentCountermeasureIndex);
+        }
+        else {
+            Countermeasure countermeasure = GetComponent<Countermeasure>();
+            if (countermeasure) {
+                AddCountermeasure(countermeasure);
+            }
+        }
+    }
+
+    protected void Start() {
+        SetupRiff();
     }
 
     public Weapon GetCurrentWeapon() {
@@ -48,13 +77,53 @@ public class BasicAgent : Agent {
         return weapons.Count > 0;
     }
 
+    public Countermeasure GetCurrentCountermeasure() {
+        if (!HasCountermeasure()) return null;
+        return countermeasures[currentCountermeasureIndex];
+    }
+
+    protected bool HasCountermeasure() {
+        return countermeasures.Count > 0;
+    }
+
+    protected void SetupRiff() {
+        List<Riff.Note> notes = new List<Riff.Note>();
+        string rhythmDefaultSound = null;
+
+        BasicAgentRhythm rhythm = GetComponent<BasicAgentRhythm>();
+        if (rhythm) {
+            notes = rhythm.notes;
+            rhythmDefaultSound = rhythm.rhythmDefaultSound;
+        }
+
+        if (notes == null || notes.Count == 0) {
+            notes = Riff.Note.MakeRandomNotes(4, 2, 4);
+        }
+        riff = new Riff(4, notes, MusicManager.Current);
+        if (rhythmDefaultSound == null || rhythmDefaultSound == "") {
+            riff.defaultSound = "chord-1";
+        }
+        else {
+            riff.defaultSound = rhythmDefaultSound;
+        }
+    }
+
     public override Riff GetRiff() {
-        Weapon weapon = GetCurrentWeapon();
-        return weapon ? weapon.GetRiff() : null;
+        return riff;
+        // Weapon weapon = GetCurrentWeapon();
+        // return weapon ? weapon.GetRiff() : null;
     }
 
     protected void ModWeaponIndex(ref int index) {
         index = ((index % weapons.Count) + weapons.Count) % weapons.Count;
+    }
+
+    protected void ModCountermeasureIndex(ref int index) {
+        index = ((index % countermeasures.Count) + countermeasures.Count) % countermeasures.Count;
+    }
+
+    protected void Update() {
+        riff.Update();
     }
 
     public override void ReceiveEvent(Event.Damage damage) {
@@ -75,20 +144,40 @@ public class BasicAgent : Agent {
         weapons[index].Fire();
     }
 
+    public override void ReceiveEvent(Event.FireCountermeasure fireCountermeasure) {
+        if (!HasCountermeasure()) return;
+        int index = currentCountermeasureIndex + fireCountermeasure.indexDelta;
+        ModCountermeasureIndex(ref index);
+        countermeasures[index].Fire();
+    }
+
     public override void ReceiveEvent(Event.SelectNextWeapon selectNextWeapon) {
         if (!HasWeapon()) return;
         currentWeaponIndex += selectNextWeapon.indexDelta;
         ModWeaponIndex(ref currentWeaponIndex);
     }
 
+    public override void ReceiveEvent(Event.SelectNextCountermeasure selectNextCountermeasure) {
+        if (!HasCountermeasure()) return;
+        currentCountermeasureIndex += selectNextCountermeasure.indexDelta;
+        ModCountermeasureIndex(ref currentCountermeasureIndex);
+    }
+
     public override void ReceiveEvent(Event.AimAt aimAt) {
         foreach (var weapon in weapons) {
             weapon.transform.LookAt(aimAt.target);
+        }
+        foreach (var countermeasure in countermeasures) {
+            countermeasure.transform.LookAt(aimAt.target);
         }
     }
 
     public override void ReceiveEvent(Event.AddWeapon addWeapon) {
         AddWeapon(addWeapon.weapon);
+    }
+    
+    public override void ReceiveEvent(Event.AddCountermeasure addCountermeasure) {
+        AddCountermeasure(addCountermeasure.countermeasure);
     }
     
     protected void DestroySelf(Agent agent) {
@@ -108,6 +197,24 @@ public class BasicAgent : Agent {
             if (weapons[i] == weapon) {
                 weapon.SetHost(null);
                 weapons.RemoveAt(i);
+                break;
+            }
+        }
+    }
+
+    public void AddCountermeasure(Countermeasure countermeasure) {
+        if (!HasCountermeasure()) {
+            currentCountermeasureIndex = 0;
+        }
+        countermeasures.Add(countermeasure);
+        countermeasure.SetHost(this);
+    }
+
+    public void RemoveCountermeasure(Countermeasure countermeasure) {
+        for (int i = 0; i < countermeasures.Count; ++i) {
+            if (countermeasures[i] == countermeasure) {
+                countermeasure.SetHost(null);
+                countermeasures.RemoveAt(i);
                 break;
             }
         }

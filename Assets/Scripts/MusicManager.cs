@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour {
 
     public static MusicManager Current;
 
-    private const float audioDelay = 0.1f;
+    private const float audioDelay = 0.2f;
     private const float audioMinLoadTime = 0.02f;
     
     private Dictionary<string, MusicTrack> activeTracks = new Dictionary<string, MusicTrack>();

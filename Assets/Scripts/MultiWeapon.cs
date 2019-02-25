@@ -22,7 +22,8 @@ public class MultiWeapon : BasicWeapon
     {
         foreach (GameObject obj in firePoints) {
                     ProjectileManager.current.SpawnProjectile 
-            (projectilePrefab,
+                        (host,
+                         projectilePrefab,
              projectileParameters
              .WithTransform(obj.transform.position,
                             obj.transform.forward)
