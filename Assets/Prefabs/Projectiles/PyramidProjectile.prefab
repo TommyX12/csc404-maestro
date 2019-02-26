@@ -28,11 +28,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20326cede07954b5bb6b18d1605bb94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHit:
+  host: {fileID: 0}
+  onHit:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  hitEffectPrefab: {fileID: 1309311861052530210, guid: 1c55fe826405e7c4cb243d73e8699ad7,
+    type: 3}
 --- !u!1001 &7372035452694481043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,11 +103,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 524980212054121176, guid: 35a731e14a1ec2e42b0bd0a7139986b9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 524980212054607608, guid: 35a731e14a1ec2e42b0bd0a7139986b9,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -124,6 +122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 16.575
+      objectReference: {fileID: 0}
+    - target: {fileID: 524980212054121176, guid: 35a731e14a1ec2e42b0bd0a7139986b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2632553775244051244, guid: 35a731e14a1ec2e42b0bd0a7139986b9,
         type: 3}

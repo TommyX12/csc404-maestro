@@ -15,15 +15,14 @@ public class InterpTo : MonoBehaviour
     {
         if (start) {
             Vector3 delta = TargetPosition.transform.position - transform.position;
-            if (delta.magnitude < Speed * Time.fixedDeltaTime) {
+            if (delta.magnitude <= 0.1f) {
                 transform.position = TargetPosition.transform.position;
                 if (Next.GetPersistentEventCount() > 0)
                 {
                     Next.Invoke();
                 }
-                this.enabled = false;
             }
-            transform.position += delta.normalized * Speed * Time.fixedDeltaTime;
+            transform.position = Vector3.Lerp(transform.position, TargetPosition.transform.position, Speed * Time.fixedDeltaTime);
             if (PointToTarget) {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(delta, Vector3.up), Time.fixedDeltaTime * Speed);
             }
