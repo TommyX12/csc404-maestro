@@ -49,14 +49,14 @@ public class BeatSequencerEditor : Editor
         if (beatSequencer.useClip)
         {
             // bpm calc
-            beats = (int) ((beatSequencer.bpm/ 60f) * beatSequencer.clip.length);
+            beats = (int)((beatSequencer.bpm / 60f) * beatSequencer.clip.length);
         }
         else {
             beats = beatSequencer.beatNum;
         }
 
 
-        if (tracks==null || tracks.Length != beats * beatSequencer.trackNum)
+        if (tracks == null || tracks.Length != beats * beatSequencer.trackNum)
         {
             tracks = new bool[beatSequencer.trackNum * beats];
         }
@@ -72,7 +72,7 @@ public class BeatSequencerEditor : Editor
                     // coloridx = (coloridx + 1) % colors.Length;
                     activeStyles = activeStyles == alphaStyles ? betaStyles : alphaStyles;
                 }
-                GUIStyle style = tracks[i + j*beatSequencer.trackNum] ? activeStyles[0] : activeStyles[1];
+                GUIStyle style = tracks[i + j * beatSequencer.trackNum] ? activeStyles[0] : activeStyles[1];
                 tracks[i + j * beatSequencer.trackNum] = EditorGUI.Toggle(new Rect(j * BOX_WIDTH, i * BOX_HEIGHT, BOX_WIDTH, BOX_HEIGHT), "", tracks[i + j * beatSequencer.trackNum], style);
             }
             EditorGUILayout.EndHorizontal();
@@ -81,16 +81,23 @@ public class BeatSequencerEditor : Editor
 
         float beatPos = 0;
 
-        if (Application.isPlaying && MusicManager.Current!=null)
+        if (Application.isPlaying && MusicManager.Current != null)
         {
             beatPos = MusicManager.Current.TimeToBeat(MusicManager.Current.GetTotalTimer());
         }
 
-        EditorGUI.DrawRect(new Rect(beatPos*BOX_WIDTH, 0, 2, beatSequencer.trackNum*BOX_HEIGHT), Color.black);
+        EditorGUI.DrawRect(new Rect(beatPos * BOX_WIDTH, 0, 2, beatSequencer.trackNum * BOX_HEIGHT), Color.black);
 
         EditorGUILayout.EndScrollView();
 
+        if (GUILayout.Button("Clear All", GUILayout.Width(100))) {
+            for (int i = 0; i < tracks.Length; i++) {
+                tracks[i] = false;
+            }
+        }
+
         beatSequencer.tracks = tracks;
+
         Repaint();
     }
 }

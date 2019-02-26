@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ScaleToBand : MonoBehaviour
 {
+    public bool additive = false;
+    public bool setRandom = false;
     private float average = 0;
     [Range(0, 1)]
     public float averageDecay = 0.5f;
@@ -14,13 +16,21 @@ public class ScaleToBand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (setRandom) {
+            this.band = Random.Range(0, 8);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         average = average * (1 - averageDecay) + (averageDecay) * FrequencyBander.GetBand(band);
-        transform.localScale = new Vector3(1, Mathf.Max(yMin,average*yScale), 1);
+        if (!additive)
+        {
+            transform.localScale = new Vector3(1, Mathf.Max(yMin, average * yScale), 1);
+        }
+        else {
+            transform.localScale = new Vector3(1, yMin + average * yScale, 1);
+        }
     }
 }
