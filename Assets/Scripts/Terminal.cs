@@ -16,7 +16,7 @@ public class Terminal : MonoBehaviour
 
     private void Start()
     {
-        riff = new Riff(4, Notes, MusicManager.Current);
+        riff = new Riff(4, Notes, MusicManager.current);
     }
 
     public void OnPlayerNear() {

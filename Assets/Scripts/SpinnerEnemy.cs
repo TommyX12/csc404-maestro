@@ -50,8 +50,8 @@ public class SpinnerEnemy : BasicAgent
             rotationIndex = -1;
         }
         
-        movementComponent.moveTime =  (60f / MusicManager.Current.bpm) * beatsPerTransition;
-        spinnerRotateComponent.moveTime = (60f / MusicManager.Current.bpm)  * beatsPerTransition;
+        movementComponent.moveTime =  (60f / MusicManager.current.bpm) * beatsPerTransition;
+        spinnerRotateComponent.moveTime = (60f / MusicManager.current.bpm)  * beatsPerTransition;
         weapon = GetComponent<BasicWeapon>();
         weapon.SetHost(this);
 

@@ -99,7 +99,7 @@ public class BasicAgent : Agent {
         if (notes == null || notes.Count == 0) {
             notes = Riff.Note.MakeRandomNotes(4, 2, 4);
         }
-        riff = new Riff(4, notes, MusicManager.Current);
+        riff = new Riff(4, notes, MusicManager.current);
         if (rhythmDefaultSound == null || rhythmDefaultSound == "") {
             riff.defaultSound = "chord-1";
         }

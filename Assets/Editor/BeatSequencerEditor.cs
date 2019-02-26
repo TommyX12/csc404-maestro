@@ -50,6 +50,7 @@ public class BeatSequencerEditor : Editor
         {
             // bpm calc
             beats = (int)((beatSequencer.bpm / 60f) * beatSequencer.clip.length);
+            beatSequencer.beatNum = beats;
         }
         else {
             beats = beatSequencer.beatNum;
@@ -81,9 +82,9 @@ public class BeatSequencerEditor : Editor
 
         float beatPos = 0;
 
-        if (Application.isPlaying && MusicManager.Current != null)
+        if (Application.isPlaying && MusicManager.current != null)
         {
-            beatPos = MusicManager.Current.TimeToBeat(MusicManager.Current.GetTotalTimer());
+            beatPos = MusicManager.current.TimeToBeat(MusicManager.current.GetTotalTimer());
         }
 
         EditorGUI.DrawRect(new Rect(beatPos * BOX_WIDTH, 0, 2, beatSequencer.trackNum * BOX_HEIGHT), Color.black);

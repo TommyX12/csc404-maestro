@@ -37,7 +37,7 @@ public class Player : Damageable
         notes.Add(new Riff.Note(1));
         notes.Add(new Riff.Note(2));
         notes.Add(new Riff.Note(3));
-        riff = new Riff(4, notes, MusicManager.Current);
+        riff = new Riff(4, notes, MusicManager.current);
         riff.noteHitEvent += OnBeatMove;
     }
 

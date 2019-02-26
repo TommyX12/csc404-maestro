@@ -8,7 +8,7 @@ public class MusicManager : MonoBehaviour {
     
     public static float BEAT_VALUE = 4;
 
-    public static MusicManager Current;
+    public static MusicManager current;
 
     private const float audioDelay = 0.2f;
     private const float audioMinLoadTime = 0.02f;
@@ -53,7 +53,7 @@ public class MusicManager : MonoBehaviour {
     }
 
     public MusicManager() {
-        Current = this;
+        current = this;
         bpm = defaultBPM;
     }
     
@@ -346,8 +346,8 @@ public class MusicManager : MonoBehaviour {
         
         public void Init() {
             if (this.synced_on_awake) {
-                MusicManager.Current.Play(this.name, true, true, 999.0f, 999.0f);
-                MusicManager.Current.Silence(this.name, 0.01f);
+                MusicManager.current.Play(this.name, true, true, 999.0f, 999.0f);
+                MusicManager.current.Silence(this.name, 0.01f);
             }
         }
         
@@ -355,18 +355,18 @@ public class MusicManager : MonoBehaviour {
             if (fadeInTime < 0) fadeInTime = this.fade_in_time;
             if (startFadeInTime < 0) startFadeInTime = this.start_fade_in_time;
             
-            MusicManager.Current.GetMusicTrack(this.name, true).Volume = this.volume * volumeMul;
-            MusicManager.Current.Play(this.name, this.loop, false, fadeInTime, startFadeInTime);
+            MusicManager.current.GetMusicTrack(this.name, true).Volume = this.volume * volumeMul;
+            MusicManager.current.Play(this.name, this.loop, false, fadeInTime, startFadeInTime);
         }
         
         public void Disable(float fadeOutTime = -1) {
             if (fadeOutTime < 0) fadeOutTime = this.fade_out_time;
             
             if (this.synced) {
-                MusicManager.Current.Silence(this.name, fadeOutTime);
+                MusicManager.current.Silence(this.name, fadeOutTime);
             }
             else {
-                MusicManager.Current.Stop(this.name, false, fadeOutTime);
+                MusicManager.current.Stop(this.name, false, fadeOutTime);
             }
         }
     }
@@ -385,7 +385,7 @@ public class MusicManager : MonoBehaviour {
             foreach (var c in this.conditions) {
                 bool passed = true;
                 foreach (string d in c) {
-                    if (!MusicManager.Current.GetCondition(d)) {
+                    if (!MusicManager.current.GetCondition(d)) {
                         passed = false;
                         break;
                     }
@@ -403,7 +403,7 @@ public class MusicManager : MonoBehaviour {
             foreach (var entry in this.tracks) {
                 string name = entry.Key;
                 float volumeMul = entry.Value;
-                MusicManager.Current.GetTrackConfigs()[name].Enable(volumeMul, this.fade_in_time, this.start_fade_in_time);
+                MusicManager.current.GetTrackConfigs()[name].Enable(volumeMul, this.fade_in_time, this.start_fade_in_time);
             }
         }
     }

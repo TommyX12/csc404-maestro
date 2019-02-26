@@ -85,6 +85,8 @@ MonoBehaviour:
   weapons:
   - {fileID: 5644527561305607430}
   currentWeaponIndex: 0
+  countermeasures: []
+  currentCountermeasureIndex: 0
   deathNoisePrefab: {fileID: 3010539009433156881, guid: 12179c019b20b28499eeb7bd6f8c6aea,
     type: 3}
   deathExplosion: {fileID: 5821361603748503042, guid: bee74651780e8c74d92779284a399186,
@@ -125,7 +127,7 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
     damage:
-      amount: 10
+      amount: 1
       force: 0
       forceDirection: {x: 0, y: 0, z: 0}
     color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
@@ -133,6 +135,8 @@ MonoBehaviour:
     scale: 1
     distance: 100
     bypassAgentType: 2
+    duration: 0
+    counterTarget: {fileID: 0}
   firePoints:
   - {fileID: 5644527561106570967}
   - {fileID: 5644527561626353867}
@@ -362,7 +366,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 2760907317042965368, guid: 495bc5811034e43bf88301177f15d18c,
+    - target: {fileID: 7451905252244821697, guid: 495bc5811034e43bf88301177f15d18c,
         type: 3}
       propertyPath: m_Layer
       value: 11
@@ -372,7 +376,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 7451905252244821697, guid: 495bc5811034e43bf88301177f15d18c,
+    - target: {fileID: 2760907317042965368, guid: 495bc5811034e43bf88301177f15d18c,
         type: 3}
       propertyPath: m_Layer
       value: 11

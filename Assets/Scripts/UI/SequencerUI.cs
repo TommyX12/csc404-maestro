@@ -45,7 +45,7 @@ public class SequencerUI : MonoBehaviour {
     protected void Awake() {
         rectTransform = GetComponent<RectTransform>();
         
-        musicManager = MusicManager.Current;
+        musicManager = MusicManager.current;
         canvas = GetComponentInParent<Canvas>();
         
         pointerBar.gameObject.SetActive(true);

@@ -14,7 +14,7 @@ public class TrackTrigger : MonoBehaviour
 
     private void Start()
     {
-        riff = new Riff(4, notes, MusicManager.Current);
+        riff = new Riff(4, notes, MusicManager.current);
         riff.noteHitEvent += noteHitEventHandler;
         riff.hitOffset = -0.2f;
     }

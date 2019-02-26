@@ -27,7 +27,7 @@ public class Shotgun : MonoBehaviour
     protected Riff riff;
     
     protected void Init() {
-        riff = new Riff(BeatsPerBar, notes, MusicManager.Current);
+        riff = new Riff(BeatsPerBar, notes, MusicManager.current);
     }
 
     private void Start()
@@ -55,17 +55,17 @@ public class Shotgun : MonoBehaviour
             switch (press.noteIndex) {
                 case 0:
                     psystem.Emit(25);
-                    MusicManager.Current.PlayAudioSourceAligned(FireSoundReload1, 4);
+                    MusicManager.current.PlayAudioSourceAligned(FireSoundReload1, 4);
                     RaycastAndDamage();
                     break;
                 case 1:
                     psystem.Emit(25);
-                    MusicManager.Current.PlayAudioSourceAligned(FireSound, 4);
+                    MusicManager.current.PlayAudioSourceAligned(FireSound, 4);
                     RaycastAndDamage();
                     break;
                 case 2:
                     psystem.Emit(25);
-                    MusicManager.Current.PlayAudioSourceAligned(FireSoundReload2, 4);
+                    MusicManager.current.PlayAudioSourceAligned(FireSoundReload2, 4);
                     RaycastAndDamage();
                     break;
                 default:

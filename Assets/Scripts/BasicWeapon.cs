@@ -89,7 +89,7 @@ public class BasicWeapon : Weapon {
     }
 
     protected void Awake() {
-        riff = new Riff(beatsPerCycle, notes, MusicManager.Current);
+        riff = new Riff(beatsPerCycle, notes, MusicManager.current);
         riff.delayedNoteHitEvent += DelayedNoteHitEventHandler;
         riff.noteHitEvent += NoteHitEventHandler;
         riff.defaultSound = defaultSound;
@@ -126,7 +126,7 @@ public class BasicWeapon : Weapon {
             Util.CopyAudioSource(templateSource, defaultSource);
         }
         defaultSource.clip = defaultClip;
-        defaultSource.outputAudioMixerGroup = MusicManager.Current.Mixer; //  temp set do better @TODO;
+        defaultSource.outputAudioMixerGroup = MusicManager.current.Mixer; //  temp set do better @TODO;
 
         Dictionary<string, AudioSource> soundMapping = new Dictionary<string, AudioSource>();
 
@@ -140,7 +140,7 @@ public class BasicWeapon : Weapon {
                     Util.CopyAudioSource(templateSource, source);
                 }
                 source.clip = clip;
-                source.outputAudioMixerGroup = MusicManager.Current.Mixer; // temp set. do better later
+                source.outputAudioMixerGroup = MusicManager.current.Mixer; // temp set. do better later
                 // @todo set a mixer
                 soundMapping[audioSound] = source;
             }

@@ -31,7 +31,7 @@ public class SpiralEnemy : BasicAgent
             w.SetAutoFire(true);
         }
 
-        transform.rotation = transform.rotation * Quaternion.Euler(0, (Time.fixedDeltaTime * MusicManager.Current.bpm/60f)*360f/beatsPerRotation, 0);
+        transform.rotation = transform.rotation * Quaternion.Euler(0, (Time.fixedDeltaTime * MusicManager.current.bpm/60f)*360f/beatsPerRotation, 0);
     }
 
     protected override void OnDeath()

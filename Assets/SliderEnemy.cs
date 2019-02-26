@@ -21,7 +21,7 @@ public class SliderEnemy : BasicAgent
         this.type = Agent.Type.ENEMY;
         indices[0] = sliderPos1;
         indices[1] = sliderPos2;
-        movement.moveTime = (60f / MusicManager.Current.bpm) * beatsPerTransition;
+        movement.moveTime = (60f / MusicManager.current.bpm) * beatsPerTransition;
         movement.SetTargetPosition(indices[0].transform.position);
         weapon.SetHost(this);
 

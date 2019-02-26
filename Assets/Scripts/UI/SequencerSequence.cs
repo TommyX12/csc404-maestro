@@ -108,7 +108,7 @@ public class SequencerSequence : MonoBehaviour{
     }
 
     protected void Awake() {
-        musicManager = MusicManager.Current;
+        musicManager = MusicManager.current;
         rectTransform = GetComponent<RectTransform>();
         staticScale = rectTransform.localScale.x;
     }
