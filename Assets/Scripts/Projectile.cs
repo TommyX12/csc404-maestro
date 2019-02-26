@@ -8,7 +8,9 @@ public abstract class Projectile : MonoBehaviour, ObjectPoolable<Projectile> {
 
     private int poolID;
 
-    public Agent host;
+    protected Agent host;
+
+    public bool usePool = true;
 
     [Serializable]
     public struct SpawnParameters {
@@ -20,6 +22,8 @@ public abstract class Projectile : MonoBehaviour, ObjectPoolable<Projectile> {
         public float scale;
         public float distance;
         public Agent.Type bypassAgentType;
+        public float duration;
+        public Projectile counterTarget;
 
         public SpawnParameters WithTransform(Vector3 position, Vector3 direction) {
             this.position = position;
@@ -29,6 +33,11 @@ public abstract class Projectile : MonoBehaviour, ObjectPoolable<Projectile> {
 
         public SpawnParameters WithBypassAgentType(Agent.Type type) {
             this.bypassAgentType = type;
+            return this;
+        }
+
+        public SpawnParameters WithCounterTarget(Projectile counterTarget) {
+            this.counterTarget = counterTarget;
             return this;
         }
     }

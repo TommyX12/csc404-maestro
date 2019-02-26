@@ -16,12 +16,21 @@ public class ProjectileManager : MonoBehaviour {
         current = this;
     }
 
-    public void SpawnProjectile(Agent host, Projectile projectilePrefab, Projectile.SpawnParameters param) {
-        if (!pools.ContainsKey(projectilePrefab.name))
-        {
-            pools.Add(projectilePrefab.name, new ObjectPool<Projectile>(projectilePrefab.CreateNew, 100, ReleaseDelegate, RequestDelegate));
+    public void SpawnProjectile(Agent host, Projectile projectilePrefab, Projectile.SpawnParameters param, bool noPooling = false) {
+        Projectile projectile;
+        if (noPooling) {
+            projectile = projectilePrefab.CreateNew();
+            projectile.gameObject.SetActive(true);
+            projectile.usePool = false;
         }
-        Projectile projectile = pools[projectilePrefab.name].Request();
+        else {
+            if (!pools.ContainsKey(projectilePrefab.name)) {
+                pools.Add(projectilePrefab.name, new ObjectPool<Projectile>(projectilePrefab.CreateNew, 100, ReleaseDelegate, RequestDelegate));
+            }
+            projectile = pools[projectilePrefab.name].Request();
+            projectile.usePool = true;
+        }
+        
         projectile.SetHost(host);
         projectile.SetSpawnParameters(param);
 
@@ -39,12 +48,16 @@ public class ProjectileManager : MonoBehaviour {
     ///   It seems important that this method is called when a projectile dies.
     /// </summary>
     public void KillProjectile(Projectile proj) {
-        if (!pools.ContainsKey(proj.name))
-        {
-            Debug.LogError("No live projectile for projectile: " + proj.name);
-            return;
+        if (proj.usePool) {
+            if (!pools.ContainsKey(proj.name)) {
+                Debug.LogError("No live projectile for projectile: " + proj.name);
+                return;
+            }
+            pools[proj.name].Release(proj);
         }
-        pools[proj.name].Release(proj);
+        else {
+            GameObject.Destroy(proj.gameObject);
+        }
 
         // track projectile host
         Agent host = proj.GetHost();
@@ -78,11 +91,10 @@ public class ProjectileManager : MonoBehaviour {
         
     }
 
-    public Projectile GetClosestProjectileOf(Agent agent) {
-        if (!agent) return null;
+    public Projectile GetClosestProjectileTo(Vector3 position, Agent host) {
+        if (!host) return null;
 
-        Vector3 agentPosition = agent.transform.position;
-        int uid = agent.GetUID();
+        int uid = host.GetUID();
         if (!hostToProjectiles.ContainsKey(uid)) {
             return null;
         }
@@ -90,8 +102,7 @@ public class ProjectileManager : MonoBehaviour {
         float bestDistance = Mathf.Infinity;
         Projectile result = null;
         foreach (var projectile in projectiles) {
-            Vector3 position = projectile.transform.position;
-            float distance = (position - agentPosition).sqrMagnitude;
+            float distance = (projectile.transform.position - position).sqrMagnitude;
             if (distance < bestDistance) {
                 bestDistance = distance;
                 result = projectile;

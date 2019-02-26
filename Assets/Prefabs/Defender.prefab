@@ -4901,6 +4901,22 @@ MonoBehaviour:
   renderer: {fileID: 0}
   color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
   noisyFollow: 1
+  projectilePrefab: {fileID: 5300498619530181080, guid: d179f8402e5994bd3bd561d408fd4b6c,
+    type: 3}
+  projectileParameters:
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+    damage:
+      amount: 0
+      force: 0
+      forceDirection: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    speed: 0
+    scale: 1
+    distance: 0
+    bypassAgentType: 0
+    duration: 0.1
+    counterTarget: {fileID: 0}
 --- !u!114 &1693889835439356710
 MonoBehaviour:
   m_ObjectHideFlags: 0
