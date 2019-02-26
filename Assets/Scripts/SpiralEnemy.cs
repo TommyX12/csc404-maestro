@@ -11,6 +11,12 @@ public class SpiralEnemy : BasicAgent
     public int beatsPerRotation = 4;
     public bool active = false;
 
+    private new void Start()
+    {
+        base.Start();
+        AgentManager.current.AddAgent(this);
+    }
+
     private void FixedUpdate()
     {
         if (!active) {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MaterialColourVisualizer : MonoBehaviour
 {
+    public Color baseColor = Color.gray;
+
     // HDR
     public bool useHDR = true;
     [Range(0, 1)]
@@ -41,11 +43,6 @@ public class MaterialColourVisualizer : MonoBehaviour
         colorID = Shader.PropertyToID("_Color");
     }
 
-    private void OnGUI()
-    {
-        GUI.TextArea(new Rect(0, 0, 100, 100), HDRMax.ToString());
-    }
-
     void Update()
     {
         average[0] = average[0] * (1 - averageDecay) + (averageDecay) * FrequencyBander.GetBand(band[0]);
@@ -60,8 +57,8 @@ public class MaterialColourVisualizer : MonoBehaviour
 
             HDRMax = HDRMax * (1 - HDRDecay * Time.deltaTime);
         }
-
-        block.SetColor(colorID, new Color((average[0]/HDRMax) * scale, (average[1] / HDRMax) * scale, (average[2] / HDRMax) * scale));
+        Color audioColor = new Color((average[0] / HDRMax) * scale, (average[1] / HDRMax) * scale, (average[2] / HDRMax) * scale);
+        block.SetColor(colorID, baseColor + audioColor);
         Graphics.DrawMesh(mesh, transform.position, transform.rotation, material, 0, null, 0, block);
     }
 }
