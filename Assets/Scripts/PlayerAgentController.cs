@@ -37,12 +37,13 @@ public class PlayerAgentController : AgentController {
             transform.position,
             Agent.Type.ENEMY,
             delegate(Agent agent) {
-                return agent != target && IsValidTarget(agent);
+                return // agent != target &&
+                    IsValidTarget(agent);
             }
         );
-        if (newTarget) {
-            target = newTarget;
-        }
+        // if (newTarget) {
+        target = newTarget;
+        // }
     }
 
     public Weapon GetCurrentWeapon() {
@@ -54,10 +55,10 @@ public class PlayerAgentController : AgentController {
     }
 
     protected void UpdateTarget() {
-        if (!IsValidTarget(target)) {
-            target = null;
-            AcquireNextTarget();
-        }
+        // if (!IsValidTarget(target)) {
+        //     target = null;
+        AcquireNextTarget();
+        // }
         if (target) {
             agent.ReceiveEvent(new Agent.Event.AimAt {target = target.transform});
         }
@@ -89,9 +90,6 @@ public class PlayerAgentController : AgentController {
         }
         if (ControllerProxy.GetButtonDown("Fire2")) {
             agent.ReceiveEvent(new Agent.Event.FireCountermeasure());
-        }
-        if (ControllerProxy.GetButtonDown("Target")) {
-            AcquireNextTarget();
         }
     }
 
