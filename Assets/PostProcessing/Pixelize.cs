@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 [Serializable]
-[PostProcess(typeof(PixelizeRenderer), PostProcessEvent.AfterStack, "Custom/Pixelize", false)]
+[PostProcess(typeof(PixelizeRenderer), PostProcessEvent.BeforeStack, "Custom/Pixelize", true)]
 public sealed class Pixelize: PostProcessEffectSettings
 {
     [Range(0f, 1f), Tooltip("blending")]

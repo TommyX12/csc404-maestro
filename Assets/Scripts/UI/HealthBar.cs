@@ -14,6 +14,9 @@ public class HealthBar : MonoBehaviour {
     protected float minHeight = 0.5f;
     protected float maxHeight = 1.0f;
 
+    public Color aliveColor;
+    public Color deadColor;
+
     protected RectTransform[] bars;
     
     public HealthBar() {
@@ -57,7 +60,8 @@ public class HealthBar : MonoBehaviour {
 
             minX += width + space;
             maxX += width + space;
-            
+
+            bar.GetComponent<ScaleToBand>().band = i;
             bars[i] = bar;
         }
     }
@@ -83,7 +87,8 @@ public class HealthBar : MonoBehaviour {
         var agent = gameManager.player.GetAgent();
         int numBarsActive = Math.Min(Math.Max(Mathf.CeilToInt(agent.hitPoint / agent.initialHitPoint * numBars), 0), numBars);
         for (int i = 0; i < bars.Length; ++i) {
-            bars[i].gameObject.SetActive(i < numBarsActive);
+            Color color = i < numBarsActive ? aliveColor : deadColor;
+            bars[i].gameObject.GetComponent<Image>().color = color;
         }
     }
 }

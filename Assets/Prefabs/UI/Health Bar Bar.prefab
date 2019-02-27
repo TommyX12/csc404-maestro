@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 598488581534565187}
   - component: {fileID: 2052490617792424628}
   - component: {fileID: 6373555569131376531}
+  - component: {fileID: 9213516565967236547}
   m_Layer: 5
   m_Name: Health Bar Bar
   m_TagString: Untagged
@@ -58,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.9454925, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.587535, b: 0.6226415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -74,3 +75,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &9213516565967236547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107746946373417839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a9d853a8c1da34f8eb6fdfd4cac08a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  additive: 1
+  setRandom: 0
+  averageDecay: 0.1
+  band: 0
+  yScale: 2
+  yMin: 0.2
