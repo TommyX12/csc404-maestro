@@ -27,15 +27,15 @@ public class PostProcessEffectManager : MonoBehaviour
             return;
         }
         volume.profile.TryGetSettings(out grayscaleEffect);
-        if (grayscaleEffect == null) {
+        if (grayscaleEffect == null)
+        {
             volume.profile.AddSettings(typeof(GrayEffect));
             volume.profile.TryGetSettings(out grayscaleEffect);
             grayscaleEffect.SetAllOverridesTo(true);
-            grayscaleEffect.blend.value=0;
+            grayscaleEffect.blend.value = 0;
         }
         volume.profile.TryGetSettings(out pixelizeEffect);
         current = this;
-        UpdateHP(8);
     }
 
     public void PlayHitEffect() {

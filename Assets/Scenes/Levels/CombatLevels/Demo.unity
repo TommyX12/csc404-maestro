@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4500578, g: 0.49753082, b: 0.56163365, a: 1}
+  m_IndirectSpecularColor: {r: 0.45005822, g: 0.49753118, b: 0.56163436, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -323,7 +323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.4025, y: 0.3177777}
-  m_AnchoredPosition: {x: 110, y: -21.5}
+  m_AnchoredPosition: {x: 110.00001, y: -21.5}
   m_SizeDelta: {x: -222, y: -43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77441483
@@ -733,11 +733,11 @@ MonoBehaviour:
   m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles:
-  - assemblyQualifiedName: Grayscale, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  m_BeforeStackBundles:
   - assemblyQualifiedName: Pixelize, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_AfterStackBundles:
+  - assemblyQualifiedName: GrayEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &145419634
 MonoBehaviour:
@@ -4509,11 +4509,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1233857529666942730, guid: 7197afd4059aef045b758d2933e5e6b2,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1125113595}
     - target: {fileID: 6933938287685056984, guid: 7197afd4059aef045b758d2933e5e6b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4569,6 +4564,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1233857529666942730, guid: 7197afd4059aef045b758d2933e5e6b2,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1125113595}
     - target: {fileID: 1161701889, guid: 7197afd4059aef045b758d2933e5e6b2, type: 3}
       propertyPath: staticallyLinkedAgents.Array.size
       value: 6
@@ -4750,7 +4750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.4025, y: 0.3177777}
-  m_AnchoredPosition: {x: -110.999985, y: -21.5}
+  m_AnchoredPosition: {x: -111, y: -21.5}
   m_SizeDelta: {x: -222, y: -43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056584705
@@ -9188,24 +9188,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2001317420 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2001317420, guid: 4ca391d162345470d9f6760a43f801af,
-    type: 3}
-  m_PrefabInstance: {fileID: 5396243479433221032}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2001317424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001317420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 883a7f896f7d24bb9911616e29a85363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2004607808
 GameObject:
   m_ObjectHideFlags: 0
@@ -10407,14 +10389,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2001317420, guid: 4ca391d162345470d9f6760a43f801af, type: 3}
-      propertyPath: m_Name
-      value: Health Bar
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001317422, guid: 4ca391d162345470d9f6760a43f801af, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3971574372733436969, guid: 4ca391d162345470d9f6760a43f801af,
         type: 3}
       propertyPath: gameManager
@@ -10426,6 +10400,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 598488581534565187, guid: af1dfa5a068d645c2bb439a8773d067f,
         type: 3}
+    - target: {fileID: 2001317420, guid: 4ca391d162345470d9f6760a43f801af, type: 3}
+      propertyPath: m_Name
+      value: Health Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001317422, guid: 4ca391d162345470d9f6760a43f801af, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ca391d162345470d9f6760a43f801af, type: 3}
 --- !u!1001 &6071045719327417132

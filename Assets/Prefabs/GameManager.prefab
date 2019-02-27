@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 6370476648903005599}
   - component: {fileID: 7923750777738053742}
   - component: {fileID: 43683007582798906}
+  - component: {fileID: 3254401275236896607}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -218,13 +219,79 @@ MonoBehaviour:
   volume: {fileID: 0}
   pixelizeHitEffectCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.49447632
+      inSlope: 75.05524
+      outSlope: 75.05524
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 8
+      inSlope: 0.5055237
+      outSlope: 0.5055237
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.23804557
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   grayscaleHPEffectCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.063229315
+      outSlope: -0.063229315
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06993865
+    - serializedVersion: 3
+      time: 8
+      value: 0
+      inSlope: -0.48926526
+      outSlope: -0.48926526
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1310708
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3254401275236896607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933938287685056982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a33570e72f057a4088366c908e88ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
