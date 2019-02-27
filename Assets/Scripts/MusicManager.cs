@@ -330,7 +330,7 @@ public class MusicManager : MonoBehaviour {
     }
 
     public int GetCycleIndex(float beatsPerCycle, bool delayed = true) {
-        return ((int) Mathf.Floor(GetTotalTimer(delayed) / (this.beatLength * BEAT_VALUE)));
+        return ((int) Mathf.Floor(GetTotalTimer(delayed) / (this.beatLength * beatsPerCycle)));
     }
     
     public class TrackConfig {

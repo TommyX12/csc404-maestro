@@ -73,8 +73,8 @@ public class BeatSequencerEditor : Editor
                     // coloridx = (coloridx + 1) % colors.Length;
                     activeStyles = activeStyles == alphaStyles ? betaStyles : alphaStyles;
                 }
-                GUIStyle style = tracks[i + j * beatSequencer.trackNum] ? activeStyles[0] : activeStyles[1];
-                tracks[i + j * beatSequencer.trackNum] = EditorGUI.Toggle(new Rect(j * BOX_WIDTH, i * BOX_HEIGHT, BOX_WIDTH, BOX_HEIGHT), "", tracks[i + j * beatSequencer.trackNum], style);
+                GUIStyle style = tracks[i*beats + j] ? activeStyles[0] : activeStyles[1];
+                tracks[i * beats + j] = EditorGUI.Toggle(new Rect(j * BOX_WIDTH, i * BOX_HEIGHT, BOX_WIDTH, BOX_HEIGHT), "", tracks[i * beats + j], style);
             }
             EditorGUILayout.EndHorizontal();
         }

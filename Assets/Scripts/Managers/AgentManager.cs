@@ -58,6 +58,10 @@ public class AgentManager : MonoBehaviour {
         return (agent.transform.position - position).sqrMagnitude <= radius * radius;
     }
 
+    public void RemoveAgent(Agent agent) {
+        agentDict[agent.type].Remove(agent);
+    }
+
     public Agent FindClosestAgentTo(Vector3 position, Agent.Type type, AgentPredicate predicate = null) {
         EnsureTypeDictExists(type);
 

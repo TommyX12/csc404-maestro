@@ -1,4 +1,4 @@
-﻿Shader "Hidden/Custom/Grayscale"
+﻿Shader "Hidden/Custom/GrayscaleEffect"
 {
 	HLSLINCLUDE
 
@@ -6,7 +6,7 @@
 
 		TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
 	float _Blend;
-
+	int _Dummy;
 	float4 Frag(VaryingsDefault i) : SV_Target
 	{
 		float4 color = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoord);

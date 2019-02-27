@@ -9,12 +9,15 @@ public class SpinnerEnemy : BasicAgent
     public ParticleGroup deathExplosion;
 
     public float beatsPerTransition = 1;
+    [Range(0,10)]
+    public float forwardSpeed = 1;
 
-    public List<GameObject> patrolPoints;
-    int patrolIndex = -1;
+    public int jumps = 5;
 
     public List<float> rotations;
     int rotationIndex = -1;
+
+    public float closeness = 10;
 
     public bool active = false;
     public GameObject spinnerGameObject;
@@ -26,24 +29,11 @@ public class SpinnerEnemy : BasicAgent
 
     private BasicWeapon weapon;
 
-    private void Start()
+    private new void Start()
     {
         this.type = Agent.Type.ENEMY;
         movementComponent = GetComponent<LerpMovement>();
         // unparent any patrol points
-        foreach (GameObject patrolPoint in patrolPoints)
-        {
-            patrolPoint.transform.SetParent(null);
-        }
-        if (patrolPoints.Count > 0)
-        {
-            patrolIndex = 0;
-            movementComponent.SetTargetPosition(patrolPoints[0].transform.position);
-        }
-        else {
-            movementComponent.enabled = false;
-        }
-
         if (rotations.Count > 0) {
             rotationIndex = 0;
         } else {
@@ -55,11 +45,14 @@ public class SpinnerEnemy : BasicAgent
         weapon = GetComponent<BasicWeapon>();
         weapon.SetHost(this);
 
+        Vector2 vector = Random.insideUnitCircle;
+        vector = vector.normalized;
+        vector *= closeness;
+        movementComponent.SetTargetPosition(CombatGameManager.current.player.transform.position + new Vector3(vector.x, 0, vector.y));
         AgentManager.current.AddAgent(this);
-
     }
 
-    public void Update()
+    public new void Update()
     {
         if (active)
         {
@@ -70,14 +63,31 @@ public class SpinnerEnemy : BasicAgent
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (!active) {
+            return;
+        }
+
+        transform.position += transform.forward * Time.fixedDeltaTime * forwardSpeed;
+
+    }
+
     public void GoToNextPoint()
     {
         if (!active) {
             return;
         }
-        if (patrolIndex != -1) {
-            patrolIndex = (patrolIndex + 1) % patrolPoints.Count;
-            movementComponent.SetTargetPosition(patrolPoints[patrolIndex].transform.position);
+        if (jumps > 0)
+        {
+            jumps--;
+            Vector2 vector = Random.insideUnitCircle;
+            vector = vector.normalized;
+            vector *= closeness;
+            movementComponent.SetTargetPosition(CombatGameManager.current.player.transform.position + new Vector3(vector.x, 0, vector.y));
+        }
+        else {
+            movementComponent.SetTargetPosition(transform.position + Vector3.up * 20);
         }
     }
 

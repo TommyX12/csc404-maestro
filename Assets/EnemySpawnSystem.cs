@@ -20,7 +20,6 @@ public class EnemySpawnSystem : MonoBehaviour
                 GameObject spawned = Instantiate(prefab);
                 spawned.transform.position = host.transform.position;
                 spawned.transform.rotation = host.transform.rotation;
-                host.enemies.Add(spawned);
             }
         }
     }
@@ -29,10 +28,6 @@ public class EnemySpawnSystem : MonoBehaviour
     public BeatSequencer sequencer;
     private List<Riff> riffs = new List<Riff>();
     private List<SpawnEventFactory> spawnEventFactories = new List<SpawnEventFactory>();
-    private List<GameObject> enemies = new List<GameObject>();
-    [Range(0, 10)]
-    public float speed = 1f;    // for now, probably should inject some layer between enemy and basic agent
-                                // for scrolling enemy
 
     private void Start()
     {
@@ -44,20 +39,29 @@ public class EnemySpawnSystem : MonoBehaviour
                     notes.Add(new Riff.Note(j));
                 }
             }
-            // create riff and a spawn event class and set them up
-            Riff riff = new Riff(sequencer.beatNum, notes, MusicManager.current);
-
-            Debug.Log(sequencer.beatNum + " " + notes.Count);
-            spawnEventFactories.Add(new SpawnEventFactory(enemyPrefabs[i], this));
-            riff.noteHitEvent += spawnEventFactories[i].HandleNoteHitEvent;
-            riffs.Add(riff);
+            if (notes.Count > 0)
+            {
+                // create riff and a spawn event class and set them up
+                Riff riff = new Riff(sequencer.beatNum, notes, MusicManager.current);
+                // Debug.Log(sequencer.beatNum + " " + notes.Count);
+                spawnEventFactories.Add(new SpawnEventFactory(enemyPrefabs[i], this));
+                riff.noteHitEvent += spawnEventFactories[i].HandleNoteHitEvent;
+                riffs.Add(riff);
+            }
+            else {
+                riffs.Add(null);
+                spawnEventFactories.Add(null);
+            }
         }
     }
 
     public void FixedUpdate()
     {
         foreach (Riff riff in riffs) {
-            riff.Update();
+            if (riff != null)
+            {
+                riff.Update();
+            }
         }
     }
 }

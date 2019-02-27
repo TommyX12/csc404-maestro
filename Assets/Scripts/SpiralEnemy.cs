@@ -6,9 +6,13 @@ public class SpiralEnemy : BasicAgent
 {
     public PoolableAudioSource deathNoisePrefab;
     public ParticleGroup deathExplosion;
-
+    public GameObject rotator;
     [Range(1, 10)]
     public int beatsPerRotation = 4;
+
+    [Range(0, 10)]
+    public float forwardSpeed;
+
     public bool active = false;
 
     private new void Start()
@@ -30,8 +34,8 @@ public class SpiralEnemy : BasicAgent
         {
             w.SetAutoFire(true);
         }
-
-        transform.rotation = transform.rotation * Quaternion.Euler(0, (Time.fixedDeltaTime * MusicManager.current.bpm/60f)*360f/beatsPerRotation, 0);
+        transform.position += transform.forward * forwardSpeed * Time.fixedDeltaTime;
+        rotator.transform.rotation = rotator.transform.rotation * Quaternion.Euler(0, (Time.fixedDeltaTime * MusicManager.current.bpm/60f)*360f/beatsPerRotation, 0);
     }
 
     protected override void OnDeath()

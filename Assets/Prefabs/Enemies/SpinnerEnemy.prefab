@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 3716920209616390516}
   - component: {fileID: 3716920209616390517}
   - component: {fileID: 4158655711906418000}
+  - component: {fileID: 2250136803316229034}
   m_Layer: 11
   m_Name: SpinnerEnemy
   m_TagString: Untagged
@@ -387,16 +388,14 @@ MonoBehaviour:
   deathExplosion: {fileID: 5821361603748503042, guid: bee74651780e8c74d92779284a399186,
     type: 3}
   beatsPerTransition: 1
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  forwardSpeed: 1
+  jumps: 5
   rotations:
   - 315
   - 0
   - 360
   - -405
+  closeness: 3
   active: 1
   spinnerGameObject: {fileID: 3716920209854423091}
   movementComponent: {fileID: 3716920209616390514}
@@ -438,6 +437,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   moveTime: 1
+  useLocalPosition: 0
   targetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &3716920209616390516
 MonoBehaviour:
@@ -626,6 +626,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &2250136803316229034
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716920209616390524}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &3716920209638823777
 GameObject:
   m_ObjectHideFlags: 0

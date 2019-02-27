@@ -8,7 +8,7 @@ using UnityEngine.Rendering.PostProcessing;
 [PostProcess(typeof(PixelizeRenderer), PostProcessEvent.AfterStack, "Custom/Pixelize", false)]
 public sealed class Pixelize: PostProcessEffectSettings
 {
-    [Range(0f, 1f), Tooltip("Grayscale effect intensity.")]
+    [Range(0f, 1f), Tooltip("blending")]
     public FloatParameter blend = new FloatParameter { value = 0.5f };
 
     [Range(1,100), Tooltip("PixelSize")]

@@ -133,7 +133,6 @@ public class Riff {
             ResetLastPlayed();
         }
         position.time = time;
-        
         CheckAutoHit(delayed);
     }
 
