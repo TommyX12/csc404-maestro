@@ -140,7 +140,7 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     direction: {x: 0, y: 0, z: 0}
     damage:
-      amount: 50
+      amount: 2
       force: 0.5
       forceDirection: {x: 0, y: 0, z: 0}
     color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
@@ -148,6 +148,8 @@ MonoBehaviour:
     scale: 1
     distance: 10
     bypassAgentType: 2
+    duration: 0
+    counterTarget: {fileID: 0}
   MuzzleFlash: {fileID: 4420728862020728513}
   Charge: {fileID: 4420728860838929381}
   FireSound: {fileID: 9104291806643182930}
@@ -168,7 +170,8 @@ MonoBehaviour:
   hitPoint: 50
   weapons: []
   currentWeaponIndex: 0
-  notes: []
+  countermeasures: []
+  currentCountermeasureIndex: 0
   deathSystem: {fileID: 8491808949533256185}
   deathSound: {fileID: 5667743251582890003}
 --- !u!82 &9104291806643182930
@@ -442,6 +445,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1379201375393942549}
     m_Modifications:
+    - target: {fileID: 2867311508023338946, guid: 0b80d438dd61e62478a86f47e6beac93,
+        type: 3}
+      propertyPath: m_Name
+      value: woofer_mesh Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867311508023338946, guid: 0b80d438dd61e62478a86f47e6beac93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2867311508022983650, guid: 0b80d438dd61e62478a86f47e6beac93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -515,16 +528,6 @@ PrefabInstance:
     - target: {fileID: 1931141227, guid: 0b80d438dd61e62478a86f47e6beac93, type: 3}
       propertyPath: playOnAwake
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2867311508023338946, guid: 0b80d438dd61e62478a86f47e6beac93,
-        type: 3}
-      propertyPath: m_Name
-      value: woofer_mesh Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2867311508023338946, guid: 0b80d438dd61e62478a86f47e6beac93,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5224565095059450487, guid: 0b80d438dd61e62478a86f47e6beac93,
         type: 3}

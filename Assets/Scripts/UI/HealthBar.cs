@@ -2,14 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+using Zenject;
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour {
 
-    // exposed parameters
-    public RectTransform healthBarBarPrefab;
-    
     protected int numBars = 8;
     protected float spacing = 0.1f;
     protected float minHeight = 0.5f;
@@ -19,6 +18,19 @@ public class HealthBar : MonoBehaviour {
     
     public HealthBar() {
         
+    }
+
+    // injected parameters
+    protected RectTransform healthBarBarPrefab;
+    protected CombatGameManager gameManager;
+
+    [Inject]
+    public void Construct([Inject(Id = Constants.Prefab.HEALTH_BAR_BAR)]
+                          RectTransform healthBarBarPrefab,
+                          CombatGameManager gameManager) {
+        Debug.Log("called");
+        this.healthBarBarPrefab = healthBarBarPrefab;
+        this.gameManager = gameManager;
     }
 
     protected void Awake() {
@@ -68,7 +80,11 @@ public class HealthBar : MonoBehaviour {
     }
 
     protected void Update() {
-        
+        var agent = gameManager.player.GetAgent();
+        int numBarsActive = Math.Min(Math.Max(Mathf.CeilToInt(agent.hitPoint / agent.initialHitPoint * numBars), 0), numBars);
+        for (int i = 0; i < bars.Length; ++i) {
+            bars[i].gameObject.SetActive(i < numBarsActive);
+        }
     }
 }
 
