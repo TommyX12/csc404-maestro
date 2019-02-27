@@ -389,7 +389,7 @@ MonoBehaviour:
     type: 3}
   beatsPerTransition: 1
   forwardSpeed: 1
-  jumps: 5
+  jumps: 3
   rotations:
   - 315
   - 0

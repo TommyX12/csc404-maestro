@@ -8,6 +8,9 @@ public class OnDestroyTrigger : MonoBehaviour
 
     private void OnDestroy()
     {
-        OnDestroyEvent.Invoke();
+        if (Application.isPlaying)
+        {
+            OnDestroyEvent.Invoke();
+        }
     }
 }
