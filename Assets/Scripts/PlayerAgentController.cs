@@ -19,6 +19,10 @@ public class PlayerAgentController : AgentController {
 
     }
 
+    public BasicAgent GetAgent() {
+        return agent;
+    }
+
     protected void Awake() {
         agentMovement = GetComponent<AgentMovement>();
         agent = GetComponent<BasicAgent>();
