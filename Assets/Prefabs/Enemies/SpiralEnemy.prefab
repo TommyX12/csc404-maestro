@@ -143,16 +143,16 @@ MonoBehaviour:
   notes:
   - index: 0
     unitPerBeat: 4
-    sound: clap-1
+    sound: scratch
   - index: 1
     unitPerBeat: 4
-    sound: clap-1
+    sound: scratch
   - index: 2
     unitPerBeat: 4
-    sound: clap-1
+    sound: scratch
   - index: 3
     unitPerBeat: 4
-    sound: clap-1
+    sound: scratch
   defaultSound: scratch
   color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
   noisyFollow: 0
