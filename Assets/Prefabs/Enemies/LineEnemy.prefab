@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 4155240025796125375}
   - component: {fileID: 4155240025796125369}
   - component: {fileID: 2920516073318726881}
+  - component: {fileID: 2465539422007985162}
   m_Layer: 11
   m_Name: LineEnemy
   m_TagString: Untagged
@@ -206,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  scoreValue: 50
   initialHitPoint: 4
   hitPoint: 0
   weapons: []
@@ -270,6 +272,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &2465539422007985162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155240025796125373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.086905, y: 1, z: 1}
+  m_Center: {x: -0.08199978, y: 0, z: 0}
 --- !u!1 &4155240026012546439
 GameObject:
   m_ObjectHideFlags: 0

@@ -186,7 +186,7 @@ InputManager:
     descriptiveName: Fire Weapon
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 0
+    positiveButton: joystick button 16
     altNegativeButton: 
     altPositiveButton: z
     gravity: 1000

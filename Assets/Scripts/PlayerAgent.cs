@@ -30,7 +30,7 @@ public class PlayerAgent : BasicAgent
         {
             if (this.hitPoint >= 0)
             {
-                MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.RoundToInt(this.hitPoint) - 1]);
+                MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.CeilToInt(this.hitPoint) - 1]);
             }
         }
     }

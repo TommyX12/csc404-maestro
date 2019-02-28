@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class BasicAgent : Agent {
 
+    public int scoreValue = 0;
+
     // exposed parameters
     public float initialHitPoint = 100;
     public float hitPoint;
@@ -20,6 +22,7 @@ public class BasicAgent : Agent {
     private Riff riff;
     
     public BasicAgent() {
+        onDeath += AddScore;
         onDeath += DestroySelf;
     }
 
@@ -182,6 +185,13 @@ public class BasicAgent : Agent {
     
     protected void DestroySelf(Agent agent) {
         GameObject.Destroy(agent.gameObject);
+    }
+
+    private void AddScore(Agent agent)
+    {
+        if (ScoreManager.current) {
+            ScoreManager.current.AddScore(this.scoreValue);
+        }
     }
 
     public void AddWeapon(Weapon weapon) {
