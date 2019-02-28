@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager current;
     public int[] starScoreThresholds;
+    public UIScoreDisplay scoreDisplay;
 
     public int score = 0;
 

@@ -6,6 +6,8 @@ public class UIScoreDisplay : MonoBehaviour
 {
     public bool updateTargetAutomatically = true;
 
+    public string scorePrefix = "";
+
     public int targetNumber;
     public int currentNumber;
 
@@ -14,14 +16,7 @@ public class UIScoreDisplay : MonoBehaviour
 
     public Text text;
 
-    public static UIScoreDisplay instance;
-
     public float lerpRate = 1;
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     public void Update()
     {
@@ -29,8 +24,15 @@ public class UIScoreDisplay : MonoBehaviour
             targetNumber = ScoreManager.current.score;
         }
 
+        int prev = currentNumber;
         currentNumber = (int)Mathf.Lerp(currentNumber, targetNumber, Time.deltaTime * lerpRate);
-        text.text = currentNumber.ToString();
+
+        if (prev == currentNumber)
+        {
+            currentNumber = targetNumber;
+        }
+
+        text.text = scorePrefix + currentNumber.ToString();
         text.color = scoreColor.Evaluate(Mathf.Min(1, 1 - (float)currentNumber / scoreColorMaxValue));
     }
 

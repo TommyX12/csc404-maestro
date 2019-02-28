@@ -308,5 +308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bc68d221b7d4b4280fd9964fd90578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starScoreThresholds: 64000000f4010000e8030000
+  starScoreThresholds: c80000002c010000f4010000
+  scoreDisplay: {fileID: 0}
   score: 0
