@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  scoreValue: 50
   initialHitPoint: 4
   hitPoint: 0
   weapons: []

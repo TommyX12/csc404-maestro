@@ -22,5 +22,4 @@ public class UILineRendererTargetSetter : MonoBehaviour
         lineRenderer.Points = points.ToArray();
         lineRenderer.SetAllDirty();
     }
-
 }
