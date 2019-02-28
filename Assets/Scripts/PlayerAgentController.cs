@@ -88,9 +88,7 @@ public class PlayerAgentController : AgentController {
         UpdateTarget();
 
         if (ControllerProxy.GetButtonDown("Fire1")) {
-            if (target) {
-                agent.ReceiveEvent(new Agent.Event.FireWeapon());
-            }
+            agent.ReceiveEvent(new Agent.Event.FireWeapon());
         }
         if (ControllerProxy.GetButtonDown("Fire2")) {
             agent.ReceiveEvent(new Agent.Event.FireCountermeasure());

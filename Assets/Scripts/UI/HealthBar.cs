@@ -31,7 +31,6 @@ public class HealthBar : MonoBehaviour {
     public void Construct([Inject(Id = Constants.Prefab.HEALTH_BAR_BAR)]
                           RectTransform healthBarBarPrefab,
                           CombatGameManager gameManager) {
-        Debug.Log("called");
         this.healthBarBarPrefab = healthBarBarPrefab;
         this.gameManager = gameManager;
     }

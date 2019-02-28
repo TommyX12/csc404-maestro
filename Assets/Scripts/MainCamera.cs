@@ -48,7 +48,8 @@ public class MainCamera : MonoBehaviour
             if (player) {
                 var playerTarget = player.GetTarget();
                 if (playerTarget) {
-                    targetPosition = (targetPosition + playerTarget.transform.position) / 2;
+                    // TODO temporally disabled panning
+                    // targetPosition = (targetPosition + playerTarget.transform.position) / 2;
                 }
             }
 
