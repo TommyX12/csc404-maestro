@@ -1,6 +1,11 @@
 # Maestro
 
-An RPG game in which the player must utilize music, rhythm, and composition to defeat enemies and solve puzzles.
+An RPG game in which the player must utilize music, and rhythm to defeat enemies.
+
+
+Alpha video
+
+https://www.youtube.com/watch?v=R6WamuxwXkM&feature=youtu.be
 
 ## Design Blog Jan 13th - Jan 27th, 2019
 
