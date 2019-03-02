@@ -9550,7 +9550,6 @@ GameObject:
   - component: {fileID: 6282790537885221050}
   - component: {fileID: 6282790537885221044}
   - component: {fileID: 6282790537885221045}
-  - component: {fileID: 3008746834339788699}
   m_Layer: 0
   m_Name: PlayerDamagedPS
   m_TagString: Untagged
@@ -9586,7 +9585,7 @@ ParticleSystem:
   serializedVersion: 6
   lengthInSec: 1.5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -14309,18 +14308,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &3008746834339788699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6282790537885221051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f059cca651b3ec498d091c522f9ed7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6282790538173614128
 GameObject:
   m_ObjectHideFlags: 0
