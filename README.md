@@ -197,6 +197,10 @@ Roughs of enemies
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/542992897763442689/enemyroughs.jpg)
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/543982712101535755/image0.jpg)
 
+## Design Blog Feb 12th, 2019 - Feb 17th, 2019
+
+The entry for this week can be found by following the link below:
+https://docs.google.com/document/d/1-amUrab4W4mbpkweFuZ-aDp3PD5DjyAHpxu0krUbTKk/edit
 
 ## Demo 1
 
