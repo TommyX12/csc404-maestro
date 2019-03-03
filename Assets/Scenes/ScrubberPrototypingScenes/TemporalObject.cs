@@ -8,8 +8,8 @@ public interface TemporalObject {
 }
 
 public abstract class TemporalController : MonoBehaviour {
-    public abstract void Initialize(GameObject obj);
-    public abstract void Determine(GameObject obj, float time);
+    public abstract void Initialize(DeterministicObject obj);
+    public abstract void Determine(DeterministicObject obj, float time);
 }
 
 [Serializable]

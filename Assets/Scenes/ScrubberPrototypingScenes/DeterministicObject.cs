@@ -14,8 +14,11 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
 
     // For universal block, these would have to be swappable on time.
     // will want a generic number (of tracks) later
+    [HideInInspector]
     public List<TemporalPair> positionControllers;
+    [HideInInspector]
     public List<TemporalPair> colorVisualization;
+    [HideInInspector]
     public List<TemporalPair> shapeVisualization;
 
     [HideInInspector]
@@ -28,6 +31,7 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
     [HideInInspector]
     public TransformSerializationExtensions.TransformInfo startingTransform;
 
+    // workaround for editor since I'm terribad at this
     private bool firstRun = true;
 
     // disgusting linear search
@@ -47,10 +51,15 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
             return -1;
         }
 
-        if (firstRun) {
+        if (time < pair[0].startTime) {
+            return -1;
+        }
+
+        if (firstRun)
+        {
             // linear search
             transform.LoadTransform(startingTransform);
-            pair[0].controller.Initialize(gameObject);
+            pair[0].controller.Initialize(this);
             firstRun = false;
         }
 
@@ -59,15 +68,15 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
         { // maybe just do -1 checking
             // linear search
             transform.LoadTransform(startingTransform);
-            pair[0].controller.Initialize(gameObject);
+            pair[0].controller.Initialize(this);
             int idx = 0;
             while (idx < pair.Count - 1 && time >= pair[idx + 1].startTime)
             {
                 // fast forward gameObject state to what it would have been
                 if (idx > 0)
                 {
-                    pair[idx - 1].controller.Determine(gameObject, pair[idx].startTime - pair[idx - 1].startTime);
-                    pair[idx].controller.Initialize(gameObject);
+                    pair[idx - 1].controller.Determine(this, pair[idx].startTime - pair[idx - 1].startTime);
+                    pair[idx].controller.Initialize(this);
                 }
                 idx++;
             }
@@ -78,21 +87,23 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
         if (pos != pair.Count - 1 && time >= pair[pos + 1].startTime)
         {
             pos++;
-            pair[pos - 1].controller.Determine(gameObject, pair[pos].startTime - pair[pos - 1].startTime);
-            pair[pos].controller.Initialize(gameObject);
+            pair[pos - 1].controller.Determine(this, pair[pos].startTime - pair[pos - 1].startTime);
+            pair[pos].controller.Initialize(this);
         }
 
-        pair[pos].controller.Determine(gameObject, time - pair[pos].startTime);
+        pair[pos].controller.Determine(this, time - pair[pos].startTime);
         return pos;
     }
 
     // serialize some start state
-    public void SetStartState() {
+    public void SetStartState()
+    {
         startingTransform = transform.StoreTransform();
     }
 
     public void Update()
     {
+#if UNITY_EDITOR
         if (Scrubber.instance && Scrubber.instance.replay)
         {
             Determine(Scrubber.instance.source.time);
@@ -103,8 +114,72 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
             colorVisualizationPos = -1;
             shapeVisualizationPos = -1;
         }
+#endif
     }
 
+    public void AddPositionController(TemporalController controller, float time)
+    {
+        InsertHelper(positionControllers, controller, time);
+        positionControllerPos = -1;
+    }
+
+    public void AddVisualizationController(TemporalController controller, float time)
+    {                     
+        InsertHelper(colorVisualization, controller, time);
+        colorVisualizationPos = -1;
+    }
+
+    public void AddShapeController(TemporalController controller, float time)
+    {
+        InsertHelper(shapeVisualization, controller, time);
+        shapeVisualizationPos = -1;
+    }
+
+    public void RemovePositionController(float time) {
+        RemoveHelper(positionControllers, time);
+        positionControllerPos = -1;
+    }
+
+    public void RemoveVisualizationController(float time) {
+        RemoveHelper(positionControllers, time);
+        positionControllerPos = -1;
+    }
+
+    public void RemoveShapeController(float time) {
+        RemoveHelper(positionControllers, time);
+        positionControllerPos = -1;
+    }
+
+    private void InsertHelper(List<TemporalPair> list, TemporalController controller, float time)
+    {
+        TemporalPair pair = new TemporalPair { controller = controller, startTime = time };
+        if (list.Count < 1 || time <= list[0].startTime)
+        {
+            list.Insert(0, pair);
+        }
+        else if (list[list.Count - 1].startTime <= time)
+        {
+            list.Add(pair);
+        }
+        else
+        {
+            for (int i = 0; i < list.Count-1; i++)
+            {
+                if (list[i].startTime >= time) {
+                    list.Insert(i, pair);
+                    break;
+                }
+            }
+        }
+    }
+    private void RemoveHelper(List<TemporalPair> list, float time) {
+        for (int i = 0; i < list.Count; i++) {
+            if (list[i].startTime - time <= 0.01) {
+                list.RemoveAt(i);
+                return;
+            }
+        }
+    }
     /*
      public void SetActivePositionController(PositionController x);
      public void SetActiveVisualizer(Visualizer x);

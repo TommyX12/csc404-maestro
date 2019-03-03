@@ -22,7 +22,7 @@ public class GridObject : MonoBehaviour
     public void Update()
     {
 #if UNITY_EDITOR
-        if (!Application.isPlaying)
+        if (!Application.isPlaying && (!Scrubber.instance || !Scrubber.instance.replay))
         {
             PlaceInGrid();
         }

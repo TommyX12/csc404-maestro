@@ -6,10 +6,10 @@ public class TemporalForwardMovement : TemporalController
 {
     public float forwardSpeed;
 
-    public Dictionary<GameObject, Vector3> startPosition = new Dictionary<GameObject, Vector3>();
-    public Dictionary<GameObject, Vector3> startForward = new Dictionary<GameObject, Vector3>();
+    public Dictionary<DeterministicObject, Vector3> startPosition = new Dictionary<DeterministicObject, Vector3>();
+    public Dictionary<DeterministicObject, Vector3> startForward = new Dictionary<DeterministicObject, Vector3>();
 
-    public override void Determine(GameObject obj, float time) {
+    public override void Determine(DeterministicObject obj, float time) {
         if (!startPosition.ContainsKey(obj)) {
             Initialize(obj);
         }
@@ -17,7 +17,7 @@ public class TemporalForwardMovement : TemporalController
         obj.transform.position = startPosition[obj] + startForward[obj] * forwardSpeed * time;
     }
 
-    public override void Initialize(GameObject obj) {
+    public override void Initialize(DeterministicObject obj) {
         startPosition[obj] = obj.transform.position;
         startForward[obj] = obj.transform.forward;
     }

@@ -9,6 +9,7 @@ public class Scrubber : MonoBehaviour
 {
     public static Scrubber instance;
     public bool replay;
+    public int bpm=60;
 
     private void Start()
     {
