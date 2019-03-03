@@ -7,11 +7,13 @@ using UnityEngine.UI;
 [CustomEditor(typeof(Scrubber))]
 public class ScrubberEditor : Editor
 {
-
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         Scrubber scrubber = (Scrubber)target;
+        if (GUILayout.Button("Set As Master")) {
+            scrubber.SetAsMaster();
+        }
         if (GUILayout.Button("Play")) {
             scrubber.PlayMusic();
         }
@@ -83,7 +85,7 @@ public class ScrubberEditor : Editor
         bool changed = false;
 
         // my rect
-        Vector2 pos = clipDisplay;
+        Vector2 pos = clipDisplay - new Vector2(leadWidth/2,0);
         pos = pos + new Vector2(displayWidth * (audioSource.time) / audioSource.clip.length, 0);
         Rect rect = new Rect(pos, new Vector2(leadWidth, displayHeight));
         
