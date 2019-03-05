@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 [CustomEditor(typeof(GridSelector))]
 public class GridSelectorEditor : Editor
@@ -106,6 +108,8 @@ public class GridSelectorEditor : Editor
                 {
                     selectedGridIndices.Add(idx);
                     grid[y * gridWidth + x] = !grid[y * gridWidth + x];
+                    var scene = SceneManager.GetActiveScene();
+                    EditorSceneManager.MarkSceneDirty(scene);
                 }
             }
             changed = true;
