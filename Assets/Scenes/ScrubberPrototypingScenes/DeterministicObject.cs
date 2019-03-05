@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 // really only position need be serialized
 
 [ExecuteInEditMode]
@@ -14,11 +14,8 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
 
     // For universal block, these would have to be swappable on time.
     // will want a generic number (of tracks) later
-    [HideInInspector]
     public List<TemporalPair> positionControllers;
-    [HideInInspector]
     public List<TemporalPair> colorVisualization;
-    [HideInInspector]
     public List<TemporalPair> shapeVisualization;
 
     [HideInInspector]
@@ -28,7 +25,6 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
     private int colorVisualizationPos = -1;
     private int shapeVisualizationPos = -1;
 
-    [HideInInspector]
     public TransformSerializationExtensions.TransformInfo startingTransform;
 
     // workaround for editor since I'm terribad at this
@@ -150,6 +146,15 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
         positionControllerPos = -1;
     }
 
+    public void ClearControllers() {
+        positionControllers.Clear();
+        shapeVisualization.Clear();
+        colorVisualization.Clear();
+        positionControllerPos = -1;
+        colorVisualizationPos = -1;
+        shapeVisualizationPos = -1;
+    }
+
     private void InsertHelper(List<TemporalPair> list, TemporalController controller, float time)
     {
         TemporalPair pair = new TemporalPair { controller = controller, startTime = time };
@@ -163,11 +168,11 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
         }
         else
         {
-            for (int i = 0; i < list.Count-1; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].startTime >= time) {
                     list.Insert(i, pair);
-                    break;
+                    return;
                 }
             }
         }
@@ -184,4 +189,19 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
      public void SetActivePositionController(PositionController x);
      public void SetActiveVisualizer(Visualizer x);
     */
+
+    private void OnEnable()
+    {
+#if UNITY_EDITOR
+        EditorApplication.update += Update;
+#endif
+    }
+
+    private void OnDisable()
+    {
+#if UNITY_EDITOR
+        EditorApplication.update -= Update;
+#endif
+    }
+
 }

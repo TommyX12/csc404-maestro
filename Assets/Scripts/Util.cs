@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -13,7 +15,11 @@ static public class Util
 {
     
     public const float PI2 = Mathf.PI * 2.0f;
-    
+
+    public static void SetCurrentSceneDirty() {
+        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+    }
+
     private static Stack<Random.State> _randomSeedStack = new Stack<Random.State>();
 
     public static T AddComponent<T>(this GameObject go, T toAdd) where T : Component
