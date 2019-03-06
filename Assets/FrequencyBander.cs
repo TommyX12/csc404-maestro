@@ -1,19 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
+[ExecuteAlways]
 public class FrequencyBander : MonoBehaviour
 {
     private static float[] samples = new float[512];
     private static float[] bands = new float[8];
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
+
         AudioListener.GetSpectrumData(samples, 0, FFTWindow.BlackmanHarris);
 
         int count = 0;
@@ -36,4 +34,17 @@ public class FrequencyBander : MonoBehaviour
         return bands[band];
     }
 
+    private void OnEnable()
+    {
+#if UNITY_EDITOR
+        EditorApplication.update += Update;
+#endif
+    }
+
+    private void OnDisable()
+    {
+#if UNITY_EDITOR
+        EditorApplication.update -= Update;
+#endif
+    }
 }

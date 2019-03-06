@@ -23,6 +23,7 @@ public class MaterialColourVisualizer : MonoBehaviour
     private MaterialPropertyBlock block;
     [Range(0, 1)]
     public float averageDecay = 0.5f;
+
     private void Start()
     {
         if (randomBand) {

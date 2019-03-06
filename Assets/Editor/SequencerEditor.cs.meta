@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 99a7bbdd0f83a5446b55afa778e2ef82
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - onA: {fileID: 2800000, guid: b143eec9199a03647b3096a41d681ad8, type: 3}
+  - offA: {fileID: 2800000, guid: c1e00523c3706c640b3405cd8200a3e1, type: 3}
+  - onB: {fileID: 2800000, guid: 60e5bc066043c0741865e59773f02885, type: 3}
+  - offB: {fileID: 2800000, guid: 6f8c80183803d4c408b7ea86514d2f33, type: 3}
+  - leadTexture: {fileID: 2800000, guid: 27c75e1c28f60f140aa883364672a480, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
