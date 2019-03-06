@@ -38,6 +38,8 @@ public class LaserStretcher : MonoBehaviour
     		//aestheticsShape = laserAesthetics.shape;
     	}
 
+    	actualLaser.SetPosition(0, transform.position);
+
         // For storing raycast results.
         RaycastHit hit;
         bool contact = Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layerMask);
@@ -49,7 +51,7 @@ public class LaserStretcher : MonoBehaviour
     		}
         }
         else{
-        	Vector3 endPoint = transform.forward * maxDistance;
+        	Vector3 endPoint = transform.position + (transform.forward * maxDistance);
         	actualLaser.SetPosition(1, endPoint);
         	laserImpact.transform.position = endPoint;
         	if(laserAesthetics){
