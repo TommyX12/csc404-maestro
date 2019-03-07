@@ -27,8 +27,8 @@ public class LaserStretcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	int layerMask = 1 << 10;
-    	layerMask = ~layerMask;
+    	int layerMask = 1 << 0;
+    	//layerMask = ~layerMask;
     	ParticleSystem.MainModule aestheticsMain;
     	//ParticleSystem.ShapeModule aestheticsShape;
 
