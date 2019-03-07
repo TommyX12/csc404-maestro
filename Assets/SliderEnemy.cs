@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SliderEnemy : BasicAgent
 {
+    public ParticleGroup deathExplosion;
+    public PoolableAudioSource deathNoisePrefab;
+
     public float beatsPerTransition = 1;
     public bool active = false;
 
@@ -59,4 +62,26 @@ public class SliderEnemy : BasicAgent
         index = (index + 1)%indices.Length;
         movement.SetTargetPosition(indices[index].transform.localPosition);
     }
+
+    protected override void OnDeath()
+    {
+        base.OnDeath();
+        if (deathNoisePrefab)
+        {
+            PoolableAudioSource source = AudioSourceManager.current.SpawnAudioSource(deathNoisePrefab);
+            if (source)
+            {
+                source.transform.position = this.transform.position;
+                source.StartCoroutine("Play");
+            }
+
+            ParticleGroup pg = ParticleManager.instance.GetParticleGroup(deathExplosion);
+            if (pg)
+            {
+                pg.transform.position = transform.position;
+                pg.PlayOnce();
+            }
+        }
+    }
+
 }

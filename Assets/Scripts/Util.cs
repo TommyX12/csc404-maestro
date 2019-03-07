@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor.SceneManagement;
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -11,13 +10,19 @@ using System.Text.RegularExpressions;
 using Random = UnityEngine.Random;
 using Newtonsoft.Json;
 
+#if UNITY_EDITOR
+using UnityEditor.SceneManagement;
+#endif
+
 static public class Util
 {
     
     public const float PI2 = Mathf.PI * 2.0f;
 
     public static void SetCurrentSceneDirty() {
+#if UNITY_EDITOR
         EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+#endif
     }
 
     private static Stack<Random.State> _randomSeedStack = new Stack<Random.State>();

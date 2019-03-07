@@ -7,18 +7,4 @@ using UnityEditor;
 [CanEditMultipleObjects]
 public class GridObjectEditor : Editor
 {
-    private void PlaceInScene() {
-        GridObject g = (GridObject)target;
-        if (!Application.isPlaying)
-        {
-            g.transform.localPosition = g.GetPosition();
-            g.GridPos = g.GetGridPosition();
-        }
-    }
-
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        PlaceInScene();
-    }
 }

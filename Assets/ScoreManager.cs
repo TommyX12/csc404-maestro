@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+
+    public ParticleGroup scoreParticles;
+
     public static ScoreManager current;
     public int[] starScoreThresholds;
     public UIScoreDisplay scoreDisplay;

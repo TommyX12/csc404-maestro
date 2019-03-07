@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[InitializeOnLoad]
 public class Scrubber : MonoBehaviour
 {
     public static Scrubber instance;

@@ -33,7 +33,7 @@ public class GridObject : MonoBehaviour
         Vector3 vec = transform.localPosition;
         Vector3 displ = (Sizes - new Vector3(1, 1, 1)) * GridSize;
         vec += GetPivotDisplacement() - GetSizeDisplacement();
-        return new Vector3Int(Mathf.FloorToInt(vec.x / GridSize), Mathf.FloorToInt(vec.y / GridSize), Mathf.FloorToInt(vec.z / GridSize));
+        return new Vector3Int(Mathf.RoundToInt(vec.x / GridSize), Mathf.RoundToInt(vec.y / GridSize), Mathf.RoundToInt(vec.z / GridSize));
     }
 
     public Vector3 GetSizePivotDisplacement() {
