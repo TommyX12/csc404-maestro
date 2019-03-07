@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5269707665212548497}
   - component: {fileID: 5269707665212548503}
   - component: {fileID: 5269707665212548496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4784,7 +4784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5269707665725144198}
   - component: {fileID: 8969948887933403226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ProjectileHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 5269707666569172821}
   - component: {fileID: 5269707666569172827}
   - component: {fileID: 5269707666569172820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9610,7 +9610,7 @@ GameObject:
   - component: {fileID: 5269707666671631058}
   - component: {fileID: 5269707666671631056}
   - component: {fileID: 5269707666671631057}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Notes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14375,7 +14375,7 @@ GameObject:
   - component: {fileID: 5269707666704075741}
   - component: {fileID: 5269707666704075555}
   - component: {fileID: 5269707666704075740}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Teal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19149,7 +19149,7 @@ GameObject:
   - component: {fileID: 5269707667019858772}
   - component: {fileID: 5269707667019858778}
   - component: {fileID: 5269707667019858779}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

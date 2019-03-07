@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2724144958806032928}
   - component: {fileID: 2724144958806032943}
   - component: {fileID: 1309311861052530210}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4698,7 +4698,7 @@ ParticleSystem:
 --- !u!199 &2724144958806032943
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

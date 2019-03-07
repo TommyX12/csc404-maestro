@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2472020515252980451}
   - component: {fileID: 2472020515252980453}
   - component: {fileID: 2472020515252980450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LaserRings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4709,7 +4709,7 @@ GameObject:
   - component: {fileID: 2472020515420526174}
   - component: {fileID: 2472020515420526176}
   - component: {fileID: 2472020515420526177}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LaserAesthetics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9408,7 +9408,7 @@ GameObject:
   - component: {fileID: 2472020515716316191}
   - component: {fileID: 2472020515716316188}
   - component: {fileID: 1151122114393210631}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LaserLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14125,7 +14125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672329755977685040}
   - component: {fileID: 6199243289592765834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14195,7 +14195,7 @@ GameObject:
   - component: {fileID: 5441942661434610717}
   - component: {fileID: 5441942661434610719}
   - component: {fileID: 5441942661434610716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LaserEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18895,7 +18895,7 @@ GameObject:
   - component: {fileID: 5441942661530561721}
   - component: {fileID: 5441942661530561723}
   - component: {fileID: 5441942661530561720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LaserEndSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23601,7 +23601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713973882252789384}
   - component: {fileID: 6255914456753721417}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23670,7 +23670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6847140472239799659}
   - component: {fileID: 6847140472239799658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ActualLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
