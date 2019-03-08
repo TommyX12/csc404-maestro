@@ -154,7 +154,7 @@ namespace XNodeEditor {
 
         private static System.Type GetType(SerializedProperty property) {
             System.Type parentType = property.serializedObject.targetObject.GetType();
-            System.Reflection.FieldInfo fi = NodeEditorWindow.GetFieldInfo(property.serializedObject.targetObject.GetType(), property.name);
+            System.Reflection.FieldInfo fi = NodeEditorWindow.GetFieldInfo(parentType, property.name);
             return fi.FieldType;
         }
 
@@ -254,6 +254,18 @@ namespace XNodeEditor {
             GUI.color = col;
         }
 
+        /// <summary> Is this port part of an InstancePortList? </summary>
+        public static bool IsInstancePortListPort(XNode.NodePort port) {
+            string[] parts = port.fieldName.Split(' ');
+            if (parts.Length != 2) return false;
+            Dictionary<string, ReorderableList> cache;
+            if (reorderableListCache.TryGetValue(port.node, out cache)) {
+                ReorderableList list;
+                if (cache.TryGetValue(parts[0], out list)) return true;
+            }
+            return false;
+        }
+
         /// <summary> Draw an editable list of instance ports. Port names are named as "[fieldName] [index]" </summary>
         /// <param name="fieldName">Supply a list for editable values</param>
         /// <param name="type">Value type of added instance ports</param>
@@ -289,7 +301,6 @@ namespace XNodeEditor {
 
         private static ReorderableList CreateReorderableList(string fieldName, List<XNode.NodePort> instancePorts, SerializedProperty arrayData, Type type, SerializedObject serializedObject, XNode.NodePort.IO io, XNode.Node.ConnectionType connectionType, XNode.Node.TypeConstraint typeConstraint, Action<ReorderableList> onCreation) {
             bool hasArrayData = arrayData != null && arrayData.isArray;
-            int arraySize = hasArrayData ? arrayData.arraySize : 0;
             XNode.Node node = serializedObject.targetObject as XNode.Node;
             ReorderableList list = new ReorderableList(instancePorts, null, true, true, true, true);
             string label = arrayData != null ? arrayData.displayName : ObjectNames.NicifyVariableName(fieldName);
@@ -305,8 +316,10 @@ namespace XNodeEditor {
                         SerializedProperty itemData = arrayData.GetArrayElementAtIndex(index);
                         EditorGUI.PropertyField(rect, itemData, true);
                     } else EditorGUI.LabelField(rect, port.fieldName);
-                    Vector2 pos = rect.position + (port.IsOutput?new Vector2(rect.width + 6, 0) : new Vector2(-36, 0));
-                    NodeEditorGUILayout.PortField(pos, port);
+                    if (port != null) {
+                        Vector2 pos = rect.position + (port.IsOutput?new Vector2(rect.width + 6, 0) : new Vector2(-36, 0));
+                        NodeEditorGUILayout.PortField(pos, port);
+                    }
                 };
             list.elementHeightCallback =
                 (int index) => {
@@ -379,11 +392,22 @@ namespace XNodeEditor {
                     else node.AddInstanceInput(type, connectionType, typeConstraint, newName);
                     serializedObject.Update();
                     EditorUtility.SetDirty(node);
-                    if (hasArrayData) arrayData.InsertArrayElementAtIndex(arraySize);
+                    if (hasArrayData) {
+                        arrayData.InsertArrayElementAtIndex(arrayData.arraySize);
+                    }
                     serializedObject.ApplyModifiedProperties();
                 };
             list.onRemoveCallback =
                 (ReorderableList rl) => {
+
+                    Predicate<string> isMatchingInstancePort =
+                        x => {
+                            string[] split = x.Split(' ');
+                            if (split != null && split.Length == 2) return split[0] == fieldName;
+                            else return false;
+                        };
+                    instancePorts = node.InstancePorts.Where(x => isMatchingInstancePort(x.fieldName)).OrderBy(x => x.fieldName).ToList();
+
                     int index = rl.index;
                     // Clear the removed ports connections
                     instancePorts[index].ClearConnections();
@@ -401,23 +425,21 @@ namespace XNodeEditor {
                     EditorUtility.SetDirty(node);
                     if (hasArrayData) {
                         arrayData.DeleteArrayElementAtIndex(index);
-                        arraySize--;
                         // Error handling. If the following happens too often, file a bug report at https://github.com/Siccity/xNode/issues
-                        if (instancePorts.Count <= arraySize) {
-                            while (instancePorts.Count <= arraySize) {
-                                arrayData.DeleteArrayElementAtIndex(--arraySize);
+                        if (instancePorts.Count <= arrayData.arraySize) {
+                            while (instancePorts.Count <= arrayData.arraySize) {
+                                arrayData.DeleteArrayElementAtIndex(arrayData.arraySize - 1);
                             }
                             UnityEngine.Debug.LogWarning("Array size exceeded instance ports size. Excess items removed.");
                         }
                         serializedObject.ApplyModifiedProperties();
                         serializedObject.Update();
                     }
-
                 };
 
             if (hasArrayData) {
                 int instancePortCount = instancePorts.Count;
-                while (instancePortCount < arraySize) {
+                while (instancePortCount < arrayData.arraySize) {
                     // Add instance port postfixed with an index number
                     string newName = arrayData.name + " 0";
                     int i = 0;
@@ -427,9 +449,8 @@ namespace XNodeEditor {
                     EditorUtility.SetDirty(node);
                     instancePortCount++;
                 }
-                while (arraySize < instancePortCount) {
-                    arrayData.InsertArrayElementAtIndex(arraySize);
-                    arraySize++;
+                while (arrayData.arraySize < instancePortCount) {
+                    arrayData.InsertArrayElementAtIndex(arrayData.arraySize);
                 }
                 serializedObject.ApplyModifiedProperties();
                 serializedObject.Update();

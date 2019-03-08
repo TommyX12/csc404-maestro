@@ -13,7 +13,7 @@ public class MusicTrackObject : MonoBehaviour
         MusicManager.current.AddMusicTrack(audioName);
     }
     public void Play() {
-        MusicManager.current.StartRiff(audioName, 80);
+        MusicManager.current.StartRiff(audioName, CombatGameManager.current.trackBPM);
         MusicManager.current.MasterVolume = volume;
     }
 

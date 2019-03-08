@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4390532945373353007}
   - component: {fileID: 4390532945373353001}
   - component: {fileID: 4390532945373353006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4785,7 +4785,7 @@ GameObject:
   - component: {fileID: 4390532945791285859}
   - component: {fileID: 4390532945791285917}
   - component: {fileID: 4390532945791285858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Teal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9559,7 +9559,7 @@ GameObject:
   - component: {fileID: 4390532945925334763}
   - component: {fileID: 4390532945925334757}
   - component: {fileID: 4390532945925334762}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14333,7 +14333,7 @@ GameObject:
   - component: {fileID: 4390532946027088748}
   - component: {fileID: 4390532946027088750}
   - component: {fileID: 4390532946027088751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Notes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19098,7 +19098,7 @@ GameObject:
   - component: {fileID: 4390532946090160874}
   - component: {fileID: 4390532946090160868}
   - component: {fileID: 4390532946090160869}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ProjectileHitParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

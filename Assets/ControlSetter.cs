@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 public class ControlSetter : MonoBehaviour
 {
     public enum ControlType {
@@ -15,6 +17,7 @@ public class ControlSetter : MonoBehaviour
     public GridSelector gridSelection;
     public Sequencer sequence;
     public void SetControls() {
+#if UNITY_EDITOR
         if (Scrubber.instance == null) {
             return;
         }
@@ -39,6 +42,7 @@ public class ControlSetter : MonoBehaviour
                 }
             }
         }
+#endif
     }
     public void RemoveControls(bool[] grids, bool[] sequences, ControlType controlType) {
         if (Scrubber.instance == null)

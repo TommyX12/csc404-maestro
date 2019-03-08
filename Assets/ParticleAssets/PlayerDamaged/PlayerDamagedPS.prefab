@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5157674911883749855}
   - component: {fileID: 5157674911883749853}
   - component: {fileID: 5157674911883749852}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Rests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4776,7 +4776,7 @@ GameObject:
   - component: {fileID: 6282790536616027775}
   - component: {fileID: 6282790536616027769}
   - component: {fileID: 6282790536616027774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Set 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9550,7 +9550,7 @@ GameObject:
   - component: {fileID: 6282790537885221050}
   - component: {fileID: 6282790537885221044}
   - component: {fileID: 6282790537885221045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerDamagedPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14319,7 +14319,7 @@ GameObject:
   - component: {fileID: 6282790538173614131}
   - component: {fileID: 6282790538173614285}
   - component: {fileID: 6282790538173614130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Sparks Set 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19093,7 +19093,7 @@ GameObject:
   - component: {fileID: 6282790538307998907}
   - component: {fileID: 6282790538307998901}
   - component: {fileID: 6282790538307998906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

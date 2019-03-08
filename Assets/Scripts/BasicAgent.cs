@@ -191,6 +191,13 @@ public class BasicAgent : Agent {
     {
         if (ScoreManager.current) {
             ScoreManager.current.AddScore(this.scoreValue);
+            if (ScoreManager.current.scoreParticles)
+            {
+                var pg = ParticleManager.instance.GetParticleGroup(ScoreManager.current.scoreParticles);
+                pg.transform.position = agent.transform.position;
+                pg.emissionNums[0] = this.scoreValue;
+                pg.PlayOnce();
+            }
         }
     }
 

@@ -9,6 +9,7 @@ public class CassetteScore : MonoBehaviour
     public UIScoreDisplay cassetteScoreDisplay;
     public AudioSource starNoise;
     public SpriteRenderer[] stars;
+    public string sceneToLoad = "MainMenu";
 
     public float inputCooldown = 1f;
 
@@ -90,7 +91,7 @@ public class CassetteScore : MonoBehaviour
                     break;
                 case CassetteScoreState.BACK:
                     // scene transition
-                    SceneManager.LoadScene("MainMenu");
+                    SceneManager.LoadScene(sceneToLoad);
                     break;
             }
         }
