@@ -47,16 +47,17 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
             return -1;
         }
 
-        if (time < pair[0].startTime) {
-            return -1;
-        }
-
         if (firstRun)
         {
             // linear search
             transform.LoadTransform(startingTransform);
             pair[0].controller.Initialize(this);
             firstRun = false;
+        }
+
+        if (time < pair[0].startTime)
+        {
+            return -1;
         }
 
         // generate state from the beginning
@@ -97,6 +98,11 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
         startingTransform = transform.StoreTransform();
     }
 
+    private void Start()
+    {
+        transform.LoadTransform(startingTransform);
+    }
+
     public void Update()
     {
 #if UNITY_EDITOR
@@ -106,6 +112,7 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
         }
         else
         {
+            firstRun = true;
             positionControllerPos = -1;
             colorVisualizationPos = -1;
             shapeVisualizationPos = -1;
