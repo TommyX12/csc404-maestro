@@ -19,6 +19,7 @@ public class ControlSetter : MonoBehaviour
     public void SetControls() {
 #if UNITY_EDITOR
         if (Scrubber.instance == null) {
+            Debug.LogWarning("Scrubber not set, no controls set");
             return;
         }
         for (int i = 0; i < sequence.data.Length; i++) {
