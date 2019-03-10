@@ -10,7 +10,7 @@ public class Scrubber : MonoBehaviour
     public bool replay;
     public int bpm=60;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }
