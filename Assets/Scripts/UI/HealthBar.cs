@@ -23,16 +23,16 @@ public class HealthBar : MonoBehaviour {
         
     }
 
-    // injected parameters
+    // Injected references
     protected RectTransform healthBarBarPrefab;
-    protected CombatGameManager gameManager;
+    protected GameplayUIModel model;
 
     [Inject]
     public void Construct([Inject(Id = Constants.Prefab.HEALTH_BAR_BAR)]
                           RectTransform healthBarBarPrefab,
-                          CombatGameManager gameManager) {
+                          GameplayUIModel model) {
         this.healthBarBarPrefab = healthBarBarPrefab;
-        this.gameManager = gameManager;
+        this.model = model;
     }
 
     protected void Awake() {
@@ -83,8 +83,9 @@ public class HealthBar : MonoBehaviour {
     }
 
     protected void Update() {
-        var agent = gameManager.player.GetAgent();
-        int numBarsActive = Math.Min(Math.Max(Mathf.CeilToInt(agent.hitPoint / agent.initialHitPoint * numBars), 0), numBars);
+        var playerHealth = model.PlayerHealth;
+        var playerTotalHealth = model.PlayerTotalHealth;
+        int numBarsActive = Math.Min(Math.Max(Mathf.CeilToInt(playerHealth / playerTotalHealth * numBars), 0), numBars);
         for (int i = 0; i < bars.Length; ++i) {
             Color color = i < numBarsActive ? aliveColor : deadColor;
             bars[i].gameObject.GetComponent<Image>().color = color;

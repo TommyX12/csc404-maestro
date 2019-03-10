@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using Zenject;
+
 public class SequencerSequence : MonoBehaviour{
 
     // references
@@ -31,14 +33,25 @@ public class SequencerSequence : MonoBehaviour{
     private int lastSeenCycle = 0;
 
     private float hitEffectTimer = 0;
-    private float hitEffectDuration= 0.5f;
+    private float hitEffectDuration = 0.5f;
     private bool hitSuccessful = false;
 
     // self reference
     private RectTransform rectTransform;
+
+    // Injected references
+    private GameplayUIModel uiModel;
+    private GlobalRules rules;
     
     public SequencerSequence() {
         
+    }
+
+    [Inject]
+    public void Construct(GameplayUIModel uiModel,
+                          GlobalRules rules) {
+        this.uiModel = uiModel;
+        this.rules = rules;
     }
 
     public void SetRiff(Riff riff) {
@@ -84,6 +97,10 @@ public class SequencerSequence : MonoBehaviour{
             }
             hitEffectTimer = hitEffectDuration;
 
+            var score = rules.GetHitScore(e);
+            uiModel.NotifyBeatPressed(new GameplayUIModel.BeatPressedEvent {
+                Score = score
+            });
         }
     }
 

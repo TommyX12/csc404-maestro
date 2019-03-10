@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+using Zenject;
+
 using UnityEngine;
 
 public class PlayerAgentController : AgentController {
@@ -15,8 +17,16 @@ public class PlayerAgentController : AgentController {
     private AgentMovement agentMovement;
     private BasicAgent agent;
 
+    // Injected references
+    protected GameplayUIModel uiModel;
+
     public PlayerAgentController() {
 
+    }
+
+    [Inject]
+    public void Construct(GameplayUIModel uiModel) {
+        this.uiModel = uiModel;
     }
 
     public BasicAgent GetAgent() {
@@ -84,8 +94,14 @@ public class PlayerAgentController : AgentController {
         return target;
     }
 
+    protected void UpdateUI() {
+        uiModel.PlayerHealth = agent.hitPoint;
+        uiModel.PlayerTotalHealth = agent.initialHitPoint;
+    }
+
     protected void Update() {
         UpdateTarget();
+        UpdateUI();
 
         if (ControllerProxy.GetButtonDown("Fire1")) {
             agent.ReceiveEvent(new Agent.Event.FireWeapon());

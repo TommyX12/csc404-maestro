@@ -18,12 +18,11 @@ public class Riff {
     private RiffPosition currentPosition;
     private RiffPosition currentPositionDelayed;
     
-    public float hitMarginBefore = 0.2f; // in seconds
-    public float hitMarginAfter = 0.2f; // in seconds
-    public float hitOffset = 0.0f; // in seconds. already taken care of in MusicManager
-    public float hitFailedBlockBeats = 0.5f; // in beats
-
-    public float autoResetThreshold = 0.5f;
+    private float hitMarginBefore; // in seconds
+    private float hitMarginAfter; // in seconds
+    private float hitFailedBlockBeats; // in beats
+    
+    private float autoResetThreshold;
 
     public string defaultSound = null;
 
@@ -40,7 +39,8 @@ public class Riff {
     // notes have to be sorted by phase
     public Riff(int beatsPerCycle,
                 List<Note> notes,
-                MusicManager musicManager) {
+                MusicManager musicManager,
+                GlobalConfiguration config = null) {
         this.beatsPerCycle = beatsPerCycle;
         this.notes = notes;
 
@@ -50,7 +50,16 @@ public class Riff {
 
         this.musicManager = musicManager;
 
+        SetConfig(config == null ? GlobalConfiguration.Current : config);
+
         Reset();
+    }
+
+    private void SetConfig(GlobalConfiguration config) {
+        hitMarginBefore = config.RiffHitMarginBefore;
+        hitMarginAfter = config.RiffHitMarginAfter;
+        hitFailedBlockBeats = config.RiffHitFailedBlockBeats;
+        autoResetThreshold = config.RiffAutoResetThreshold;
     }
 
     public List<Note> GetNotes() {
@@ -189,7 +198,7 @@ public class Riff {
         RiffPosition position = GetCurrentPosition(delayed);
         float totalBeat = GetNoteTotalBeat(index);
         float noteTime = musicManager.BeatToTime(totalBeat, beatsPerCycle);
-        float deltaTime = position.time - (noteTime + hitOffset);
+        float deltaTime = position.time - (noteTime);
         float error = Mathf.Abs(deltaTime);
         if (position.lastHit.LessThan(index) &&
             deltaTime <= hitMarginAfter &&
