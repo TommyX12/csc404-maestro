@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 43683007582798906}
   - component: {fileID: 3254401275236896607}
   - component: {fileID: 1886161825000574046}
+  - component: {fileID: 102573879292259585}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -224,15 +225,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.49447632
-      inSlope: 75.05524
-      outSlope: 75.05524
+      inSlope: 378.6333
+      outSlope: 378.6333
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.1
-      value: 8
+      time: 0.10447584
+      value: 40.05251
       inSlope: 0.5055237
       outSlope: 0.5055237
       tangentMode: 0
@@ -240,13 +241,13 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.5110574
+      value: 11.160384
+      inSlope: -29.600988
+      outSlope: -29.600988
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.1219076
       outWeight: 0.23804557
     - serializedVersion: 3
       time: 1
@@ -308,6 +309,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bc68d221b7d4b4280fd9964fd90578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreParticles: {fileID: 0}
   starScoreThresholds: c80000002c010000f4010000
   scoreDisplay: {fileID: 0}
   score: 0
+--- !u!114 &102573879292259585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933938287685056982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17aacb83cb51045985f852f74bcf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

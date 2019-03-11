@@ -141,7 +141,7 @@ public class SequencerSequence : MonoBehaviour{
     }
 
     protected void Start() {
-        
+        musicManager = MusicManager.current;
     }
 
     private void CleanUp() {
@@ -166,7 +166,6 @@ public class SequencerSequence : MonoBehaviour{
         if (riff == null) {
             return;
         }
-
         int cycle = musicManager.GetCycleIndex(beatsPerCycle);
         if (cycle != lastSeenCycle) {
             lastSeenCycle = cycle;

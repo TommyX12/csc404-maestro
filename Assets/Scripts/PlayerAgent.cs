@@ -39,7 +39,7 @@ public class PlayerAgent : BasicAgent
                 MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.CeilToInt(this.hitPoint) - 1]);
             }
         }
-
+        model.PlayerHit();
         invulnerabilityTimer = invulnerabilityTime;
     }
 
@@ -56,6 +56,7 @@ public class PlayerAgent : BasicAgent
         }
         transform.position = CheckpointManager.instance.GetActiveCheckpoint().transform.position;
         OnDeathClip.Play();
+        model.PlayerDied();
     }
 
     private void UpdateScreenEffects() {

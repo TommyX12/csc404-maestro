@@ -105,7 +105,6 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
 
     public void Update()
     {
-#if UNITY_EDITOR
         if (Scrubber.instance && Scrubber.instance.replay)
         {
             Determine(Scrubber.instance.source.time);
@@ -117,7 +116,6 @@ public class DeterministicObject : MonoBehaviour, TemporalObject
             colorVisualizationPos = -1;
             shapeVisualizationPos = -1;
         }
-#endif
     }
 
     public void AddPositionController(TemporalController controller, float time)

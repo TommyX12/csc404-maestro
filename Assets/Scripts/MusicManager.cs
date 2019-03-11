@@ -57,11 +57,6 @@ public class MusicManager : MonoBehaviour {
         }
     }
 
-    public MusicManager() {
-        current = this;
-        bpm = defaultBPM;
-    }
-    
     private bool conditionsDirty = true;
 
     [Inject]
@@ -69,11 +64,12 @@ public class MusicManager : MonoBehaviour {
         this.config = config;
     }
     
-    void Awake() {
-
+    public void Awake() {
+        Debug.Log("Awake");
         audioDelay = config.AudioDelay;
         audioMinLoadTime = config.AudioMinLoadTime;
-        
+        current = this; 
+        bpm = defaultBPM;
         this.audioSourceContainer = Util.MakeEmptyContainer(this.gameObject.transform);
         // if (DefaultConfigText != null) {
         //     this.LoadConfig(Util.FromJson<Config>(this.DefaultConfigText.text));

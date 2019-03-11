@@ -7,5 +7,6 @@ public class ChangeMaterial : MonoBehaviour
     public Material material;
     public void Change() {
         GetComponent<Renderer>().material = material;
+        GetComponent<Renderer>().SetPropertyBlock(null);
     }
 }

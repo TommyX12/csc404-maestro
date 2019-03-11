@@ -113,8 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   scoreValue: 25
-  initialHitPoint: 3
-  hitPoint: 3
+  initialHitPoint: 2
+  hitPoint: 2
   weapons:
   - {fileID: 5644527561305607430}
   currentWeaponIndex: 0
