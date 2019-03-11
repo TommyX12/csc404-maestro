@@ -9,7 +9,7 @@ public class FireSpawner : MonoBehaviour
     public GridSelector selector;
     public Sequencer sequencer;
     public List<GameObject> targets;
-    private float time = 0;
+    private float time = Mathf.Infinity;
     private bool played = false;
 
     private void Start()
@@ -31,7 +31,7 @@ public class FireSpawner : MonoBehaviour
                     for (int j = 0; j < selector.width; j++) {
                         if (selector.gridData[j + i * selector.width])
                         {
-                            Vector3 targetPos = targets[j + i * selector.width].transform.position;
+                            Vector3 targetPos = targets[j + i * selector.width].transform.position + new Vector3(0, 0.5f, 0);
                             GameObject go = GameObject.Instantiate(flamePrefab);
                             go.transform.position = targetPos;
                         }

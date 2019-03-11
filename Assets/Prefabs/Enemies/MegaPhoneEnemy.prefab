@@ -40,10 +40,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5450995522208131439}
   - component: {fileID: 5450995522208131436}
-  - component: {fileID: 5450995522208131437}
   - component: {fileID: 5450995522208131442}
   - component: {fileID: 5901736405328103034}
   - component: {fileID: 1741414195794296296}
+  - component: {fileID: 1857091889979234009}
   m_Layer: 11
   m_Name: MegaPhoneEnemy
   m_TagString: Untagged
@@ -84,51 +84,13 @@ MonoBehaviour:
   scoreValue: 5
   initialHitPoint: 1
   hitPoint: 0
-  weapons:
-  - {fileID: 5450995522208131437}
+  weapons: []
   currentWeaponIndex: 0
   countermeasures: []
   currentCountermeasureIndex: 0
   forwardSpeed: 5
   frequency: 1
   amplitude: 1
---- !u!114 &5450995522208131437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450995522208131438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2c19a307e623645a9aa6788a71af13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
-  notes:
-  - index: 0
-    unitPerBeat: 1
-    sound: 
-  defaultSound: kick-1
-  color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
-  noisyFollow: 0
-  projectilePrefab: {fileID: 1239826451, guid: d118de5e52d92534bb568cd6688a53e6, type: 3}
-  projectileParameters:
-    position: {x: 0, y: 0, z: 0}
-    direction: {x: 0, y: 0, z: 0}
-    damage:
-      amount: 1
-      force: 0
-      forceDirection: {x: 0, y: 0, z: 0}
-    color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
-    speed: 10
-    scale: 1
-    distance: 100
-    bypassAgentType: 0
-    duration: 0
-    counterTarget: {fileID: 0}
-  firePoints:
-  - {fileID: 5450995521215391322}
 --- !u!135 &5450995522208131442
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -255,6 +217,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1857091889979234009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450995522208131438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b579d0c6c24b9a743b9a967619882c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HazardDamage: 1
+  Active: 1
+  activeTime: Infinity
 --- !u!1001 &63937230809103549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,6 +399,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6247904296656029748, guid: 1623e4834caae45f1902aed7078a2b08,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 899982ad0d5e941ccb809641227de281, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1623e4834caae45f1902aed7078a2b08, type: 3}
 --- !u!4 &2833182753020276905 stripped

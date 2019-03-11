@@ -9,6 +9,8 @@ public class PlayerAgent : BasicAgent
     public float healthRegenDelay = 5;
     private float healthRegenDelayTimer = 0;
     public float healthRegenRate = 1;
+    public float invulnerabilityTime = 1f;
+    public float invulnerabilityTimer = 0f;
 
     protected override void OnDeath()
     {
@@ -17,6 +19,10 @@ public class PlayerAgent : BasicAgent
 
     public override void ReceiveEvent(Event.Damage damage)
     {
+        if (invulnerabilityTimer >= 0) {
+            return;
+        }
+
         base.ReceiveEvent(damage);
 
         healthRegenDelayTimer = 5;
@@ -33,6 +39,8 @@ public class PlayerAgent : BasicAgent
                 MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.CeilToInt(this.hitPoint) - 1]);
             }
         }
+
+        invulnerabilityTimer = invulnerabilityTime;
     }
 
     private void PlayerOnDeath(Agent agent)
@@ -65,6 +73,8 @@ public class PlayerAgent : BasicAgent
     {
         base.Update();
         healthRegenDelayTimer -= Time.deltaTime;
+        invulnerabilityTimer -= Time.deltaTime;
+
         if (healthRegenDelayTimer < 0) {
             healthRegenDelayTimer = 0;
             hitPoint += healthRegenRate * Time.deltaTime;
@@ -72,5 +82,4 @@ public class PlayerAgent : BasicAgent
             UpdateScreenEffects();
         }
     }
-
 }
