@@ -105,8 +105,6 @@ public class BasicWeapon : Weapon {
 
         AudioSource templateSource = GetComponent<AudioSource>();
 
-
-
         List<string> uniqueAudioSounds = new List<string>();
         foreach (Riff.Note note in riff.GetNotes()) {
             if (!uniqueAudioSounds.Contains(note.sound)) {

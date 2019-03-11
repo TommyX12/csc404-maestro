@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
         current = this;
     }
 
-    public void AddScore(int score) {
-        this.score += score;
-    }
+    // public void AddScore(int score) {
+    //     this.score += score;
+    // }
 }

@@ -36,7 +36,7 @@ public class MainCamera : MonoBehaviour
             float angleTarget = 0;
 
             if (topDown) {
-                angleTarget = 90;
+                angleTarget = 80;
             }
             else
             {
@@ -57,5 +57,9 @@ public class MainCamera : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(angleTarget, 0, 0);
             camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, rotation, Time.fixedDeltaTime);
         }
+    }
+
+    public void ToggleTopDown() {
+        topDown = !topDown;
     }
 }

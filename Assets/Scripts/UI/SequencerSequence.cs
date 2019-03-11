@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using Zenject;
+
 public class SequencerSequence : MonoBehaviour{
 
     // references
@@ -24,21 +26,37 @@ public class SequencerSequence : MonoBehaviour{
     private SequenceNote[] noteObjects;
     private SequenceMarker[] markerObjects;
 
-    private MusicManager musicManager;
     private Riff riff = null;
     private int beatsPerCycle;
 
     private int lastSeenCycle = 0;
 
     private float hitEffectTimer = 0;
-    private float hitEffectDuration= 0.5f;
+    private float hitEffectDuration = 0.5f;
     private bool hitSuccessful = false;
 
     // self reference
     private RectTransform rectTransform;
+
+    // Injected references
+    private GameplayModel model;
+    private GlobalConfiguration config;
+    private GlobalRules rules;
+    private MusicManager musicManager;
     
     public SequencerSequence() {
         
+    }
+
+    [Inject]
+    public void Construct(GameplayModel model,
+                          GlobalConfiguration config,
+                          GlobalRules rules,
+                          MusicManager musicManager) {
+        this.model = model;
+        this.config = config;
+        this.rules = rules;
+        this.musicManager = musicManager;
     }
 
     public void SetRiff(Riff riff) {
@@ -73,17 +91,27 @@ public class SequencerSequence : MonoBehaviour{
         }
     }
 
+    private void PlayHitSound() {
+        // musicManager.PlayOnce(config.CorrectNoteHitSoundName, 0);
+        // TODO problem due to delay
+    }
+
     private void DelayedNoteHitEventHandler(Riff.NoteHitEvent e) {
         if (!e.automatic) {
             if (e.noteIndex >= 0) {
                 noteObjects[e.noteIndex].SetHitState(SequenceNote.HIT_STATE_HIT);
                 hitSuccessful = true;
+                PlayHitSound();
             }
             else {
                 hitSuccessful = false;
             }
             hitEffectTimer = hitEffectDuration;
 
+            var score = rules.GetHitScore(e);
+            model.NotifyBeatPressed(new GameplayModel.BeatPressedEvent {
+                Score = score
+            });
         }
     }
 
@@ -108,7 +136,6 @@ public class SequencerSequence : MonoBehaviour{
     }
 
     protected void Awake() {
-        musicManager = MusicManager.current;
         rectTransform = GetComponent<RectTransform>();
         staticScale = rectTransform.localScale.x;
     }

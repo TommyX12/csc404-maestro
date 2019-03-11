@@ -33,7 +33,6 @@ public class Shotgun : MonoBehaviour
     private void Start()
     {
         Init();
-        riff.hitOffset = 0;
         riff.noteHitEvent += noteHitEventHandler;
     }
 

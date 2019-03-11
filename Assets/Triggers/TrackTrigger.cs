@@ -15,8 +15,7 @@ public class TrackTrigger : MonoBehaviour
     private void Start()
     {
         riff = new Riff(4, notes, MusicManager.current);
-        riff.noteHitEvent += noteHitEventHandler;
-        riff.hitOffset = -0.2f;
+        riff.delayedNoteHitEvent += DelayedNoteHitEventHandler;
     }
 
     private void Update() {
@@ -28,7 +27,7 @@ public class TrackTrigger : MonoBehaviour
         riff.Update();
     }
 
-    private void noteHitEventHandler(Riff.NoteHitEvent e) {
+    private void DelayedNoteHitEventHandler(Riff.NoteHitEvent e) {
         if (e.automatic && e.noteIndex != -1 && e.deltaTime < tol) {
             OnBeat.Invoke();
         }

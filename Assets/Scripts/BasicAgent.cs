@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Assertions;
+
+using Zenject;
 
 public class BasicAgent : Agent {
 
@@ -19,11 +22,19 @@ public class BasicAgent : Agent {
     // self reference
     private AgentMovement agentMovement;
 
+    // Injected references
+    private GameplayModel model;
+
     private Riff riff;
     
     public BasicAgent() {
         onDeath += AddScore;
         onDeath += DestroySelf;
+    }
+
+    [Inject]
+    public void Construct(GameplayModel model) {
+        this.model = model;
     }
 
     protected void Awake() {
@@ -187,17 +198,14 @@ public class BasicAgent : Agent {
         GameObject.Destroy(agent.gameObject);
     }
 
-    private void AddScore(Agent agent)
-    {
-        if (ScoreManager.current) {
-            ScoreManager.current.AddScore(this.scoreValue);
-            if (ScoreManager.current.scoreParticles)
-            {
-                var pg = ParticleManager.instance.GetParticleGroup(ScoreManager.current.scoreParticles);
-                pg.transform.position = agent.transform.position;
-                pg.emissionNums[0] = this.scoreValue;
-                pg.PlayOnce();
-            }
+    private void AddScore(Agent agent) {
+        model.AddScore(this.scoreValue);
+        if (ScoreManager.current && ScoreManager.current.scoreParticles)
+        {
+            var pg = ParticleManager.instance.GetParticleGroup(ScoreManager.current.scoreParticles);
+            pg.transform.position = agent.transform.position;
+            pg.emissionNums[0] = this.scoreValue;
+            pg.PlayOnce();
         }
     }
 
