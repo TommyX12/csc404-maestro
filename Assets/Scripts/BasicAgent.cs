@@ -23,7 +23,7 @@ public class BasicAgent : Agent {
     private AgentMovement agentMovement;
 
     // Injected references
-    private GameplayModel model;
+    protected GameplayModel model;
 
     private Riff riff;
     
@@ -200,6 +200,10 @@ public class BasicAgent : Agent {
 
     private void AddScore(Agent agent) {
         model.AddScore(this.scoreValue);
+        for (int i = 0; i < Mathf.Max(1, scoreValue / 5); i++)
+        {
+            model.IncrementCombo();
+        }
         if (ScoreManager.current && ScoreManager.current.scoreParticles)
         {
             var pg = ParticleManager.instance.GetParticleGroup(ScoreManager.current.scoreParticles);
