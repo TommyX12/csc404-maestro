@@ -109,7 +109,7 @@ public class BeatTutorial : BasicAgent
                     onSuccess.Invoke();
                     this.enabled = false;
                     CleanUp();
-                    model.NotifyTutorialFinished();
+                    model.NotifyShowMoveTutorial();
                     GameObject.Destroy(gameObject, 1f);
                     return;
                 }

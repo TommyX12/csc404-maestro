@@ -23,6 +23,7 @@ public class GameplayModel : ScriptableObject {
     // Events
     public event Action<BeatPressedEvent> BeatPressed;
     public event Action TutorialFinished;
+    public event Action ShowMoveTutorial;
 
     // Methods
     
@@ -35,6 +36,12 @@ public class GameplayModel : ScriptableObject {
     public void NotifyTutorialFinished() {
         if (TutorialFinished != null) {
             TutorialFinished();
+        }
+    }
+
+    public void NotifyShowMoveTutorial() {
+        if (ShowMoveTutorial != null) {
+            ShowMoveTutorial();
         }
     }
 

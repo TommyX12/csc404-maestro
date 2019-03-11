@@ -29,6 +29,9 @@ public class GlobalConfiguration : ScriptableObject {
 
     public float RiffSoundVolume = 0.4f;
 
+    public string MoveTutorialText = "Use left stick to move";
+    public float MoveTutorialTimeout = 20.0f;
+
     public GlobalConfiguration() {
         Current = this;
     }
