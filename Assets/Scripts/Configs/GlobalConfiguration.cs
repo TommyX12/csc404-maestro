@@ -8,6 +8,9 @@ public class GlobalConfiguration : ScriptableObject {
 
     public static GlobalConfiguration Current {get; set;}
 
+    public float AudioDelay {get; set;}
+    public float AudioMinLoadTime {get; set;}
+
     public float RiffHitMarginBefore {get; set;}
     public float RiffHitMarginAfter {get; set;}
     public float RiffHitFailedBlockBeats {get; set;} // in beats
@@ -18,6 +21,8 @@ public class GlobalConfiguration : ScriptableObject {
     public Color ScoreIncreaseColor {get; set;}
     public Color ScoreDecreaseColor {get; set;}
     public Color ScoreIdleColor {get; set;}
+
+    public string CorrectNoteHitSoundName {get; set;}
 
     public GlobalConfiguration() {
         Current = this;
@@ -32,6 +37,12 @@ public class GlobalConfiguration : ScriptableObject {
         ScoreIncreaseColor = new Color(0, 1, 0);
         ScoreDecreaseColor = new Color(1, 0, 0);
         ScoreIdleColor = new Color(1, 1, 1);
+
+        CorrectNoteHitSoundName = "chord-1";
+
+        AudioDelay = 0.2f;
+        AudioMinLoadTime = 0.02f;
+
     }
 
     public float GetBPM() {

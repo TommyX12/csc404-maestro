@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4609,7 +4609,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scoreDisplay
       value: 
-      objectReference: {fileID: 1161759342}
+      objectReference: {fileID: 0}
     - target: {fileID: 1886161825000574046, guid: 7197afd4059aef045b758d2933e5e6b2,
         type: 3}
       propertyPath: scoreParticles
@@ -13736,18 +13736,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1161526482}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1161759342 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4107483909516699222, guid: 1c5ea40b0607f48039ab530ca726f72d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4107483908493225016}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd0516f9e632f1645ac25b8f962fe4cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1172123681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24272,6 +24260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8392102bce3684865a2375970845d152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 363674783}
+  healthBarBarPrefab: {fileID: 598488581534565187, guid: af1dfa5a068d645c2bb439a8773d067f,
+    type: 3}
 --- !u!1001 &2016968412
 PrefabInstance:
   m_ObjectHideFlags: 0

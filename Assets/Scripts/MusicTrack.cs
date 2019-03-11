@@ -108,7 +108,7 @@ public class MusicTrack {
         this.Start(fadeInTime, false);
     }
 
-    public void PlayAfter(float seconds, float fadeInTime) {
+    public void PlayAfter(double seconds, float fadeInTime) {
         nextPlayDSPTime = AudioSettings.dspTime + seconds;
         this.Stopping = false;
         this.SetFade(true, fadeInTime);

@@ -4,14 +4,19 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System.Linq;
 
+using Zenject;
+
 public class MusicManager : MonoBehaviour {
     
     public static float BEAT_VALUE = 4;
 
     public static MusicManager current;
 
-    private const float audioDelay = 0.2f;
-    private const float audioMinLoadTime = 0.02f;
+    // injected references
+    private GlobalConfiguration config;
+
+    private float audioDelay;
+    private float audioMinLoadTime;
     
     private Dictionary<string, MusicTrack> activeTracks = new Dictionary<string, MusicTrack>();
     private GameObject audioSourceContainer;
@@ -58,8 +63,17 @@ public class MusicManager : MonoBehaviour {
     }
     
     private bool conditionsDirty = true;
+
+    [Inject]
+    public void Construct(GlobalConfiguration config) {
+        this.config = config;
+    }
     
     void Awake() {
+
+        audioDelay = config.AudioDelay;
+        audioMinLoadTime = config.AudioMinLoadTime;
+        
         this.audioSourceContainer = Util.MakeEmptyContainer(this.gameObject.transform);
         // if (DefaultConfigText != null) {
         //     this.LoadConfig(Util.FromJson<Config>(this.DefaultConfigText.text));
@@ -215,7 +229,7 @@ public class MusicManager : MonoBehaviour {
         return track;
     }
 
-    public MusicTrack PlayOnce(string name, float delaySeconds = 0, float fadeInTime = -1) {
+    public MusicTrack PlayOnce(string name, double delaySeconds = 0, float fadeInTime = -1) {
         MusicTrack track = this.GetMusicTrack(name, true);
         if (fadeInTime < 0) {
             fadeInTime = this.DefaultFadeInTime;
@@ -233,6 +247,15 @@ public class MusicManager : MonoBehaviour {
         double nextPlayDSPTime = AudioSettings.dspTime + timeToNextUnit;
         // Debug.Log(timeToNextUnit);
         audioSource.PlayScheduled(nextPlayDSPTime);
+    }
+
+    /// <summary>
+    ///   Play MusicTrack at the next aligned unit. The length of each unit is a beat divided by unitPerBeat.
+    /// </summary>
+    public void PlayOnceAligned(string name, float unitPerBeat = 4, float fadeInTime = -1) {
+        double timePerUnit = BeatToTime(1.0f / unitPerBeat);
+        double timeToNextUnit = Math.Ceiling((totalTimer + audioMinLoadTime) / timePerUnit) * timePerUnit - totalTimer;
+        PlayOnce(name, timeToNextUnit, fadeInTime);
     }
 
     public MusicTrack PlayPattern(string name, float beatsPerCycle, float fadeInTime = -1) {

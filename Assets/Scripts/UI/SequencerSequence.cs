@@ -26,7 +26,6 @@ public class SequencerSequence : MonoBehaviour{
     private SequenceNote[] noteObjects;
     private SequenceMarker[] markerObjects;
 
-    private MusicManager musicManager;
     private Riff riff = null;
     private int beatsPerCycle;
 
@@ -41,7 +40,9 @@ public class SequencerSequence : MonoBehaviour{
 
     // Injected references
     private GameplayModel model;
+    private GlobalConfiguration config;
     private GlobalRules rules;
+    private MusicManager musicManager;
     
     public SequencerSequence() {
         
@@ -49,9 +50,13 @@ public class SequencerSequence : MonoBehaviour{
 
     [Inject]
     public void Construct(GameplayModel model,
-                          GlobalRules rules) {
+                          GlobalConfiguration config,
+                          GlobalRules rules,
+                          MusicManager musicManager) {
         this.model = model;
+        this.config = config;
         this.rules = rules;
+        this.musicManager = musicManager;
     }
 
     public void SetRiff(Riff riff) {
@@ -86,11 +91,17 @@ public class SequencerSequence : MonoBehaviour{
         }
     }
 
+    private void PlayHitSound() {
+        // musicManager.PlayOnce(config.CorrectNoteHitSoundName, 0);
+        // TODO problem due to delay
+    }
+
     private void DelayedNoteHitEventHandler(Riff.NoteHitEvent e) {
         if (!e.automatic) {
             if (e.noteIndex >= 0) {
                 noteObjects[e.noteIndex].SetHitState(SequenceNote.HIT_STATE_HIT);
                 hitSuccessful = true;
+                PlayHitSound();
             }
             else {
                 hitSuccessful = false;
@@ -125,7 +136,6 @@ public class SequencerSequence : MonoBehaviour{
     }
 
     protected void Awake() {
-        musicManager = MusicManager.current;
         rectTransform = GetComponent<RectTransform>();
         staticScale = rectTransform.localScale.x;
     }

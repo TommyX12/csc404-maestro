@@ -2,17 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Zenject;
+
 public class SingleEnemySpawnSystem : MonoBehaviour
 {
+
+    private DiContainer container;
+
+    [Inject]
+    public void Construct(DiContainer container) {
+        this.container = container;
+    }
+
     private class SpawnEventFactory
     {
         GameObject prefab;
         SingleEnemySpawnSystem host;
+        DiContainer container;
 
-        public SpawnEventFactory(GameObject prefab, SingleEnemySpawnSystem host)
+        public SpawnEventFactory(GameObject prefab, SingleEnemySpawnSystem host, DiContainer container)
         {
             this.prefab = prefab;
             this.host = host;
+            this.container = container;
         }
 
         public void HandleNoteHitEvent(Riff.NoteHitEvent hit)
@@ -20,7 +32,7 @@ public class SingleEnemySpawnSystem : MonoBehaviour
             if (hit.noteIndex != -1)
             {
                 // spawn shit
-                GameObject spawned = Instantiate(prefab);
+                GameObject spawned = container.InstantiatePrefab(prefab);
                 spawned.transform.position = host.transform.position;
                 spawned.transform.rotation = host.transform.rotation;
             }
@@ -46,7 +58,7 @@ public class SingleEnemySpawnSystem : MonoBehaviour
             // create riff and a spawn event class and set them up
             riff = new Riff(sequencer.data.Length, notes, MusicManager.current);
             // Debug.Log(sequencer.beatNum + " " + notes.Count);
-            spawnEventFactory = new SpawnEventFactory(enemyPrefab, this);
+            spawnEventFactory = new SpawnEventFactory(enemyPrefab, this, container);
             riff.noteHitEvent += spawnEventFactory.HandleNoteHitEvent;
         }
     }
