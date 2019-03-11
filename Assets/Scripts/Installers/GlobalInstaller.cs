@@ -5,30 +5,42 @@ using Zenject;
 public class GlobalInstaller : MonoInstaller
 {
 
-    private GameplayModel gameplayModel;
+    [SerializeField]
+    private CombatGameManager gameManager;
+    [SerializeField]
+    private RectTransform healthBarBarPrefab;
+    [SerializeField]
     private GlobalConfiguration globalConfiguration;
+    [SerializeField]
+    private GameplayModel gameplayModel;
+    [SerializeField]
     private GlobalRules globalRules;
+    [SerializeField]
     private MusicManager musicManager;
 
-    // Dragged references
-    public CombatGameManager gameManager;
-    public RectTransform healthBarBarPrefab;
-    
     public override void InstallBindings()
     {
-        gameplayModel = ScriptableObject.CreateInstance<GameplayModel>();
+        if (gameplayModel == null) {
+            gameplayModel = ScriptableObject.CreateInstance<GameplayModel>();
+        }
         Container.Bind<GameplayModel>()
             .FromInstance(gameplayModel);
 
-        globalConfiguration = ScriptableObject.CreateInstance<GlobalConfiguration>();
+        if (globalConfiguration == null) {
+            globalConfiguration = ScriptableObject.CreateInstance<GlobalConfiguration>();
+        }
         Container.Bind<GlobalConfiguration>()
             .FromInstance(globalConfiguration);
 
-        globalRules = new GlobalRules(globalConfiguration);
+        if (globalRules == null) {
+            globalRules = new GlobalRules(globalConfiguration);
+        }
         Container.Bind<GlobalRules>()
             .FromInstance(globalRules);
 
-        musicManager = MusicManager.current;
+        if (musicManager == null) {
+            musicManager = MusicManager.current;
+        }
         Container.Bind<MusicManager>()
             .FromInstance(musicManager);
 

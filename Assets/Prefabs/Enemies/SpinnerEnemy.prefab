@@ -499,15 +499,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 0}
   notes:
-  - index: 1
-    unitPerBeat: 1
-    sound: kick-1
   - index: 2
     unitPerBeat: 1
     sound: kick-1
-  - index: 3
-    unitPerBeat: 1
-    sound: clap-1
   defaultSound: kick-1
   color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
   noisyFollow: 0

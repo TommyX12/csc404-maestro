@@ -21,6 +21,8 @@ public class Riff {
     private float hitMarginBefore; // in seconds
     private float hitMarginAfter; // in seconds
     private float hitFailedBlockBeats; // in beats
+
+    private float soundVolume;
     
     private float autoResetThreshold;
 
@@ -60,6 +62,7 @@ public class Riff {
         hitMarginAfter = config.RiffHitMarginAfter;
         hitFailedBlockBeats = config.RiffHitFailedBlockBeats;
         autoResetThreshold = config.RiffAutoResetThreshold;
+        soundVolume = config.RiffSoundVolume;
     }
 
     public List<Note> GetNotes() {
@@ -165,7 +168,7 @@ public class Riff {
                     sound = defaultSound;
                 }
                 if (sound != null && sound != "") {
-                    musicManager.PlayOnce(sound, delaySeconds);
+                    musicManager.PlayOnce(sound, delaySeconds, 0, soundVolume);
                     lastScheduledPlayDSPTime = AudioSettings.dspTime + delaySeconds;
                 }
             }

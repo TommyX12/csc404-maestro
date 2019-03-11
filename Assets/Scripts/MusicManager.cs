@@ -225,8 +225,11 @@ public class MusicManager : MonoBehaviour {
         return track;
     }
 
-    public MusicTrack PlayOnce(string name, double delaySeconds = 0, float fadeInTime = -1) {
+    public MusicTrack PlayOnce(string name, double delaySeconds = 0, float fadeInTime = -1, float volume = -1) {
         MusicTrack track = this.GetMusicTrack(name, true);
+        if (volume >= 0) {
+            track.Volume = volume;
+        }
         if (fadeInTime < 0) {
             fadeInTime = this.DefaultFadeInTime;
         }

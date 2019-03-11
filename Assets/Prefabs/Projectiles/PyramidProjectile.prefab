@@ -28,7 +28,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20326cede07954b5bb6b18d1605bb94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  host: {fileID: 0}
+  usePool: 1
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 524980212056376344, guid: 35a731e14a1ec2e42b0bd0a7139986b9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b9015eab29e7458ba7eff7749891748, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35a731e14a1ec2e42b0bd0a7139986b9, type: 3}
 --- !u!1 &6991734619974521728 stripped

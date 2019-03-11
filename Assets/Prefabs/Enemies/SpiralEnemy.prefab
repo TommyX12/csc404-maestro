@@ -145,13 +145,13 @@ MonoBehaviour:
   - index: 0
     unitPerBeat: 4
     sound: scratch
-  - index: 1
-    unitPerBeat: 4
-    sound: scratch
   - index: 2
     unitPerBeat: 4
     sound: scratch
-  - index: 3
+  - index: 4
+    unitPerBeat: 4
+    sound: scratch
+  - index: 6
     unitPerBeat: 4
     sound: scratch
   defaultSound: scratch
