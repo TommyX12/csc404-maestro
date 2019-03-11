@@ -26,7 +26,7 @@ public class GlobalConfiguration : ScriptableObject {
 
     public GlobalConfiguration() {
         Current = this;
-        
+
         RiffHitMarginBefore = 0.2f;
         RiffHitMarginAfter = 0.2f;
         RiffHitFailedBlockBeats = 0.5f;
