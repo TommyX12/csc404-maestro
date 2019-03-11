@@ -12,8 +12,12 @@ public class GlobalConfiguration : ScriptableObject {
     public float RiffHitMarginAfter {get; set;}
     public float RiffHitFailedBlockBeats {get; set;} // in beats
     public float RiffAutoResetThreshold {get; set;}
-
     public float RiffHitPerfectThreshold {get; set;} // in seconds
+
+    public float ScoreColorEffectDuration {get; set;}
+    public Color ScoreIncreaseColor {get; set;}
+    public Color ScoreDecreaseColor {get; set;}
+    public Color ScoreIdleColor {get; set;}
 
     public GlobalConfiguration() {
         Current = this;
@@ -23,6 +27,11 @@ public class GlobalConfiguration : ScriptableObject {
         RiffHitFailedBlockBeats = 0.5f;
         RiffAutoResetThreshold = 0.5f;
         RiffHitPerfectThreshold = 0.1f;
+
+        ScoreColorEffectDuration = 1.0f;
+        ScoreIncreaseColor = new Color(0, 1, 0);
+        ScoreDecreaseColor = new Color(1, 0, 0);
+        ScoreIdleColor = new Color(1, 1, 1);
     }
 
     public float GetBPM() {

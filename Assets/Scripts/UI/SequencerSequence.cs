@@ -40,7 +40,7 @@ public class SequencerSequence : MonoBehaviour{
     private RectTransform rectTransform;
 
     // Injected references
-    private GameplayUIModel uiModel;
+    private GameplayModel model;
     private GlobalRules rules;
     
     public SequencerSequence() {
@@ -48,9 +48,9 @@ public class SequencerSequence : MonoBehaviour{
     }
 
     [Inject]
-    public void Construct(GameplayUIModel uiModel,
+    public void Construct(GameplayModel model,
                           GlobalRules rules) {
-        this.uiModel = uiModel;
+        this.model = model;
         this.rules = rules;
     }
 
@@ -98,7 +98,7 @@ public class SequencerSequence : MonoBehaviour{
             hitEffectTimer = hitEffectDuration;
 
             var score = rules.GetHitScore(e);
-            uiModel.NotifyBeatPressed(new GameplayUIModel.BeatPressedEvent {
+            model.NotifyBeatPressed(new GameplayModel.BeatPressedEvent {
                 Score = score
             });
         }

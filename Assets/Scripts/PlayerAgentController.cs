@@ -18,15 +18,15 @@ public class PlayerAgentController : AgentController {
     private BasicAgent agent;
 
     // Injected references
-    protected GameplayUIModel uiModel;
+    private GameplayModel model;
 
     public PlayerAgentController() {
 
     }
 
     [Inject]
-    public void Construct(GameplayUIModel uiModel) {
-        this.uiModel = uiModel;
+    public void Construct(GameplayModel model) {
+        this.model = model;
     }
 
     public BasicAgent GetAgent() {
@@ -95,8 +95,8 @@ public class PlayerAgentController : AgentController {
     }
 
     protected void UpdateUI() {
-        uiModel.PlayerHealth = agent.hitPoint;
-        uiModel.PlayerTotalHealth = agent.initialHitPoint;
+        model.PlayerHealth = agent.hitPoint;
+        model.PlayerTotalHealth = agent.initialHitPoint;
     }
 
     protected void Update() {

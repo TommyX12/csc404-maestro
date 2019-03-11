@@ -2,22 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Zenject;
+
 public class EnemySpawnSystem : MonoBehaviour
 {
+
+    private DiContainer container;
+
+    [Inject]
+    public void Construct(DiContainer container) {
+        this.container = container;
+    }
 
     private class SpawnEventFactory {
         GameObject prefab;
         EnemySpawnSystem host;
+        DiContainer container;
 
-        public SpawnEventFactory(GameObject prefab, EnemySpawnSystem host) {
+        public SpawnEventFactory(GameObject prefab, EnemySpawnSystem host, DiContainer container) {
             this.prefab = prefab;
             this.host = host;
+            this.container = container;
         }
 
         public void HandleNoteHitEvent(Riff.NoteHitEvent hit) {
             if (hit.noteIndex != -1) {
                 // spawn shit
-                GameObject spawned = Instantiate(prefab);
+                GameObject spawned = container.InstantiatePrefab(prefab);
                 spawned.transform.position = host.transform.position;
                 spawned.transform.rotation = host.transform.rotation;
             }
@@ -44,7 +55,7 @@ public class EnemySpawnSystem : MonoBehaviour
                 // create riff and a spawn event class and set them up
                 Riff riff = new Riff(sequencer.beatNum, notes, MusicManager.current);
                 // Debug.Log(sequencer.beatNum + " " + notes.Count);
-                spawnEventFactories.Add(new SpawnEventFactory(enemyPrefabs[i], this));
+                spawnEventFactories.Add(new SpawnEventFactory(enemyPrefabs[i], this, container));
                 riff.noteHitEvent += spawnEventFactories[i].HandleNoteHitEvent;
                 riffs.Add(riff);
             }

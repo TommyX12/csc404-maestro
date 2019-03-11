@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class GameplayUIModel : ScriptableObject {
+public class GameplayModel : ScriptableObject {
 
     // Event data
     public enum BeatPressedEventScore {
@@ -14,24 +14,24 @@ public class GameplayUIModel : ScriptableObject {
         public BeatPressedEventScore Score {get; set;}
     }
 
-    // Delegates
-    public delegate void BeatPressedHandler(BeatPressedEvent eventData);
-
     // Properties
-    public float PlayerHealth {
-        get; set;
-    }
-    public float PlayerTotalHealth {
-        get; set;
-    }
+    public float PlayerHealth {get; set;}
+    public float PlayerTotalHealth {get; set;}
+    public float Score {get; set;}
 
     // Events
-    public event BeatPressedHandler BeatPressed;
+    public event Action<BeatPressedEvent> BeatPressed;
 
+    // Methods
+    
     public void NotifyBeatPressed(BeatPressedEvent eventData) {
         if (BeatPressed != null) {
             BeatPressed(eventData);
         }
+    }
+
+    public void AddScore(float score) {
+        Score += score;
     }
 
 }

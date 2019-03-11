@@ -24,13 +24,13 @@ public class HealthBar : MonoBehaviour {
     }
 
     // Injected references
-    protected RectTransform healthBarBarPrefab;
-    protected GameplayUIModel model;
+    private RectTransform healthBarBarPrefab;
+    private GameplayModel model;
 
     [Inject]
     public void Construct([Inject(Id = Constants.Prefab.HEALTH_BAR_BAR)]
                           RectTransform healthBarBarPrefab,
-                          GameplayUIModel model) {
+                          GameplayModel model) {
         this.healthBarBarPrefab = healthBarBarPrefab;
         this.model = model;
     }
