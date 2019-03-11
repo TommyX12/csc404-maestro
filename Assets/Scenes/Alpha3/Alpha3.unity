@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -795,7 +795,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000700000004000000
+  band: 020000000700000000000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &9272038
@@ -4786,7 +4786,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 050000000600000007000000
+  band: 030000000100000004000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &63519868
@@ -5363,7 +5363,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 050000000300000003000000
+  band: 020000000400000007000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &67165535
@@ -7483,7 +7483,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 030000000700000006000000
+  band: 070000000400000004000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &81828656
@@ -8677,7 +8677,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 020000000300000006000000
+  band: 050000000700000005000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &124427812
@@ -8899,7 +8899,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 040000000200000004000000
+  band: 040000000500000005000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &126080007
@@ -11416,7 +11416,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 000000000100000004000000
+  band: 070000000500000003000000
   scale: 1
   averageDecay: 0.1
 --- !u!114 &162540540
@@ -12134,7 +12134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000100000000000000000000000001000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &194012077
 MonoBehaviour:
@@ -14396,7 +14396,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 030000000300000004000000
+  band: 070000000600000001000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &229708535
@@ -15178,7 +15178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000001000000000000000000000001000000000000000000000000000000000000000100000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000100000000000000000000000000000000000001000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &247465848
 MonoBehaviour:
@@ -18556,7 +18556,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 070000000000000006000000
+  band: 070000000100000001000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &300958323
@@ -19294,7 +19294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000001000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000001000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &314081167
 MonoBehaviour:
@@ -19362,7 +19362,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000300000001000000
+  band: 000000000700000007000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &316030518
@@ -19615,7 +19615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &342038631
 MonoBehaviour:
@@ -19683,7 +19683,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 050000000200000004000000
+  band: 020000000700000001000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &342445040
@@ -20260,7 +20260,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 040000000100000002000000
+  band: 020000000300000001000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &343390540
@@ -21247,7 +21247,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 020000000700000002000000
+  band: 020000000100000002000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &359919168
@@ -21475,7 +21475,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000000000007000000
+  band: 070000000400000002000000
   scale: 1
   averageDecay: 0.1
 --- !u!114 &361099426
@@ -22354,7 +22354,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000300000006000000
+  band: 010000000300000005000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &368574952
@@ -23737,7 +23737,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 040000000100000003000000
+  band: 010000000400000005000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &394827465
@@ -23939,6 +23939,123 @@ Transform:
   m_Father: {fileID: 1367413347}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &405381828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 405381834}
+  - component: {fileID: 405381833}
+  - component: {fileID: 405381832}
+  - component: {fileID: 405381831}
+  - component: {fileID: 405381830}
+  - component: {fileID: 405381829}
+  m_Layer: 16
+  m_Name: KillWall (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &405381829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405381828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c0175befdb1c74b9d9d7fecc74f784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &405381830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405381828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d31548dbba9d8428d9ddb1a4601d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &405381831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405381828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &405381832
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405381828}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &405381833
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405381828}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &405381834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405381828}
+  m_LocalRotation: {x: -0, y: -0.7071067, z: -0, w: 0.7071069}
+  m_LocalPosition: {x: -12.925001, y: -0.25, z: -4.1250076}
+  m_LocalScale: {x: 31.034946, y: 35.363785, z: 0.73736}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!1 &407225680
 GameObject:
   m_ObjectHideFlags: 0
@@ -26717,7 +26834,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000500000006000000
+  band: 030000000600000001000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &491483224
@@ -26962,7 +27079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000010000000100000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000100000000000000000000000001010100000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000001000000000000000000000100000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &496793607
 MonoBehaviour:
@@ -27030,7 +27147,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 020000000300000007000000
+  band: 010000000200000004000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &498290485
@@ -27252,7 +27369,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 070000000100000004000000
+  band: 030000000300000000000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &500996442
@@ -28276,7 +28393,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 030000000600000003000000
+  band: 060000000700000006000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &515089293
@@ -29398,7 +29515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000001000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000100000000000000000000000001010100000000000000000000000000000000000000000000000000000000000001000000000000000000000000000100000000000000000000000000000000000001000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &551090877
 MonoBehaviour:
@@ -29978,7 +30095,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 000000000300000003000000
+  band: 030000000000000000000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &558240701
@@ -33170,7 +33287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &602046459
 MonoBehaviour:
@@ -34052,6 +34169,137 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1723414296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &642338129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642338133}
+  - component: {fileID: 642338132}
+  - component: {fileID: 642338131}
+  - component: {fileID: 642338130}
+  - component: {fileID: 642338134}
+  - component: {fileID: 642338135}
+  m_Layer: 5
+  m_Name: WorldScoreBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &642338130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642338129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &642338131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642338129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &642338132
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642338129}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 1030911391}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &642338133
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642338129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0018386323, y: 0.0018386323, z: 0}
+  m_Children:
+  - {fileID: 841022904}
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 356.095, y: 173.55}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &642338134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642338129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e304851e9cd934c3cbbfef70b722ef66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 913632589}
+  friction: 0.8
+  targetPosition: {x: 0, y: 0, z: 0}
+  minCorner: {x: -1.5, y: 1.5, z: -1.5}
+  maxCorner: {x: 1.5, y: 1.5, z: 1.5}
+  noiseSpeed: 0.35
+--- !u!114 &642338135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642338129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e692e7e8ba2d8b24499604f05ccfa700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &643471834
 GameObject:
   m_ObjectHideFlags: 0
@@ -34469,7 +34717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000101010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000010000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &652072707
 MonoBehaviour:
@@ -34530,7 +34778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &661046715
 MonoBehaviour:
@@ -34622,7 +34870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000100000000000000000000000000000000000000010000000100000001000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &663755355
 MonoBehaviour:
@@ -34912,7 +35160,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 010000000400000006000000
+  band: 050000000400000007000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &669272496
@@ -35199,7 +35447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000010000000000000000000001000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000010000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &687961261
 MonoBehaviour:
@@ -35267,7 +35515,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 020000000400000000000000
+  band: 070000000700000003000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &690326734
@@ -36561,7 +36809,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 050000000700000003000000
+  band: 030000000200000006000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &706037162
@@ -36783,7 +37031,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 070000000300000001000000
+  band: 030000000700000004000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &706402766
@@ -37029,7 +37277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &712744812
 MonoBehaviour:
@@ -37097,7 +37345,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000500000002000000
+  band: 050000000500000005000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &714588536
@@ -42133,7 +42381,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000700000003000000
+  band: 020000000300000003000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &801474771
@@ -42551,6 +42799,315 @@ Transform:
   m_Father: {fileID: 1083342473}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &829563738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829563744}
+  - component: {fileID: 829563743}
+  - component: {fileID: 829563742}
+  - component: {fileID: 829563741}
+  - component: {fileID: 829563740}
+  - component: {fileID: 829563739}
+  m_Layer: 16
+  m_Name: KillWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &829563739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829563738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c0175befdb1c74b9d9d7fecc74f784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &829563740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829563738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d31548dbba9d8428d9ddb1a4601d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &829563741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829563738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &829563742
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829563738}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &829563743
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829563738}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &829563744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829563738}
+  m_LocalRotation: {x: -0, y: 0.00000017881393, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7, y: -0.25, z: 9.5}
+  m_LocalScale: {x: 31.034946, y: 35.363785, z: 0.73736}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &835914329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 835914335}
+  - component: {fileID: 835914334}
+  - component: {fileID: 835914333}
+  - component: {fileID: 835914332}
+  - component: {fileID: 835914331}
+  - component: {fileID: 835914330}
+  m_Layer: 16
+  m_Name: KillWall (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &835914330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835914329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c0175befdb1c74b9d9d7fecc74f784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &835914331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835914329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d31548dbba9d8428d9ddb1a4601d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &835914332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835914329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &835914333
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835914329}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &835914334
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835914329}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &835914335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835914329}
+  m_LocalRotation: {x: -0, y: 0.00000017881393, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7, y: -0.25, z: -17.75}
+  m_LocalScale: {x: 31.034946, y: 35.363785, z: 0.73736}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &841022903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841022904}
+  - component: {fileID: 841022906}
+  - component: {fileID: 841022905}
+  m_Layer: 5
+  m_Name: Combo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &841022904
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841022903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2047643983}
+  m_Father: {fileID: 642338133}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &841022905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841022903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0.6862745}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &841022906
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841022903}
+  m_CullTransparentMesh: 0
 --- !u!1 &841699795
 GameObject:
   m_ObjectHideFlags: 0
@@ -44346,7 +44903,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 030000000300000000000000
+  band: 020000000400000003000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &857688262
@@ -44568,7 +45125,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 040000000600000001000000
+  band: 000000000300000006000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &862922228
@@ -45365,7 +45922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000100000000000000000001000000000000000000000000000000000000000000000001000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000010000000000000000000000000000000000000100000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &865702597
 MonoBehaviour:
@@ -45433,7 +45990,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 010000000300000004000000
+  band: 060000000600000007000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &866218803
@@ -47295,7 +47852,7 @@ PrefabInstance:
     - target: {fileID: 1379201374164523638, guid: aa960a7215fdb49d185fc30fb7951c1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.906
+      value: -3.901
       objectReference: {fileID: 0}
     - target: {fileID: 1379201374164523638, guid: aa960a7215fdb49d185fc30fb7951c1a,
         type: 3}
@@ -47346,6 +47903,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 178404993, guid: aa960a7215fdb49d185fc30fb7951c1a, type: 3}
+      propertyPath: maxSpeedPerSecond
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3607669955454877097, guid: aa960a7215fdb49d185fc30fb7951c1a, type: 3}
@@ -51039,7 +51600,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 030000000300000005000000
+  band: 040000000500000006000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1011360636
@@ -51254,7 +51815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &1013454619
 MonoBehaviour:
@@ -52947,7 +53508,7 @@ PrefabInstance:
     - target: {fileID: 3383577331534278182, guid: 727f7d5a7f84e4640baf05dd27865563,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.5
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 3383577331534278182, guid: 727f7d5a7f84e4640baf05dd27865563,
         type: 3}
@@ -53051,9 +53612,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.22
-  m_Height: 0.83
+  m_Height: 1.03
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &1046817500 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5635118141847681944, guid: aa960a7215fdb49d185fc30fb7951c1a,
@@ -53116,7 +53677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &1059146088
 MonoBehaviour:
@@ -53184,7 +53745,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 030000000000000000000000
+  band: 060000000200000002000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1074734168
@@ -53948,7 +54509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &1077776595
 MonoBehaviour:
@@ -54960,6 +55521,72 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1633588460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1120140136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120140139}
+  - component: {fileID: 1120140138}
+  - component: {fileID: 1120140137}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1120140137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120140136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1120140138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120140136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1120140139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120140136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1121191401 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8400502453146245348, guid: 91de56bfeff60dd4385599ed4efef31e,
@@ -59198,7 +59825,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000000000002000000
+  band: 010000000500000003000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1197874193
@@ -59425,7 +60052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000001000000000001000000000000000000000000000000000000000000010000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &1228016502
 MonoBehaviour:
@@ -60892,7 +61519,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 050000000400000006000000
+  band: 000000000300000003000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1240554819
@@ -61114,7 +61741,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 070000000500000003000000
+  band: 050000000300000001000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &1240829441
@@ -61368,7 +61995,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 040000000400000002000000
+  band: 030000000000000004000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1247742366
@@ -64094,7 +64721,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0
   randomBand: 1
-  band: 040000000500000007000000
+  band: 030000000300000004000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &1292940825
@@ -65544,6 +66171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107483908790867215, guid: 1c5ea40b0607f48039ab530ca726f72d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 223.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107483908790867215, guid: 1c5ea40b0607f48039ab530ca726f72d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 447.31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c5ea40b0607f48039ab530ca726f72d, type: 3}
@@ -69296,7 +69933,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 040000000300000003000000
+  band: 020000000300000001000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1438391501
@@ -69563,7 +70200,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 010000000400000005000000
+  band: 070000000600000003000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1444448879
@@ -72200,7 +72837,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 000000000100000005000000
+  band: 010000000600000005000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1502703885
@@ -72770,7 +73407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &1511274359
 MonoBehaviour:
@@ -72888,7 +73525,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 050000000700000003000000
+  band: 040000000300000004000000
   scale: 1
   averageDecay: 0.1
 --- !u!114 &1521271899
@@ -73090,7 +73727,7 @@ PrefabInstance:
     - target: {fileID: 8962871481127028924, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.9
+      value: -3.89
       objectReference: {fileID: 0}
     - target: {fileID: 8962871481127028924, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
@@ -76400,6 +77037,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6933938287685056985, guid: 7197afd4059aef045b758d2933e5e6b2,
+        type: 3}
+      propertyPath: defaultBPM
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 43683007582798906, guid: 7197afd4059aef045b758d2933e5e6b2,
         type: 3}
       propertyPath: volume
@@ -76449,11 +77091,6 @@ PrefabInstance:
         type: 3}
       propertyPath: pixelizeHitEffectCurve.m_Curve.Array.data[2].inWeight
       value: 0.1219076
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933938287685056985, guid: 7197afd4059aef045b758d2933e5e6b2,
-        type: 3}
-      propertyPath: defaultBPM
-      value: 110
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7197afd4059aef045b758d2933e5e6b2, type: 3}
@@ -80932,7 +81569,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000400000007000000
+  band: 060000000200000000000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1684654938
@@ -81749,7 +82386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!1 &1699566866
 GameObject:
@@ -86039,7 +86676,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000000000006000000
+  band: 020000000700000001000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1736161296
@@ -86261,7 +86898,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 020000000300000000000000
+  band: 040000000600000001000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1746210126
@@ -86515,7 +87152,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 020000000000000003000000
+  band: 050000000000000006000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1749297008
@@ -89757,7 +90394,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 000000000600000002000000
+  band: 010000000300000005000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1832118803
@@ -94171,7 +94808,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 020000000400000001000000
+  band: 070000000400000002000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1895899605
@@ -97363,7 +98000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000010000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000100000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &1950866724
 MonoBehaviour:
@@ -98115,7 +98752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  data: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!114 &1963569484
 MonoBehaviour:
@@ -99118,6 +99755,123 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 68871998}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1984455018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984455024}
+  - component: {fileID: 1984455023}
+  - component: {fileID: 1984455022}
+  - component: {fileID: 1984455021}
+  - component: {fileID: 1984455020}
+  - component: {fileID: 1984455019}
+  m_Layer: 16
+  m_Name: KillWall (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1984455019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984455018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c0175befdb1c74b9d9d7fecc74f784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1984455020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984455018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d31548dbba9d8428d9ddb1a4601d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1984455021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984455018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1984455022
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984455018}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1984455023
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984455018}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1984455024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984455018}
+  m_LocalRotation: {x: -0, y: -0.7071067, z: -0, w: 0.7071069}
+  m_LocalPosition: {x: 14.324997, y: -0.25, z: -4.1249924}
+  m_LocalScale: {x: 31.034946, y: 35.363785, z: 0.73736}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!1 &1988940662
 GameObject:
   m_ObjectHideFlags: 0
@@ -100281,7 +101035,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 070000000400000007000000
+  band: 020000000000000007000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1996166123
@@ -100503,7 +101257,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 060000000600000003000000
+  band: 060000000100000006000000
   scale: 1
   averageDecay: 0.124
 --- !u!114 &1998262900
@@ -103241,7 +103995,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.397
   randomBand: 1
-  band: 070000000300000004000000
+  band: 030000000300000003000000
   scale: 1
   averageDecay: 0.1
 --- !u!114 &2014641051
@@ -106133,6 +106887,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2794891f0ba644d9c1dedaff3867a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2047643982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047643983}
+  - component: {fileID: 2047643985}
+  - component: {fileID: 2047643984}
+  - component: {fileID: 2047643986}
+  m_Layer: 5
+  m_Name: Combo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2047643983
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047643982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 841022904}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2047643984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047643982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c9ae1cac7a2784a738673a841d4222c0, type: 3}
+    m_FontSize: 128
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 128
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: x999
+--- !u!222 &2047643985
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047643982}
+  m_CullTransparentMesh: 0
+--- !u!114 &2047643986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047643982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278ed49d9ed748b4783ab2c0403261b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 2047643984}
 --- !u!1001 &2049972199
 PrefabInstance:
   m_ObjectHideFlags: 0

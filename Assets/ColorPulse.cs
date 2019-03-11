@@ -19,9 +19,6 @@ public class ColorPulse : TemporalController
     private bool setup = false;
 
     private void Setup() {
-        if (setup) {
-            return;
-        }
         colorID = Shader.PropertyToID("_Color");
         block = new MaterialPropertyBlock();
         setup = true;

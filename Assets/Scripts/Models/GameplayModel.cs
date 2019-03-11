@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GameplayModel : ScriptableObject {
 
+    public int combo = 1;
+
     // Event data
     public enum BeatPressedEventScore {
         MISSED, GOOD, PERFECT
@@ -31,7 +33,20 @@ public class GameplayModel : ScriptableObject {
     }
 
     public void AddScore(float score) {
-        Score += score;
+        Score += score * combo;
+    }
+
+    public void PlayerDied() {
+        Score = 0;
+        combo = 1;
+    }
+
+    public void PlayerHit() {
+        combo = 0;
+    }
+
+    public void IncrementCombo() {
+        combo++;
     }
 
 }

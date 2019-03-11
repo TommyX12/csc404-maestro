@@ -4780,7 +4780,7 @@ ParticleSystem:
 --- !u!199 &843650481776967291
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4930,7 +4930,7 @@ MonoBehaviour:
   defaultSound: kick-1
   color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
   noisyFollow: 1
-  projectilePrefab: {fileID: 5213244232771709077, guid: bfad838f006e7441793d19bc11066f19,
+  projectilePrefab: {fileID: 5474172226629348296, guid: 92f15fba0726446418cee18fd3681071,
     type: 3}
   projectileParameters:
     position: {x: 0, y: 0, z: 0}
@@ -4944,6 +4944,8 @@ MonoBehaviour:
     scale: 1
     distance: 50
     bypassAgentType: 0
+    duration: 0
+    counterTarget: {fileID: 0}
   MuzzleSystem: {fileID: 3596801222766083607}
 --- !u!1 &8962871481237132611
 GameObject:
