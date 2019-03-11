@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+using Zenject;
+
 public class BeatTutorial : BasicAgent
 {
 
@@ -23,6 +25,11 @@ public class BeatTutorial : BasicAgent
 
     public UnityEvent onSuccess;
 
+    private bool hitFirstNoteBeforeTime = false;
+
+    // Injected references
+    private GameplayModel model;
+
     // Start is called before the first frame update
     public void SetRiffToPlayerWeapon() {
         riff = CombatGameManager.current.player.GetCurrentWeapon().GetRiff();
@@ -40,8 +47,7 @@ public class BeatTutorial : BasicAgent
             display.transform.SetParent(transform);
         }
 
-        riff.noteHitEvent += OnBeat;
-        riff.delayedNoteHitEvent += OnDelayedBeat;
+        Subscribe();
 
         GetComponent<Collider>().enabled = true;
         ready = true;
@@ -53,18 +59,19 @@ public class BeatTutorial : BasicAgent
         AgentManager.current.AddAgent(this);
     }
 
-    void OnDelayedBeat(Riff.NoteHitEvent hit) {
-        if (!this.enabled || hit.noteIndex == -1)
-        {
-            return;
-        }
-        displays[hit.noteIndex].Pulse();
+    [Inject]
+    public void Construct(GameplayModel model) {
+        this.model = model;
     }
 
     void OnBeat(Riff.NoteHitEvent hit) {
+        if (!hit.automatic) return;
         if (!this.enabled || hit.noteIndex == -1) {
             return;
         }
+
+        displays[hit.noteIndex].Pulse();
+
         noteIndex = hit.noteIndex;
         if (hit.noteIndex == 0)
         {
@@ -74,9 +81,19 @@ public class BeatTutorial : BasicAgent
                 {
                     // play fail sound
                     failSound.Play();
+                    int j = 0;
                     foreach (BeatTutorialDisplay d in displays) {
                         d.SetState(2);
+                        hits[j] = false;
+                        j++;
                     }
+
+                    if (hitFirstNoteBeforeTime) {
+                        hits[0] = true;
+                        displays[0].SetState(1);
+                        hitFirstNoteBeforeTime = false;
+                    }
+                    
                     break;
                 }
 
@@ -91,28 +108,46 @@ public class BeatTutorial : BasicAgent
                     successSound.Play();
                     onSuccess.Invoke();
                     this.enabled = false;
-                    riff.delayedNoteHitEvent -= OnDelayedBeat;
-                    riff.noteHitEvent -= OnBeat;
+                    CleanUp();
+                    model.NotifyTutorialFinished();
                     GameObject.Destroy(gameObject, 1f);
                     return;
                 }
-
-                // clear
-                hits[i] = false;
             }
         }
         else {
             displays[noteIndex - 1].SetState(hits[noteIndex-1] ? 1 : 0);
         }
+
+        hitFirstNoteBeforeTime = false;
+    }
+
+    private void Subscribe() {
+        riff.delayedNoteHitEvent += OnBeat;
+        riff.delayedNoteHitEvent += OnHit;
+    }
+
+    private void CleanUp() {
+        riff.delayedNoteHitEvent -= OnBeat;
+        riff.delayedNoteHitEvent -= OnHit;
+    }
+
+    private void OnHit(Riff.NoteHitEvent e) {
+        if (e.automatic) return;
+        if (e.noteIndex == -1 || !this.enabled || !this.ready)
+        {
+            return;
+        }
+        hits[e.noteIndex] = true;
+        displays[e.noteIndex].SetState(1);
+
+        if (e.noteIndex == 0 && e.deltaTime < 0) {
+            hitFirstNoteBeforeTime = true;
+        }
     }
 
     public override void ReceiveEvent(Event.Damage damage)
     {
-        if (!this.enabled || !this.ready)
-        {
-            return;
-        }
-        hits[noteIndex] = true;
-        displays[noteIndex].SetState(1);
+        
     }
 }

@@ -22,6 +22,7 @@ public class GameplayModel : ScriptableObject {
 
     // Events
     public event Action<BeatPressedEvent> BeatPressed;
+    public event Action TutorialFinished;
 
     // Methods
     
@@ -31,8 +32,14 @@ public class GameplayModel : ScriptableObject {
         }
     }
 
+    public void NotifyTutorialFinished() {
+        if (TutorialFinished != null) {
+            TutorialFinished();
+        }
+    }
+
     public void AddScore(float score) {
-        Score += score;
+        Score += score * combo;
     }
 
     public void PlayerDied() {
