@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4467457376947489151}
   - component: {fileID: 1626415801385244380}
   - component: {fileID: 8225884587164424324}
-  - component: {fileID: 5818015732250305110}
+  - component: {fileID: 1046817496}
   m_Layer: 10
   m_Name: CombatPlayer
   m_TagString: Player
@@ -176,11 +176,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  scoreValue: 0
   initialHitPoint: 8
-  hitPoint: 0
+  hitPoint: 8
   weapons: []
   currentWeaponIndex: 0
+  countermeasures: []
+  currentCountermeasureIndex: 0
   OnDeathClip: {fileID: 7957643589598323029}
+  healthRegenDelay: 5
+  healthRegenRate: 1
+  invulnerabilityTime: 1
+  invulnerabilityTimer: 0
 --- !u!114 &178404993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideRigidBody: 1
-  maxSpeedPerSecond: 3.5
+  maxSpeedPerSecond: 5.5
   friction: 0.25
   rotationFriction: 1
 --- !u!114 &4467457376947489151
@@ -317,8 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d311b0025e44a87bcf4fc6d6b9d353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &5818015732250305110
-SphereCollider:
+--- !u!136 &1046817496
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -327,9 +334,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.45
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.22
+  m_Height: 1.03
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1545395352466026015
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,6 +986,7 @@ GameObject:
   - component: {fileID: 1860967466984188486}
   - component: {fileID: 5177386473784011552}
   - component: {fileID: 2341810649070711475}
+  - component: {fileID: 913632588}
   m_Layer: 10
   m_Name: Body
   m_TagString: Player
@@ -1101,6 +1110,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &913632588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186202350781250348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd1c81bf202bf542adde3afb8587004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 30
+  player: {fileID: 5635118141847681944}
 --- !u!1 &8474551315094542655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,8 +1133,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2498553620239106028}
-  - component: {fileID: 3607669955454877097}
-  - component: {fileID: 1883754061679348916}
   m_Layer: 10
   m_Name: Collider
   m_TagString: Player
@@ -1133,31 +1154,3 @@ Transform:
   m_Father: {fileID: 3465988277073958010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3607669955454877097
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8474551315094542655}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1883754061679348916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8474551315094542655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa3a0d1042c3aa24d8080cedf99359c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  Proxy: {fileID: 5635118141847681944}
