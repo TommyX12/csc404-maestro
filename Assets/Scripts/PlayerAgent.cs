@@ -29,7 +29,7 @@ public class PlayerAgent : BasicAgent
 
         if (PostProcessEffectManager.current) {
             PostProcessEffectManager.current.PlayHitEffect();
-            PostProcessEffectManager.current.UpdateHP(Mathf.RoundToInt(this.hitPoint));
+            PostProcessEffectManager.current.UpdateHP(this);
         }
 
         if (MixerManager.current)
@@ -48,7 +48,7 @@ public class PlayerAgent : BasicAgent
         this.hitPoint = initialHitPoint; // wait for a bit maybe? coroutine
         if (PostProcessEffectManager.current)
         {
-            PostProcessEffectManager.current.UpdateHP(Mathf.RoundToInt(this.hitPoint));
+            PostProcessEffectManager.current.UpdateHP(this);
         }
         if (MixerManager.current)
         {
@@ -62,7 +62,7 @@ public class PlayerAgent : BasicAgent
     private void UpdateScreenEffects() {
         if (PostProcessEffectManager.current)
         {
-            PostProcessEffectManager.current.UpdateHP(Mathf.RoundToInt(this.hitPoint));
+            PostProcessEffectManager.current.UpdateHP(this);
         }
         if (MixerManager.current)
         {

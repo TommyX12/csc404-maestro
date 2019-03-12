@@ -7,6 +7,9 @@ public class SpeakerEnemy : BasicAgent
     public PoolableAudioSource deathNoisePrefab;
     public ParticleGroup deathExplosion;
 
+    public float speed;
+    public bool moveForward = true;
+
     private new void Start()
     {
         base.Start();
@@ -18,8 +21,8 @@ public class SpeakerEnemy : BasicAgent
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if(moveForward) transform.position += transform.forward * speed * Time.fixedDeltaTime;
     }
 }

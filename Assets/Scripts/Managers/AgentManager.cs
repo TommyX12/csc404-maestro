@@ -68,10 +68,11 @@ public class AgentManager : MonoBehaviour {
         float bestDistance = Mathf.Infinity;
         Agent result = null;
         foreach (var agent in agentDict[type]) {
+            
             if (predicate != null && !predicate(agent)) continue;
             
             float distance = (agent.transform.position - position).sqrMagnitude;
-            if (distance < bestDistance) {
+            if (agent.gameObject.activeInHierarchy && distance < bestDistance) {
                 bestDistance = distance;
                 result = agent;
             }

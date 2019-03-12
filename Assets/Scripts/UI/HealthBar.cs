@@ -39,7 +39,6 @@ public class HealthBar : MonoBehaviour {
         if (!healthBarBarPrefab) {
             Debug.Log("healthBarBarPrefab is not injected.");
         }
-        
         GenerateBars();
     }
 
@@ -84,7 +83,7 @@ public class HealthBar : MonoBehaviour {
 
     protected void Update() {
         var playerHealth = model.PlayerHealth;
-        var playerTotalHealth = model.PlayerTotalHealth;
+        var playerTotalHealth = 8;
         int numBarsActive = Math.Min(Math.Max(Mathf.CeilToInt(playerHealth / playerTotalHealth * numBars), 0), numBars);
         for (int i = 0; i < bars.Length; ++i) {
             Color color = i < numBarsActive ? aliveColor : deadColor;

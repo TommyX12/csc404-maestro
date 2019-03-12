@@ -42,8 +42,8 @@ public class PostProcessEffectManager : MonoBehaviour
         hitEffectTimer = 0;
     }
 
-    public void UpdateHP(int hp) {
-        hpEffectTargetIndex = hp;
+    public void UpdateHP(BasicAgent agent) {
+        hpEffectTargetIndex = agent.hitPoint / agent.initialHitPoint;
     }
 
     public void UpdateHPEffect() {
