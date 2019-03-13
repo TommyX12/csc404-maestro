@@ -28,6 +28,8 @@ public class LeaderboardUI : MonoBehaviour
         }
     }
 
+    public string saveFile = "leaderoard";
+
     public GameObject leaderBoard;
     public GameObject scoreEntry;
 
@@ -85,9 +87,9 @@ public class LeaderboardUI : MonoBehaviour
 
         Debug.Log(Application.persistentDataPath);
 
-        if (File.Exists(Path.Combine(Application.persistentDataPath, "leaderboard.txt")))
+        if (File.Exists(Path.Combine(Application.persistentDataPath, saveFile)))
         {
-            text = File.ReadAllText(Path.Combine(Application.persistentDataPath, "leaderboard.txt"), Encoding.UTF8);
+            text = File.ReadAllText(Path.Combine(Application.persistentDataPath, saveFile), Encoding.UTF8);
         }
         else {
             text = "";
@@ -151,6 +153,6 @@ public class LeaderboardUI : MonoBehaviour
                 write += "\n";
             }
         }
-        System.IO.File.WriteAllText(Path.Combine(Application.persistentDataPath, "leaderboard.txt"), write);
+        System.IO.File.WriteAllText(Path.Combine(Application.persistentDataPath, saveFile), write);
     }
 }
