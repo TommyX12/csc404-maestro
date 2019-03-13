@@ -56,7 +56,6 @@ public class BeatTutorial : BasicAgent
     new void Start()
     {
         base.Start();
-        AgentManager.current.AddAgent(this);
     }
 
     [Inject]
