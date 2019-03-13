@@ -83,7 +83,7 @@ public class HealthBar : MonoBehaviour {
 
     protected void Update() {
         var playerHealth = model.PlayerHealth;
-        var playerTotalHealth = 8;
+        var playerTotalHealth = model.PlayerTotalHealth;
         int numBarsActive = Math.Min(Math.Max(Mathf.CeilToInt(playerHealth / playerTotalHealth * numBars), 0), numBars);
         for (int i = 0; i < bars.Length; ++i) {
             Color color = i < numBarsActive ? aliveColor : deadColor;
