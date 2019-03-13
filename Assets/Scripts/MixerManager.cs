@@ -15,7 +15,6 @@ public class MixerManager : MonoBehaviour
     public float targetLowPass = 22000.00f;
     public float targetHighPass = 0;
 
-
     private void Awake()
     {
         current = this;
@@ -31,5 +30,4 @@ public class MixerManager : MonoBehaviour
         master.audioMixer.GetFloat("LowpassFreq", out val);
         master.audioMixer.SetFloat("LowpassFreq", Mathf.Lerp(val, targetLowPass, Time.deltaTime*interpSpeed));
     }
-
 }

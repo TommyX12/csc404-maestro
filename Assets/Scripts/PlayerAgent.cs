@@ -32,13 +32,7 @@ public class PlayerAgent : BasicAgent
             PostProcessEffectManager.current.UpdateHP(this);
         }
 
-        if (MixerManager.current)
-        {
-            if (this.hitPoint >= 0)
-            {
-                // MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.CeilToInt(this.hitPoint) - 1]);
-            }
-        }
+        UpdateScreenEffects();
         model.PlayerHit();
         invulnerabilityTimer = invulnerabilityTime;
     }
@@ -46,14 +40,7 @@ public class PlayerAgent : BasicAgent
     private void PlayerOnDeath(Agent agent)
     {
         this.hitPoint = initialHitPoint; // wait for a bit maybe? coroutine
-        if (PostProcessEffectManager.current)
-        {
-            PostProcessEffectManager.current.UpdateHP(this);
-        }
-        if (MixerManager.current)
-        {
-            MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.RoundToInt(this.hitPoint)-1]);
-        }
+        UpdateScreenEffects();
         transform.position = CheckpointManager.instance.GetActiveCheckpoint().transform.position;
         OnDeathClip.Play();
         model.PlayerDied();
@@ -64,10 +51,10 @@ public class PlayerAgent : BasicAgent
         {
             PostProcessEffectManager.current.UpdateHP(this);
         }
-        if (MixerManager.current)
-        {
-            MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.RoundToInt(this.hitPoint) - 1]);
-        }
+        //if (MixerManager.current)
+        //{
+        //    MixerManager.current.SetTargetLowpassFreq(MixerManager.current.hpFreqBands[Mathf.RoundToInt(this.hitPoint) - 1]);
+        //}
     }
 
     private new void Update()
