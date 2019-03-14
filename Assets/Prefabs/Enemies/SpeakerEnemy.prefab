@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3582985488609398504}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: RingSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 991304936904870856}
   - component: {fileID: 3391595697715372345}
   - component: {fileID: 6036895870264368500}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: BottomRings
   m_TagString: Untagged
   m_Icon: {fileID: 0}

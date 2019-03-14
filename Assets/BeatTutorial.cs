@@ -45,6 +45,7 @@ public class BeatTutorial : BasicAgent
             display.transform.rotation = rot;
             displays[i].SetState(2);
             display.transform.SetParent(transform);
+            display.transform.localScale = pos.transform.localScale;
         }
 
         Subscribe();
