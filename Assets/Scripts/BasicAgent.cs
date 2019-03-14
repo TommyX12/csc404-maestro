@@ -179,7 +179,7 @@ public class BasicAgent : Agent {
 
     public override void ReceiveEvent(Event.AimAt aimAt) {
         foreach (var weapon in weapons) {
-            weapon.transform.LookAt(aimAt.target);
+            weapon.AimAt(aimAt.target);
         }
         foreach (var countermeasure in countermeasures) {
             countermeasure.transform.LookAt(aimAt.target);

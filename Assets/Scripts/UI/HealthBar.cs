@@ -9,10 +9,10 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour {
 
-    protected int numBars = 8;
-    protected float spacing = 0.1f;
-    protected float minHeight = 0.5f;
-    protected float maxHeight = 1.0f;
+    protected int numBars;
+    protected float spacing;
+    protected float minHeight;
+    protected float maxHeight;
 
     public Color aliveColor;
     public Color deadColor;
@@ -30,9 +30,19 @@ public class HealthBar : MonoBehaviour {
     [Inject]
     public void Construct([Inject(Id = Constants.Prefab.HEALTH_BAR_BAR)]
                           RectTransform healthBarBarPrefab,
-                          GameplayModel model) {
+                          GameplayModel model,
+                          GlobalConfiguration config) {
         this.healthBarBarPrefab = healthBarBarPrefab;
         this.model = model;
+
+        SetConfig(config);
+    }
+
+    public void SetConfig(GlobalConfiguration config) {
+        numBars = config.HealthBarNumBars;
+        spacing = config.HealthBarSpacing;
+        minHeight = config.HealthBarMinHeight;
+        maxHeight = config.HealthBarMaxHeight;
     }
 
     protected void Awake() {

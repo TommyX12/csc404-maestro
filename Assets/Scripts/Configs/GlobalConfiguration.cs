@@ -32,6 +32,13 @@ public class GlobalConfiguration : ScriptableObject {
     public string MoveTutorialText = "Use left stick to move";
     public float MoveTutorialTimeout = 20.0f;
 
+    public float PlayerMaxHealth = 4.0f;
+
+    public int HealthBarNumBars = 8;
+    public float HealthBarSpacing = 0.1f;
+    public float HealthBarMinHeight = 0.5f;
+    public float HealthBarMaxHeight = 1.0f;
+
     public GlobalConfiguration() {
         Current = this;
     }

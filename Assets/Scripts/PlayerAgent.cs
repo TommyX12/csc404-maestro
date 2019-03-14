@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Zenject;
+
 public class PlayerAgent : BasicAgent
 {
     public AudioSource OnDeathClip;
@@ -11,6 +13,19 @@ public class PlayerAgent : BasicAgent
     public float healthRegenRate = 1;
     public float invulnerabilityTime = 1f;
     public float invulnerabilityTimer = 0f;
+
+    // Injected references
+    private GlobalConfiguration config;
+
+    [Inject]
+    public void Construct(GlobalConfiguration config) {
+        this.config = config;
+    }
+
+    protected void Awake() {
+        // TODO: this overrides the inspector version.
+        initialHitPoint = config.PlayerMaxHealth;
+    }
 
     protected override void OnDeath()
     {

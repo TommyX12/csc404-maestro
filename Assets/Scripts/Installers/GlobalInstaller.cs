@@ -17,6 +17,8 @@ public class GlobalInstaller : MonoInstaller
     private GlobalRules globalRules;
     [SerializeField]
     private MusicManager musicManager;
+    [SerializeField]
+    private PlayerAgentController player;
 
     public override void InstallBindings()
     {
@@ -38,9 +40,7 @@ public class GlobalInstaller : MonoInstaller
         Container.Bind<GlobalRules>()
             .FromInstance(globalRules);
 
-        if (musicManager == null) {
-            musicManager = MusicManager.current;
-        }
+        Assert.IsNotNull(musicManager);
         Container.Bind<MusicManager>()
             .FromInstance(musicManager);
 
@@ -52,5 +52,11 @@ public class GlobalInstaller : MonoInstaller
         Container.Bind<RectTransform>()
             .WithId(Constants.Prefab.HEALTH_BAR_BAR)
             .FromInstance(healthBarBarPrefab);
+
+        if (player == null) {
+            player = gameManager.player;
+        }
+        Container.Bind<PlayerAgentController>()
+            .FromInstance(player);
     }
 }

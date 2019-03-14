@@ -65,7 +65,6 @@ public class MusicManager : MonoBehaviour {
     }
     
     public void Awake() {
-        Debug.Log("Awake");
         audioDelay = config.AudioDelay;
         audioMinLoadTime = config.AudioMinLoadTime;
         current = this; 

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Zenject;
+
 [RequireComponent(typeof(LerpMovement))]
 public class SpinnerEnemy : BasicAgent
 {
@@ -27,6 +29,9 @@ public class SpinnerEnemy : BasicAgent
     public LerpMovement movementComponent;
     public LerpRotate spinnerRotateComponent;
 
+    // Injected references
+    private PlayerAgentController player;
+
     private BasicWeapon weapon;
 
     private new void Start()
@@ -44,6 +49,7 @@ public class SpinnerEnemy : BasicAgent
         spinnerRotateComponent.moveTime = (60f / MusicManager.current.bpm)  * beatsPerTransition;
         weapon = GetComponent<BasicWeapon>();
         weapon.SetHost(this);
+        AddWeapon(weapon);
 
         Vector2 vector = Random.insideUnitCircle;
         vector = vector.normalized;
@@ -52,8 +58,20 @@ public class SpinnerEnemy : BasicAgent
         AgentManager.current.AddAgent(this);
     }
 
+    [Inject]
+    public void Construct(PlayerAgentController player) {
+        this.player = player;
+    }
+
+    private void AimAtPlayer() {
+        ReceiveEvent(new Agent.Event.AimAt {
+                target = player.transform
+            });
+    }
+
     public new void Update()
     {
+        AimAtPlayer();
         if (active)
         {
             weapon.SetAutoFire(true);

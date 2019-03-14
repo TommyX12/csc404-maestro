@@ -6,4 +6,5 @@ public abstract class Weapon : MonoBehaviour {
     public abstract Riff GetRiff();
     public abstract void Fire();
     public abstract void SetHost(Agent agent);
+    public abstract void AimAt(Transform target);
 }

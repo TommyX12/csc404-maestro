@@ -319,9 +319,9 @@ GameObject:
   - component: {fileID: 3716920209616390515}
   - component: {fileID: 3716920209616390514}
   - component: {fileID: 3716920209616390516}
-  - component: {fileID: 3716920209616390517}
   - component: {fileID: 4158655711906418000}
   - component: {fileID: 2250136803316229034}
+  - component: {fileID: 4702769155556300786}
   m_Layer: 11
   m_Name: SpinnerEnemy
   m_TagString: Untagged
@@ -485,46 +485,6 @@ MonoBehaviour:
   - index: 0
     unitPerBeat: 1
     sound: 
---- !u!114 &3716920209616390517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3716920209616390524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2c19a307e623645a9aa6788a71af13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
-  notes:
-  - index: 2
-    unitPerBeat: 1
-    sound: kick-1
-  defaultSound: kick-1
-  color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
-  noisyFollow: 0
-  projectilePrefab: {fileID: 1239826451, guid: d118de5e52d92534bb568cd6688a53e6, type: 3}
-  projectileParameters:
-    position: {x: 0, y: 0, z: 0}
-    direction: {x: 0, y: 0, z: 0}
-    damage:
-      amount: 1
-      force: 0
-      forceDirection: {x: 0, y: 0, z: 0}
-    color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
-    speed: 5
-    scale: 1
-    distance: 100
-    bypassAgentType: 1
-    duration: 0
-    counterTarget: {fileID: 0}
-  firePoints:
-  - {fileID: 3716920209139951538}
-  - {fileID: 3716920209009071499}
-  - {fileID: 3716920209638823777}
-  - {fileID: 3716920208701637283}
 --- !u!82 &4158655711906418000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -637,6 +597,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4702769155556300786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716920209616390524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ba558ff63b94300a879835cd24b005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 0}
+  notes:
+  - index: 2
+    unitPerBeat: 1
+    sound: 
+  defaultSound: kick-1
+  color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
+  noisyFollow: 0
+  projectilePrefab: {fileID: 1239826451, guid: d118de5e52d92534bb568cd6688a53e6, type: 3}
+  projectileParameters:
+    position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 0}
+    damage:
+      amount: 1
+      force: 0
+      forceDirection: {x: 0, y: 0, z: 0}
+    color: {r: 0.2, g: 0.4, b: 0.8, a: 1}
+    speed: 5
+    scale: 1
+    distance: 100
+    bypassAgentType: 2
+    duration: 0
+    counterTarget: {fileID: 0}
 --- !u!1 &3716920209638823777
 GameObject:
   m_ObjectHideFlags: 0

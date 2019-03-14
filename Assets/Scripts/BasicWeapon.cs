@@ -32,6 +32,9 @@ public class BasicWeapon : Weapon {
 
     protected List<AudioSource> noteSounds = new List<AudioSource> ();
 
+    // Fields
+    private Vector3 targetDirection = new Vector3(1, 0, 0);
+
     public BasicWeapon() {
         
     }
@@ -48,6 +51,10 @@ public class BasicWeapon : Weapon {
         else {
             GetComponent<NoisyFollow>().target = null;
         }
+    }
+
+    public override void AimAt(Transform target) {
+        targetDirection = (target.position - transform.position).normalized;
     }
 
     public void SetAutoFire(bool autoFire) {
@@ -76,7 +83,7 @@ public class BasicWeapon : Weapon {
              projectilePrefab,
              projectileParameters
              .WithTransform(transform.position,
-                            transform.forward)
+                            targetDirection)
              .WithBypassAgentType(host.type));
     }
 
@@ -89,6 +96,9 @@ public class BasicWeapon : Weapon {
     }
 
     protected void Awake() {
+
+        targetDirection = transform.forward;
+        
         riff = new Riff(beatsPerCycle, notes, MusicManager.current);
         riff.delayedNoteHitEvent += DelayedNoteHitEventHandler;
         riff.noteHitEvent += NoteHitEventHandler;

@@ -15,14 +15,15 @@ public class LowPassFilterVolume : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        MixerManager.current.SetTargetLowpassFreq(frequency);
+        // TODO: temporarily disabled
+        // MixerManager.current.SetTargetLowpassFreq(frequency);
     }
 
     private void OnTriggerExit(Collider other)
     {
         collisions--;
         if (collisions == 0) {
-            MixerManager.current.SetTargetLowpassFreq(22000);
+            // MixerManager.current.SetTargetLowpassFreq(22000);
         }
     }
 }
