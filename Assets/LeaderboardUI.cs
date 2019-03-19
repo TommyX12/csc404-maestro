@@ -8,6 +8,14 @@ using Zenject;
 
 public class LeaderboardUI : MonoBehaviour
 {
+
+    // fields
+
+    private List<ScoreEntry> scores;
+    [SerializeField]
+    private bool autoShow = false;
+    
+    
     // Injected references
     private GameplayModel model;
     private GlobalConfiguration config;
@@ -49,6 +57,11 @@ public class LeaderboardUI : MonoBehaviour
     {
         scoreEntryPlayerName.onEndEdit.AddListener(delegate { OnEndEdit(scoreEntryPlayerName); });
         scoreEntryPlayerName.onValidateInput += delegate (string input, int charIndex, char addedChar) { return MyValidate(addedChar); };
+
+        // LoadScores();
+        if (autoShow) {
+            ShowLeaderboard();
+        }
     }
 
     void OnEndEdit(InputField input) {
@@ -79,9 +92,7 @@ public class LeaderboardUI : MonoBehaviour
         public int score;
     }
 
-    public void Submit() {
-        scoreEntry.SetActive(false);
-        leaderBoard.SetActive(true);
+    private void LoadScores() {
         // load the file
         string text;
 
@@ -98,7 +109,7 @@ public class LeaderboardUI : MonoBehaviour
         string[] lines = text.Split('\n');
         
         // ascending?
-        List<ScoreEntry> scores = new List<ScoreEntry>();
+        scores = new List<ScoreEntry>();
         Debug.Log(lines.Length);
         for (int i = 0; i < lines.Length; i++) {
             if (lines[i].Length < 1) {
@@ -115,7 +126,9 @@ public class LeaderboardUI : MonoBehaviour
         }
 
         scores.Sort(new ScoreEntryComparer());
+    }
 
+    private void AddScore() {
         int idx = 0;
         ScoreEntry newEntry = new ScoreEntry() { score = Mathf.RoundToInt(model.Score), name = scoreEntryPlayerName.text };
         for (int i = 0; i < scores.Count; i++) {
@@ -139,12 +152,21 @@ public class LeaderboardUI : MonoBehaviour
             playerScoreText.text = newEntry.score.ToString();
             playerNameText.text = (idx + 1).ToString() + ". " + newEntry.name;
         }
+    }
 
+    private void ShowScores(bool noPlayerText = false) {
+        if (noPlayerText) {
+            playerScoreText.text = "";
+            playerNameText.text = "";
+        }
+        
         for (int i = 0; i < 10 && i < scores.Count; i++) {
             this.topTenNames[i].text = (i + 1).ToString() + ". " + scores[i].name;
             this.topTen[i].text = scores[i].score.ToString();
         }
+    }
 
+    private void WriteScores() {
         string write = "";
 
         for (int i = 0; i < scores.Count; i++) {
@@ -154,5 +176,23 @@ public class LeaderboardUI : MonoBehaviour
             }
         }
         System.IO.File.WriteAllText(Path.Combine(Application.persistentDataPath, saveFile), write);
+    }
+
+    public void ShowLeaderboard() {
+        scoreEntry.SetActive(false);
+        leaderBoard.SetActive(true);
+        
+        LoadScores();
+        ShowScores(true);
+    }
+
+    public void Submit() {
+        scoreEntry.SetActive(false);
+        leaderBoard.SetActive(true);
+
+        LoadScores();
+        AddScore();
+        ShowScores();
+        WriteScores();
     }
 }

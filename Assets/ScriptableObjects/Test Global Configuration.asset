@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc12d179fb3949c791590bca7bcd784, type: 3}
   m_Name: Test Global Configuration
   m_EditorClassIdentifier: 
+  Version: Alpha 3
   RiffHitMarginBefore: 0.2
   RiffHitMarginAfter: 0.2
   RiffHitFailedBlockBeats: 0.5
@@ -24,3 +25,16 @@ MonoBehaviour:
   CorrectNoteHitSoundName: chord-1
   AudioDelay: 0.2
   AudioMinLoadTime: 0.02
+  RiffSoundVolume: 0.4
+  MoveTutorialText: Use left stick to move
+  MoveTutorialTimeout: 20
+  PlayerMaxHealth: 4
+  HealthBarNumBars: 8
+  HealthBarSpacing: 0.1
+  HealthBarMinHeight: 0.5
+  HealthBarMaxHeight: 1
+  levels:
+  - SceneName: Tutorial
+    DisplayName: Tutorial
+  - SceneName: Alpha3
+    DisplayName: Dominion

@@ -11,10 +11,15 @@ public class SimplePulse : MonoBehaviour {
     // Dragged references
     [SerializeField]
     private Image image;
+    [SerializeField]
     private float minValue = 0.5f;
+    [SerializeField]
     private float maxValue = 1.0f;
+    [SerializeField]
     private float cycle = 1.0f;
+    [SerializeField]
     private float phase = 0.0f;
+    [SerializeField]
     private float sharpness = 1.0f;
     
     protected void Awake() {

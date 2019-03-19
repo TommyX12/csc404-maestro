@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.08628178, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.764151, b: 0.0659323, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Resolution: 0
   m_useNativeSize: 0
   m_points:
-  - {x: -187.70255, y: -40.145626}
-  - {x: -195.59647, y: -40.14563}
+  - {x: -186.70251, y: 34.964664}
+  - {x: -207.5118, y: 34.999405}
   - {x: -263.8416, y: 57.724552}
   - {x: -272.75098, y: 57.72455}
   lineThickness: 3
@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 7748032805293013792}
   - component: {fileID: 7748032805293013794}
   - component: {fileID: 7748032805293013795}
+  - component: {fileID: 4852693199207355881}
   m_Layer: 5
   m_Name: Controller
   m_TagString: Untagged
@@ -181,7 +182,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7748032805293013793}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.57929033, y: 0.57929033, z: 0.57929033}
   m_Children:
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -241,6 +242,24 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4852693199207355881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7748032805293013793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b673f8853eb241da8a15a680be3472d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 7748032805293013795}
+  minValue: 0.5
+  maxValue: 1
+  cycle: 2
+  phase: 0
+  sharpness: 1
 --- !u!1 &7748032805703575102
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352.6, y: 57.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -393, y: 58.3}
+  m_SizeDelta: {x: 240.9, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7748032805703575099
 CanvasRenderer:
@@ -300,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.49019608}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -350,7 +369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -157.30005, y: 38}
+  m_AnchoredPosition: {x: -157.29999, y: -39.499992}
   m_SizeDelta: {x: 69.8, y: 69.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7748032805765123440
@@ -448,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.08628178, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8018868, b: 0.0338808, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -507,8 +526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 352, y: 62.7}
-  m_SizeDelta: {x: 67.34, y: 30}
+  m_AnchoredPosition: {x: 451.7, y: 62.7}
+  m_SizeDelta: {x: 266.6, y: 115.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7748032805909591025
 CanvasRenderer:
@@ -531,7 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.49019608}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -605,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.059427653, g: 0.745283, b: 0.03867035, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -613,7 +632,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c9ae1cac7a2784a738673a841d4222c0, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -624,8 +643,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Fire
+    m_LineSpacing: 1.5
+  m_Text: 'Fire on Beat
+
+    Menu Confirm'
 --- !u!1 &7748032806001801342
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -157.3, y: -39.5}
+  m_AnchoredPosition: {x: -157.3, y: 34.900017}
   m_SizeDelta: {x: 69.8, y: 69.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7748032806001801339
@@ -906,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.082903184, g: 0.764151, b: 0.16622119, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -914,7 +935,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c9ae1cac7a2784a738673a841d4222c0, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -925,8 +946,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Movement
+    m_LineSpacing: 1.5
+  m_Text: 'Move
+
+    Menu Select'
 --- !u!1 &7748032806920528079
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,6 @@ public class MusicManager : MonoBehaviour {
     // injected references
     private GlobalConfiguration config;
 
-    private float audioDelay;
     private float audioMinLoadTime;
     
     private Dictionary<string, MusicTrack> activeTracks = new Dictionary<string, MusicTrack>();
@@ -65,7 +64,6 @@ public class MusicManager : MonoBehaviour {
     }
     
     public void Awake() {
-        audioDelay = config.AudioDelay;
         audioMinLoadTime = config.AudioMinLoadTime;
         current = this; 
         bpm = defaultBPM;
@@ -161,7 +159,7 @@ public class MusicManager : MonoBehaviour {
 
         if (masterMusicName != null) {
             this.totalTimer = GetTrackPosition(masterMusicName);
-            this.totalTimerDelayed = GetTrackPosition(masterMusicName) - audioDelay;
+            this.totalTimerDelayed = GetTrackPosition(masterMusicName) - config.AudioDelay;
         }
         
         if (this.conditionsDirty && onBeat) {
@@ -302,7 +300,7 @@ public class MusicManager : MonoBehaviour {
     public float GetTotalTimer(bool delayed = true) {
         if (masterMusicName != null) {
             if (delayed) {
-                return GetTrackPosition(masterMusicName) - audioDelay;
+                return GetTrackPosition(masterMusicName) - config.AudioDelay;
             }
             else {
                 return GetTrackPosition(masterMusicName);
