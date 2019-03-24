@@ -256,6 +256,15 @@ As for things to fix for two weeks from now:
 - Differentiate interactables with non-interactables visually. Make the interactables stand out. Make bullets brighter so they're more visible.
 - The targetting lock-on circle isn't needed. The red circle may or may not be necessary. Possibly shrink or remove it. 
 - Have a leveling system or special weapons so the player feels dominant.
-- Consider optional objectives.
+- Consider adding optional objectives.
 
 ##### New pictures, assets & more since last time
+
+![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/555963430058721280/PlayArea1.png)
+Arcade-themed level idea
+
+![ScreenShot](https://cdn.discordapp.com/attachments/538107981972242432/557707592877604864/20190319_192557_1.mp4)
+New effects
+
+![ScreenShot](https://media.discordapp.net/attachments/538651386951368714/559132272373006355/20190323_173940.jpg?width=745&height=559)
+Golden Disco ball
