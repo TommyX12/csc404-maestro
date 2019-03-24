@@ -212,4 +212,6 @@ https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/
 
 ## Design Blog March 21th, 2019 - March th, 2019
 
-##### Final Presentation
+##### Beta Demo Presentation
+
+Thursdat March 21 was also the final presentation. 
