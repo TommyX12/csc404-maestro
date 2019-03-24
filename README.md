@@ -210,19 +210,27 @@ https://www.youtube.com/watch?v=NzPD-uGhl2U&feature=youtu.be
 
 https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/edit#
 
-## Design Blog March 21th, 2019 - March th, 2019
+## Design Blog March 19th, 2019 - March 22th, 2019
 
 ##### Beta Demo Presentation
 
-Thursday, March 21 was also the final presentation. For some inexplicable reason, a large number of our members were sick and couldn't make it. For their privacy, they will be kept anonymous. The largest impact this had on the presentation was that the computer used was another group member's computer meant to be a back-up. This back-up laptop was not a gaming laptop but played the game adequately. But because this was a back-up computer that was intended as a last resort compared to the gaming laptops of numerous members, it wasn't calibrated the best. The game is far from unplayable in this state but it required some extra calibration during the presentation. 
+Thursday, March 21 was also the final presentation. For some inexplicable reason, a large number of our members were sick and couldn't make it. For their privacy, they will be kept anonymous. The largest impact this had on the presentation was that the computer used was another group member's computer meant to be a back-up to the back-ups. This back-up laptop was not a gaming laptop but played the game adequately. But because this was a back-up computer that was intended as a last resort compared to the gaming laptops (and back-up gaming laptops) of numerous members, it wasn't calibrated the best. The game is far from unplayable in this state but it required some extra calibration during the presentation. 
 
 In this demo, the panellists stepped up to personally play our games. This game was intended to be played on a controller (Xbox) but we were forced to use the keypad. Fortunately, the controls were only movement and a shooting button. It could practically be played using an Atari 2600 controller.
 
 ![ScreenShot](https://cdn.discordapp.com/attachments/536218953987653674/559230510010859521/41jDq2B8tYEL.png)
 
-Thus, the difference exists but isn't too damaging. Our panellist
+Thus, the difference exists but isn't too damaging. Our panellist didn't have much trouble picking up the game but the technical difficulties during the presentation had some small degree of interference.
 
 Reception was overall positive. The panellists liked the neon-80s feel. Much of the positive feedback is similar to positive feedback we've obtained before so there's not much to say in that area without repeating.
 What's new and worth mentioning are the parts they disliked and next steps for improvement:
 - The laptop used wasn't calibrated the best and the tempo was a bit slow.
-- 
+- They want to be able to tap to the beat even with their eyes closed.
+- The calibration screen's music has multiple beats, unsure which beat to tap to.
+- Beat should change.
+- The line around the circle to indicate when to shoot was a bit confusing. Consider not having a line do the moving.
+- Recommendation was something alike the Windows Loading circle.
+
+![ScreenShot](https://i.gifer.com/BA5o.gif)
+
+- The aiming lines may be unneccessary. 
