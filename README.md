@@ -218,6 +218,7 @@ Thursday, March 21 was also the final presentation. For some inexplicable reason
 
 In this demo, the panellists stepped up to personally play our games. This game was intended to be played on a controller (Xbox) but we were forced to use the keypad. Fortunately, the controls were only movement and a shooting button. It could practically be played using an Atari 2600 controller.
 ![ScreenShot](https://cdn.discordapp.com/attachments/536218953987653674/559230510010859521/41jDq2B8tYEL.png)
+
 Thus, the difference exists but isn't too damaging. Our panellist
 
 Reception was overall positive. The panellists liked the neon-80s feel. Much of the positive feedback is similar to positive feedback we've obtained before so there's not much to say in that area without repeating.
