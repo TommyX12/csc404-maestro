@@ -234,3 +234,20 @@ What's new and worth mentioning are the parts they disliked and next steps for i
 ![ScreenShot](https://i.gifer.com/BA5o.gif)
 
 - The aiming lines may be unneccessary. 
+- Make the music have strong beats which match the visuals, should be able to close your eyes and tap to the beat
+- One found the "Don't get hit to regenerate health" to be awkward and unnecessary
+- Something more apparent that your health is going down i.e. Call of Duty making the screen bloody (or covered in strawberry jam) or the music changing upon hit (we chose to make the music fuzz a bit)
+
+![ScreenShot](https://aspiringgameprogrammer.files.wordpress.com/2009/11/vlcsnap-112634.png)
+
+- The player's eyes are mostly on the spinning wheel, never looking down on the health bar. Consider putting health bar on the firing wheel.
+- It's hard to see the enemies as they're watching the spinning wheel.
+- As for things to fix two weeks from now:
+- The enemy fire is hard to see, especially when focusing on the beat. Environment is a bit noisy.
+- Have an indication before they shoot. 
+- Be sure to nail the audio at Level-Up (We plan on getting headphones)
+- Bullet Hell games often have colorful projectiles on a dark background, thus it's easier to see the projectiles. They're the brightest things so they're the most noticable.
+
+![ScreenShot](https://vignette.wikia.nocookie.net/touhou/images/6/68/Th08screenLayout.jpg/revision/latest?cb=20051028013614)
+
+- We have colors everywhere. We should try to have most of the brighter colors in the background, with a darker foreground so the bright projectiles are easily seen.
