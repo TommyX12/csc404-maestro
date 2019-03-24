@@ -216,7 +216,7 @@ https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/
 
 Thursday, March 21 was also the final presentation. For some inexplicable reason, a large number of our members were sick and couldn't make it. For their privacy, they will be kept anonymous. The largest impact this had on the presentation was that the computer used was another group member's computer meant to be a back-up to the back-ups. This back-up laptop was not a gaming laptop but played the game adequately. But because this was a back-up computer that was intended as a last resort compared to the gaming laptops (and back-up gaming laptops) of numerous members, it wasn't calibrated the best. The game is far from unplayable in this state but it required some extra calibration during the presentation. 
 
-In this demo, the panellists stepped up to personally play our games. This game was intended to be played on a controller (Xbox) but we were forced to use the keypad. Fortunately, the controls were only movement and a shooting button. It could practically be played using an Atari 2600 controller.
+In this demo, the panellists stepped up to personally play our games. This game was intended to be played on a controller (Xbox) but we were forced to use the keyboard. Fortunately, the controls were only arrow keys for movement and a shooting button. It could practically be played using an Atari 2600 controller.
 
 ![ScreenShot](https://cdn.discordapp.com/attachments/536218953987653674/559230510010859521/41jDq2B8tYEL.png)
 
