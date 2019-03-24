@@ -214,4 +214,8 @@ https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/
 
 ##### Beta Demo Presentation
 
-Thursdat March 21 was also the final presentation. 
+Thursday, March 21 was also the final presentation. 
+
+Reception was overall positive. The panellists liked the neon-80s feel. 
+They did have dislikes and next steps for improvement however.
+
