@@ -222,7 +222,8 @@ In this demo, the panellists stepped up to personally play our games. This game 
 
 Thus, the difference exists but isn't too damaging. Our panellist didn't have much trouble picking up the game but the technical difficulties during the presentation had some small degree of interference.
 
-Reception was overall positive. The panellists liked the neon-80s feel. Much of the positive feedback is similar to positive feedback we've obtained before so there's not much to say in that area without repeating. They didn't have any super-major gamebreaking gripes. 
+Reception was overall favorable. The panellists say they liked the neon-80s feel when asked post-presentation. Much of the positive feedback is similar to positive feedback we've obtained before so there's not much to say in that area without repeating. They didn't have any super-major gamebreaking gripes either.
+
 What's new and worth mentioning are the parts they disliked and next steps for improvement:
 - The laptop used wasn't calibrated the best and the tempo was a bit slow.
 - They want to be able to tap to the beat even with their eyes closed.
@@ -243,7 +244,7 @@ What's new and worth mentioning are the parts they disliked and next steps for i
 - The player's eyes are mostly on the spinning wheel, never looking down on the health bar. Consider putting health bar on the firing wheel.
 - It's hard to see the enemies as they're watching the spinning wheel.
 
-As for things to fix for two weeks from now:
+As for things they want fixed for two weeks from now:
 
 - The enemy fire is hard to see, especially when focusing on the beat. Environment is a bit noisy.
 - Have an indication before they shoot. 
