@@ -242,7 +242,9 @@ What's new and worth mentioning are the parts they disliked and next steps for i
 
 - The player's eyes are mostly on the spinning wheel, never looking down on the health bar. Consider putting health bar on the firing wheel.
 - It's hard to see the enemies as they're watching the spinning wheel.
-- As for things to fix two weeks from now:
+
+As for things to fix for two weeks from now:
+
 - The enemy fire is hard to see, especially when focusing on the beat. Environment is a bit noisy.
 - Have an indication before they shoot. 
 - Be sure to nail the audio at Level-Up (We plan on getting headphones)
