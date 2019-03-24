@@ -253,3 +253,7 @@ As for things to fix for two weeks from now:
 ![ScreenShot](https://vignette.wikia.nocookie.net/touhou/images/6/68/Th08screenLayout.jpg/revision/latest?cb=20051028013614)
 
 - We have colors everywhere. We should try to have most of the brighter colors in the background, with a darker foreground so the bright projectiles are easily seen.
+- Differentiate interactables with non-interactables visually. Make the interactables stand out. Make bullets brighter so they're more visible.
+- The targetting lock-on circle isn't needed. The red circle may or may not be necessary. Possibly shrink or remove it. 
+- Have a leveling system or special weapons so the player feels dominant.
+- Consider optional objectives.
