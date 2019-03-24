@@ -214,8 +214,11 @@ https://docs.google.com/document/d/1pzBNcJ1X8DKWTHz2AxP3mD6JzXRbEpm7DsJseca8l2c/
 
 ##### Beta Demo Presentation
 
-Thursday, March 21 was also the final presentation. 
+Thursday, March 21 was also the final presentation. For some inexplicable reason, a large number of our members were sick and couldn't make it. For their privacy, they will be kept anonymous. The largest impact this had on the presentation was that the computer used was another group member's computer meant to be a back-up. This back-up laptop was not a gaming laptop but played the game adequately. But because this was a back-up computer that was intended as a last resort compared to the gaming laptops of numerous members, it wasn't calibrated the best. The game is far from unplayable in this state but it required some extra calibration during the presentation. 
 
-Reception was overall positive. The panellists liked the neon-80s feel. 
-They did have dislikes and next steps for improvement however.
+In this demo, the panellists stepped up to personally play our games. This game was intended to be played on a controller (Xbox) but we were forced to use the keypad. Fortunately, the controls were only movement and a shooting button. Thus, the difference exists but isn't too damaging. Our panellist
 
+Reception was overall positive. The panellists liked the neon-80s feel. Much of the positive feedback is similar to positive feedback we've obtained before so there's not much to say in that area without repeating.
+What's new and worth mentioning are the parts they disliked and next steps for improvement:
+- The laptop used wasn't calibrated the best and the tempo was a bit slow.
+- 
