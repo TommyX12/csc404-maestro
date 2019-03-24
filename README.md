@@ -222,7 +222,7 @@ In this demo, the panellists stepped up to personally play our games. This game 
 
 Thus, the difference exists but isn't too damaging. Our panellist didn't have much trouble picking up the game but the technical difficulties during the presentation had some small degree of interference.
 
-Reception was overall positive. The panellists liked the neon-80s feel. Much of the positive feedback is similar to positive feedback we've obtained before so there's not much to say in that area without repeating.
+Reception was overall positive. The panellists liked the neon-80s feel. Much of the positive feedback is similar to positive feedback we've obtained before so there's not much to say in that area without repeating. They didn't have any super-major gamebreaking gripes. 
 What's new and worth mentioning are the parts they disliked and next steps for improvement:
 - The laptop used wasn't calibrated the best and the tempo was a bit slow.
 - They want to be able to tap to the beat even with their eyes closed.
@@ -257,3 +257,5 @@ As for things to fix for two weeks from now:
 - The targetting lock-on circle isn't needed. The red circle may or may not be necessary. Possibly shrink or remove it. 
 - Have a leveling system or special weapons so the player feels dominant.
 - Consider optional objectives.
+
+##### New pictures, assets & more since last time
