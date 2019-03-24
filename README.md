@@ -261,14 +261,18 @@ As for things to fix for two weeks from now:
 ##### New pictures, assets & more since last time
 
 Disco-themed level concept
+
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/555963430058721280/PlayArea1.png)
 
 New effects
+
 https://cdn.discordapp.com/attachments/538107981972242432/557707592877604864/20190319_192557_1.mp4
 
 
 Golden Disco ball
+
 ![ScreenShot](https://media.discordapp.net/attachments/538651386951368714/559132272373006355/20190323_173940.jpg?width=745&height=559)
 
 New music
+
 https://cdn.discordapp.com/attachments/537445596345401370/558408097891352591/track_1.mid
