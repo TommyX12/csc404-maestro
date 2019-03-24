@@ -264,7 +264,7 @@ Disco-themed level concept
 ![ScreenShot](https://cdn.discordapp.com/attachments/538651386951368714/555963430058721280/PlayArea1.png)
 
 New effects
-![ScreenShot](https://cdn.discordapp.com/attachments/538107981972242432/557707592877604864/20190319_192557_1.mp4)
+https://cdn.discordapp.com/attachments/538107981972242432/557707592877604864/20190319_192557_1.mp4
 
 
 Golden Disco ball
