@@ -6,6 +6,9 @@ public class MixerManager : MonoBehaviour
 {
     public static MixerManager current;
     public AudioMixerGroup master;
+    public AudioMixerGroup playerHitMixer;
+
+    public AnimationCurve playerHitLowpassCurve;
 
     public float interpSpeed = 1;
 
@@ -14,6 +17,13 @@ public class MixerManager : MonoBehaviour
     [Range(0,22000)]
     public float targetLowPass = 22000.00f;
     public float targetHighPass = 0;
+
+    private float interpVal = 0;
+
+    public void PlayerGotHit()
+    {
+        interpVal = 1;
+    }
 
     private void Awake()
     {
@@ -29,5 +39,10 @@ public class MixerManager : MonoBehaviour
         float val;
         master.audioMixer.GetFloat("LowpassFreq", out val);
         master.audioMixer.SetFloat("LowpassFreq", Mathf.Lerp(val, targetLowPass, Time.deltaTime*interpSpeed));
+
+        interpVal -= Time.deltaTime;
+        interpVal = interpVal < 0 ? 0 : interpVal;
+
+        master.audioMixer.SetFloat("LowpassFreq", playerHitLowpassCurve.Evaluate(interpVal));
     }
 }

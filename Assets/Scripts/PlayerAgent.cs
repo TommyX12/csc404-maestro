@@ -47,6 +47,14 @@ public class PlayerAgent : BasicAgent
             PostProcessEffectManager.current.UpdateHP(this);
         }
 
+        if (MixerManager.current) {
+            MixerManager.current.PlayerGotHit();
+        }
+
+        if (StaticAudioManager.current) {
+            StaticAudioManager.current.GetPreviewSound().Play();
+        }
+
         UpdateScreenEffects();
         model.PlayerHit();
         invulnerabilityTimer = invulnerabilityTime;

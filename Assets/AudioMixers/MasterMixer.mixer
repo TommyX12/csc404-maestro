@@ -7,7 +7,7 @@ AudioMixerController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MasterMixer
-  m_OutputGroup: {fileID: 0}
+  m_OutputGroup: {fileID: 24300002, guid: ca49cd4b95db0814aaa2a51d1da5a670, type: 2}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 245442470246304556}
@@ -21,6 +21,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: f057acd83212d084799c27844077cd5f
     name: Volume
+  - guid: be33b673ffb7faa4c84dee5cb65827de
+    name: PlayerHitLowpassFreq
   - guid: 284a113150ae7474cac083652ce0d531
     name: LowpassFreq
   m_AudioMixerGroupViews:
@@ -28,6 +30,7 @@ AudioMixerController:
     - 4f208c8c34c16634b973c9b8e8853983
     - 4703232216ee92c46968404c1c5341b7
     - 46d130cb9f669f747bbe6da37fae6c86
+    - c3dca0a35db0ff64696ad5c9ced4ec92
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 245442470246304556}
@@ -42,7 +45,7 @@ AudioMixerGroupController:
   m_GroupID: 4f208c8c34c16634b973c9b8e8853983
   m_Children:
   - {fileID: 243869064549537838}
-  - {fileID: 243188762775397756}
+  - {fileID: 243844886325495072}
   m_Volume: f057acd83212d084799c27844077cd5f
   m_Pitch: 806a10cb2a1040c4c8b52d255ca1f2e7
   m_Effects:
@@ -74,7 +77,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SFX
+  m_Name: SFXSource
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 4703232216ee92c46968404c1c5341b7
   m_Children: []
@@ -83,6 +86,26 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 244231173701584020}
   - {fileID: 244339733013907334}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &243844886325495072
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerHitSFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c3dca0a35db0ff64696ad5c9ced4ec92
+  m_Children:
+  - {fileID: 243188762775397756}
+  m_Volume: dd1c21c5253aa8c4fb74af8bc21f6bfd
+  m_Pitch: 5899723c39822ae4e940a17069a3461a
+  m_Effects:
+  - {fileID: 244081841484976732}
+  - {fileID: 244935632433719056}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -105,6 +128,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &244081841484976732
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: cc82fefdda7e4594b9a4e40f240df995
+  m_EffectName: Attenuation
+  m_MixLevel: 0e9d28e2755bfa2478a8beeae651a743
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &244231173701584020
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -225,6 +262,24 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &244935632433719056
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5e8860dc8dc15d749bffd95c9f716d7a
+  m_EffectName: Lowpass
+  m_MixLevel: 0849c50713cc5904e8fd335f4cbd3411
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: be33b673ffb7faa4c84dee5cb65827de
+  - m_ParameterName: Resonance
+    m_GUID: fedba1bcd13ccce42ba47a328239b58b
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!245 &245442470246304556
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
@@ -245,6 +300,7 @@ AudioMixerSnapshotController:
     db5498b2f6070fd4a88eaa685ad290c7: 0.254
     658c90437f47d4953887578349276791: 533.12146
     ac8612735f0500e46a31b524d08f6bd7: 78.1
+    be33b673ffb7faa4c84dee5cb65827de: 22000
     a6e721a3f912d6d45a0e45806d5fddeb: 3.43
     06d331143315940cebdc00df26cefff8: 1
     51c8e7f484d46904e9f49f511ffef427: 0.08
@@ -266,6 +322,7 @@ AudioMixerSnapshotController:
     44f8de5bf4c72e34ebb33ee1d254c21b: 10
     99a0717b1b439164eb0da758612cf722: 1.990001
     806a10cb2a1040c4c8b52d255ca1f2e7: 1
+    fedba1bcd13ccce42ba47a328239b58b: 4
     ad9016dcf0fd5e548a1ea686451517b6: 0.83
     f6c567dcfffa5554c9bd82442f82e29c: 22000
     222accade3df5bc409cff56c9eb153ec: 0.698
