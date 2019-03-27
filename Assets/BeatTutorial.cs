@@ -27,8 +27,6 @@ public class BeatTutorial : BasicAgent
 
     private bool hitFirstNoteBeforeTime = false;
 
-    // Injected references
-    private GameplayModel model;
 
     // Start is called before the first frame update
     public void SetRiffToPlayerWeapon() {
