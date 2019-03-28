@@ -42,10 +42,12 @@ public class AgentManager : MonoBehaviour {
         EnsureTypeDictExists(agent.type);
         agentDict[agent.type].Add(agent);
         agent.onDeath += AgentOnDeath;
+        OffscreenIndicatorSystem.current.AddMarker(agent.gameObject);
     }
 
     private void AgentOnDeath(Agent agent) {
         agentDict[agent.type].Remove(agent);
+        OffscreenIndicatorSystem.current.RemoveMarker(agent.gameObject);
     }
 
     private void EnsureTypeDictExists(Agent.Type type) {
