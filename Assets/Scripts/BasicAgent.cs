@@ -204,6 +204,14 @@ public class BasicAgent : Agent {
         {
             model.IncrementCombo();
         }
+
+        if (ScoreManager.current) {
+            var go = GameObject.Instantiate(ScoreManager.current.floatingScorePrefab);
+            var score = go.GetComponent<FloatingScore>();
+            score.SetScore(this.scoreValue);
+            go.transform.position = this.transform.position;
+        }
+
         if (ScoreManager.current && ScoreManager.current.scoreParticles)
         {
             var pg = ParticleManager.instance.GetParticleGroup(ScoreManager.current.scoreParticles);
