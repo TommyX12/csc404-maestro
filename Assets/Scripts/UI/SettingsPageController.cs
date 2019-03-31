@@ -72,8 +72,12 @@ public class SettingsPageController : MonoBehaviour {
                 colorFactor = 0;
             }
         }
-        offsetText.color = Color.Lerp(config.SettingsOffsetTextIdleColor, config.SettingsOffsetTextBeatColor, colorFactor / config.SettingsOffsetTextBeatColorDuration);
+        float interp = colorFactor / config.SettingsOffsetTextBeatColorDuration;
+        offsetText.color = Color.Lerp(config.SettingsOffsetTextIdleColor, config.SettingsOffsetTextBeatColor, interp);
         offsetText.text = config.AudioDelay.ToString("0.00");
+        float scaleFactor = 1.0f + interp * config.CalibrationScaleFactor;
+        Vector3 scale = new Vector3(scaleFactor, scaleFactor, 1.0f);
+        offsetText.transform.localScale = scale;
 
         config.SetGlobalAudioDelay(Mathf.Clamp(config.AudioDelay + Input.GetAxis("Horizontal") * Time.deltaTime * config.AudioDelayStep, config.AudioDelayMin, config.AudioDelayMax));
     }
