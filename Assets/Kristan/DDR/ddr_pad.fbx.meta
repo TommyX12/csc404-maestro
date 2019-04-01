@@ -1,78 +1,27 @@
 fileFormatVersion: 2
-guid: e3deaa0cfa1e4401096cca452bea409a
+guid: 5ccd2cce627174cf093d7a51f4fcc904
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Circle.003
-    100004: Circle.004
-    100006: Circle.005
-    100008: Circle.006
-    100010: Circle.007
-    100012: Circle.008
-    100014: Cube.011
-    100016: Cylinder
-    100018: Plane.005
-    100020: Plane.006
-    100022: Plane.007
-    100024: Plane.008
-    100026: Sphere
-    400000: //RootNode
-    400002: Circle.003
-    400004: Circle.004
-    400006: Circle.005
-    400008: Circle.006
-    400010: Circle.007
-    400012: Circle.008
-    400014: Cube.011
-    400016: Cylinder
-    400018: Plane.005
-    400020: Plane.006
-    400022: Plane.007
-    400024: Plane.008
-    400026: Sphere
-    2100000: Material.004
-    2100002: Material.025
-    2100004: Material.021
-    2300000: Circle.003
-    2300002: Circle.004
-    2300004: Circle.005
-    2300006: Circle.006
-    2300008: Circle.007
-    2300010: Circle.008
-    2300012: Cube.011
-    2300014: Cylinder
-    2300016: Plane.005
-    2300018: Plane.006
-    2300020: Plane.007
-    2300022: Plane.008
-    2300024: Sphere
-    3300000: Circle.003
-    3300002: Circle.004
-    3300004: Circle.005
-    3300006: Circle.006
-    3300008: Circle.007
-    3300010: Circle.008
-    3300012: Cube.011
-    3300014: Cylinder
-    3300016: Plane.005
-    3300018: Plane.006
-    3300020: Plane.007
-    3300022: Plane.008
-    3300024: Sphere
-    4300000: Plane.008
-    4300002: Plane.007
-    4300004: Plane.006
-    4300006: Plane.005
-    4300008: Circle.008
-    4300010: Circle.007
-    4300012: Circle.006
-    4300014: Circle.005
-    4300016: Circle.004
-    4300018: Circle.003
-    4300020: Cylinder
-    4300022: Sphere
-    4300024: Cube.011
+    100000: Cube
+    100002: //RootNode
+    100004: Torus.003
+    100006: Torus.007
+    400000: Cube
+    400002: //RootNode
+    400004: Torus.003
+    400006: Torus.007
+    2100000: Material.007
+    2100002: Material.001
+    2300000: Cube
+    2300002: Torus.003
+    2300004: Torus.007
+    3300000: Cube
+    3300002: Torus.003
+    3300004: Torus.007
+    4300000: Torus.003
+    4300002: Cube
+    4300004: Torus.007
   externalObjects: {}
   materials:
     importMaterials: 1
