@@ -7,6 +7,8 @@ public class ScoreManager : MonoBehaviour
 
     public ParticleGroup scoreParticles;
 
+    public GameObject floatingScorePrefab;
+
     public static ScoreManager current;
     public int[] starScoreThresholds;
     public UIScoreDisplay scoreDisplay;
