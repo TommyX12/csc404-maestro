@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 3254401275236896607}
   - component: {fileID: 1886161825000574046}
   - component: {fileID: 102573879292259585}
+  - component: {fileID: 5041946995222436832}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MonoBehaviour:
   DefaultStartFadeInTime: 1
   MasterVolume: 1
   ContextVolume: 1
-  defaultBPM: 80
+  defaultBPM: 110
 --- !u!114 &6933938287685056986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78584df36920acd43882f50016a7c838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 243869064549537838, guid: 55f1ba7b7af5d4644a2c0125adc72579, type: 2}
 --- !u!114 &6933938287685056988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 6933938287685056985}
-  track: csc404-test-base
-  trackBPM: 80
+  track: white-noise
+  trackBPM: 110
   player: {fileID: 0}
 --- !u!114 &1161701889
 MonoBehaviour:
@@ -182,7 +184,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   master: {fileID: 243188762775397756, guid: 55f1ba7b7af5d4644a2c0125adc72579, type: 2}
-  interpSpeed: 1
+  playerHitMixer: {fileID: 243844886325495072, guid: 55f1ba7b7af5d4644a2c0125adc72579,
+    type: 2}
+  playerHitLowpassCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 22000
+      inSlope: -69208.43
+      outSlope: -69208.43
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.034355827
+    - serializedVersion: 3
+      time: 1
+      value: 550
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  interpSpeed: 5
   hpFreqBands:
   - 95
   - 170
@@ -274,13 +302,46 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.06993865
     - serializedVersion: 3
-      time: 8
+      time: 1
       value: 0
       inSlope: -0.48926526
       outSlope: -0.48926526
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.1310708
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  redFlashEffectCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -20
+      outSlope: -20
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.05
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -310,7 +371,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreParticles: {fileID: 0}
-  starScoreThresholds: c80000002c010000f4010000
+  floatingScorePrefab: {fileID: 6138245852557598474, guid: cf0ef5b4346a3f14f8b963ac402006fd,
+    type: 3}
+  starScoreThresholds: 10270000204e000030750000
   scoreDisplay: {fileID: 0}
   score: 0
 --- !u!114 &102573879292259585
@@ -325,3 +388,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c17aacb83cb51045985f852f74bcf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5041946995222436832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933938287685056982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc54c3d5115c4c7a9c3d322251eaf6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnArea: {fileID: 0}

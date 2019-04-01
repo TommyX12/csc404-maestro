@@ -64,6 +64,10 @@ public class GlobalConfiguration : ScriptableObject {
 
     public float CalibrationScaleFactor = 0.25f;
 
+    public float PickupSpawnInterval = 32.0f; // beats
+    public float PickupEffectDuration = 16.0f; // beats
+    public float PickupItemDuration = 8.0f; // beats
+
     [SerializeField]
     private Level[] levels = {
         new Level{

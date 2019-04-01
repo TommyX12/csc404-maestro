@@ -18,7 +18,7 @@ public class SongProgressBar : MonoBehaviour
     {                              
         Vector3 position = playhead.anchoredPosition;
         position.x = bar.sizeDelta.x * (source.time / source.clip.length);
-        Debug.Log(bar.sizeDelta.x);
+        // Debug.Log(bar.sizeDelta.x); // understandable, have a good day
         playhead.anchoredPosition = position;
     }
 }   

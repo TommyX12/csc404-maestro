@@ -360,6 +360,17 @@ static public class Util
         }
     }
     
+    static public T GetRandomElement<T>(Array list)
+    {
+        if (list.Length > 0)
+        {
+            return (T)list.GetValue(RandomInt(list.Length));
+        }
+        else {
+            throw new Exception("List is empty");
+        }
+    }
+    
     static public int RandomSelectChance(float[] chanceArray)
     {
         if (chanceArray.Length == 0) return -1;

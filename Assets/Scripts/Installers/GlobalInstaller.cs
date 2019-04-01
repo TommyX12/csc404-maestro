@@ -18,7 +18,11 @@ public class GlobalInstaller : MonoInstaller
     [SerializeField]
     private MusicManager musicManager;
     [SerializeField]
+    private PickupManager pickupManager;
+    [SerializeField]
     private PlayerAgentController player;
+    [SerializeField]
+    private PrefabObjectProvider prefabProvider;
 
     public override void InstallBindings()
     {
@@ -44,9 +48,17 @@ public class GlobalInstaller : MonoInstaller
         Container.Bind<MusicManager>()
             .FromInstance(musicManager);
 
+        Assert.IsNotNull(pickupManager);
+        Container.Bind<PickupManager>()
+            .FromInstance(pickupManager);
+
         Assert.IsNotNull(gameManager);
         Container.Bind<CombatGameManager>()
             .FromInstance(gameManager);
+
+        Assert.IsNotNull(prefabProvider);
+        Container.Bind<PrefabObjectProvider>()
+            .FromInstance(prefabProvider);
         
         Assert.IsNotNull(healthBarBarPrefab);
         Container.Bind<RectTransform>()
