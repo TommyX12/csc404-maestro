@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  scoreValue: 0
   initialHitPoint: 5
   hitPoint: 0
   weapons: []
@@ -218,6 +219,28 @@ MonoBehaviour:
   onFinish:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6953647671508471607}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 1
@@ -241,6 +264,17 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -251,9 +285,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6953647671508471607}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 0}
+        m_MethodName: PlayMusic
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -468,16 +502,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7638639766065963726, guid: cb95d14e2d1a5444b9ee414b4b884a80,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7638639766065963724, guid: cb95d14e2d1a5444b9ee414b4b884a80,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 7638639766065963720, guid: cb95d14e2d1a5444b9ee414b4b884a80,
         type: 3}
       propertyPath: m_Layer
@@ -489,6 +513,16 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4420257561931871130, guid: cb95d14e2d1a5444b9ee414b4b884a80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638639766065963724, guid: cb95d14e2d1a5444b9ee414b4b884a80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638639766065963726, guid: cb95d14e2d1a5444b9ee414b4b884a80,
         type: 3}
       propertyPath: m_Layer
       value: 12
@@ -508,16 +542,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6953647671508471608}
     m_Modifications:
-    - target: {fileID: 3736294757636404612, guid: aeaf9526877340645a5872f388051752,
-        type: 3}
-      propertyPath: authorName
-      value: Thommy Xiang
-      objectReference: {fileID: 0}
-    - target: {fileID: 3736294757636404612, guid: aeaf9526877340645a5872f388051752,
-        type: 3}
-      propertyPath: songName
-      value: Maestro 01
-      objectReference: {fileID: 0}
     - target: {fileID: 4587296457002867783, guid: aeaf9526877340645a5872f388051752,
         type: 3}
       propertyPath: m_Name
@@ -583,13 +607,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4587296457002867781, guid: aeaf9526877340645a5872f388051752,
+    - target: {fileID: 1774013808730168736, guid: aeaf9526877340645a5872f388051752,
         type: 3}
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 4587296457002867779, guid: aeaf9526877340645a5872f388051752,
-        type: 3}
+    - target: {fileID: 93546154, guid: aeaf9526877340645a5872f388051752, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333925643, guid: aeaf9526877340645a5872f388051752, type: 3}
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
@@ -598,10 +625,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 1774013808730168736, guid: aeaf9526877340645a5872f388051752,
+    - target: {fileID: 3736294757636404612, guid: aeaf9526877340645a5872f388051752,
         type: 3}
-      propertyPath: m_Layer
-      value: 12
+      propertyPath: authorName
+      value: Thommy Xiang
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736294757636404612, guid: aeaf9526877340645a5872f388051752,
+        type: 3}
+      propertyPath: songName
+      value: Maestro 01
       objectReference: {fileID: 0}
     - target: {fileID: 4642067129055869818, guid: aeaf9526877340645a5872f388051752,
         type: 3}
@@ -618,15 +650,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 1333925643, guid: aeaf9526877340645a5872f388051752, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2002242586, guid: aeaf9526877340645a5872f388051752, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1298544947, guid: aeaf9526877340645a5872f388051752, type: 3}
+    - target: {fileID: 874399156, guid: aeaf9526877340645a5872f388051752, type: 3}
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
@@ -634,19 +658,29 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 93546154, guid: aeaf9526877340645a5872f388051752, type: 3}
+    - target: {fileID: 1691270634, guid: aeaf9526877340645a5872f388051752, type: 3}
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 874399156, guid: aeaf9526877340645a5872f388051752, type: 3}
+    - target: {fileID: 2002242586, guid: aeaf9526877340645a5872f388051752, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587296457002867779, guid: aeaf9526877340645a5872f388051752,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587296457002867781, guid: aeaf9526877340645a5872f388051752,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298544947, guid: aeaf9526877340645a5872f388051752, type: 3}
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1473854443, guid: aeaf9526877340645a5872f388051752, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1691270634, guid: aeaf9526877340645a5872f388051752, type: 3}
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
