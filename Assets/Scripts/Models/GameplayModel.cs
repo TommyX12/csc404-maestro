@@ -19,6 +19,13 @@ public class GameplayModel : ScriptableObject {
     public float PlayerTotalHealth {get; set;}
     public float Score {get; set;}
     public int combo = 1;
+    public PickupEffect CurrentPickupEffect {get; set;}
+    public bool LevelStarted = false;
+    public bool CanSpawnPickup {
+        get {
+            return LevelStarted;
+        }
+    }
 
     // Events
     public event Action<BeatPressedEvent> BeatPressed;
