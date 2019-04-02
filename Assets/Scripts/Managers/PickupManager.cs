@@ -48,16 +48,22 @@ public class PickupManager : MonoBehaviour {
         model.CurrentPickupEffect = effect;
         pickupEffectActive = true;
         pickupEffectTimerBeats = config.PickupEffectDuration;
+        model.NotifyPickupEffectActivated();
     }
 
     public void EndEffect() {
         activeEffect = null;
         model.CurrentPickupEffect = null;
         pickupEffectActive = false;
+        model.NotifyPickupEffectEnded();
     }
 
     public void NotifyPickupDestroyed(Pickup pickup) {
         pickupOnStage = false;
+    }
+
+    public float GetEffectTimeLeftPercentage() {
+        return pickupEffectTimerBeats / config.PickupEffectDuration;
     }
 
     private void Start() {
@@ -84,6 +90,8 @@ public class PickupManager : MonoBehaviour {
                 EndEffect();
             }
         }
+
+        model.CurrentPickupTimeLeftPercentage = GetEffectTimeLeftPercentage();
     }
 
     private void SpawnRandomPickup() {

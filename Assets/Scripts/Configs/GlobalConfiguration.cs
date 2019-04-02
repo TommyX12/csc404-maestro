@@ -68,6 +68,8 @@ public class GlobalConfiguration : ScriptableObject {
     public float PickupEffectDuration = 16.0f; // beats
     public float PickupItemDuration = 8.0f; // beats
 
+    public float PowerupUILerpFactor = 0.25f;
+
     [SerializeField]
     private Level[] levels = {
         new Level{
