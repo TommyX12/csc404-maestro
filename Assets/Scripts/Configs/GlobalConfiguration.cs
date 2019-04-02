@@ -82,6 +82,14 @@ public class GlobalConfiguration : ScriptableObject {
         }
     };
 
+    private Dictionary<PickupEffect.PickupEffectType, string> pickupEffectTypeDescriptions =
+        new Dictionary<PickupEffect.PickupEffectType, string>() {
+        {PickupEffect.PickupEffectType.DOUBLE_SHOT, "Double Shot"},
+        {PickupEffect.PickupEffectType.SPEED_BOOST, "Speed Boost"},
+        {PickupEffect.PickupEffectType.SHIELD, "Shield"},
+        {PickupEffect.PickupEffectType.EXTRA_BEATS, "Extra Beats"}
+    };
+
     public GlobalConfiguration() {
         Current = this;
     }
@@ -97,5 +105,9 @@ public class GlobalConfiguration : ScriptableObject {
     // TODO: a hack
     public void SetGlobalAudioDelay(float value) {
         _globalAudioDelay = value;
+    }
+
+    public string GetPickupEffectDescriptions(PickupEffect effect) {
+        return pickupEffectTypeDescriptions[effect.effectType];
     }
 }

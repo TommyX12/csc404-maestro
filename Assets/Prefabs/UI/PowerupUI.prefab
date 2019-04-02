@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.8652289, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.16078424, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -364,3 +364,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLeftBarImage: {fileID: 7569068419623523544}
   container: {fileID: 1688260445061150576}
+  descriptionText: {fileID: 5221774386119839892}

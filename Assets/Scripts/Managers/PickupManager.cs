@@ -48,7 +48,7 @@ public class PickupManager : MonoBehaviour {
         model.CurrentPickupEffect = effect;
         pickupEffectActive = true;
         pickupEffectTimerBeats = config.PickupEffectDuration;
-        model.NotifyPickupEffectActivated();
+        model.NotifyPickupEffectActivated(effect);
     }
 
     public void EndEffect() {

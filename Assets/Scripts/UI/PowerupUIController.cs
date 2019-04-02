@@ -14,6 +14,8 @@ public class PowerupUIController : MonoBehaviour {
     private Image timeLeftBarImage;
     [SerializeField]
     private RectTransform container;
+    [SerializeField]
+    private Text descriptionText;
 
     // Injected references
     private GameplayModel model;
@@ -25,6 +27,7 @@ public class PowerupUIController : MonoBehaviour {
     private void Awake() {
         Assert.IsNotNull(timeLeftBarImage, "timeLeftBarImage");
         Assert.IsNotNull(container, "container");
+        Assert.IsNotNull(descriptionText, "descriptionText");
         Hide(/* immediate */ true);
     }
 
@@ -52,7 +55,8 @@ public class PowerupUIController : MonoBehaviour {
         targetAnchorValue = 0;
     }
 
-    private void OnPickupEventActivated() {
+    private void OnPickupEventActivated(PickupEffect effect) {
+        descriptionText.text = config.GetPickupEffectDescriptions(effect);
         Show();
     }
 
