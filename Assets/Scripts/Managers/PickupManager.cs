@@ -29,6 +29,7 @@ public class PickupManager : MonoBehaviour {
     
     private void Awake() {
         Assert.IsNotNull(spawnArea, "pickup manager requires a BoxCollider as spawnArea");
+        spawnArea.enabled = false;
     }
 
     [Inject]
@@ -121,11 +122,13 @@ public class PickupManager : MonoBehaviour {
     }
 
     private Vector3 GetRandomSpawnPosition() {
+        spawnArea.enabled = true;
         var bounds = spawnArea.bounds;
         float x = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
         float y = UnityEngine.Random.Range(bounds.min.y, bounds.max.y);
         float z = UnityEngine.Random.Range(bounds.min.z, bounds.max.z);
         var position = new Vector3(x, y, z);
+        spawnArea.enabled = false;
         return position;
     }
 }
