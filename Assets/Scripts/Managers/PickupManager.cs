@@ -18,6 +18,7 @@ public class PickupManager : MonoBehaviour {
     private GlobalConfiguration config;
     private MusicManager musicManager;
     private GameplayModel model;
+    private PlayerAgentController player;
 
     private float spawnTimer = 0;
     private bool pickupOnStage = false;
@@ -35,15 +36,21 @@ public class PickupManager : MonoBehaviour {
                           MusicManager musicManager,
                           DiContainer diContainer,
                           GlobalConfiguration config,
-                          GameplayModel model) {
+                          GameplayModel model,
+                          PlayerAgentController player) {
         this.prefabProvider = prefabProvider;
         this.diContainer = diContainer;
         this.config = config;
         this.musicManager = musicManager;
         this.model = model;
+        this.player = player;
     }
 
     public void StartEffect(PickupEffect effect) {
+        var data = new PickupEffect.EffectFunctionData() {
+            player = player
+        };
+        effect.Start(data);
         activeEffect = effect;
         model.CurrentPickupEffect = effect;
         pickupEffectActive = true;
@@ -52,6 +59,10 @@ public class PickupManager : MonoBehaviour {
     }
 
     public void EndEffect() {
+        var data = new PickupEffect.EffectFunctionData() {
+            player = player
+        };
+        activeEffect.End(data);
         activeEffect = null;
         model.CurrentPickupEffect = null;
         pickupEffectActive = false;

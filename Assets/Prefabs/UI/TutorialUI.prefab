@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.12217188, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -169,6 +169,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1839618773794523046}
+  minValue: 0.5
+  maxValue: 1
+  cycle: 1
+  phase: 0
+  sharpness: 1
 --- !u!114 &1374029727650808300
 MonoBehaviour:
   m_ObjectHideFlags: 0

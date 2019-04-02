@@ -70,6 +70,8 @@ public class GlobalConfiguration : ScriptableObject {
 
     public float PowerupUILerpFactor = 0.25f;
 
+    public float PowerupSpeedBoostMultiplier = 1.5f;
+
     [SerializeField]
     private Level[] levels = {
         new Level{
