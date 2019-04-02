@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc12d179fb3949c791590bca7bcd784, type: 3}
   m_Name: Test Global Configuration
   m_EditorClassIdentifier: 
-  Version: Alpha 3
+  Version: Beta 1
   RiffHitMarginBefore: 0.2
   RiffHitMarginAfter: 0.2
   RiffHitFailedBlockBeats: 0.5
@@ -23,8 +23,13 @@ MonoBehaviour:
   ScoreDecreaseColor: {r: 1, g: 0, b: 0, a: 1}
   ScoreIdleColor: {r: 1, g: 1, b: 1, a: 1}
   CorrectNoteHitSoundName: chord-1
-  AudioDelay: 0.2
+  AudioDelayMin: 0
+  AudioDelayMax: 0.5
+  AudioDelayStep: 0.2
   AudioMinLoadTime: 0.02
+  SettingsOffsetTextIdleColor: {r: 1, g: 1, b: 1, a: 1}
+  SettingsOffsetTextBeatColor: {r: 0.2, g: 0.4, b: 1, a: 1}
+  SettingsOffsetTextBeatColorDuration: 0.3
   RiffSoundVolume: 0.4
   MoveTutorialText: Use left stick to move
   MoveTutorialTimeout: 20
@@ -33,8 +38,15 @@ MonoBehaviour:
   HealthBarSpacing: 0.1
   HealthBarMinHeight: 0.5
   HealthBarMaxHeight: 1
+  CalibrationScaleFactor: 0.25
+  PickupSpawnInterval: 32
+  PickupEffectDuration: 16
+  PickupItemDuration: 8
+  PowerupUILerpFactor: 0.25
   levels:
   - SceneName: Tutorial
     DisplayName: Tutorial
   - SceneName: Alpha3
     DisplayName: Dominion
+  - SceneName: workingTitle
+    DisplayName: Arcade
