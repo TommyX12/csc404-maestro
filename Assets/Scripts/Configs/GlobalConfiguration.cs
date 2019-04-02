@@ -67,10 +67,14 @@ public class GlobalConfiguration : ScriptableObject {
     public float PickupSpawnInterval = 32.0f; // beats
     public float PickupEffectDuration = 16.0f; // beats
     public float PickupItemDuration = 8.0f; // beats
+    public string PickupSpawnedSound = "chord-1";
+    public string PickupStartEffectSound = "powerup-1";
 
     public float PowerupUILerpFactor = 0.25f;
 
     public float PowerupSpeedBoostMultiplier = 1.5f;
+    public float PowerupScreenFlashDuration = 0.5f; // seconds
+    public float PowerupScreenFlashIntensity = 0.5f;
 
     [SerializeField]
     private Level[] levels = {

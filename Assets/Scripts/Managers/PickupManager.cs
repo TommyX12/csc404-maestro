@@ -56,6 +56,8 @@ public class PickupManager : MonoBehaviour {
         pickupEffectActive = true;
         pickupEffectTimerBeats = config.PickupEffectDuration;
         model.NotifyPickupEffectActivated(effect);
+
+        musicManager.PlayOnceAligned(config.PickupStartEffectSound, 4, 0);
     }
 
     public void EndEffect() {
@@ -114,6 +116,8 @@ public class PickupManager : MonoBehaviour {
              musicManager.BeatToTime(config.PickupItemDuration),
              PickupEffect.GetRandomPickupEffect());
         pickupOnStage = true;
+
+        musicManager.PlayOnceAligned(config.PickupSpawnedSound, 4, 0);
     }
 
     private Vector3 GetRandomSpawnPosition() {
