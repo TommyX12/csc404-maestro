@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.99010324, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1204,12 +1204,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ca391d162345470d9f6760a43f801af, type: 3}
---- !u!224 &8350790815873085345 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5396243480457758364, guid: 4ca391d162345470d9f6760a43f801af,
-    type: 3}
-  m_PrefabInstance: {fileID: 4107483909519206717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1017086755617385748 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3971574372733436969, guid: 4ca391d162345470d9f6760a43f801af,
@@ -1222,6 +1216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfabbd0a1d1545879089d3fbe122397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &8350790815873085345 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5396243480457758364, guid: 4ca391d162345470d9f6760a43f801af,
+    type: 3}
+  m_PrefabInstance: {fileID: 4107483909519206717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6267804265883322188
 PrefabInstance:
   m_ObjectHideFlags: 0
