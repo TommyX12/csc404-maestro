@@ -32,14 +32,14 @@ public class GameplayModel : ScriptableObject {
     public event Action<BeatPressedEvent> BeatPressed;
     public event Action TutorialFinished;
     public event Action ShowMoveTutorial;
-    public event Action PickupEffectActivated;
+    public event Action<PickupEffect> PickupEffectActivated;
     public event Action PickupEffectEnded;
 
     // Methods
 
-    public void NotifyPickupEffectActivated() {
+    public void NotifyPickupEffectActivated(PickupEffect effect) {
         if (PickupEffectActivated != null) {
-            PickupEffectActivated();
+            PickupEffectActivated(effect);
         }
     }
     
