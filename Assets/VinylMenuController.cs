@@ -9,6 +9,8 @@ using Zenject;
 public class VinylMenuController : MainMenuPage
 {
 
+    public delegate void OnStateChange();
+    event OnStateChange OnChange;
 
     [Serializable]
     public struct MenuEntry {
@@ -45,11 +47,13 @@ public class VinylMenuController : MainMenuPage
         if (Input.GetKeyDown(KeyCode.S) || ControllerProxy.GetVerticalAxisOnce(true) == -1) {
             textController.ScrollDown();
             menuMove.Play();
+            OnChange();
         }
 
         if (Input.GetKeyDown(KeyCode.W) || ControllerProxy.GetVerticalAxisOnce(true) == 1) {
             textController.ScrollUp();
             menuMove.Play();
+            OnChange();
         }
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire1")) {

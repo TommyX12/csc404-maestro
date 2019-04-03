@@ -51,13 +51,16 @@ MonoBehaviour:
   levels:
   - SceneName: Tutorial
     DisplayName: Tutorial
-    leaderboardFile: 
+    leaderboardFile: tutorial
+    artists: Tommy Xiang
     difficulty: 1
   - SceneName: Alpha3
     DisplayName: Dominion
-    leaderboardFile: 
+    leaderboardFile: dominion
+    artists: Tommy Xiang
     difficulty: 2
   - SceneName: workingTitle
     DisplayName: Arcade
-    leaderboardFile: 
+    leaderboardFile: arcade
+    artists: Paul Lessard, Tommy Xiang
     difficulty: 3

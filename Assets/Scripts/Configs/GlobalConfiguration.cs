@@ -14,6 +14,7 @@ public class GlobalConfiguration : ScriptableObject {
         public string SceneName;
         public string DisplayName;
         public string leaderboardFile;
+        public string artists;
         public int difficulty;
     }
 
