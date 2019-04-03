@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3367,7 +3367,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 000000000700000004000000
+  band: 050000000200000001000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &142113380
@@ -4099,7 +4099,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 010000000400000005000000
+  band: 070000000600000003000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &163839131
@@ -11671,7 +11671,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 030000000000000004000000
+  band: 020000000500000000000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &511328131
@@ -13917,7 +13917,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 010000000700000003000000
+  band: 030000000200000006000000
   scale: 1
   averageDecay: 0.357
 --- !u!1 &594387830
@@ -16968,11 +16968,6 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 1979947242}
-    - target: {fileID: 8350790815873085345, guid: 1c5ea40b0607f48039ab530ca726f72d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -9.999985
-      objectReference: {fileID: 0}
     - target: {fileID: 8506257619183415394, guid: 1c5ea40b0607f48039ab530ca726f72d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -17027,6 +17022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnCullStateChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350790815873085345, guid: 1c5ea40b0607f48039ab530ca726f72d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6093280886532053406, guid: 1c5ea40b0607f48039ab530ca726f72d, type: 3}
@@ -18676,7 +18676,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 050000000000000005000000
+  band: 070000000700000000000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &791730722
@@ -29064,6 +29064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b12d5eb1096074c9c3f1ad6f907b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interpRate: 10
 --- !u!4 &1067492510
 Transform:
   m_ObjectHideFlags: 0
@@ -29323,7 +29324,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 010000000600000006000000
+  band: 010000000500000007000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &1106609931
@@ -30828,7 +30829,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 020000000700000004000000
+  band: 000000000700000007000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &1188608068
@@ -42323,7 +42324,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 010000000000000005000000
+  band: 070000000600000007000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &1599472215
@@ -44202,6 +44203,7 @@ MonoBehaviour:
   pickupManager: {fileID: 1564602470}
   player: {fileID: 1103930096}
   prefabProvider: {fileID: 825443262}
+  levelConfiguration: {fileID: 11400000, guid: 3f70cee6c5ccb478f935bce3435bd89f, type: 2}
 --- !u!114 &1665005983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45808,7 +45810,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 020000000600000004000000
+  band: 010000000400000003000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &1733452436
@@ -53221,7 +53223,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 060000000600000003000000
+  band: 070000000100000007000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &1995138767
