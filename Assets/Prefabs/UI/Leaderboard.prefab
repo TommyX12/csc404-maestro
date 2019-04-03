@@ -654,6 +654,11 @@ PrefabInstance:
       propertyPath: scoreEntryPlayerName
       value: 
       objectReference: {fileID: 3804909821409586462}
+    - target: {fileID: 3804909820345650263, guid: 1f7c4ccf05eb44fe187a67d2e8b11c7b,
+        type: 3}
+      propertyPath: saveFile
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3804909822136710218, guid: 1f7c4ccf05eb44fe187a67d2e8b11c7b,
         type: 3}
       propertyPath: m_TargetGraphic
