@@ -33,7 +33,7 @@ public class MainMenuController : MonoBehaviour
 
     private void Awake() {
         Assert.IsNotNull(currentPage);
-        musicManager.StartRiff("main-menu-2", 120);
+        musicManager.StartRiff("white-noise", 120);
     }
 
     private void Start() {
@@ -55,10 +55,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(level.SceneName);
     }
 
-    private void Update()
-    {
-        // if (ControllerProxy.GetButton("Fire1")) {
-        //     SceneManager.LoadScene(sceneToLoad);
-        // }
+    public void Exit() {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+          Application.Quit();
+#endif
     }
 }

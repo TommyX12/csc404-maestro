@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ControllerProxy
+public class ControllerProxy : MonoBehaviour
 {
+
+    private static bool axisInUseVertical = false;
+    private static bool axisUsedThisFrameVertical = false;
 
     public static bool inputEnabled = true;
 
-    public static bool GetButtonDown(string id) {
-        if (inputEnabled)
+    public static bool GetButtonDown(string id, bool bypass = false) {
+        if (inputEnabled || bypass)
         {
             return Input.GetButtonDown(id);
         }
@@ -17,8 +20,8 @@ public static class ControllerProxy
         }
     }
 
-    public static bool GetButton(string id) {
-        if (inputEnabled)
+    public static bool GetButton(string id, bool bypass = false) {
+        if (inputEnabled || bypass)
         {
             return Input.GetButton(id);
         }
@@ -27,9 +30,9 @@ public static class ControllerProxy
         }
     }
 
-    public static float GetAxisRaw(string id)
+    public static float GetAxisRaw(string id, bool bypass = false)
     {
-        if (inputEnabled)
+        if (inputEnabled || bypass)
         {
             return Input.GetAxisRaw(id);
         }
@@ -38,4 +41,39 @@ public static class ControllerProxy
             return 0;
         }
     }
+
+    public static int GetVerticalAxisOnce(bool bypass = false)
+    {
+        if (inputEnabled || bypass)
+        {
+            if (!axisInUseVertical && Input.GetAxisRaw("Vertical") >= 0.5)
+            {
+                axisUsedThisFrameVertical = true;
+                return 1;
+            }
+            else if (!axisInUseVertical && Input.GetAxisRaw("Vertical") <= -0.5)
+            {
+                axisUsedThisFrameVertical = true;
+                return -1;
+            }
+        }
+        return 0;
+    }
+
+    private void Update()
+    {
+        if (Input.GetAxisRaw("Vertical") > -0.5 && Input.GetAxisRaw("Vertical") < 0.5)
+        {
+            axisInUseVertical = false;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (axisUsedThisFrameVertical) {
+            axisUsedThisFrameVertical = false;
+            axisInUseVertical = true;
+        }
+    }
+
 }

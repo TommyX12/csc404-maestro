@@ -6,6 +6,8 @@ public class CinematicSystem : MonoBehaviour
 {
     public static CinematicSystem current;
 
+    public float interpRate = 10;
+
     GameObject target = null;
     bool cinematicMode = false;
     int idx = 0;
@@ -40,8 +42,8 @@ public class CinematicSystem : MonoBehaviour
     {
         // interp
         if (cinematicMode && target != null) {
-            MainCamera.current.transform.position = Vector3.Lerp(MainCamera.current.transform.position, target.transform.position, Time.deltaTime);
-            MainCamera.current.transform.rotation = Quaternion.Lerp(MainCamera.current.transform.rotation, target.transform.rotation, Time.deltaTime);
+            MainCamera.current.transform.position = Vector3.Lerp(MainCamera.current.transform.position, target.transform.position, Time.deltaTime * interpRate);
+            MainCamera.current.transform.rotation = Quaternion.Lerp(MainCamera.current.transform.rotation, target.transform.rotation, Time.deltaTime * interpRate);
         }
     }
 
