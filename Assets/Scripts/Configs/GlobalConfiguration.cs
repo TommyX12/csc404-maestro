@@ -11,12 +11,19 @@ public class GlobalConfiguration : ScriptableObject {
 
     [Serializable]
     public class Level {
+        [SerializeField]
         public string SceneName;
+        [SerializeField]
         public string DisplayName;
+        [SerializeField]
         public string leaderboardFile;
+        [SerializeField]
         public string artists;
+        [SerializeField]
         public string audioFile;
+        [SerializeField]
         public int difficulty;
+        [SerializeField]
         public int bpm;
     }
 

@@ -63,7 +63,7 @@ MonoBehaviour:
     audioFile: csc404-dominion
     difficulty: 2
     bpm: 120
-  - SceneName: Arcade
+  - SceneName: arcade
     DisplayName: Arcade
     leaderboardFile: arcade
     artists: Paul Lessard, Tommy Xiang
