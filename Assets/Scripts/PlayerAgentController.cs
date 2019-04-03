@@ -13,6 +13,10 @@ public class PlayerAgentController : AgentController {
 
     // exposed parameters
     public float targetRadius = 5.0f;
+
+    // Dragged references
+    [SerializeField]
+    private GameObject shieldGameObject;
     
     // self reference
     private BasicAgentMovement agentMovement;
@@ -48,6 +52,9 @@ public class PlayerAgentController : AgentController {
 
         Assert.IsNotNull(agentMovement, "agentMovement");
         Assert.IsNotNull(agent, "agent");
+
+        Assert.IsNotNull(shieldGameObject, "shieldGameObject");
+        shieldGameObject.SetActive(false);
     }
 
     protected void Start() {
@@ -169,6 +176,11 @@ public class PlayerAgentController : AgentController {
                 oldSpeed = -1;
             }
         }
+    }
+
+    public void SetShieldEnabled(bool value) {
+        shieldGameObject.SetActive(value);
+        agent.Invincible = value;
     }
 
     protected void FixedUpdate() {

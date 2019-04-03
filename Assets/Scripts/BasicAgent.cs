@@ -26,6 +26,8 @@ public class BasicAgent : Agent {
     protected GameplayModel model;
 
     private Riff riff;
+
+    public bool Invincible {get; set;}
     
     public BasicAgent() {
         onDeath += AddScore;
@@ -39,6 +41,7 @@ public class BasicAgent : Agent {
 
     protected void Awake() {
         hitPoint = initialHitPoint;
+        Invincible = false;
 
         InitWeapon();
         InitCountermeasure();
@@ -141,6 +144,10 @@ public class BasicAgent : Agent {
     }
 
     public override void ReceiveEvent(Event.Damage damage) {
+        if (Invincible) {
+            return;
+        }
+
         hitPoint -= damage.amount;
         if (agentMovement)
         {

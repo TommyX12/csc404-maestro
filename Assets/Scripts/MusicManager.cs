@@ -248,7 +248,7 @@ public class MusicManager : MonoBehaviour {
     /// <summary>
     ///   Play MusicTrack at the next aligned unit. The length of each unit is a beat divided by unitPerBeat.
     /// </summary>
-    public void PlayOnceAligned(string name, float unitPerBeat = 4, float fadeInTime = -1) {
+    public void PlayOnceAligned(string name, float unitPerBeat = 2, float fadeInTime = -1) {
         double timePerUnit = BeatToTime(1.0f / unitPerBeat);
         double timeToNextUnit = Math.Ceiling((totalTimer + audioMinLoadTime) / timePerUnit) * timePerUnit - totalTimer;
         PlayOnce(name, timeToNextUnit, fadeInTime);

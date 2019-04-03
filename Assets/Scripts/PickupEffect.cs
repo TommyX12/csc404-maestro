@@ -49,8 +49,8 @@ public class PickupEffect {
     }
 
     public static PickupEffect GetRandomPickupEffect() {
-        // // Testing single effects.
-        // return new PickupEffect(PickupEffectType.SPEED_BOOST);
+        // Test single effect.
+        // return new PickupEffect(PickupEffectType.SHIELD);
 
         return new PickupEffect
             (Util.GetRandomElement<PickupEffectType>
@@ -74,11 +74,11 @@ public class PickupEffect {
     }
 
     public static void ShieldStartEffect(EffectFunctionData data) {
-        Debug.Log("ShieldStartEffect called");
+        data.player.SetShieldEnabled(true);
     }
 
     public static void ShieldEndEffect(EffectFunctionData data) {
-        Debug.Log("ShieldEndEffect called");
+        data.player.SetShieldEnabled(false);
     }
 
     public static void ExtraBeatsStartEffect(EffectFunctionData data) {

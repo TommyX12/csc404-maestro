@@ -34,6 +34,10 @@ public class PlayerAgent : BasicAgent
 
     public override void ReceiveEvent(Event.Damage damage)
     {
+        if (Invincible) {
+            return;
+        }
+
         if (invulnerabilityTimer >= 0) {
             return;
         }
