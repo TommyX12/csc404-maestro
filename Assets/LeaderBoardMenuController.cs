@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class LeaderBoardMenuController : MonoBehaviour
 {
+    public VinylMenuController controller;
+    public LeaderboardUI leaderboard;
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller.OnChange += OnChange;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnChange() {
     }
 }

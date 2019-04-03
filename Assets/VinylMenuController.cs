@@ -10,7 +10,7 @@ public class VinylMenuController : MainMenuPage
 {
 
     public delegate void OnStateChange();
-    event OnStateChange OnChange;
+    public event OnStateChange OnChange;
 
     [Serializable]
     public struct MenuEntry {
