@@ -92,7 +92,7 @@ public class LeaderboardUI : MonoBehaviour
         public int score;
     }
 
-    private void LoadScores() {
+    public void LoadScores() {
         // load the file
         string text;
 
