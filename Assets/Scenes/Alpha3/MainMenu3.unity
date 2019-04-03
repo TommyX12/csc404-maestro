@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4513535, g: 0.5009341, b: 0.57280236, a: 1}
+  m_IndirectSpecularColor: {r: 0.4513539, g: 0.5009345, b: 0.57280284, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -469,7 +469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23a5042bec784e3e9b12153c52fa10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalConfiguration: {fileID: 0}
+  globalConfiguration: {fileID: 11400000, guid: 9757169c5e16f4910a039b0466e977c4,
+    type: 2}
   mainMenuModel: {fileID: 0}
   gameplayModel: {fileID: 0}
   musicManager: {fileID: 123028993}
@@ -10874,6 +10875,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 318283107257017976, guid: 59a21f2d4b7704afe9019289ebe4eda3,
+        type: 3}
+      propertyPath: m_Text
+      value: Beta 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59a21f2d4b7704afe9019289ebe4eda3, type: 3}
 --- !u!224 &1209910906097895502 stripped
@@ -11007,7 +11013,79 @@ PrefabInstance:
     - target: {fileID: 6626757762591132164, guid: b1817fec5ad5649e7b446a6821dd07c0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.399963
+      value: -11.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572105295417342784, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075274386941831582, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 33.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626757763543287065, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.30993652
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626757762644262771, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.1999817
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626757763294249913, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14.849976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826988372771474603, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 128756724707802767, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 128756724707802767, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 128756724707802767, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 128756724707802767, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 128756724707802767, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3527589300447588075}
+    - target: {fileID: 128756724707802767, guid: b1817fec5ad5649e7b446a6821dd07c0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1817fec5ad5649e7b446a6821dd07c0, type: 3}
+--- !u!114 &3527589300447588075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8604035939579656035, guid: b1817fec5ad5649e7b446a6821dd07c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3527589300447588072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c5fd83ac979463f95ee8d1d094661e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

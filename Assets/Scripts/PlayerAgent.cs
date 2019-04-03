@@ -60,6 +60,10 @@ public class PlayerAgent : BasicAgent
         invulnerabilityTimer = invulnerabilityTime;
     }
 
+    public void AcceptPickup(Pickup pickup) {
+        
+    }
+
     private void PlayerOnDeath(Agent agent)
     {
         this.hitPoint = initialHitPoint; // wait for a bit maybe? coroutine

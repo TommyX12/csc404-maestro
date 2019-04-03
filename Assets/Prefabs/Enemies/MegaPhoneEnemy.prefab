@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &988204011061974738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6740703281134855521}
+  - component: {fileID: 526083956539522598}
+  - component: {fileID: 7765533627243747000}
+  m_Layer: 12
+  m_Name: HitBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6740703281134855521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988204011061974738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5450995522208131439}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &526083956539522598
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988204011061974738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.81
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7765533627243747000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988204011061974738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b579d0c6c24b9a743b9a967619882c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HazardDamage: 1
+  Active: 1
+  activeTime: Infinity
 --- !u!1 &5450995521215391322
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +103,6 @@ GameObject:
   - component: {fileID: 5450995522208131442}
   - component: {fileID: 5901736405328103034}
   - component: {fileID: 1741414195794296296}
-  - component: {fileID: 1857091889979234009}
   m_Layer: 11
   m_Name: MegaPhoneEnemy
   m_TagString: Untagged
@@ -65,6 +124,7 @@ Transform:
   - {fileID: 2833182753020276905}
   - {fileID: 5450995521215391323}
   - {fileID: 4232209936980722807}
+  - {fileID: 6740703281134855521}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,21 +277,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1857091889979234009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5450995522208131438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b579d0c6c24b9a743b9a967619882c1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HazardDamage: 1
-  Active: 1
-  activeTime: Infinity
 --- !u!1001 &63937230809103549
 PrefabInstance:
   m_ObjectHideFlags: 0

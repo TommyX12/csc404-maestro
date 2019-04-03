@@ -19,13 +19,35 @@ public class GameplayModel : ScriptableObject {
     public float PlayerTotalHealth {get; set;}
     public float Score {get; set;}
     public int combo = 1;
+    public PickupEffect CurrentPickupEffect {get; set;}
+    public float CurrentPickupTimeLeftPercentage = 0;
+    public bool LevelStarted = false;
+    public bool CanSpawnPickup {
+        get {
+            return LevelStarted;
+        }
+    }
 
     // Events
     public event Action<BeatPressedEvent> BeatPressed;
     public event Action TutorialFinished;
     public event Action ShowMoveTutorial;
+    public event Action<PickupEffect> PickupEffectActivated;
+    public event Action PickupEffectEnded;
 
     // Methods
+
+    public void NotifyPickupEffectActivated(PickupEffect effect) {
+        if (PickupEffectActivated != null) {
+            PickupEffectActivated(effect);
+        }
+    }
+    
+    public void NotifyPickupEffectEnded() {
+        if (PickupEffectEnded != null) {
+            PickupEffectEnded();
+        }
+    }
     
     public void NotifyBeatPressed(BeatPressedEvent eventData) {
         if (BeatPressed != null) {

@@ -29,11 +29,13 @@ public class BasicWeapon : Weapon {
     };
 
     protected bool autoFire = false;
+    protected bool doubleShot = false;
 
     protected List<AudioSource> noteSounds = new List<AudioSource> ();
 
     // Fields
     private Vector3 targetDirection = new Vector3(1, 0, 0);
+    private Vector3 secondaryTargetDirection = new Vector3(1, 0, 0);
 
     public BasicWeapon() {
         
@@ -57,8 +59,16 @@ public class BasicWeapon : Weapon {
         targetDirection = (target.position - transform.position).normalized;
     }
 
+    public void AimAtSecondary(Transform target) {
+        secondaryTargetDirection = (target.position - transform.position).normalized;
+    }
+
     public void SetAutoFire(bool autoFire) {
         this.autoFire = autoFire;
+    }
+
+    public void SetDoubleShot(bool value) {
+        doubleShot = value;
     }
 
     protected void DelayedNoteHitEventHandler(Riff.NoteHitEvent e) {
@@ -85,6 +95,16 @@ public class BasicWeapon : Weapon {
              .WithTransform(transform.position,
                             targetDirection)
              .WithBypassAgentType(host.type));
+
+        if (doubleShot) {
+            ProjectileManager.current.SpawnProjectile 
+                (host,
+                 projectilePrefab,
+                 projectileParameters
+                 .WithTransform(transform.position,
+                                secondaryTargetDirection)
+                 .WithBypassAgentType(host.type));
+        }
     }
 
     public override Riff GetRiff() {

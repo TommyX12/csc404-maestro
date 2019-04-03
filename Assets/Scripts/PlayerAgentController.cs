@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Zenject;
 
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PlayerAgentController : AgentController {
 
@@ -14,19 +15,27 @@ public class PlayerAgentController : AgentController {
     public float targetRadius = 5.0f;
     
     // self reference
-    private AgentMovement agentMovement;
+    private BasicAgentMovement agentMovement;
     private BasicAgent agent;
 
     // Injected references
     private GameplayModel model;
+    private GlobalConfiguration config;
+
+    // fields
+    private bool doubleShotEnabled = false;
+    private BasicWeapon doubleShotWeapon = null;
+    private float oldSpeed = -1;
 
     public PlayerAgentController() {
 
     }
 
     [Inject]
-    public void Construct(GameplayModel model) {
+    public void Construct(GameplayModel model,
+                          GlobalConfiguration config) {
         this.model = model;
+        this.config = config;
     }
 
     public BasicAgent GetAgent() {
@@ -34,8 +43,11 @@ public class PlayerAgentController : AgentController {
     }
 
     protected void Awake() {
-        agentMovement = GetComponent<AgentMovement>();
+        agentMovement = GetComponent<BasicAgentMovement>();
         agent = GetComponent<BasicAgent>();
+
+        Assert.IsNotNull(agentMovement, "agentMovement");
+        Assert.IsNotNull(agent, "agent");
     }
 
     protected void Start() {
@@ -73,12 +85,31 @@ public class PlayerAgentController : AgentController {
         //     target = null;
         AcquireNextTarget();
         // }
-        if (target) {
-            agent.ReceiveEvent(new Agent.Event.AimAt {target = target.transform});
-        }
         Countermeasure countermeasure = GetCurrentCountermeasure();
         if (countermeasure) {
             countermeasure.SetTarget(target);
+        }
+    }
+
+    protected void AimAtCurrentTarget() {
+        if (target) {
+            agent.ReceiveEvent(new Agent.Event.AimAt {target = target.transform});
+        }
+    }
+
+    protected void AimAtSecondTarget() {
+        if (!doubleShotWeapon) return;
+
+        Agent newTarget = AgentManager.current.FindClosestAgentTo(
+            transform.position,
+            Agent.Type.ENEMY,
+            delegate(Agent agent) {
+                return agent != target &&
+                    IsValidTarget(agent);
+            }
+        );
+        if (newTarget) {
+            doubleShotWeapon.AimAtSecondary(newTarget.transform);
         }
     }
 
@@ -104,10 +135,39 @@ public class PlayerAgentController : AgentController {
         UpdateUI();
 
         if (ControllerProxy.GetButtonDown("Fire1")) {
+            if (doubleShotEnabled) {
+                AimAtSecondTarget();
+            }
+            AimAtCurrentTarget();
             agent.ReceiveEvent(new Agent.Event.FireWeapon());
         }
         if (ControllerProxy.GetButtonDown("Fire2")) {
             agent.ReceiveEvent(new Agent.Event.FireCountermeasure());
+        }
+    }
+
+    public void SetDoubleShotEnabled(bool value) {
+        doubleShotEnabled = value;
+        if (value) {
+            doubleShotWeapon = ((BasicWeapon) GetCurrentWeapon());
+        }
+        if (doubleShotWeapon) {
+            doubleShotWeapon.SetDoubleShot(value);
+        }
+    }
+
+    public void SetSpeedBoostEnabled(bool value) {
+        if (value) {
+            if (oldSpeed < 0) {
+                oldSpeed = agentMovement.maxSpeedPerSecond;
+                agentMovement.maxSpeedPerSecond *= config.PowerupSpeedBoostMultiplier;
+            }
+        }
+        else {
+            if (oldSpeed >= 0) {
+                agentMovement.maxSpeedPerSecond = oldSpeed;
+                oldSpeed = -1;
+            }
         }
     }
 

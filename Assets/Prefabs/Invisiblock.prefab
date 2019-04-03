@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6358982539758540630}
   - component: {fileID: 6358982539758540626}
   - component: {fileID: 6358982539758540584}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Invisiblock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6358982539758540585}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 4.5, z: 11.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2e0e606c0138c46adff2e63ae53a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridPos: {x: -2, y: 1, z: 0}
-  Sizes: {x: 1, y: 1, z: 1}
+  GridPos: {x: 0, y: 0, z: -6}
+  Sizes: {x: 1, y: 2, z: 2}
 --- !u!114 &6358982539758540584
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -77,9 +77,9 @@ public class NewBasicProjectile : Projectile {
         scale = param.scale;
         lifespan = param.distance / speed;
         bypassAgentType = param.bypassAgentType;
-        if(bulletTrail){
+        /*if(bulletTrail){
             trailPos = Instantiate (bulletTrail, transform.position,  transform.rotation);
-        }
+        }*/
         if(bulletTrailPS)
         {
             trailPSPos = Instantiate (bulletTrailPS, transform.position,  transform.rotation);
@@ -103,9 +103,9 @@ public class NewBasicProjectile : Projectile {
 
     protected void FixedUpdate() {
         transform.position += transform.forward * speed * Time.fixedDeltaTime;
-        if(bulletTrail){
+        /*if(bulletTrail){
             trailPos.transform.position = transform.position;
-        }
+        }*/
         if(bulletTrailPS)
         {
             trailPSPos.transform.position = transform.position;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1140631320883878628}
   - component: {fileID: 2292969984878725923}
   - component: {fileID: 4833211164176350514}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 6945632991366955656}
   - component: {fileID: 5597030326932200458}
   - component: {fileID: 8372433154976142888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1545795934128925324}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Slider_purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}

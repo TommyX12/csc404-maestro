@@ -62,6 +62,20 @@ public class GlobalConfiguration : ScriptableObject {
     public float HealthBarMinHeight = 0.5f;
     public float HealthBarMaxHeight = 1.0f;
 
+    public float CalibrationScaleFactor = 0.25f;
+
+    public float PickupSpawnInterval = 32.0f; // beats
+    public float PickupEffectDuration = 16.0f; // beats
+    public float PickupItemDuration = 8.0f; // beats
+    public string PickupSpawnedSound = "chord-1";
+    public string PickupStartEffectSound = "powerup-1";
+
+    public float PowerupUILerpFactor = 0.25f;
+
+    public float PowerupSpeedBoostMultiplier = 1.5f;
+    public float PowerupScreenFlashDuration = 0.5f; // seconds
+    public float PowerupScreenFlashIntensity = 0.5f;
+
     [SerializeField]
     private Level[] levels = {
         new Level{
@@ -72,6 +86,14 @@ public class GlobalConfiguration : ScriptableObject {
             SceneName = "Alpha3",
             DisplayName = "Dominion"
         }
+    };
+
+    private Dictionary<PickupEffect.PickupEffectType, string> pickupEffectTypeDescriptions =
+        new Dictionary<PickupEffect.PickupEffectType, string>() {
+        {PickupEffect.PickupEffectType.DOUBLE_SHOT, "Double Shot"},
+        {PickupEffect.PickupEffectType.SPEED_BOOST, "Speed Boost"},
+        {PickupEffect.PickupEffectType.SHIELD, "Shield"},
+        {PickupEffect.PickupEffectType.EXTRA_BEATS, "Extra Beats"}
     };
 
     public GlobalConfiguration() {
@@ -89,5 +111,9 @@ public class GlobalConfiguration : ScriptableObject {
     // TODO: a hack
     public void SetGlobalAudioDelay(float value) {
         _globalAudioDelay = value;
+    }
+
+    public string GetPickupEffectDescriptions(PickupEffect effect) {
+        return pickupEffectTypeDescriptions[effect.effectType];
     }
 }
