@@ -95,7 +95,6 @@ public class LeaderboardUI : MonoBehaviour
     public void LoadScores() {
         // load the file
         string text;
-
         Debug.Log(Application.persistentDataPath);
 
         if (File.Exists(Path.Combine(Application.persistentDataPath, saveFile)))
@@ -160,9 +159,16 @@ public class LeaderboardUI : MonoBehaviour
             playerNameText.text = "";
         }
         
-        for (int i = 0; i < 10 && i < scores.Count; i++) {
-            this.topTenNames[i].text = (i + 1).ToString() + ". " + scores[i].name;
-            this.topTen[i].text = scores[i].score.ToString();
+        for (int i = 0; i < 10 ; i++) {
+            if (i < scores.Count)
+            {
+                this.topTenNames[i].text = (i + 1).ToString() + ". " + scores[i].name;
+                this.topTen[i].text = scores[i].score.ToString();
+            }
+            else {
+                this.topTenNames[i].text = i.ToString() + ". --------";
+                this.topTen[i].text = "00000";
+            }
         }
     }
 
