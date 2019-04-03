@@ -52,6 +52,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayLevel(int index) {
         var level = config.GetLevel(index);
+        ControllerProxy.inputEnabled = true; // enable input before level loads
         SceneManager.LoadScene(level.SceneName);
     }
 
