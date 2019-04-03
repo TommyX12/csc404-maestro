@@ -102,9 +102,6 @@ public class Riff {
     }
 
     private void ResetLastPlayed() {
-
-        inhibitNextSound = Math.Max(inhibitNextSound, 1);
-
         lastPlayed.cycle = currentPosition.cycle;
         lastPlayed.noteIndex = -1;
         for (int i = notes.Count - 1; i >= 0; --i) {
