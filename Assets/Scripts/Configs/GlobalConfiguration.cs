@@ -15,7 +15,9 @@ public class GlobalConfiguration : ScriptableObject {
         public string DisplayName;
         public string leaderboardFile;
         public string artists;
+        public string audioFile;
         public int difficulty;
+        public int bpm;
     }
 
     // TODO: a hack

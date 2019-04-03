@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9a47365c3b5444897b2b1e55218646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoShow: 0
   saveFile: leaderoard
   leaderBoard: {fileID: 3804909821076424127}
   scoreEntry: {fileID: 3804909821130449927}
@@ -693,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 0
-  sceneName: MainMenu3
+  sceneName: Menu
 --- !u!114 &3804909820623341692
 MonoBehaviour:
   m_ObjectHideFlags: 0

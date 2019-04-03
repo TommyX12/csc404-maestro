@@ -5,16 +5,19 @@ using UnityEngine.UI;
 
 public class SongInfoController : MonoBehaviour
 {
-
+    public VinylMenuController menu;
     public VinylMenuTextController controller;
     public Text songTitle;
     public Text artistTitle;
     public List<LEDLightController> difficultyLights;
-    
-    // Update is called once per frame
-    void Update()
-    {
+    public AudioSource player;
 
+    private void Start()
+    {
+        menu.OnChange += OnChange;
+    }
+
+    void OnChange() {
         if (controller.absoluteSelection > 0)
         {
             int song_idx = controller.absoluteSelection - 1;
@@ -32,14 +35,21 @@ public class SongInfoController : MonoBehaviour
                     difficultyLights[i].TurnOff();
                 }
             }
+
+            player.clip = ResourceManager.GetMusic(level.audioFile);
+            player.Play();
+            player.time = Random.Range(0, player.clip.length / 2f);
         }
-        else {
+        else
+        {
             songTitle.text = "-----";
             artistTitle.text = "Artist: -----";
             for (int i = 0; i < 5; i++)
             {
                 difficultyLights[i].TurnOff();
             }
+            player.Stop();
         }
     }
+
 }

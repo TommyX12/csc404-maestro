@@ -168,7 +168,7 @@ public class LeaderboardUI : MonoBehaviour
             else {
                 this.topTenNames[i].text = i.ToString() + ". --------";
                 this.topTen[i].text = "00000";
-            }
+            } 
         }
     }
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cc12d179fb3949c791590bca7bcd784, type: 3}
-  m_Name: Test Global Configuration
+  m_Name: MaestroConfig
   m_EditorClassIdentifier: 
   Version: Beta 1
   RiffHitMarginBefore: 0.2
@@ -53,14 +53,20 @@ MonoBehaviour:
     DisplayName: Tutorial
     leaderboardFile: tutorial
     artists: Tommy Xiang
+    audioFile: csc404-test-1
     difficulty: 1
+    bpm: 80
   - SceneName: Alpha3
     DisplayName: Dominion
     leaderboardFile: dominion
     artists: Tommy Xiang
+    audioFile: csc404-dominion
     difficulty: 2
-  - SceneName: workingTitle
+    bpm: 120
+  - SceneName: Arcade
     DisplayName: Arcade
     leaderboardFile: arcade
     artists: Paul Lessard, Tommy Xiang
+    audioFile: csc404-paul
     difficulty: 3
+    bpm: 120
