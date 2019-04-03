@@ -31,7 +31,7 @@ public class SongPreloader : MonoBehaviour
     {
         var controller = GetComponent<VinylMenuController>();
         var entries = controller.entries;
-        for (int i = config.GetLevelCount()-1; i>=0 ; i--) {
+        for (int i = 0; i < config.GetLevelCount(); i++) {
             var level = config.GetLevel(i);
             VinylMenuController.MenuEntry entry;
             entry.menuText = level.DisplayName;
