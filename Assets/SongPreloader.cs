@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using Zenject;
 
 public class IntEvent : UnityEvent<int> {
-    int val = 0;
+    public int val = 0;
     public void Invoke() {
         this.Invoke(val);
     }
@@ -36,6 +36,7 @@ public class SongPreloader : MonoBehaviour
             VinylMenuController.MenuEntry entry;
             entry.menuText = level.DisplayName;
             IntEvent evt = new IntEvent();
+            evt.val = i;
             evt.AddListener(mainMenu.PlayLevel);
             entry.onSelect = new UnityEvent();
             entry.onSelect.AddListener(new UnityAction(evt.Invoke));
