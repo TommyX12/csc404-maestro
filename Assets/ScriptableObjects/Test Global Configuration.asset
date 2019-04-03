@@ -42,11 +42,22 @@ MonoBehaviour:
   PickupSpawnInterval: 32
   PickupEffectDuration: 16
   PickupItemDuration: 8
+  PickupSpawnedSound: chord-1
+  PickupStartEffectSound: powerup-1
   PowerupUILerpFactor: 0.25
+  PowerupSpeedBoostMultiplier: 1.5
+  PowerupScreenFlashDuration: 0.5
+  PowerupScreenFlashIntensity: 0.5
   levels:
   - SceneName: Tutorial
     DisplayName: Tutorial
+    leaderboardFile: 
+    difficulty: 1
   - SceneName: Alpha3
     DisplayName: Dominion
+    leaderboardFile: 
+    difficulty: 2
   - SceneName: workingTitle
     DisplayName: Arcade
+    leaderboardFile: 
+    difficulty: 3

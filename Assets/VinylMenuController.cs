@@ -30,9 +30,13 @@ public class VinylMenuController : MainMenuPage
 
     public AudioSource menuMove;
 
+    public void UpdateEntries() {
+        textController.SetMenuItems(entries);
+    }
+
     private void Start()
     {
-        textController.SetMenuItems(entries);
+        UpdateEntries();
     }
 
     private void Update()

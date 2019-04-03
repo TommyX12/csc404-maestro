@@ -13,6 +13,8 @@ public class GlobalConfiguration : ScriptableObject {
     public class Level {
         public string SceneName;
         public string DisplayName;
+        public string leaderboardFile;
+        public int difficulty;
     }
 
     // TODO: a hack
@@ -80,11 +82,15 @@ public class GlobalConfiguration : ScriptableObject {
     private Level[] levels = {
         new Level{
             SceneName = "Tutorial",
-            DisplayName = "Tutorial"
+            DisplayName = "Tutorial",
+            leaderboardFile = " tutorial",
+            difficulty = 1
         },
         new Level{
             SceneName = "Alpha3",
-            DisplayName = "Dominion"
+            DisplayName = "Dominion",
+            leaderboardFile = "leaderboard",
+            difficulty = 2
         }
     };
 
@@ -106,6 +112,10 @@ public class GlobalConfiguration : ScriptableObject {
 
     public Level GetLevel(int index) {
         return levels[index];
+    }
+
+    public int GetLevelCount() {
+        return levels.Length;
     }
 
     // TODO: a hack
