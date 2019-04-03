@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Powerup
-  m_Shader: {fileID: 4800000, guid: 1a8a081a2e1ad4fefad40d77e0e494a7, type: 3}
+  m_Shader: {fileID: 4800000, guid: 03433226effdb45948dee405a78846ee, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -67,5 +67,5 @@ Material:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _albedo: {r: 0, g: 2.1915433, b: 0.38113633, a: 0}
-    - _emission: {r: 0, g: 2.670157, b: 2.479618, a: 0}
+    - _albedo: {r: 0, g: 2.9258823, b: 0.52083766, a: 0}
+    - _emission: {r: 0, g: 3.5648696, b: 0.29095098, a: 0}

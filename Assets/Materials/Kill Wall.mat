@@ -69,4 +69,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _albedo: {r: 0, g: 0.557381, b: 0.764151, a: 0}
-    - _emission: {r: 0, g: 0, b: 0, a: 0}
+    - _emission: {r: 0.05793621, g: 0.32830518, b: 0.9221513, a: 0}

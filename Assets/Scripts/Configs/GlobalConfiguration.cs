@@ -66,7 +66,7 @@ public class GlobalConfiguration : ScriptableObject {
 
     public float PickupSpawnInterval = 32.0f; // beats
     public float PickupEffectDuration = 16.0f; // beats
-    public float PickupItemDuration = 8.0f; // beats
+    public float PickupItemDuration = 12.0f; // beats
     public string PickupSpawnedSound = "chord-1";
     public string PickupStartEffectSound = "powerup-1";
 
