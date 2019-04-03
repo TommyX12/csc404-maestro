@@ -16,6 +16,7 @@ public class PickupEffect {
 
     public class EffectFunctionData {
         public PlayerAgentController player;
+        public LevelConfiguration levelConfiguration;
     }
 
     private static Dictionary<PickupEffectType, Action<EffectFunctionData>> startEffectFunctions =
@@ -50,7 +51,7 @@ public class PickupEffect {
 
     public static PickupEffect GetRandomPickupEffect() {
         // Test single effect.
-        // return new PickupEffect(PickupEffectType.SHIELD);
+        // return new PickupEffect(PickupEffectType.EXTRA_BEATS);
 
         return new PickupEffect
             (Util.GetRandomElement<PickupEffectType>
@@ -82,11 +83,11 @@ public class PickupEffect {
     }
 
     public static void ExtraBeatsStartEffect(EffectFunctionData data) {
-        Debug.Log("ExtraBeatsStartEffect called");
+        data.player.SetTempRiff(data.levelConfiguration.ExtraBeatsRiffNotes);
     }
 
     public static void ExtraBeatsEndEffect(EffectFunctionData data) {
-        Debug.Log("ExtraBeatsEndEffect called");
+        data.player.ResetToOldRiff();
     }
 
 }

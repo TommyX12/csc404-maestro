@@ -30,6 +30,7 @@ public class PlayerAgentController : AgentController {
     private bool doubleShotEnabled = false;
     private BasicWeapon doubleShotWeapon = null;
     private float oldSpeed = -1;
+    private BasicWeapon tempRiffWeapon = null;
 
     public PlayerAgentController() {
 
@@ -181,6 +182,19 @@ public class PlayerAgentController : AgentController {
     public void SetShieldEnabled(bool value) {
         shieldGameObject.SetActive(value);
         agent.Invincible = value;
+    }
+
+    public void SetTempRiff(List<Riff.Note> notes) {
+        tempRiffWeapon = ((BasicWeapon) GetCurrentWeapon());
+        if (tempRiffWeapon) {
+            tempRiffWeapon.SetTempRiff(notes);
+        }
+    }
+
+    public void ResetToOldRiff() {
+        if (tempRiffWeapon) {
+            tempRiffWeapon.ResetToOldRiff();
+        }
     }
 
     protected void FixedUpdate() {

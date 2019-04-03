@@ -37,6 +37,8 @@ public class SequencerUI : MonoBehaviour {
 
     protected Riff outerRiff;
     protected Riff innerRiff;
+    protected List<Riff.Note> outerRiffNotes;
+    protected List<Riff.Note> innerRiffNotes;
     
     public SequencerUI() {
         
@@ -105,7 +107,8 @@ public class SequencerUI : MonoBehaviour {
             // outer ring
             Weapon weapon = player.GetCurrentWeapon();
             Riff playerRiff = weapon ? weapon.GetRiff() : null;
-            if (playerRiff != outerRiff) {
+            List<Riff.Note> playerRiffNotes = playerRiff == null ? null : playerRiff.GetNotes();
+            if (playerRiffNotes != outerRiffNotes) {
                 if (outerRiff != null) {
                     outerRiff.playing = false;
                 }
@@ -120,12 +123,14 @@ public class SequencerUI : MonoBehaviour {
                 }
 
                 outerRiff = playerRiff;
+                outerRiffNotes = playerRiffNotes;
             }
             
             // inner ring
             Countermeasure countermeasure = player.GetCurrentCountermeasure();
             Riff targetRiff = countermeasure ? countermeasure.GetTargetRiff() : null;
-            if (targetRiff != innerRiff) {
+            List<Riff.Note> targetRiffNotes = targetRiff == null ? null : targetRiff.GetNotes();
+            if (targetRiffNotes != innerRiffNotes) {
                 if (innerRiff != null) {
                     innerRiff.playing = false;
                 }
@@ -140,6 +145,7 @@ public class SequencerUI : MonoBehaviour {
                 }
 
                 innerRiff = targetRiff;
+                innerRiffNotes = targetRiffNotes;
             }
         }
         else {

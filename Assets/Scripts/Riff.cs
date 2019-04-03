@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Riff {
 
     public delegate void NoteHitEventHandler(NoteHitEvent e);
@@ -29,6 +30,8 @@ public class Riff {
     public string defaultSound = null;
 
     public bool playing = false;
+
+    private int inhibitNextSound = 0;
 
     private NoteIndexWithCycle lastPlayed;
     public float soundPreloadTime = 0.25f;
@@ -73,9 +76,17 @@ public class Riff {
         return beatsPerCycle;
     }
 
+    public void SetNotes(List<Note> notes) {
+        this.notes = notes;
+        Reset();
+        inhibitNextSound = Math.Max(inhibitNextSound, 1);
+    }
+
     private void Reset() {
         currentPosition.Reset();
         currentPositionDelayed.Reset();
+        UpdatePosition(false);
+        UpdatePosition(true);
         ResetLastHit(false);
         ResetLastHit(true);
         ResetLastPlayed();
@@ -91,9 +102,12 @@ public class Riff {
     }
 
     private void ResetLastPlayed() {
+
+        inhibitNextSound = Math.Max(inhibitNextSound, 1);
+
         lastPlayed.cycle = currentPosition.cycle;
         lastPlayed.noteIndex = -1;
-        for (int i = 0; i < notes.Count; ++i) {
+        for (int i = notes.Count - 1; i >= 0; --i) {
             Note note = notes[i];
             if (note.beat < currentPosition.beat) {
                 lastPlayed.noteIndex = i;
@@ -168,7 +182,12 @@ public class Riff {
                     sound = defaultSound;
                 }
                 if (sound != null && sound != "") {
-                    musicManager.PlayOnce(sound, delaySeconds, 0, soundVolume);
+                    if (inhibitNextSound > 0) {
+                        inhibitNextSound--;
+                    }
+                    else{
+                        musicManager.PlayOnce(sound, delaySeconds, 0, soundVolume);
+                    }
                     lastScheduledPlayDSPTime = AudioSettings.dspTime + delaySeconds;
                 }
             }

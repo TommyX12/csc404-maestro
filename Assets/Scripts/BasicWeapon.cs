@@ -30,6 +30,7 @@ public class BasicWeapon : Weapon {
 
     protected bool autoFire = false;
     protected bool doubleShot = false;
+    protected List<Riff.Note> oldRiffNotes = null;
 
     protected List<AudioSource> noteSounds = new List<AudioSource> ();
 
@@ -191,5 +192,18 @@ public class BasicWeapon : Weapon {
 
     protected void FixedUpdate() {
         riff.Update();
+    }
+
+    public void SetTempRiff(List<Riff.Note> notes) {
+        if (oldRiffNotes == null) {
+            oldRiffNotes = riff.GetNotes();
+        }
+        riff.SetNotes(notes);
+    }
+
+    public void ResetToOldRiff() {
+        if (oldRiffNotes != null) {
+            riff.SetNotes(oldRiffNotes);
+        }
     }
 }

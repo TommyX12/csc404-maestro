@@ -23,6 +23,8 @@ public class GlobalInstaller : MonoInstaller
     private PlayerAgentController player;
     [SerializeField]
     private PrefabObjectProvider prefabProvider;
+    [SerializeField]
+    private LevelConfiguration levelConfiguration;
 
     public override void InstallBindings()
     {
@@ -70,5 +72,9 @@ public class GlobalInstaller : MonoInstaller
         }
         Container.Bind<PlayerAgentController>()
             .FromInstance(player);
+
+        Assert.IsNotNull(levelConfiguration);
+        Container.Bind<LevelConfiguration>()
+            .FromInstance(levelConfiguration);
     }
 }
