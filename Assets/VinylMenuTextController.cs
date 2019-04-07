@@ -103,7 +103,7 @@ public class VinylMenuTextController : MonoBehaviour
             }
             else {
                 menuSelections[i].transform.localScale = new Vector3(1, 1, 1);
-                menuSelections[i].text.color = Color.black;
+                menuSelections[i].text.color = Color.white;
             }
         }
     }
