@@ -9,7 +9,7 @@ public class BeatTutorial : BasicAgent
 {
 
     bool ready = false;
-    Riff riff;
+    Riff beatriff;
     private List<BeatTutorialDisplay> displays = new List<BeatTutorialDisplay>();
     private int noteNum;
     private int noteIndex;
@@ -30,8 +30,8 @@ public class BeatTutorial : BasicAgent
 
     // Start is called before the first frame update
     public void SetRiffToPlayerWeapon() {
-        riff = CombatGameManager.current.player.GetCurrentWeapon().GetRiff();
-        noteNum = riff.GetNotes().Count;
+        beatriff = CombatGameManager.current.player.GetCurrentWeapon().GetRiff();
+        noteNum = beatriff.GetNotes().Count;
         noteIndex = 0;
         hits = new bool[noteNum];
         Vector3 diff = end.transform.position - start.transform.position;
@@ -58,7 +58,7 @@ public class BeatTutorial : BasicAgent
     }
 
     [Inject]
-    public void Construct(GameplayModel model) {
+    public new void Construct(GameplayModel model) {
         this.model = model;
     }
 
@@ -121,13 +121,13 @@ public class BeatTutorial : BasicAgent
     }
 
     private void Subscribe() {
-        riff.delayedNoteHitEvent += OnBeat;
-        riff.delayedNoteHitEvent += OnHit;
+        beatriff.delayedNoteHitEvent += OnBeat;
+        beatriff.delayedNoteHitEvent += OnHit;
     }
 
     private void CleanUp() {
-        riff.delayedNoteHitEvent -= OnBeat;
-        riff.delayedNoteHitEvent -= OnHit;
+        beatriff.delayedNoteHitEvent -= OnBeat;
+        beatriff.delayedNoteHitEvent -= OnHit;
     }
 
     private void OnHit(Riff.NoteHitEvent e) {

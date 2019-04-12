@@ -10,21 +10,11 @@ public class LoadScene : MonoBehaviour
 
     bool Load = false;
 
-    private void Update()
-    {
-        if (Load) {
-            if (Delay > 0)
-            {
-                Delay -= Time.deltaTime;
-            }
-            else {
-                SceneManager.LoadScene(sceneName);
-            }
-        }
- 
+    public void LoadNewScene(string sceneName) {
+        SceneManager.LoadScene(sceneName);
     }
 
-    public void Reload() {
-        Load = true;
+    public void ReloadCurrentScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
