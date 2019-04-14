@@ -51,7 +51,7 @@ public class PickupEffect {
 
     public static PickupEffect GetRandomPickupEffect() {
         // Test single effect.
-        return new PickupEffect(PickupEffectType.EXTRA_BEATS);
+        // return new PickupEffect(PickupEffectType.EXTRA_BEATS);
 
         return new PickupEffect
             (Util.GetRandomElement<PickupEffectType>
