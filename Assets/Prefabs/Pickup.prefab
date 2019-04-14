@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d3577cb1a29eb7b4c928fd87a6fef277, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d3577cb1a29eb7b4c928fd87a6fef277, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -127,14 +131,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.046533763
       objectReference: {fileID: 0}
-    - target: {fileID: 3300000, guid: d3577cb1a29eb7b4c928fd87a6fef277, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 2300000, guid: d3577cb1a29eb7b4c928fd87a6fef277, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 01b71afdcdd647c4a9a8987a71379b42, type: 2}
+    - target: {fileID: 3300000, guid: d3577cb1a29eb7b4c928fd87a6fef277, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3577cb1a29eb7b4c928fd87a6fef277, type: 3}
 --- !u!4 &13827540304694694 stripped
@@ -150,41 +154,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1262414262404382322}
     m_Modifications:
-    - target: {fileID: 5269707665725144199, guid: 1a68e93b67dff0e48adff67f60764332,
-        type: 3}
-      propertyPath: m_Name
-      value: ProjectileHit
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
-        type: 3}
-      propertyPath: EmissionModule.m_BurstCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5269707665725144198, guid: 1a68e93b67dff0e48adff67f60764332,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,6 +209,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5269707665725144199, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: m_Name
+      value: ProjectileHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269707665725144199, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: EmissionModule.m_BurstCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269707667019858778, guid: 1a68e93b67dff0e48adff67f60764332,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8969948887933403226, guid: 1a68e93b67dff0e48adff67f60764332, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a68e93b67dff0e48adff67f60764332, type: 3}
@@ -256,11 +265,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1262414262404382322}
     m_Modifications:
-    - target: {fileID: 7892783736101655324, guid: 2fcc818c42bbce44e92c534a62e71ec1,
-        type: 3}
-      propertyPath: m_Name
-      value: ExplosionParticles
-      objectReference: {fileID: 0}
     - target: {fileID: 4104804160555169840, guid: 2fcc818c42bbce44e92c534a62e71ec1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,6 +319,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892783736101655324, guid: 2fcc818c42bbce44e92c534a62e71ec1,
+        type: 3}
+      propertyPath: m_Name
+      value: ExplosionParticles
       objectReference: {fileID: 0}
     - target: {fileID: 9012669133310179764, guid: 2fcc818c42bbce44e92c534a62e71ec1,
         type: 3}

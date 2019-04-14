@@ -82,6 +82,10 @@ public class Riff {
         inhibitNextSound = Math.Max(inhibitNextSound, 1);
     }
 
+    public float GetHitMarginAfter() {
+        return hitMarginAfter;
+    }
+
     private void Reset() {
         currentPosition.Reset();
         currentPositionDelayed.Reset();

@@ -50,10 +50,25 @@ public class PickupManager : MonoBehaviour {
         this.levelConfiguration = levelConfiguration;
     }
 
+    public void SpawnPickupStartParticle(PickupEffect effect) {
+        var startParticlePrefab = prefabProvider.GetPickupStartParticle(effect.effectType);
+        if (startParticlePrefab) {
+            var startParticle = GameObject.Instantiate(startParticlePrefab);
+            var selfDestruct = startParticle.AddComponent<AutoSelfDestruct>();
+            selfDestruct.Delay = config.PickupStartParticleDuration;
+            startParticle.transform.position = player.transform.position + config.PickupStartParticleOffset;
+            startParticle.transform.localScale *= config.PickupStartParticleScale;
+        }
+    }
+
     public void StartEffect(PickupEffect effect) {
+
+        // TODO: spawn particle
+        SpawnPickupStartParticle(effect);
+
         var data = new PickupEffect.EffectFunctionData() {
             player = player,
-            levelConfiguration = levelConfiguration
+            levelConfiguration = levelConfiguration,
         };
         effect.Start(data);
         activeEffect = effect;
@@ -68,7 +83,7 @@ public class PickupManager : MonoBehaviour {
     public void EndEffect() {
         var data = new PickupEffect.EffectFunctionData() {
             player = player,
-            levelConfiguration = levelConfiguration
+            levelConfiguration = levelConfiguration,
         };
         activeEffect.End(data);
         activeEffect = null;
@@ -116,11 +131,13 @@ public class PickupManager : MonoBehaviour {
     private void SpawnRandomPickup() {
         var prefab = prefabProvider.GetPickup();
         var gameObject = diContainer.InstantiatePrefab(prefab);
+        var effect = PickupEffect.GetRandomPickupEffect();
         gameObject.transform.position = GetRandomSpawnPosition();
         gameObject.GetComponent<Pickup>().Initialize
             (this,
+             prefabProvider.GetPickupItemParticle(effect.effectType),
              musicManager.BeatToTime(config.PickupItemDuration),
-             PickupEffect.GetRandomPickupEffect());
+             effect);
         pickupOnStage = true;
 
         musicManager.PlayOnceAligned(config.PickupSpawnedSound, 2, 0);

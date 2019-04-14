@@ -45,3 +45,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupPrefab: {fileID: 498221981550266031, guid: f5d4f419ad38245e68f107d3c78b4773,
     type: 3}
+  doubleShotStartParticle: {fileID: 8337941849184658717, guid: 894180f0d19805249933fe8bf650aed7,
+    type: 3}
+  speedBoostStartParticle: {fileID: 4837519003715707492, guid: 82d5115d4090037438789310c4105378,
+    type: 3}
+  shieldStartParticle: {fileID: 4872274312359673766, guid: 3b1b75c7f5feedb4eb792704ae82efd9,
+    type: 3}
+  extraBeatsStartParticle: {fileID: 878786974485447969, guid: 177ee78eebe41e546a4ba81e8e87db81,
+    type: 3}
+  doubleShotItemParticle: {fileID: 2434933503606953842, guid: 0e2fee70e76bbed4285e20f35007f3b0,
+    type: 3}
+  speedBoostItemParticle: {fileID: 5041686434210670685, guid: 52db62bff20c104469bc0f1cbb66c1c2,
+    type: 3}
+  shieldItemParticle: {fileID: 2311207550822511143, guid: 6de14dc4dd23ec243a6b3d67720115a7,
+    type: 3}
+  extraBeatsItemParticle: {fileID: 6924429176447372099, guid: 628e9ad6ba4d5d741ac7dd7e00b3a71a,
+    type: 3}

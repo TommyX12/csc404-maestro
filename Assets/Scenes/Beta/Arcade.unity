@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3367,7 +3367,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 050000000300000007000000
+  band: 030000000200000006000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &142113380
@@ -4099,7 +4099,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 040000000000000003000000
+  band: 050000000000000007000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &163839131
@@ -11387,7 +11387,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 040000000600000001000000
+  band: 070000000500000007000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &511328131
@@ -13633,7 +13633,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 020000000400000000000000
+  band: 030000000200000004000000
   scale: 1
   averageDecay: 0.357
 --- !u!1 &594387830
@@ -18392,7 +18392,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 040000000100000002000000
+  band: 060000000700000004000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &791730722
@@ -28160,7 +28160,7 @@ PrefabInstance:
     - target: {fileID: 1839618773794523040, guid: f0ddba615b94641429e48085aa523c0c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1839618773794523040, guid: f0ddba615b94641429e48085aa523c0c,
         type: 3}
@@ -28961,7 +28961,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 000000000000000000000000
+  band: 040000000000000000000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &1106609931
@@ -30466,7 +30466,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 030000000000000003000000
+  band: 060000000500000004000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &1188608068
@@ -38645,7 +38645,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 050000000600000007000000
+  band: 010000000500000001000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &1532917441
@@ -39468,47 +39468,47 @@ PrefabInstance:
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[1].index
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[2].index
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[3].index
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[0].unitPerBeat
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[1].unitPerBeat
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[2].unitPerBeat
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[3].unitPerBeat
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[1].sound
-      value: clap-1
+      value: kick-1
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
@@ -39518,12 +39518,42 @@ PrefabInstance:
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[4].index
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
         type: 3}
       propertyPath: notes.Array.data[4].unitPerBeat
-      value: 2
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[5].index
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[5].unitPerBeat
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[5].sound
+      value: clap-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[0].sound
+      value: kick-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[2].sound
+      value: clap-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541313578325738394, guid: 043c4ba7c070849f1bf713e48e371cda,
+        type: 3}
+      propertyPath: notes.Array.data[4].sound
+      value: kick-1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043c4ba7c070849f1bf713e48e371cda, type: 3}
@@ -41832,7 +41862,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 060000000700000000000000
+  band: 010000000700000006000000
   scale: 1
   averageDecay: 0.5
 --- !u!114 &1599472215
@@ -44824,11 +44854,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1832416661}
     m_Modifications:
-    - target: {fileID: 3804909820345650257, guid: 1f7c4ccf05eb44fe187a67d2e8b11c7b,
-        type: 3}
-      propertyPath: m_Name
-      value: LeaderboardUI
-      objectReference: {fileID: 0}
     - target: {fileID: 3804909820345650262, guid: 1f7c4ccf05eb44fe187a67d2e8b11c7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45169,6 +45194,11 @@ PrefabInstance:
       propertyPath: saveFile
       value: arcade
       objectReference: {fileID: 0}
+    - target: {fileID: 3804909820345650257, guid: 1f7c4ccf05eb44fe187a67d2e8b11c7b,
+        type: 3}
+      propertyPath: m_Name
+      value: LeaderboardUI
+      objectReference: {fileID: 0}
     - target: {fileID: 3804909820623341688, guid: 1f7c4ccf05eb44fe187a67d2e8b11c7b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -45254,7 +45284,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 020000000000000007000000
+  band: 010000000100000004000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &1733452436
@@ -52666,7 +52696,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 020000000300000005000000
+  band: 020000000300000000000000
   scale: 1
   averageDecay: 0.357
 --- !u!114 &1995138767
