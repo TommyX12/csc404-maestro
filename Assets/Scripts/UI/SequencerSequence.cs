@@ -172,9 +172,10 @@ public class SequencerSequence : MonoBehaviour{
         }
         
         float currentPos = musicManager.GetBeatPosition(beatsPerCycle);
+        float hitMarginAfterBeats = musicManager.TimeToBeat(riff.GetHitMarginAfter());
         foreach (var noteObject in noteObjects) {
             float dist = musicManager.GetDistanceToBeat(noteObject.note.beat, beatsPerCycle);
-            noteObject.SetBeatDistance(dist);
+            noteObject.SetBeatDistance(dist, hitMarginAfterBeats);
         }
 
         // hit color effect

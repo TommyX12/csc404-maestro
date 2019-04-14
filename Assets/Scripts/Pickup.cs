@@ -13,11 +13,19 @@ public class Pickup : MonoBehaviour {
     private float timer = 0;
 
     public void Initialize(PickupManager pickupManager,
+                           GameObject itemParticlePrefab,
                            float duration,
                            PickupEffect pickupEffect) {
         this.pickupManager = pickupManager;
         this.timer = duration;
         this.pickupEffect = pickupEffect;
+
+        SpawnItemParticle(itemParticlePrefab);
+    }
+
+    private void SpawnItemParticle(GameObject prefab) {
+        var particle = GameObject.Instantiate(prefab, transform);
+        particle.transform.localPosition = Vector3.zero;
     }
 
     private void OnTriggerEnter(Collider other) {
