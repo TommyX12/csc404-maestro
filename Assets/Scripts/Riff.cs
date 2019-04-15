@@ -29,7 +29,8 @@ public class Riff {
 
     public string defaultSound = null;
 
-    public bool playing = false;
+    public bool playing = false; // 2 gates for playing sound
+    public bool muted = false;
 
     private int inhibitNextSound = 0;
 
@@ -176,7 +177,7 @@ public class Riff {
         float nextTotalTime = musicManager.BeatToTime(nextTotalBeat);
         float delaySeconds = Mathf.Max(0, nextTotalTime - currentTotalTime);
         if (delaySeconds <= soundPreloadTime) {
-            if (playing) {
+            if (playing && !muted) {
                 // Debug.Log(delaySeconds);
                 string sound = notes[next.noteIndex].sound;
                 if (sound == null || sound == "") {
