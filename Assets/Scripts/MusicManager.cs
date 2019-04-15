@@ -331,7 +331,7 @@ public class MusicManager : MonoBehaviour {
     }
 
     /// <summary>
-    ///   Returns closest signed distance from current beat to beatIndex,
+    ///   Returns closest signed distance (in beat) from current beat to beatIndex,
     ///   assuming the beatIndex can be in previous or next cycle.
     /// </summary>
     public float GetDistanceToBeat(float beatIndex, float beatsPerCycle, bool delayed = true) {

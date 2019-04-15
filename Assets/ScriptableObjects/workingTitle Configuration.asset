@@ -16,21 +16,24 @@ MonoBehaviour:
   - index: 0
     unitPerBeat: 2
     sound: kick-1
-  - index: 1
-    unitPerBeat: 2
-    sound: kick-1
   - index: 2
-    unitPerBeat: 2
-    sound: clap-1
+    unitPerBeat: 4
+    sound: kick-1
+  - index: 3
+    unitPerBeat: 4
+    sound: kick-1
   - index: 3
     unitPerBeat: 2
-    sound: kick-1
+    sound: clap-1
   - index: 4
     unitPerBeat: 2
     sound: kick-1
-  - index: 5
-    unitPerBeat: 2
+  - index: 10
+    unitPerBeat: 4
     sound: kick-1
-  - index: 6
+  - index: 11
+    unitPerBeat: 4
+    sound: kick-1
+  - index: 7
     unitPerBeat: 2
     sound: clap-1
