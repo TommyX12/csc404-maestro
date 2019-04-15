@@ -14,10 +14,11 @@ public class MarkerParticleSystemController : MonoBehaviour
         psr = GetComponent<ParticleSystemRenderer>();
     }
 
+
+    // rotates this gameobject to face the target game object, and manages particles to reach that game object.
     private void Update()
     {
-        float rot = transform.localEulerAngles.y;
-        psr.alignment = ParticleSystemRenderSpace.Local;
+        transform.rotation = Quaternion.LookRotation(Marker.transform.position - transform.position, transform.up);
         float delta = (Marker.transform.position - transform.position).magnitude;
         var pmain = psys.main;
         pmain.startLifetime = delta / psys.main.startSpeed.constant;
