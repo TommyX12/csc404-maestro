@@ -81,7 +81,7 @@ public class GlobalConfiguration : ScriptableObject {
     public float PickupItemDuration = 12.0f; // beats
     public string PickupSpawnedSound = "chord-1";
     public string PickupStartEffectSound = "powerup-1";
-    public Vector3 PickupStartParticleOffset = new Vector3(0.0f, 2.0f, 0.0f);
+    public Vector3 PickupStartParticleOffset = new Vector3(0.0f, 3.0f, 0.0f);
     public float PickupStartParticleScale = 5.0f;
     public float PickupStartParticleDuration = 5.0f;
 
