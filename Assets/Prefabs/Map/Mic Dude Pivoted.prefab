@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7521760480138868989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7521760480138868990}
+  m_Layer: 0
+  m_Name: Mic Dude Pivoted
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7521760480138868990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521760480138868989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7521760480699587305}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7521760480763842881
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7521760480138868990}
+    m_Modifications:
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colorables.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colorables.Array.data[0]
+      value: 
+      objectReference: {fileID: 7521760480272236939}
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colorables.Array.data[1]
+      value: 
+      objectReference: {fileID: 7521760481410086594}
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colorables.Array.data[2]
+      value: 
+      objectReference: {fileID: 7521760481620419692}
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colors.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 582aec1c4062f46cf8bb1f4bc7feeb51, type: 2}
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colors.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9369e4cca2ef343a3912f9b0e6a35bfc, type: 2}
+    - target: {fileID: 2974795038741165607, guid: d200d4bf86a14594792729c0832025e4,
+        type: 3}
+      propertyPath: colors.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 537579e2f57144d98ac300c3af6ad289, type: 2}
+    - target: {fileID: 69962662, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_Name
+      value: MicDude
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8660257
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 60.000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d200d4bf86a14594792729c0832025e4, type: 3}
+--- !u!4 &7521760480699587305 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 69962664, guid: d200d4bf86a14594792729c0832025e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7521760480763842881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7521760480272236939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 766693578, guid: d200d4bf86a14594792729c0832025e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7521760480763842881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7521760481410086594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1770317699, guid: d200d4bf86a14594792729c0832025e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7521760480763842881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7521760481620419692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2098099501, guid: d200d4bf86a14594792729c0832025e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7521760480763842881}
+  m_PrefabAsset: {fileID: 0}

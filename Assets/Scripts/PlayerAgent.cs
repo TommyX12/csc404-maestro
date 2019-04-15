@@ -13,7 +13,7 @@ public class PlayerAgent : BasicAgent
     public float healthRegenRate = 1;
     public float invulnerabilityTime = 1f;
     public float invulnerabilityTimer = 0f;
-
+    private bool weaponsMuted = false;
     // Injected references
     private GlobalConfiguration config;
 
@@ -88,6 +88,10 @@ public class PlayerAgent : BasicAgent
         //}
     }
 
+    public void MuteWeapon() {
+        weaponsMuted = true;
+    }
+
     private new void Update()
     {
         base.Update();
@@ -99,6 +103,14 @@ public class PlayerAgent : BasicAgent
             hitPoint += healthRegenRate * Time.deltaTime;
             hitPoint = Mathf.Min(hitPoint, initialHitPoint);
             UpdateScreenEffects();
+        }
+
+        if (weaponsMuted)
+        {
+            foreach (Weapon w in weapons)
+            {
+                w.GetRiff().playing = false;
+            }
         }
     }
 }
