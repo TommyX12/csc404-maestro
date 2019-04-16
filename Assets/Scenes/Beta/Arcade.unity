@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -3367,7 +3367,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 040000000300000007000000
+  band: 010000000700000002000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &142113380
@@ -4099,7 +4099,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 010000000200000004000000
+  band: 020000000700000001000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &163839131
@@ -4264,7 +4264,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -7956,7 +7956,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -9533,7 +9533,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -11387,7 +11387,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 000000000700000004000000
+  band: 040000000000000000000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &511328131
@@ -13633,7 +13633,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 060000000400000004000000
+  band: 010000000300000007000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!1 &594387830
@@ -16744,6 +16744,11 @@ PrefabInstance:
       propertyPath: m_OnCullStateChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5112004931239741118, guid: 1c5ea40b0607f48039ab530ca726f72d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6093280886532053406, guid: 1c5ea40b0607f48039ab530ca726f72d, type: 3}
     - {fileID: 961970171474419543, guid: 1c5ea40b0607f48039ab530ca726f72d, type: 3}
@@ -16793,6 +16798,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 733445058}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &733445060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5112004931239741118, guid: 1c5ea40b0607f48039ab530ca726f72d,
+    type: 3}
+  m_PrefabInstance: {fileID: 733445054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &745204759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18392,7 +18403,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 020000000700000004000000
+  band: 020000000100000007000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &791730722
@@ -28072,6 +28083,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 733445060}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1051556808
@@ -28961,7 +28983,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 010000000400000005000000
+  band: 020000000400000003000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &1106609931
@@ -30466,7 +30488,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 020000000000000000000000
+  band: 000000000200000000000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &1188608068
@@ -38645,7 +38667,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 040000000000000002000000
+  band: 060000000400000000000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &1532917441
@@ -40836,7 +40858,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -41862,7 +41884,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 030000000600000003000000
+  band: 070000000200000003000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &1599472215
@@ -45284,7 +45306,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 030000000400000007000000
+  band: 040000000100000003000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &1733452436
@@ -48274,7 +48296,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -48711,7 +48733,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -50608,7 +50630,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -52696,7 +52718,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 060000000400000005000000
+  band: 030000000300000005000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &1995138767
@@ -54808,7 +54830,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -55527,7 +55549,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -57712,7 +57734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd708959b2aea2645a3ba95f375988e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000
+  data: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   beatDiv: 1
 --- !u!1 &674347858490564416
 GameObject:
