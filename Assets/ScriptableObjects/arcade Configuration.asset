@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8db333d15ba304e38b2eec19e8a41070, type: 3}
-  m_Name: ArcadeConfig
+  m_Name: arcade Configuration
   m_EditorClassIdentifier: 
   ExtraBeatsRiffNotes:
   - index: 0
     unitPerBeat: 2
-    sound: kick_909
-  - index: 1
-    unitPerBeat: 2
-    sound: kick_short
+    sound: kick-1
   - index: 2
-    unitPerBeat: 2
-    sound: kick_short
+    unitPerBeat: 4
+    sound: kick-1
+  - index: 3
+    unitPerBeat: 4
+    sound: kick-1
   - index: 3
     unitPerBeat: 2
-    sound: kick_short
+    sound: clap-1
   - index: 4
     unitPerBeat: 2
-    sound: kick_short
-  - index: 5
+    sound: kick-1
+  - index: 10
+    unitPerBeat: 4
+    sound: kick-1
+  - index: 11
+    unitPerBeat: 4
+    sound: kick-1
+  - index: 7
     unitPerBeat: 2
-    sound: clap_909
-  - index: 6
-    unitPerBeat: 2
-    sound: clap_909
+    sound: clap-1

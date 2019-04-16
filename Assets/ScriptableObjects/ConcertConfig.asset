@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8db333d15ba304e38b2eec19e8a41070, type: 3}
-  m_Name: workingTitle Configuration
+  m_Name: ConcertConfig
   m_EditorClassIdentifier: 
   ExtraBeatsRiffNotes:
   - index: 0
     unitPerBeat: 2
     sound: kick-1
-  - index: 2
-    unitPerBeat: 4
+  - index: 1
+    unitPerBeat: 2
     sound: kick-1
-  - index: 3
-    unitPerBeat: 4
+  - index: 2
+    unitPerBeat: 2
     sound: kick-1
   - index: 3
     unitPerBeat: 2
@@ -28,12 +28,9 @@ MonoBehaviour:
   - index: 4
     unitPerBeat: 2
     sound: kick-1
-  - index: 10
-    unitPerBeat: 4
+  - index: 5
+    unitPerBeat: 2
     sound: kick-1
-  - index: 11
-    unitPerBeat: 4
-    sound: kick-1
-  - index: 7
+  - index: 6
     unitPerBeat: 2
     sound: clap-1
