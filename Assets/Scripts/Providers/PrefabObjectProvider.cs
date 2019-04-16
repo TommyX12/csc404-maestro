@@ -28,6 +28,9 @@ public class PrefabObjectProvider : MonoBehaviour {
     [SerializeField]
     private GameObject extraBeatsItemParticle;
 
+    [SerializeField]
+    private GuideLine guideLinePrefab;
+
     private Dictionary<PickupEffect.PickupEffectType, GameObject> startEffectParticle;
     private Dictionary<PickupEffect.PickupEffectType, GameObject> itemEffectParticle;
 
@@ -41,6 +44,7 @@ public class PrefabObjectProvider : MonoBehaviour {
         Assert.IsNotNull(speedBoostItemParticle, "speedBoostItemParticle");
         Assert.IsNotNull(shieldItemParticle, "shieldItemParticle");
         Assert.IsNotNull(extraBeatsItemParticle, "extraBeatsItemParticle");
+        Assert.IsNotNull(guideLinePrefab, "guideLinePrefab");
 
         startEffectParticle = new Dictionary<PickupEffect.PickupEffectType, GameObject>() {
             {PickupEffect.PickupEffectType.DOUBLE_SHOT, doubleShotStartParticle},
@@ -63,6 +67,10 @@ public class PrefabObjectProvider : MonoBehaviour {
 
     private void Update() {
         
+    }
+
+    public GuideLine GetGuideLine() {
+        return guideLinePrefab;
     }
 
     public Pickup GetPickup() {

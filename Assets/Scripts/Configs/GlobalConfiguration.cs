@@ -91,6 +91,8 @@ public class GlobalConfiguration : ScriptableObject {
     public float PowerupScreenFlashDuration = 0.5f; // seconds
     public float PowerupScreenFlashIntensity = 0.5f;
 
+    public float GuideLineAnimationSpeed = 2.0f;
+
     [SerializeField]
     private Level[] levels = {
         new Level{

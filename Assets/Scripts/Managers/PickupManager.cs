@@ -12,6 +12,8 @@ public class PickupManager : MonoBehaviour {
     [SerializeField]
     private BoxCollider spawnArea;
 
+    private GuideLine guideLine = null;
+
     // Injected references
     private PrefabObjectProvider prefabProvider;
     private DiContainer diContainer;
@@ -22,7 +24,7 @@ public class PickupManager : MonoBehaviour {
     private LevelConfiguration levelConfiguration;
 
     private float spawnTimer = 0;
-    private bool pickupOnStage = false;
+    private GameObject pickupOnStage = null;
     private bool pickupEffectActive = false;
     private float pickupEffectTimerBeats = 0;
     private PickupEffect activeEffect = null;
@@ -50,10 +52,20 @@ public class PickupManager : MonoBehaviour {
         this.levelConfiguration = levelConfiguration;
     }
 
+    private GuideLine GetGuideLine() {
+        if (guideLine == null) {
+            guideLine = diContainer.InstantiatePrefab
+                (prefabProvider.GetGuideLine())
+                .GetComponent<GuideLine>();
+            guideLine.gameObject.SetActive(false);
+        }
+        return guideLine;
+    }
+
     public void SpawnPickupStartParticle(PickupEffect effect) {
         var startParticlePrefab = prefabProvider.GetPickupStartParticle(effect.effectType);
         if (startParticlePrefab) {
-            var startParticle = GameObject.Instantiate(startParticlePrefab);
+            var startParticle = diContainer.InstantiatePrefab(startParticlePrefab);
             var selfDestruct = startParticle.AddComponent<AutoSelfDestruct>();
             selfDestruct.Delay = config.PickupStartParticleDuration;
             startParticle.transform.position = player.transform.position + config.PickupStartParticleOffset;
@@ -93,7 +105,7 @@ public class PickupManager : MonoBehaviour {
     }
 
     public void NotifyPickupDestroyed(Pickup pickup) {
-        pickupOnStage = false;
+        pickupOnStage = null;
     }
 
     public float GetEffectTimeLeftPercentage() {
@@ -102,6 +114,19 @@ public class PickupManager : MonoBehaviour {
 
     private void Start() {
 
+    }
+
+    private void UpdateGuideLine() {
+        GuideLine guideLine = GetGuideLine();
+
+        if (pickupOnStage == null || player == null) {
+            guideLine.gameObject.SetActive(false);
+            return;
+        }
+
+        guideLine.gameObject.SetActive(true);
+        guideLine.SetStart(player.transform.position);
+        guideLine.SetEnd(pickupOnStage.transform.position);
     }
 
     private void Update() {
@@ -113,7 +138,7 @@ public class PickupManager : MonoBehaviour {
         spawnTimer += deltaBeats;
         if (spawnTimer > config.PickupSpawnInterval) {
             spawnTimer = 0;
-            if (!(pickupOnStage || pickupEffectActive) && model.CanSpawnPickup) {
+            if (!((pickupOnStage != null) || pickupEffectActive) && model.CanSpawnPickup) {
                 SpawnRandomPickup();
             }
         }
@@ -126,6 +151,8 @@ public class PickupManager : MonoBehaviour {
         }
 
         model.CurrentPickupTimeLeftPercentage = GetEffectTimeLeftPercentage();
+
+        UpdateGuideLine();
     }
 
     private void SpawnRandomPickup() {
@@ -138,7 +165,7 @@ public class PickupManager : MonoBehaviour {
              prefabProvider.GetPickupItemParticle(effect.effectType),
              musicManager.BeatToTime(config.PickupItemDuration),
              effect);
-        pickupOnStage = true;
+        pickupOnStage = gameObject;
 
         musicManager.PlayOnceAligned(config.PickupSpawnedSound, 2, 0);
     }
