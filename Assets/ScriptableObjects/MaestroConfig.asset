@@ -44,18 +44,22 @@ MonoBehaviour:
   PickupItemDuration: 8
   PickupSpawnedSound: chord-1
   PickupStartEffectSound: powerup-1
+  PickupStartParticleOffset: {x: 0, y: 3, z: 0}
+  PickupStartParticleScale: 5
+  PickupStartParticleDuration: 5
   PowerupUILerpFactor: 0.25
   PowerupSpeedBoostMultiplier: 1.5
   PowerupScreenFlashDuration: 0.5
   PowerupScreenFlashIntensity: 0.5
+  GuideLineAnimationSpeed: 2
   levels:
-  - SceneName: Tutorial
-    DisplayName: Tutorial
-    leaderboardFile: tutorial
-    artists: Tommy Xiang
-    audioFile: csc404-test-1
-    difficulty: 1
-    bpm: 80
+  - SceneName: arcade
+    DisplayName: Arcade
+    leaderboardFile: arcade
+    artists: Paul Lessard, Tommy Xiang
+    audioFile: csc404-paul-preview
+    difficulty: 3
+    bpm: 120
   - SceneName: Alpha3
     DisplayName: Dominion
     leaderboardFile: dominion
@@ -63,10 +67,10 @@ MonoBehaviour:
     audioFile: csc404-dominion
     difficulty: 2
     bpm: 120
-  - SceneName: arcade
-    DisplayName: Arcade
-    leaderboardFile: arcade
-    artists: Paul Lessard, Tommy Xiang
-    audioFile: csc404-paul
-    difficulty: 3
-    bpm: 120
+  - SceneName: Tutorial
+    DisplayName: Tutorial
+    leaderboardFile: tutorial
+    artists: Tommy Xiang
+    audioFile: csc404-test-1
+    difficulty: 1
+    bpm: 80
