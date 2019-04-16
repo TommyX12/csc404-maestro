@@ -53,6 +53,13 @@ MonoBehaviour:
   PowerupScreenFlashIntensity: 0.5
   GuideLineAnimationSpeed: 2
   levels:
+  - SceneName: Concert
+    DisplayName: Concert
+    leaderboardFile: concert
+    artists: Paul Lessard, Raymond Gao
+    audioFile: Paul_Lessard_3
+    difficulty: 5
+    bpm: 140
   - SceneName: arcade
     DisplayName: Arcade
     leaderboardFile: arcade

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276314545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.204, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 852041323}
@@ -133,9 +133,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938448557}
-  m_LocalRotation: {x: -0.61237264, y: -0.3535536, z: -0.35355318, w: 0.6123723}
+  m_LocalRotation: {x: -0.61237246, y: -0.3535534, z: -0.3535534, w: 0.61237246}
   m_LocalPosition: {x: 5.63, y: -0.796, z: 2.63}
-  m_LocalScale: {x: 0.69195294, y: 1.4440051, z: 1.2927935}
+  m_LocalScale: {x: 0.691953, y: 1.4440054, z: 1.2927935}
   m_Children:
   - {fileID: 1276314546}
   m_Father: {fileID: 0}
@@ -148,7 +148,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938448557}
-  m_Mesh: {fileID: 4300000, guid: ef300bc629c8a7f488fa13f41a68dcbc, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 3b59ba9b6266045b58bae4c656739496, type: 3}
 --- !u!23 &1938448559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3518c67e7c12049cd9dfcd4d41d819a6, type: 2}
+  - {fileID: 2100000, guid: 98a2f833573a1484ab7e13a80675ddb5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,10 +272,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.13715333
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a41a31e68b8cd4b06aad13eb2fd6c55c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.074413
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a41a31e68b8cd4b06aad13eb2fd6c55c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -287,6 +283,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: a41a31e68b8cd4b06aad13eb2fd6c55c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a41a31e68b8cd4b06aad13eb2fd6c55c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.074413
       objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: a41a31e68b8cd4b06aad13eb2fd6c55c, type: 3}
       propertyPath: m_Materials.Array.data[0]
