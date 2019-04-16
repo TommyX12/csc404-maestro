@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 8940955469530357231}
   - component: {fileID: 3355553207079431052}
   - component: {fileID: 1682552952954381614}
+  - component: {fileID: 7325328919044218116}
   m_Layer: 5
   m_Name: GameplayUI
   m_TagString: Untagged
@@ -569,6 +570,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashScreenImage: {fileID: 2997448543855741438}
+--- !u!114 &7325328919044218116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535613497340098787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc1c53e45617c04582a353981ecd227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escapeMenu: {fileID: 2280442126576697018}
 --- !u!1001 &2226958837755578278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,8 +700,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 90772706540534043, guid: 9920d70b8890e0a4abee8ffe29976402, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9920d70b8890e0a4abee8ffe29976402, type: 3}
+--- !u!1 &2280442126576697018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 90772706540534044, guid: 9920d70b8890e0a4abee8ffe29976402,
+    type: 3}
+  m_PrefabInstance: {fileID: 2226958837755578278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2280442126576697019 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 90772706540534045, guid: 9920d70b8890e0a4abee8ffe29976402,

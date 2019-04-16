@@ -5,7 +5,16 @@ using UnityEngine;
 public class EscapeMenuController : MonoBehaviour
 {
 
+    public GameObject escapeMenu;
+
     private List<AudioSource> paused = new List<AudioSource>();
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Escape") || Input.GetKeyDown(KeyCode.Escape)) {
+            Toggle();
+        }
+    }
 
     private void Awake()
     {
@@ -13,9 +22,9 @@ public class EscapeMenuController : MonoBehaviour
     }
 
     public void Toggle() {
-        if (this.gameObject.activeInHierarchy)
+        if (this.escapeMenu.activeInHierarchy)
         {
-            this.gameObject.SetActive(false);
+            this.escapeMenu.SetActive(false);
             Time.timeScale = 1f;
             foreach (AudioSource s in paused)
             {
@@ -24,7 +33,7 @@ public class EscapeMenuController : MonoBehaviour
             paused.Clear();
         }
         else {
-            this.gameObject.SetActive(true);
+            this.escapeMenu.SetActive(true);
             Time.timeScale = 0f;
             AudioSource[] sources = FindObjectsOfType<AudioSource>();
             foreach (AudioSource s in sources)
