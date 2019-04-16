@@ -4992,6 +4992,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlashParticleSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
+      propertyPath: particleSystems.Array.data[0]
+      value: 
+      objectReference: {fileID: 609025724876515263}
+    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
+      propertyPath: particleSystems.Array.data[1]
+      value: 
+      objectReference: {fileID: 609025725427444201}
+    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
+      propertyPath: particleSystems.Array.data[2]
+      value: 
+      objectReference: {fileID: 609025726846748966}
+    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
+      propertyPath: particleSystems.Array.data[3]
+      value: 
+      objectReference: {fileID: 8720284935419955627}
     - target: {fileID: 609025725549849220, guid: 804f38c0c36489748a02d5ea6817ed5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5047,6 +5063,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 609025725549849220, guid: 804f38c0c36489748a02d5ea6817ed5d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 609025725549849220, guid: 804f38c0c36489748a02d5ea6817ed5d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 609025725549849222, guid: 804f38c0c36489748a02d5ea6817ed5d,
         type: 3}
       propertyPath: EmissionModule.enabled
@@ -5057,22 +5083,11 @@ PrefabInstance:
       propertyPath: stopAction
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
-      propertyPath: particleSystems.Array.data[0]
-      value: 
-      objectReference: {fileID: 609025724876515263}
-    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
-      propertyPath: particleSystems.Array.data[1]
-      value: 
-      objectReference: {fileID: 609025725427444201}
-    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
-      propertyPath: particleSystems.Array.data[2]
-      value: 
-      objectReference: {fileID: 609025726846748966}
-    - target: {fileID: 787526070, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
-      propertyPath: particleSystems.Array.data[3]
-      value: 
-      objectReference: {fileID: 8720284935419955627}
+    - target: {fileID: 609025725549849222, guid: 804f38c0c36489748a02d5ea6817ed5d,
+        type: 3}
+      propertyPath: scalingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 804f38c0c36489748a02d5ea6817ed5d, type: 3}
 --- !u!4 &609025724876515261 stripped

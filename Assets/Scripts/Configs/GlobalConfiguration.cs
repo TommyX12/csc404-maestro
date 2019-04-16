@@ -82,7 +82,7 @@ public class GlobalConfiguration : ScriptableObject {
     public string PickupSpawnedSound = "chord-1";
     public string PickupStartEffectSound = "powerup-1";
     public Vector3 PickupStartParticleOffset = new Vector3(0.0f, 3.0f, 0.0f);
-    public float PickupStartParticleScale = 5.0f;
+    public float PickupStartParticleScale = 4.0f;
     public float PickupStartParticleDuration = 5.0f;
 
     public float PowerupUILerpFactor = 0.25f;

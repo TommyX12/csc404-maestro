@@ -13,4 +13,9 @@ public class BlasterWeapon : BasicWeapon
         FlashSystem.PlayOnce();
     }
 
+    public override void AimAt(Transform target) {
+        base.AimAt(target);
+        transform.LookAt(target.position);
+    }
+
 }
