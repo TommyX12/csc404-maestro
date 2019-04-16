@@ -5,7 +5,7 @@ using UnityEngine;
 public class MultiWeapon : BasicWeapon
 {
     public List<GameObject> firePoints;
-
+    public List<ParticleGroup> particleGroups = new List<ParticleGroup>();
     private Animator weaponAnim;
 
     private int triggerIndex = Animator.StringToHash("Fire");
@@ -29,6 +29,11 @@ public class MultiWeapon : BasicWeapon
                             obj.transform.forward)
              .WithBypassAgentType(host.type));
         }
+
+        foreach (ParticleGroup pg in particleGroups) {
+            pg.PlayOnce();
+        }
+
         if (weaponAnim)
         {
             weaponAnim.SetTrigger(triggerIndex);

@@ -860,7 +860,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 7779766300952527568}
   - component: {fileID: 7588743971376643811}
   - component: {fileID: 3507622832472871590}
+  - component: {fileID: 8018446611972468143}
   m_Layer: 0
   m_Name: EnemyFlashParticles
   m_TagString: Untagged
@@ -4783,7 +4784,7 @@ Transform:
   m_GameObject: {fileID: 6511110297389837221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 3}
+  m_LocalScale: {x: 1.3583, y: 4.0748997, z: 4.0748997}
   m_Children:
   - {fileID: 4894388914592430960}
   - {fileID: 2056204258519680369}
@@ -4798,7 +4799,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6511110297389837221}
   serializedVersion: 6
-  lengthInSec: 0.35
+  lengthInSec: 0.05
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5618,12 +5619,12 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9514,6 +9515,23 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8018446611972468143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511110297389837221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf6009638b87f244a12e4317a9b20ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystems:
+  - {fileID: 7588743971376643811}
+  - {fileID: 6041940223819012082}
+  - {fileID: 2603183736756498840}
+  emissionNums: 020000000200000002000000
 --- !u!1 &7284549841671192555
 GameObject:
   m_ObjectHideFlags: 0
@@ -10374,7 +10392,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
