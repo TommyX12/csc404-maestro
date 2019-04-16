@@ -18,11 +18,10 @@ public class AudioFinishTrigger : MonoBehaviour
     {
 
         if (playing) {
-            if (!source.isPlaying) {
+            if (Mathf.Abs(source.time - source.clip.length) < 0.1) {
                 playing = false;
                 onFinish.Invoke();
             }
         }
-
     }
 }
