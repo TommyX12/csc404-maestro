@@ -18,7 +18,7 @@ public class AudioFinishTrigger : MonoBehaviour
     {
 
         if (playing) {
-            if (Mathf.Abs(source.time - source.clip.length) < 0.1) {
+            if (Mathf.Abs(source.time - source.clip.length) < 0.5) {
                 playing = false;
                 onFinish.Invoke();
             }
