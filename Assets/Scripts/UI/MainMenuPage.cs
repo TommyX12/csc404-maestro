@@ -24,15 +24,13 @@ public class MainMenuPage : MonoBehaviour {
     }
 
     public virtual void OnPageEnabled() {
-        if (selectedItem)
-        {
+        if (selectedItem) {
             selectedItem.Select();
         }
     }
 
     public virtual void OnPageDisabled() {
-        if (EventSystem.current && EventSystem.current.currentSelectedGameObject)
-        {
+        if (EventSystem.current && EventSystem.current.currentSelectedGameObject) {
             selectedItem = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>();
         }
     }

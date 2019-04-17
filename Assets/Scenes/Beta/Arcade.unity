@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -3367,7 +3367,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 010000000700000002000000
+  band: 030000000600000001000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &142113380
@@ -4099,7 +4099,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 020000000700000001000000
+  band: 050000000500000007000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &163839131
@@ -4264,7 +4264,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -7956,7 +7956,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -9533,7 +9533,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -11387,7 +11387,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 040000000000000000000000
+  band: 020000000300000003000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &511328131
@@ -13633,7 +13633,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 010000000300000007000000
+  band: 020000000500000002000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!1 &594387830
@@ -16749,6 +16749,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2280442126428702269, guid: 1c5ea40b0607f48039ab530ca726f72d,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280442127378707655, guid: 1c5ea40b0607f48039ab530ca726f72d,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325328919044218116, guid: 1c5ea40b0607f48039ab530ca726f72d,
+        type: 3}
+      propertyPath: selectedItem
+      value: 
+      objectReference: {fileID: 1634452369}
     m_RemovedComponents:
     - {fileID: 6093280886532053406, guid: 1c5ea40b0607f48039ab530ca726f72d, type: 3}
     - {fileID: 961970171474419543, guid: 1c5ea40b0607f48039ab530ca726f72d, type: 3}
@@ -18403,7 +18418,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 020000000100000007000000
+  band: 000000000700000007000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &791730722
@@ -28983,7 +28998,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 020000000400000003000000
+  band: 030000000300000001000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &1106609931
@@ -30488,7 +30503,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 000000000200000000000000
+  band: 040000000500000006000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &1188608068
@@ -33729,16 +33744,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3383577331534278181, guid: 727f7d5a7f84e4640baf05dd27865563,
-        type: 3}
-      propertyPath: Active
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3383577331534278181, guid: 727f7d5a7f84e4640baf05dd27865563,
-        type: 3}
-      propertyPath: DefaultCheckpoint
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3383577330815277468, guid: 727f7d5a7f84e4640baf05dd27865563,
         type: 3}
       propertyPath: m_IsActive
@@ -33748,6 +33753,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383577331534278181, guid: 727f7d5a7f84e4640baf05dd27865563,
+        type: 3}
+      propertyPath: Active
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383577331534278181, guid: 727f7d5a7f84e4640baf05dd27865563,
+        type: 3}
+      propertyPath: DefaultCheckpoint
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 727f7d5a7f84e4640baf05dd27865563, type: 3}
@@ -38667,7 +38682,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 060000000400000000000000
+  band: 010000000000000002000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &1532917441
@@ -40858,7 +40873,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -41884,7 +41899,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.228
   randomBand: 1
-  band: 070000000200000003000000
+  band: 070000000500000006000000
   scale: 0.5
   averageDecay: 0.5
 --- !u!114 &1599472215
@@ -42891,6 +42906,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2794891f0ba644d9c1dedaff3867a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1634452369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2280442126428702269, guid: 1c5ea40b0607f48039ab530ca726f72d,
+    type: 3}
+  m_PrefabInstance: {fileID: 733445054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1650689240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43693,7 +43720,8 @@ MonoBehaviour:
   gameManager: {fileID: 1564602472}
   healthBarBarPrefab: {fileID: 598488581534565187, guid: af1dfa5a068d645c2bb439a8773d067f,
     type: 3}
-  globalConfiguration: {fileID: 0}
+  globalConfiguration: {fileID: 11400000, guid: 9757169c5e16f4910a039b0466e977c4,
+    type: 2}
   gameplayModel: {fileID: 0}
   musicManager: {fileID: 1564602471}
   pickupManager: {fileID: 1564602470}
@@ -45306,7 +45334,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 040000000100000003000000
+  band: 020000000100000002000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &1733452436
@@ -48296,7 +48324,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -48733,7 +48761,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -50630,7 +50658,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -52718,7 +52746,7 @@ MonoBehaviour:
   useHDR: 1
   HDRDecay: 0.242
   randomBand: 1
-  band: 030000000300000005000000
+  band: 040000000300000007000000
   scale: 0.5
   averageDecay: 0.357
 --- !u!114 &1995138767
@@ -54830,7 +54858,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
@@ -55549,7 +55577,7 @@ PrefabInstance:
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49999997
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400502453146245349, guid: 91de56bfeff60dd4385599ed4efef31e,
         type: 3}

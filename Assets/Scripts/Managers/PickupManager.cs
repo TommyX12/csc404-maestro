@@ -68,7 +68,12 @@ public class PickupManager : MonoBehaviour {
             var startParticle = diContainer.InstantiatePrefab(startParticlePrefab);
             var selfDestruct = startParticle.AddComponent<AutoSelfDestruct>();
             selfDestruct.Delay = config.PickupStartParticleDuration;
-            startParticle.transform.position = player.transform.position + config.PickupStartParticleOffset;
+            var offset = config.PickupStartParticleOffset;
+            // if (Camera.main) {
+            //     offset = -Camera.main.transform.forward.normalized * config.PickupStartParticleOffsetDistance;
+            // }
+            // offset.y += 2.0f;
+            startParticle.transform.position = player.transform.position + offset;
             startParticle.transform.localScale *= config.PickupStartParticleScale;
         }
     }

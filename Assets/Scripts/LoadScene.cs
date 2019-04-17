@@ -11,10 +11,12 @@ public class LoadScene : MonoBehaviour
     bool Load = false;
 
     public void LoadNewScene(string sceneName) {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 
     public void ReloadCurrentScene() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

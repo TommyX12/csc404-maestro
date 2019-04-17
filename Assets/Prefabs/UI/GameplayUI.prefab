@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   escapeMenu: {fileID: 2280442126576697018}
+  selectedItem: {fileID: 2280442126428702269}
 --- !u!1001 &2226958837755578278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,6 +716,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2226958837755578278}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2280442126428702269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 90772705880048027, guid: 9920d70b8890e0a4abee8ffe29976402,
+    type: 3}
+  m_PrefabInstance: {fileID: 2226958837755578278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3641125482418637544
 PrefabInstance:
   m_ObjectHideFlags: 0
