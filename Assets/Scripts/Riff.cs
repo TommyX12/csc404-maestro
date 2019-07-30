@@ -375,7 +375,7 @@ public class Riff {
 
             List<Note> notes = new List<Note>();
             
-            // Fisher–Yates shuffle
+            // Fisher Yates shuffle
             for (int i = 0; i < units.Length; ++i) {
                 int j = Mathf.FloorToInt(UnityEngine.Random.Range(i, units.Length - 0.0001f));
                 bool temp = units[i];
